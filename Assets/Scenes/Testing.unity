@@ -2494,7 +2494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148287761626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7628602, y: -1.5827105e-18, z: 7.1278944}
+  m_LocalPosition: {x: 4.7, y: -1.5827105e-18, z: -6.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1642929446}
@@ -2534,6 +2534,7 @@ GameObject:
   - component: {fileID: 919132148287761627}
   - component: {fileID: 919132148287761628}
   - component: {fileID: 919132148287761629}
+  - component: {fileID: 919132148287761630}
   m_Layer: 0
   m_Name: little_lizard_01
   m_TagString: Untagged
@@ -2709,6 +2710,20 @@ MonoBehaviour:
     maintainRotationWeight: 0
     bendModifierWeight: 1
     bendGoal: {fileID: 0}
+--- !u!114 &919132148287761630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148287761626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f44ca40813540dfbf46de3a8ce78b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 678847348}
+  speed: 0.01
 --- !u!4 &1511997118299565544
 Transform:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: swing_3
-  m_Speed: 3.87
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1754208961262801769}
@@ -70,7 +70,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.2564513
   m_TransitionOffset: 0.47147754
   m_ExitTime: 0.9843081
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -335,7 +335,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: swing_2
-  m_Speed: 3.93
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2065822273670527230}
@@ -373,9 +373,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.19948477
-  m_TransitionOffset: 0.017580014
-  m_ExitTime: 0.971237
+  m_TransitionDuration: 0.19948474
+  m_TransitionOffset: 0.0070960093
+  m_ExitTime: 0.8517189
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

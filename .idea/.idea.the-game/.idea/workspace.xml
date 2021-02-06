@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InPlaceOfPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InPlaceOfPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelling/little_lizard_01.blend" beforeDir="false" afterPath="$PROJECT_DIR$/modelling/little_lizard_01.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelling/sword/sword._boneAnimation.blend" beforeDir="false" afterPath="$PROJECT_DIR$/modelling/sword/sword._boneAnimation.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/the-game.sln" beforeDir="false" afterPath="$PROJECT_DIR$/the-game.sln" afterDir="false" />
-    </list>
+    <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +14,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeepOnFloor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DC77650D-0349-4034-8F31-3461908BD465/d7/7e895d1c/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LegMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LizardMove.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -31,6 +23,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/KeepOnFloor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LegMove.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LizardMove.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nqDH9RbKCaths3dqmALE3xCfzt" />
@@ -87,7 +80,7 @@
       <workItem from="1612108647860" duration="2247000" />
       <workItem from="1612309849765" duration="6846000" />
       <workItem from="1612538086713" duration="3465000" />
-      <workItem from="1612640842617" duration="5104000" />
+      <workItem from="1612640842617" duration="5371000" />
     </task>
     <servers />
   </component>

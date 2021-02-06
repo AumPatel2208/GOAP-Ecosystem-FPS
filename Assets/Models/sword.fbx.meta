@@ -26,11 +26,12 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: <Root Transform>
+    motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: Event ComboCheck has a time (0.833333) outside the clip's
+      valid range (0.000000..0.833333). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -97,7 +98,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.89425826
+      - time: 0.9408867
         functionName: ComboCheck
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 4ab53b4ec689847fd8b839c2c3a431ac,
@@ -134,7 +135,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.9943861
+      - time: 0.9014778
         functionName: ComboCheck
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 4ab53b4ec689847fd8b839c2c3a431ac,
@@ -171,7 +172,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.98543465
+      - time: 0.9162561
         functionName: ComboCheck
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 4ab53b4ec689847fd8b839c2c3a431ac,
@@ -233,7 +234,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.03
+    globalScale: 3
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

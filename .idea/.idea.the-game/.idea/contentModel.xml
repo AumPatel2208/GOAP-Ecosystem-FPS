@@ -344,6 +344,7 @@
           <e p="InPlaceOfPlayer.cs" t="Include" />
           <e p="KeepOnFloor.cs" t="Include" />
           <e p="LegMove.cs" t="Include" />
+          <e p="LizardMove.cs" t="Include" />
           <e p="MouseLook.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="SwordAttack.cs" t="Include" />
