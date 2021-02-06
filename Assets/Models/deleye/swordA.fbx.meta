@@ -1,14 +1,26 @@
 fileFormatVersion: 2
-guid: 1f2a4c9a6720e4c9c90fb7db1cec4f47
+guid: cec2f11d499ae49818883e6df7ba4fe2
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -4767871758195675906
-    second: starting shord sword|starting shord swordAction
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
   - first:
-      74: 9162750656901909144
-    second: starting shord sword|starting shord swordAction.001
+      74: -1422011007694221501
+    second: idle
+  - first:
+      74: -7446090138137772612
+    second: Armature|starting shord swordAction.001
+  - first:
+      74: -1646184791463580164
+    second: swing_1
+  - first:
+      74: -3595028998349690231
+    second: swing_2
+  - first:
+      74: 4584273790413197347
+    second: swing_3
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -20,7 +32,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: Armature
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -38,11 +50,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: starting shord sword|starting shord swordAction
-      takeName: starting shord sword|starting shord swordAction
+      name: idle
+      takeName: Armature|ArmatureAction.001
       internalID: 0
       firstFrame: 1
-      lastFrame: 1
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -67,10 +79,84 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: starting shord sword|starting shord swordAction.001
-      takeName: starting shord sword|starting shord swordAction.001
+      name: swing_1
+      takeName: Armature|ArmatureAction.001
       internalID: 0
-      firstFrame: 0
+      firstFrame: 60
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.9119772
+        functionName: ComboCheck
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 4ab53b4ec689847fd8b839c2c3a431ac,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: swing_2
+      takeName: Armature|ArmatureAction.001
+      internalID: 0
+      firstFrame: 90
+      lastFrame: 109
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.93846995
+        functionName: ComboCheck
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 4ab53b4ec689847fd8b839c2c3a431ac,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: swing_3
+      takeName: Armature|ArmatureAction.001
+      internalID: 0
+      firstFrame: 120
       lastFrame: 139
       wrapMode: 0
       orientationOffsetY: 0
@@ -90,7 +176,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.9355613
+        functionName: ComboCheck
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 4ab53b4ec689847fd8b839c2c3a431ac,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -98,7 +192,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 3
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -145,7 +239,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 3
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

@@ -23,55 +23,14 @@ public class SwordAttack : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        // https://youtu.be/NWt84YCMHHE Reference
         if (Input.GetButtonDown("Fire1")) {
             
             Debug.Log("Fire: canClick: " + canClick+ " noOfClicks: " + noOfClicks+ ". Current Animation:" + animator.GetInteger(hAttackNo) );
             ComboStarter();
         }
 
-        /*bool isAttacking = animator.GetBool("isAttacking");
-        int attackNo = animator.GetInteger("attackNo");
-        // // animator.GetCurrentAnimatorStateInfo(0).IsName("")
-        // if (Input.GetButtonDown("Fire1")) {
-        //     if (!isAttacking) {
-        //         isAttacking = true;
-        //         attackNo += 1;
-        //     }
-        //     else {
-        //         if (attackNo < 3) {
-        //             attackNo += 1;
-        //         }
-        //     }
-        //     animator.SetBool("isAttacking", isAttacking);
-        //     animator.SetInteger("attackNo", attackNo);
-        //     // animationTimer = 5f;
-        // }
-
-        // if (animationTimer<=0f) {
-        //     isAttacking = 0;
-        // }
-        // else {
-        //     animationTimer -= 0.1f;
-        // }
-
-
-        if (Input.GetButtonDown("Fire1") && !isAttacking) {
-            isAttacking = true;
-            animator.SetBool(hIsAttacking, isAttacking);
-        }
         
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("swing_1"))
-        {
-            // do something
-        }
-        else {
-            
-        }
-        if (isAttacking) {
-        }
-
-
-        // set parameter*/
     }
 
     private void ComboStarter() {
