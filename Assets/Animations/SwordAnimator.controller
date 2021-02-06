@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: swing_3
-  m_Speed: 1
+  m_Speed: 3.87
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1754208961262801769}
@@ -306,7 +306,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: swing_1
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5875190648171684926}
@@ -335,7 +335,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: swing_2
-  m_Speed: 1
+  m_Speed: 3.93
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2065822273670527230}

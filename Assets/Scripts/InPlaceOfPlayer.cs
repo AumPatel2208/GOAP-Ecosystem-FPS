@@ -19,6 +19,6 @@ public class InPlaceOfPlayer : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        transform.position = player.position + new Vector3(xOffset, yOffset, zOffset);
+        // transform.position = player.position + new Vector3(xOffset, yOffset, zOffset);
     }
 }

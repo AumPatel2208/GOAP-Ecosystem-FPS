@@ -44,7 +44,7 @@ public class SwordAttack : MonoBehaviour {
     }
 
     public void ComboCheck() {
-        Debug.Log("ComboCheck: " + noOfClicks);
+        // Debug.Log("ComboCheck: " + noOfClicks);
         canClick = false;
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("swing_1") && noOfClicks == 1) {
