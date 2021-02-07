@@ -9,8 +9,9 @@ public class KeepOnFloor : MonoBehaviour {
 
     void FixedUpdate() {
         RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit)) {
+        Vector3 start = new Vector3(transform.position.x,transform.position.y+1, transform.position.z);
+        
+        if (Physics.Raycast(start, -Vector3.up, out hit)) {
             Debug.Log("Found an object - distance: " + hit.distance);
             transform.position = new Vector3(hit.point.x, hit.point.y+0.01f, hit.point.z);
         }
