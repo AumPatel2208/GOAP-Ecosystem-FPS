@@ -2723,7 +2723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 678847348}
-  speed: 0.01
+  speed: -0.01
 --- !u!4 &1511997118299565544
 Transform:
   m_ObjectHideFlags: 0

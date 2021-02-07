@@ -14,7 +14,7 @@ public class LegMove : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         float distance = Vector3.Distance(transform.position, futureTarget.position);
-        Debug.Log("Distance: " + distance);
+        // Debug.Log("Distance: " + distance);
         if (distance > threshold) {
             transform.position = futureTarget.position;
         }

@@ -14,7 +14,6 @@ public class InPlaceOfPlayer : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         transform.Rotate(xRotation, yRotation, zRotation, Space.Self);
-
     }
 
     // Update is called once per frame
