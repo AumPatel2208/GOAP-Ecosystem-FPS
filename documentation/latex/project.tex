@@ -1,0 +1,63 @@
+\documentclass[10pt]{report}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{graphicx} % images
+\usepackage{fancyhdr} % headers and footers
+\usepackage{parskip} % paragraph
+\usepackage{geometry} % shapes
+\usepackage{hyperref} % Links
+\usepackage{pdflscape} % making a page landscape
+% \usepackage{natbib}
+\renewcommand{\bibname}{References}
+\renewcommand{\baselinestretch}{1.5}
+
+\bibliographystyle{unsrtnat}
+
+% hyperlink setup
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% margins and page size
+\geometry{
+a4paper,
+left=30mm,
+top=25mm,
+right=30mm,
+bottom=25mm
+}
+
+\begin{document}
+
+\begin{titlepage}
+\center
+{\huge\bfseries Report}  
+\end{titlepage}
+\tableofcontents
+
+\chapter{Introduction}
+\chapter{Output Summary}
+\chapter{Literature Review}
+My project focuses on creating a game in the souls-like genre where the enemies act in an eco-system where there is a food-chain hierarchy in which they can fight each other.
+
+An intricate in-fighting system between multiple different AI agents is what I will be focusing on. One of the early examples of in-fighting was seen in the original Doom (1993)\cite{doom93}, where if an enemy-A got attacked by enemy-B, enemy-A will change it's target from player to enemy-B, this is a very simple system but offers many different gameplay opportunities, many levels were crafted with this in mind where the players would have to manipulate the AI by luring one enemy into anothers line of fire.
+This idea was later expanded by Ubisoft in their later Far Cry games where different clans can combat each other in random events, and animals can also combat each other, combining these together, there a re many random events where animals attack enemies that are already mid combat between you and another clan.
+
+This sort of systemic game design is created by making the different game systems aware of each other, and this inturn invites the player to use their creativity to make plans on how to execute their goals and creating unique experiences. This type of gameplay has been coined as emergent gameplay where complex systems \textit{emerge} from the interaction on relatively simple game mechanics.\cite{emergentGameplay}
+
+
+\begin{thebibliography}{}
+    \bibitem{doom93}
+    id Software, id Software, (1993). DOOM. [computer game]. Available at: \url{https://store.bethesda.net/store/bethesda/en_IE/pd/productID.5361563100/currency.GBP}
+    \bibitem{farcry}
+    Ubisoft.com. 2021. Far Cry franchise. [online] Available at: \url{https://www.ubisoft.com/en-gb/franchise/far-cry/} [Accessed 9 February 2021].
+    \bibitem{emergentGameplay}
+    "Le Gameplay emergent (in French)". jeuxvideo.com. 2006-01-19. Available at: \url{https://www.jeuxvideo.com/dossiers/00006203/le-gameplay-emergent.htm} [Accessed 9th February 2021]
+    
+\end{thebibliography}
+\end{document}

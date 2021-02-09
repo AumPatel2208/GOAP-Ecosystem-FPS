@@ -6,8 +6,11 @@ public class LegMove : MonoBehaviour {
     private Vector3 pointToTransitionTo;
     private bool isTransitioning = false;
     private bool toTransition = false;
+    
     public float transitionTime = 0.1f;
-
+    
+    
+    
     public Transform futureTarget;
 
 
@@ -16,6 +19,16 @@ public class LegMove : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        //set strarting position of the future target
+       float zFutureTargetValue = futureTarget.transform.position.z * transform.parent.localScale.z;
+       futureTarget.transform.position = new Vector3(futureTarget.transform.position.x,futureTarget.transform.position.y, zFutureTargetValue);
+       // if (threshold < 1) {
+       //     threshold *= transform.parent.localScale.x;
+       // }
+       // else {
+       //     threshold = transform.parent.localScale.x;
+       // }
+           
     }
 
     // Update is called once per frame

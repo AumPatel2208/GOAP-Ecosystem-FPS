@@ -19,7 +19,13 @@ Some systems will be exapanded on and some of these will potentially be scrapped
 
 Keep everything simple so that interaction between systems is possible.
 
+
+
+## Ideas
+
 - Maybe have an outline effect on object that you are able to pick up
+- Taming the mid-class predator enemies, only with certain items however
+- 
 
 ## Resources
 
