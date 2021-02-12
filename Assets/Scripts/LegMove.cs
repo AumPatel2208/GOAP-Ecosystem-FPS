@@ -7,7 +7,7 @@ public class LegMove : MonoBehaviour {
     private bool isTransitioning = false;
     private bool toTransition = false;
     
-    public float transitionTime = 0.1f;
+    public float transitionTime = 0.05f; // figure out a way to change based on the movement speed.
     
     
     

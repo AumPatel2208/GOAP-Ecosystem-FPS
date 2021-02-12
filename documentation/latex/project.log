@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.8)  9 FEB 2021 17:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.8)  12 FEB 2021 16:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -319,34 +319,34 @@ Chapter 2.
 Chapter 3.
 [4
 
-]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 56.
+] [5]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 63.
  (/usr/local/texlive/2020basic/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 56.
+(Font)              <7> on input line 63.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 56.
- [5
+(Font)              <5> on input line 63.
+ [6
 
 ] (./project.aux)
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: 0A5C1DA723AB22FA1246BC3A32C1FC15;350.
  ) 
 Here is how much of TeX's memory you used:
- 9069 strings out of 480750
- 134094 string characters out of 5901292
- 427138 words of memory out of 5000000
- 25928 multiletter control sequences out of 15000+600000
+ 9080 strings out of 480750
+ 134255 string characters out of 5901292
+ 430308 words of memory out of 5000000
+ 25933 multiletter control sequences out of 15000+600000
  409064 words of font info for 35 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 71i,5n,74p,615b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,6n,74p,731b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk>
-Output written on project.pdf (6 pages, 55484 bytes).
+Output written on project.pdf (7 pages, 64960 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
+ 294 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 
