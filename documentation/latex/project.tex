@@ -56,7 +56,7 @@ Finite state machines are the most rudimentary AI system, it is a system that I 
 
 Behaviour Trees were popularised by Halo 2\cite{halo2} and are now the most common AI technique used in modern games, this is due to there being a streamlined flow/logic to the readability of the AI, this makes it easier to expand while keeping debugging simple. The design is built using nodes as modules, allowing nodes to be reused with minimal effort. There is also a 'blackboard' where shared knowledge is kept which the AI uses to make 'smarter' decisions while keeping memory usage to a minimum. This all happens while keeping a low computational overhead if implemented correctly. \cite{behaviourTrees}
 
-Goal Oriented Action Planning (GOAP) was originally implemented in F.E.A.R (First Encounter Assault Recon) by Jeff Orkin \cite{goap}.
+Goal Oriented Action Planning (GOAP) was originally implemented in a game in F.E.A.R (First Encounter Assault Recon) by Jeff Orkin \cite{goap}. It is a system that is made up of many actions, these actions comprise of objects, preconditions and effects; an agent will decide on an action to execute based on their current situation and then work backwards through the preconditions to create an efficient plan of executing the actions. This is done using an A* path finding algorithm, the actions have different weightings based on how easy they are to execute from the current state of the agent. This system can be very easy to scale if the ground work is set up properly as all would have to be done is add more actions in. Similar to behaviour trees (BT), a blackboard is used to store shared data which the AI can use to make decisions. This system can have performance issues, as goals and plans will have to be calculated for every active agent very frequently, so increasing the number of agents in the scene will have a performance hit. This was an issue when F.E.A.R came out as the rats in the game used the same AI system as the enemies, and once a rat had spawn, it would not be destroyed, and this would accumulate over a long play session and cause performance issues. This system can create novel AI behaviour which isn't seen easily in BT and FSM AI design. This is the system I would like to implement as it would be easier to create AI that seems to behave 'organically' like they do in F.E.A.R. \cite{goapTommyTompson}
 
 \begin{thebibliography}{}
     \bibitem{doom93}
@@ -75,5 +75,7 @@ Goal Oriented Action Planning (GOAP) was originally implemented in F.E.A.R (Firs
     Simpson, C., 2014. Behavior trees for AI: How they work. [online] Gamasutra.com. Available at: \url{https://www.gamasutra.com/blogs/ChrisSimpson/20140717/221339/Behavior_trees_for_AI_How_they_work.php} [Accessed 12 February 2021].
     \bibitem{goap}
     Orkin, J., n.d. Goal-Oriented Action Planning (GOAP). [online] Alumni.media.mit.edu. Available at: \url{http://alumni.media.mit.edu/~jorkin/goap.html} [Accessed 12 February 2021].
+    \bibitem{goapTommyTompson}
+    Thompson, T., 2020. Building the AI of F.E.A.R. with Goal Oriented Action Planning. [online] Gamasutra.com. Available at: \url{https://www.gamasutra.com/blogs/TommyThompson/20200507/362417/Building_the_AI_of_FEAR_with_Goal_Oriented_Action_Planning.php} [Accessed 13 February 2021].
 \end{thebibliography}
 \end{document}
