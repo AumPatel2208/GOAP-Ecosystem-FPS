@@ -341,6 +341,11 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AI" t="Include">
+            <e p="AIAction.cs" t="Include" />
+            <e p="AIBlackBoard.cs" t="Include" />
+            <e p="AIOwnWorldState.cs" t="Include" />
+          </e>
           <e p="InPlaceOfPlayer.cs" t="Include" />
           <e p="KeepOnFloor.cs" t="Include" />
           <e p="LegMove.cs" t="Include" />

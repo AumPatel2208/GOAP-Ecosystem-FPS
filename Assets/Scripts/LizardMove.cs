@@ -5,8 +5,10 @@ using UnityEngine;
 public class LizardMove : MonoBehaviour {
     public Transform main;
 
+    public List<Transform> feet = new List<Transform>();
+    
     public float speed = 0.01f;
-    public float height = 1;
+    public float height = 0;
 
     private float previousHeightOffset;
     // private const int MainIndex = 0;
@@ -32,7 +34,35 @@ public class LizardMove : MonoBehaviour {
         //     previousHeightOffset = average;
         // }
 
+        // transform.Find("LeftBackLeg_Target");
+        // height = CalculateHeight();
+        // float tempHeight = height;
+        // height = height - previousHeightOffset;
+        main.position = new Vector3(main.position.x, main.position.y+height, main.position.z + speed);
+        // previousHeightOffset = tempHeight;
+        // if (height == previousHeightOffset) {
+        //     main.position = new Vector3(main.position.x, main.position.y, main.position.z + speed);
+        // }
+        // else {
+        //     main.position = new Vector3(main.position.x, main.position.y+height, main.position.z + speed);
+        //     previousHeightOffset = height;
+        // }
 
-        main.position = new Vector3(main.position.x, main.position.y, main.position.z + speed);
+
     }
+
+    private float CalculateHeight() {
+        float newHeight = 0;
+
+        float average = 0;
+        foreach (Transform foot in feet) {
+            average+=foot.position.y;
+        }
+
+        average /= feet.Count;
+        
+        
+        return average;
+    }
+    
 }

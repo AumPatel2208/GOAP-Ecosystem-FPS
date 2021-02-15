@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIAction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIAction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackBoard.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIOwnWorldState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIOwnWorldState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeepOnFloor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KeepOnFloor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LegMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LegMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LizardMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LizardMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.aux" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.out" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.tex" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.toc" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.toc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +30,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeepOnFloor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DC77650D-0349-4034-8F31-3461908BD465/d7/7e895d1c/Animator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/AIBlackBoard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/AIAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LegMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LizardMove.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -23,9 +40,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/InPlaceOfPlayer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LegMove.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/KeepOnFloor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LizardMove.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/LegMove.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackBoard.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIAction.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/Conditions.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIOwnWorldState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nqDH9RbKCaths3dqmALE3xCfzt" />
@@ -86,6 +107,7 @@
       <workItem from="1612697657148" duration="5939000" />
       <workItem from="1612741809972" duration="3081000" />
       <workItem from="1613145125667" duration="657000" />
+      <workItem from="1613413812214" duration="3703000" />
     </task>
     <servers />
   </component>

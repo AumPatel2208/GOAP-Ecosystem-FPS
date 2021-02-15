@@ -15,7 +15,7 @@ public class KeepOnFloor : MonoBehaviour {
         Vector3 start = new Vector3(transform.position.x,transform.position.y+1, transform.position.z);
         
         if (Physics.Raycast(start, -Vector3.up, out hit)) {
-            Debug.Log("Found an object - distance: " + hit.distance);
+            // Debug.Log("Found an object - distance: " + hit.distance);
             transform.position = new Vector3(hit.point.x, hit.point.y+0.01f, hit.point.z);
         }
     }

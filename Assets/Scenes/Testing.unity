@@ -2837,8 +2837,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 678847348}
-  speed: 0.01
-  height: 1
+  feet:
+  - {fileID: 1642929446}
+  - {fileID: 792924329}
+  - {fileID: 728503228}
+  - {fileID: 1302473090}
+  speed: 0
+  height: 0
 --- !u!4 &1511997118299565544
 Transform:
   m_ObjectHideFlags: 0
