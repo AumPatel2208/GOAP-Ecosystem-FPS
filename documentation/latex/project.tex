@@ -103,11 +103,21 @@ This is my image editor of choice as I am very well versed in it and have been u
 \section{Milestone 1}
 
 \subsection{References for implementation}
-F.E.A.R SDK: \url{http://fear.filefront.com/file/FEAR_v108_SDK;71433}
+I did extensive reading through the FEAR SDK\cite{fearSDK} that contains the full AI source code to fully understand the implementation of GOAP.
+I also read up on many other implementations of GOAP and all of them are done in a very similar way with only minor structural differences. 
+Peter Klooster created a multi-threaded GOAP System for Unity3D which he originally used in his game Basher Beatdown \cite{basherGoap}. This is a pretty simple implementation that includes a visualiser for the system as well.
+Anne from the YouTube channel TheHappieCat did a GOAP implementation in Unity \cite{happieGoapVideo} based on the papers by Jeff Orkin and an article by Brent Owens \cite{brentOwensGoap} (taking the core system from here). She made a very informative video on the topic as well as walking through the code with a live simple example.
+On Jeff Orkin's website, there was a reference to ReGOAP by Luciano Ferraro, which is a very generic C\# GOAP library, that was used in Unity3D, but can be used anywhere. Compared to the other implementations, this has been officially released on the Unity Asset store, however the code seems to be quite verbose and is not well commented, giving me a hard time understanding how to use it.
 
-GOAP library by crashkonijn for Unity: \url{https://github.com/crashkonijn/GOAP}, under Apache-2.0 licence
+Based on all this I started creating my own GOAP system, however, it became very time consuming to create, and based on the gannt chart I had made, I was running behind on schedule; as the main focus of the project is to create the interaction between these different AI agents, and not the core AI system itself, I decided to use the implementation provided by Brent Owens \cite{brentOwensGoapCode} which is under the MIT licence. This is a very bare bones implementation only consisting of 6 scripts, and with the video explanation by TheHappieCat this was the simplest one I could implement and still have a great amount of flexibility in modifying the code due to its loosely coupled nature.
+
+
+
+
 
 HappieGoapGame from YouTube Tutorial: \url{https://github.com/anneomcl/HappieGOAPGame}
+
+ReGOAP as mentioned on Jeff Orkin's Website. Under Apache-2.0 licence \url{https://github.com/luxkun/ReGoap}.
 
 \begin{thebibliography}{}
     \bibitem{doom93}
@@ -130,5 +140,17 @@ HappieGoapGame from YouTube Tutorial: \url{https://github.com/anneomcl/HappieGOA
     Orkin, J., n.d. Applying Goal-Oriented Action Planning to Games. [online] Alumni.media.mit.edu. Available at: \url{http://alumni.media.mit.edu/~jorkin/GOAP_draft_AIWisdom2_2003.pdf} [Accessed 12 February 2021].
     \bibitem{goapTommyTompson}
     Thompson, T., 2020. Building the AI of F.E.A.R. with Goal Oriented Action Planning. [online] Gamasutra.com. Available at: \url{https://www.gamasutra.com/blogs/TommyThompson/20200507/362417/Building_the_AI_of_FEAR_with_Goal_Oriented_Action_Planning.php} [Accessed 13 February 2021].
+    \bibitem{fearSDK}
+    Monolith Productions, Inc., 2004, Fear SDK 1.08 [code] Available at: \url{http://fear.filefront.com/file/FEAR_v108_SDK;71433} and \url{https://github.com/xfw5/Fear-SDK-1.08.git}
+    \bibitem{basherGoap}
+    Klooster, Peter, GOAP, a multi-threaded library for Unity [code] Available at: \url{https://github.com/crashkonijn/GOAP}, under Apache-2.0 licence
+    \bibitem{happieGoapVideo}
+    Anne, 2016. Combat AI for Action-Adventure Games Tutorial [Unity/C\#] [GOAP]. [video] Available at: \url{https://youtu.be/n6vn7d5R_2c} [Accessed 13 February 2021].
+    \bibitem{brentOwensGoap}
+    Owens, B., 2014. Goal Oriented Action Planning for a Smarter AI. [online] Game Development Envato Tuts+. Available at: \url{https://gamedevelopment.tutsplus.com/tutorials/goal-oriented-action-planning-for-a-smarter-ai--cms-20793} [Accessed 13 February 2021].
+    \bibitem{brentOwensGoapCode}
+    Owens, B., 2014. Goal Oriented Action Planning for a Smarter AI. [code]. Available at: \url{https://github.com/sploreg/goap} [Accessed 13 February 2021].
+
+
 \end{thebibliography}
 \end{document}

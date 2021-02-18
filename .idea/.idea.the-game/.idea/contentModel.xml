@@ -344,7 +344,12 @@
           <e p="AI" t="Include">
             <e p="AIAction.cs" t="Include" />
             <e p="AIBlackBoard.cs" t="Include" />
-            <e p="AIOwnWorldState.cs" t="Include" />
+            <e p="AIGOAPAgent.cs" t="Include" />
+            <e p="AIWorldState.cs" t="Include" />
+            <e p="Lizard" t="Include">
+              <e p="Lizard.cs" t="Include" />
+              <e p="Move.cs" t="Include" />
+            </e>
           </e>
           <e p="InPlaceOfPlayer.cs" t="Include" />
           <e p="KeepOnFloor.cs" t="Include" />

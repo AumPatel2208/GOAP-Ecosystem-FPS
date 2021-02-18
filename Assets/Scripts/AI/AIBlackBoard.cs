@@ -1,11 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AIBlackBoard : MonoBehaviour {
-    public Transform targetLastSighted;
-    public Transform threatLastSighted;
-    
+    // contains information
+    public List<Transform> targetsLastSighted;
+    public List<Transform> threatsLastSighted;
+
+    public Dictionary<String, Transform> notableTransforms;
+
     
     // Start is called before the first frame update
     void Start()

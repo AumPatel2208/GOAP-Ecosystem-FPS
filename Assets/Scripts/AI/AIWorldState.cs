@@ -2,10 +2,9 @@ using System;
 using System.Collections.Generic;
 
 namespace AI {
-    public class AIOwnWorldState {
+    public class AIWorldState {
         // stores the states as a dictionary
-        public Dictionary<String, bool> states = new Dictionary<string, bool>();
-
+        private Dictionary<String, bool> states = new Dictionary<string, bool>();
         
         // if the key exists, then change it, otherwise create one
         public void SetState(String key, bool value) {
