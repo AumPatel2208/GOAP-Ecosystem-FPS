@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-19T18:54:28.943Z" agent="5.0 (Macintosh)" etag="EBV5AUWnb9SIMZaWqM8U" version="14.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-19T19:01:06.953Z" agent="5.0 (Macintosh)" etag="qIaFtfiIahx3KFMxxR3J" version="14.4.2" type="github">
   <diagram id="sP1BEkB5rZuLdxHkqu5_" name="Page-1">
     <mxGraphModel dx="1426" dy="1977" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -12,18 +12,6 @@
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-2" value="&lt;div&gt;Creature&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="195" y="90" width="30" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="eLbIoZme7NKjvp2zswM4-3" value="&lt;div&gt;&lt;b&gt;Flee&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;from threat&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="490" y="70" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="eLbIoZme7NKjvp2zswM4-5" value="&lt;div&gt;&lt;b&gt;Locate Food&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Roam&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="490" y="140" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="eLbIoZme7NKjvp2zswM4-6" value="&lt;b&gt;Eat Food&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="630" y="140" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="eLbIoZme7NKjvp2zswM4-8" value="&lt;div&gt;&lt;b&gt;Get Food&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="630" y="70" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-24" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="eLbIoZme7NKjvp2zswM4-26">
           <mxGeometry relative="1" as="geometry">
@@ -72,9 +60,6 @@
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-20" value="Food Chain" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-14">
           <mxGeometry y="234" width="140" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="eLbIoZme7NKjvp2zswM4-22" value="&lt;div&gt;Actions&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="590" y="30" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-28" value="Attributes" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
           <mxGeometry x="274" y="379" width="140" height="52" as="geometry" />
@@ -141,6 +126,42 @@
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-66" value="Fly" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="195" y="560" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-69" value="Actions" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="590" y="35" width="140" height="156" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-70" value="Flee" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-69">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-71" value="Get Food" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-69">
+          <mxGeometry y="52" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-72" value="Locate Food" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-69">
+          <mxGeometry y="78" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-73" value="Roam" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-69">
+          <mxGeometry y="104" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-74" value="Eat Food" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-69">
+          <mxGeometry y="130" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-79" value="World State" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="35" width="140" height="156" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-80" value="isHungry" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-79">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-81" value="" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-79">
+          <mxGeometry y="52" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-82" value="Locate Food" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-79">
+          <mxGeometry y="78" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-83" value="Roam" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-79">
+          <mxGeometry y="104" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-84" value="Eat Food" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-79">
+          <mxGeometry y="130" width="140" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
