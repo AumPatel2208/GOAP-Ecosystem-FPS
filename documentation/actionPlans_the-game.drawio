@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-19T17:55:44.906Z" agent="5.0 (Macintosh)" etag="yb0J-pHkk7t5hjoKGdye" version="14.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-19T18:54:28.943Z" agent="5.0 (Macintosh)" etag="EBV5AUWnb9SIMZaWqM8U" version="14.4.2" type="github">
   <diagram id="sP1BEkB5rZuLdxHkqu5_" name="Page-1">
     <mxGraphModel dx="1426" dy="1977" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -8,7 +8,7 @@
           <mxGeometry x="170" y="290" width="600" height="230" as="geometry" />
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-25" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="170" y="-14" width="600" height="254" as="geometry" />
+          <mxGeometry x="170" y="-14" width="600" height="294" as="geometry" />
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-2" value="&lt;div&gt;Creature&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="195" y="90" width="30" height="60" as="geometry" />
@@ -27,10 +27,10 @@
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-24" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="eLbIoZme7NKjvp2zswM4-26">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="170" y="110" as="targetPoint" />
+            <mxPoint x="170" y="130" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="30" y="405" />
-              <mxPoint x="30" y="110" />
+              <mxPoint x="60" y="405" />
+              <mxPoint x="60" y="130" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -44,7 +44,7 @@
           <mxGeometry x="560" y="410" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-14" value="Attributes" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="274" y="9" width="140" height="260" as="geometry" />
+          <mxGeometry x="274" width="140" height="260" as="geometry" />
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-17" value="Health" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-14">
           <mxGeometry y="26" width="140" height="26" as="geometry" />
@@ -77,13 +77,10 @@
           <mxGeometry x="590" y="30" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-28" value="Attributes" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="310" y="299" width="140" height="78" as="geometry" />
+          <mxGeometry x="274" y="379" width="140" height="52" as="geometry" />
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-33" value="Damage Scaling" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-28">
           <mxGeometry y="26" width="140" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="eLbIoZme7NKjvp2zswM4-40" value="Damage Scaling" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#ffffff;" vertex="1" parent="eLbIoZme7NKjvp2zswM4-28">
-          <mxGeometry y="52" width="140" height="26" as="geometry" />
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-44" value="&lt;div&gt;Food Chain Build 1&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="1176.5" y="60" width="129" height="20" as="geometry" />
@@ -132,6 +129,18 @@
         </mxCell>
         <mxCell id="eLbIoZme7NKjvp2zswM4-65" value="Hunger Depletion Rate could be tied in with stamina regen, to regain stamina you lose hunger. same with health" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="790" y="-50" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-67" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;strokeColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="eLbIoZme7NKjvp2zswM4-66" target="eLbIoZme7NKjvp2zswM4-25">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="40" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="60" y="590" />
+              <mxPoint x="60" y="133" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eLbIoZme7NKjvp2zswM4-66" value="Fly" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="195" y="560" width="30" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
