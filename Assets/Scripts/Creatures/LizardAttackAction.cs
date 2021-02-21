@@ -43,7 +43,6 @@ namespace Creatures {
 
         public override bool perform(GameObject agent) {
             // throw new System.NotImplementedException();
-            Debug.Log("recah");
             Lizard currentAgent = agent.GetComponent<Lizard> ();
             currentAgent.stamina -= staminaCost; // maybe add a stamina cost scaling to the different actions
 

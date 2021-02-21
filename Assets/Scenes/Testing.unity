@@ -192,7 +192,6 @@ MonoBehaviour:
   stamina: 100
   staminaRegenRate: 2
   moveSpeed: 1.73
-  lizardMove: {fileID: 0}
 --- !u!114 &211576882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,7 +694,6 @@ MonoBehaviour:
   stamina: 100
   staminaRegenRate: 2
   moveSpeed: 2.56
-  lizardMove: {fileID: 0}
 --- !u!4 &603527596
 Transform:
   m_ObjectHideFlags: 0
@@ -3364,7 +3362,6 @@ MonoBehaviour:
   stamina: 100
   staminaRegenRate: 2
   moveSpeed: 0.01
-  lizardMove: {fileID: 919132148287761630}
 --- !u!114 &919132148287761633
 MonoBehaviour:
   m_ObjectHideFlags: 0

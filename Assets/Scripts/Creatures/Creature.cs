@@ -17,6 +17,9 @@ namespace Creatures {
 
         // public food chain
 
+
+
+        
         public HashSet<KeyValuePair<string, object>> getWorldState() {
             HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
 
@@ -25,23 +28,18 @@ namespace Creatures {
 
             // TODO implement does a threat exist
             // worldData.Add(new KeyValuePair<string, object>("noThreatExists", true));
-
             return worldData;
         }
-
-
-
-
+        
         public HashSet<KeyValuePair<string, object>> createGoalState() {
             // create the desired goal state
             HashSet<KeyValuePair<string, object>> goal = new HashSet<KeyValuePair<string, object>>();
             // goal.Add(new KeyValuePair<string, object>("eatFood", true));
             // goal.Add(new KeyValuePair<string, object>("noThreatExists", true));
             goal.Add(new KeyValuePair<string, object>("isHungry", false));
-
             return goal;
         }
-
+ 
         public void planFailed(HashSet<KeyValuePair<string, object>> failedGoal) {
             // throw new System.NotImplementedException();
             // Not handling this here since we are making sure our goals will always succeed.

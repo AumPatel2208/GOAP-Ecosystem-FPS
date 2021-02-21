@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Creatures {
+    [RequireComponent(typeof(LizardMove))]
     public class Lizard : Creature {
-        public LizardMove lizardMove;
+        private LizardMove lizardMove;
 
         public void Start() {
-            
+            // lizardMove = gameObject.GetComponent(typeof(LizardMove)) as LizardMove;
+            lizardMove = gameObject.GetComponent<LizardMove>();
         }
 
         public HashSet<KeyValuePair<string, object>> getWorldState() {
             HashSet<KeyValuePair<string, object>> worldData = base.getWorldState();
+            Debug.Log("World Data: " + worldData);
             worldData.Add(new KeyValuePair<string, object>("damagePlayer", false)); //to-do: change player's state for world data here
             return worldData;
         }
 
+      
 
         public HashSet<KeyValuePair<string, object>> createGoalState() {
             HashSet<KeyValuePair<string, object>> goal = base.createGoalState();
