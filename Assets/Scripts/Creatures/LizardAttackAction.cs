@@ -5,7 +5,7 @@ namespace Creatures {
 
         private bool attacked = false;
         public float staminaCost = 5f;
-        public float radius = 0.5f;
+        // public float radius = 0.5f;
         
         public LizardAttackAction() {
             // add preconditions

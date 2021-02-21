@@ -6,6 +6,8 @@ public abstract class GoapAction : MonoBehaviour {
     private HashSet<KeyValuePair<string, object>> effects;
 
     private bool inRange = false;
+    // needs only if in range is true, can be set in inspector
+    public float radius = 0f;
 
     /* The cost of performing the action. 
      * Figure out a weight that suits the action. 

@@ -102,7 +102,7 @@ This is my image editor of choice as I am very well versed in it and have been u
 
 \section{Milestone 1}
 
-\subsection{References for implementation}
+\subsection{Planning}
 I did extensive reading through the FEAR SDK\cite{fearSDK} that contains the full AI source code to fully understand the implementation of GOAP.
 I also read up on many other implementations of GOAP and all of them are done in a very similar way with only minor structural differences. 
 Peter Klooster created a multi-threaded GOAP System for Unity3D which he originally used in his game Basher Beatdown \cite{basherGoap}. This is a pretty simple implementation that includes a visualiser for the system as well.
@@ -111,6 +111,8 @@ On Jeff Orkin's website, there was a reference to ReGOAP by Luciano Ferraro, whi
 
 Based on all this I started creating my own GOAP system, however, it became very time consuming to create, and based on the gannt chart I had made, I was running behind on schedule; as the main focus of the project is to create the interaction between these different AI agents, and not the core AI system itself, I decided to use the implementation provided by Brent Owens \cite{brentOwensGoapCode} which is under the MIT licence. This is a very bare bones implementation only consisting of 6 scripts, and with the video explanation by TheHappieCat this was the simplest one I could implement and still have a great amount of flexibility in modifying the code due to its loosely coupled nature.
 
+After I landed on this implementation of GOAP, I decided to start modelling out the different actions (with their preconditions and effects (post-conditions)), different creatures with their world state and the list of goals they would like to achieve. As Unity works with game objects made up of components, I decided to plan out the agents in an unconventional manner before creating the class diagrams. 
+% Use case diagrams: 
 
 \begin{thebibliography}{}
     \bibitem{doom93}

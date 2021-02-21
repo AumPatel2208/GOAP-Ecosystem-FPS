@@ -354,8 +354,8 @@
             </e>
           </e>
           <e p="Creatures" t="Include">
+            <e p="Creature.cs" t="Include" />
             <e p="Lizard.cs" t="Include" />
-            <e p="LizardActionMove.cs" t="Include" />
             <e p="LizardAttackAction.cs" t="Include" />
           </e>
           <e p="InPlaceOfPlayer.cs" t="Include" />
