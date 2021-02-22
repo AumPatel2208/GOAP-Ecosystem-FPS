@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/ActionEatFood.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/ActionEatFood.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Food.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Fly.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FoodChain.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/relationships.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Creature.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Lizard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Lizard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/LizardAttackAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/LizardAttackAction.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +32,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeepOnFloor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DC77650D-0349-4034-8F31-3461908BD465/d7/7e895d1c/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/351E49E2-A5BF-4FD6-BEAB-B458CE2255F3/3d/24c944f9/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FoodChain.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Food.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F7599570-39B4-4A01-90B1-110FDFE3030F/bb/8d9a74a4/Action.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LegMove.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,9 +72,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Lizard_old.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/LizardAttackAction.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Food.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Lizard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/ActionEatFood.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Lizard.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Fly.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Creature.cs" />
+      <option value="$PROJECT_DIR$/Assets/FoodChain.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nqDH9RbKCaths3dqmALE3xCfzt" />
@@ -99,14 +102,14 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="942">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1044">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="942" />
+      <option name="pid" value="1044" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -148,7 +151,8 @@
       <workItem from="1613652211681" duration="4792000" />
       <workItem from="1613736718536" duration="5875000" />
       <workItem from="1613856931437" duration="3479000" />
-      <workItem from="1613904728018" duration="9526000" />
+      <workItem from="1613904728018" duration="9923000" />
+      <workItem from="1613994944285" duration="7121000" />
     </task>
     <servers />
   </component>
@@ -171,7 +175,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Assets/ReGoap" />
+      <path value="$PROJECT_DIR$/Assets/Scripts/ReGoap" />
+    </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="this.threats" />
+        <watch expression="this.foods" />
+        <watch expression="new System.Collections.Generic.IDictionaryDebugView&lt;string, System.Collections.Generic.HashSet&lt;string&gt;&gt;(this.threats).Items[1]" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

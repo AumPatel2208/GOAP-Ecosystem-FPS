@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -18,8 +19,10 @@ namespace Creatures {
         // public food chain
 
 
+        public void FixedUpdate() {
+            DepleteHunger();
+        }
 
-        
         public HashSet<KeyValuePair<string, object>> getWorldState() {
             HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
 
@@ -65,5 +68,14 @@ namespace Creatures {
         }
 
         public abstract bool moveAgent(GoapAction nextAction);
+
+        private void DepleteHunger() {
+            if (hunger < 10) {
+                health -= 1 *Time.deltaTime;
+            }
+            else {
+                hunger -= hungerDepletionRate*Time.deltaTime;
+            }
+        }
     }
 }

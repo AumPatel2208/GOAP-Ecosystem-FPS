@@ -356,10 +356,12 @@
           <e p="Creatures" t="Include">
             <e p="ActionEatFood.cs" t="Include" />
             <e p="Creature.cs" t="Include" />
+            <e p="Fly.cs" t="Include" />
             <e p="Lizard.cs" t="Include" />
             <e p="LizardAttackAction.cs" t="Include" />
           </e>
           <e p="Food.cs" t="Include" />
+          <e p="FoodChain.cs" t="Include" />
           <e p="InPlaceOfPlayer.cs" t="Include" />
           <e p="KeepOnFloor.cs" t="Include" />
           <e p="LegMove.cs" t="Include" />

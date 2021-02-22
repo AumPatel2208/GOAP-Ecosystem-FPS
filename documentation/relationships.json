@@ -1,0 +1,5 @@
+{
+    "player": "lizard, fly, plant",
+    "lizard" : "fly, player",
+    "fly" : "plant"
+}

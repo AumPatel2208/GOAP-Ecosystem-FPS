@@ -638,6 +638,7 @@ GameObject:
   - component: {fileID: 603527593}
   - component: {fileID: 603527595}
   - component: {fileID: 603527594}
+  - component: {fileID: 603527597}
   m_Layer: 0
   m_Name: Predetor (1)
   m_TagString: Untagged
@@ -670,7 +671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1.1
-  cost: 1
+  cost: 4.51
   target: {fileID: 0}
   staminaCost: 5
 --- !u!114 &603527595
@@ -690,10 +691,10 @@ MonoBehaviour:
   healthThreshold: 50
   hunger: 100
   hungerDepletionRate: 2
-  hungerThreshold: 0.5
+  hungerThreshold: 80.8
   stamina: 100
   staminaRegenRate: 2
-  moveSpeed: 2.56
+  moveSpeed: 2.1
 --- !u!4 &603527596
 Transform:
   m_ObjectHideFlags: 0
@@ -709,6 +710,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &603527597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603527592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f4158ad23249f3b3d8b9979ce4a23d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1.2
+  cost: 1
+  target: {fileID: 0}
 --- !u!1 &611722484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,8 +1155,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 891162432}
+  - component: {fileID: 891162433}
   m_Layer: 0
-  m_Name: Plant
+  m_Name: Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1154,13 +1171,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891162431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.17, y: 1.05, z: 5.19}
+  m_LocalPosition: {x: 10.58, y: 2.06, z: 5.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2074125419}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &891162433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891162431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7595cdad74b234187a5d9b80435258e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodAmount: 10
 --- !u!1 &962971008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,7 +2870,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074125418}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6, z: 2.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 891162432}
@@ -3358,7 +3388,7 @@ MonoBehaviour:
   healthThreshold: 50
   hunger: 100
   hungerDepletionRate: 2
-  hungerThreshold: 0.5
+  hungerThreshold: 97.8
   stamina: 100
   staminaRegenRate: 2
   moveSpeed: 0.01
