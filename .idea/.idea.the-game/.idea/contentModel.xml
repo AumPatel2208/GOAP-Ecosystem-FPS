@@ -368,6 +368,7 @@
           <e p="LizardMove.cs" t="Include" />
           <e p="MouseLook.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
+          <e p="StatsUIController.cs" t="Include" />
           <e p="SwordAttack.cs" t="Include" />
         </e>
       </e>

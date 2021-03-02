@@ -15,15 +15,14 @@ public class FoodChain : MonoBehaviour {
     // preys
     private Dictionary<String, HashSet<String>> foods = new Dictionary<string, HashSet<string>>();
 
-    public void Start() {
-        // predators.Add(NAME_PLAYER, new HashSet<string>() {NAME_LIZARD, NAME_FLY, NAME_PLANT});
-        // predators.Add(NAME_LIZARD, new HashSet<string>() {NAME_FLY, NAME_PLAYER});
-        // predators.Add(NAME_FLY, new HashSet<string>() {NAME_PLANT});
+    public void Awake() {
+        // Create the food chain
         addToChain(NAME_PLAYER,NAME_LIZARD);
         addToChain(NAME_PLAYER, NAME_FLY);
         addToChain(NAME_PLAYER, NAME_PLANT);
         addToChain(NAME_LIZARD, NAME_PLAYER);
         addToChain(NAME_LIZARD, NAME_FLY);
+        addToChain(NAME_LIZARD, NAME_PLANT);
         addToChain(NAME_FLY, NAME_PLANT);
         Debug.Log(foods);
         Debug.Log(threats);
@@ -47,9 +46,9 @@ public class FoodChain : MonoBehaviour {
         }
     }
 
-
-    private void createPreyFromPredators() {
-        foreach (var predator in threats) {
-        }
+    public HashSet<String> GetFood(String name) {
+        // Debug.Log("food name: " + name);
+        return foods[name];
     }
+
 }

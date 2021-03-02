@@ -37,3 +37,12 @@ Keep everything simple so that interaction between systems is possible.
 - Stealth game enemy detection Unity
   - https://www.youtube.com/watch?v=mBGUY7EUxXQ
 
+# TODO
+
+
+
+- [ ] Roam action for all creatures
+- [ ] Threat calculation
+- [ ] Implement the Food Chain
+- [ ] 
+- [ ] 
