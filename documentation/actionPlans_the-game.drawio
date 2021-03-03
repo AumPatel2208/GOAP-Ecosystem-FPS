@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-03-03T20:20:04.130Z" agent="5.0 (Macintosh)" etag="F4vbzqX3bC1gngoxuJv4" version="14.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-03T21:22:13.663Z" agent="5.0 (Macintosh)" etag="gjJYoinv97ffo4HniKvg" version="14.4.4" type="github">
   <diagram id="sP1BEkB5rZuLdxHkqu5_" name="Page-1">
-    <mxGraphModel dx="1188" dy="1813" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1188" dy="2982" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -203,7 +203,7 @@
           <mxGeometry x="710" y="-1030" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="GrFTg4ESrFVmJhSyd5H9-34" value="Eat Food" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#000000;swimlaneFillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1290" y="-840" width="160" height="86" as="geometry" />
+          <mxGeometry x="1260" y="-840" width="160" height="86" as="geometry" />
         </mxCell>
         <mxCell id="GrFTg4ESrFVmJhSyd5H9-38" value="preyDead : true" style="text;strokeColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="GrFTg4ESrFVmJhSyd5H9-34">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
@@ -246,6 +246,9 @@
         </mxCell>
         <mxCell id="GrFTg4ESrFVmJhSyd5H9-61" value="Program will constantly make preyDead false by checking its status " style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeColor=#000000;fillColor=#ffffff;size=10;rounded=0;shadow=0;sketch=0;" vertex="1" parent="1">
           <mxGeometry x="1040" y="-1110" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GrFTg4ESrFVmJhSyd5H9-62" value="PROCEDURAL PRECONDITIONS HAPPEN FIRST, and only those that meet the requirements will be considered usable to build the graph." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;rounded=0;shadow=0;sketch=1;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="730" y="-1190" width="280" height="130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
