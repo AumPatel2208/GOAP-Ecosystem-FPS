@@ -22,11 +22,11 @@ public class FoodChain : MonoBehaviour {
         addToChain(NAME_PLAYER, NAME_PLANT);
         addToChain(NAME_LIZARD, NAME_PLAYER);
         addToChain(NAME_LIZARD, NAME_FLY);
-        addToChain(NAME_LIZARD, NAME_PLANT);
+        // addToChain(NAME_LIZARD, NAME_PLANT);
         addToChain(NAME_FLY, NAME_PLANT);
-        Debug.Log(foods);
-        Debug.Log(threats);
-        Debug.Log("Player Threats Count: " + threats[NAME_PLAYER].Count);
+        // Debug.Log(foods);
+        // Debug.Log(threats);
+        // Debug.Log("Player Threats Count: " + threats[NAME_PLAYER].Count);
     }
 
     private void addToChain(String threat, String food) {

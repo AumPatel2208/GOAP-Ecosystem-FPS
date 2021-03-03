@@ -354,11 +354,15 @@
             </e>
           </e>
           <e p="Creatures" t="Include">
-            <e p="ActionEatFood.cs" t="Include" />
+            <e p="Actions" t="Include">
+              <e p="Action_EatFood.cs" t="Include" />
+              <e p="Action_FindFood.cs" t="Include" />
+              <e p="Action_LizardAttack.cs" t="Include" />
+              <e p="Action_MeleeAttack.cs" t="Include" />
+            </e>
             <e p="Creature.cs" t="Include" />
             <e p="Fly.cs" t="Include" />
             <e p="Lizard.cs" t="Include" />
-            <e p="LizardAttackAction.cs" t="Include" />
           </e>
           <e p="Food.cs" t="Include" />
           <e p="FoodChain.cs" t="Include" />

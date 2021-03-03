@@ -19,8 +19,8 @@ namespace Creatures {
         public float moveSpeed = 5;
 
 
-        // public food chain
-
+        public GameObject target = null;
+        
 
         public void FixedUpdate() {
             DepleteHunger();

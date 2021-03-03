@@ -1334,6 +1334,7 @@ GameObject:
   - component: {fileID: 603527595}
   - component: {fileID: 603527597}
   - component: {fileID: 603527594}
+  - component: {fileID: 603527598}
   m_Layer: 0
   m_Name: Predetor (1)
   m_TagString: lizard
@@ -1421,6 +1422,21 @@ MonoBehaviour:
   radius: 1.2
   cost: 1
   target: {fileID: 0}
+--- !u!114 &603527598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603527592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7595cdad74b234187a5d9b80435258e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodAmount: 50
+  isEaten: 0
+  requiresDestroying: 1
 --- !u!1 &611722484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2071,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodAmount: 10
+  isEaten: 0
+  requiresDestroying: 0
 --- !u!1 &962971008
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,6 +3970,7 @@ GameObject:
   - component: {fileID: 1772740002}
   - component: {fileID: 1772740001}
   - component: {fileID: 1772740005}
+  - component: {fileID: 1772740006}
   m_Layer: 0
   m_Name: Fly
   m_TagString: fly
@@ -4039,6 +4058,21 @@ MonoBehaviour:
   staminaBar: {fileID: 0}
   hungerBar: {fileID: 0}
   hungerThresholdBar: {fileID: 0}
+--- !u!114 &1772740006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772740000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7595cdad74b234187a5d9b80435258e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodAmount: 20
+  isEaten: 0
+  requiresDestroying: 1
 --- !u!1 &1895476054
 GameObject:
   m_ObjectHideFlags: 0

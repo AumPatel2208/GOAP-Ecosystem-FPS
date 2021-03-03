@@ -1,13 +1,13 @@
 using UnityEngine;
 
 namespace Creatures {
-    public class LizardAttackAction : GoapAction {
+    public class Action_LizardAttack : GoapAction {
 
         private bool attacked = false;
         public float staminaCost = 5f;
         // public float radius = 0.5f;
         
-        public LizardAttackAction() {
+        public Action_LizardAttack() {
             // add preconditions
             // should not need to add if in range as that is a common thing it should be handled elsewhere           
             

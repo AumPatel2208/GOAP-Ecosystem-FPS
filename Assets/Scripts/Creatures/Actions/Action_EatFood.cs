@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Creatures {
-    public class ActionEatFood : GoapAction {
+    public class Action_EatFood : GoapAction {
         private HashSet<string> food;
 
         // private string agentName;
         private bool foodIsEaten = false;
 
-        public ActionEatFood() {
-            addPrecondition("isHungry", true);
+        public Action_EatFood() {
+            // commented out as need to change this to work separately
+            // addPrecondition("isHungry", true);
 
             addEffect("isHungry", false);
             cost = 1f;
@@ -56,7 +57,12 @@ namespace Creatures {
                     }
                 }
             }
-
+            //
+            // if (tempTarget.GetComponent<Food>().requiresDestroying) {
+            //     // addPrecondition("targetDestroyed", true);
+            // }
+            //
+            //
             // target = GameObject.Find("Food");
             target = tempTarget;
 

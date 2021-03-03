@@ -15,14 +15,19 @@ namespace Creatures {
         public HashSet<KeyValuePair<string, object>> getWorldState() {
             HashSet<KeyValuePair<string, object>> worldData = base.getWorldState();
             Debug.Log("World Data: " + worldData);
-            worldData.Add(new KeyValuePair<string, object>("damagePlayer", false)); //to-do: change player's state for world data here
+            // worldData.Add(new KeyValuePair<string, object>("damagePlayer", false)); //to-do: change player's state for world data here
+
+            worldData.Add(new KeyValuePair<string, object>("killTarget", true)); // true so it doesnt have to do it
             return worldData;
         }
 
 
         public HashSet<KeyValuePair<string, object>> createGoalState() {
             HashSet<KeyValuePair<string, object>> goal = base.createGoalState();
-            goal.Add(new KeyValuePair<string, object>("damagePlayer", true));
+            // goal.Add(new KeyValuePair<string, object>("damagePlayer", true));
+
+            goal.Add(new KeyValuePair<string, object>("killTarget", true));
+            
             return goal;
         }
 
