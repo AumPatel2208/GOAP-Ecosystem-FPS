@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-03T21:22:13.663Z" agent="5.0 (Macintosh)" etag="gjJYoinv97ffo4HniKvg" version="14.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-03T21:32:53.966Z" agent="5.0 (Macintosh)" etag="j1v59FI8IwVCR3Hq7XpL" version="14.4.4" type="github">
   <diagram id="sP1BEkB5rZuLdxHkqu5_" name="Page-1">
     <mxGraphModel dx="1188" dy="2982" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -242,13 +242,16 @@
           <mxGeometry x="1270" y="-1120" width="170" height="100" as="geometry" />
         </mxCell>
         <mxCell id="GrFTg4ESrFVmJhSyd5H9-59" value="food ready is true if target is dead" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1450" y="-1030" width="170" height="100" as="geometry" />
+          <mxGeometry x="1460" y="-1050" width="170" height="100" as="geometry" />
         </mxCell>
         <mxCell id="GrFTg4ESrFVmJhSyd5H9-61" value="Program will constantly make preyDead false by checking its status " style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeColor=#000000;fillColor=#ffffff;size=10;rounded=0;shadow=0;sketch=0;" vertex="1" parent="1">
           <mxGeometry x="1040" y="-1110" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="GrFTg4ESrFVmJhSyd5H9-62" value="PROCEDURAL PRECONDITIONS HAPPEN FIRST, and only those that meet the requirements will be considered usable to build the graph." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;rounded=0;shadow=0;sketch=1;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;" vertex="1" parent="1">
           <mxGeometry x="730" y="-1190" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="GrFTg4ESrFVmJhSyd5H9-63" value="MAKE A TARGET FIRST STUPID " style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;rounded=0;shadow=0;sketch=1;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="-840" width="150" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
