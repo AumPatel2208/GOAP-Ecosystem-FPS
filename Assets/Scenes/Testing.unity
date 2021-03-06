@@ -437,7 +437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &211576879
 Transform:
   m_ObjectHideFlags: 0
@@ -490,6 +490,7 @@ MonoBehaviour:
   stamina: 100
   staminaRegenRate: 2
   moveSpeed: 1.73
+  target: {fileID: 0}
 --- !u!114 &211576882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,10 +1334,12 @@ GameObject:
   - component: {fileID: 603527593}
   - component: {fileID: 603527595}
   - component: {fileID: 603527597}
+  - component: {fileID: 603527599}
   - component: {fileID: 603527594}
   - component: {fileID: 603527598}
+  - component: {fileID: 603527600}
   m_Layer: 0
-  m_Name: Predetor (1)
+  m_Name: Lizard
   m_TagString: lizard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1385,12 +1388,13 @@ MonoBehaviour:
   health: 100
   healthRegenRate: 2
   healthThreshold: 50
-  hunger: 100
+  hunger: 35
   hungerDepletionRate: 2
   hungerThreshold: 80.8
   stamina: 100
   staminaRegenRate: 2
   moveSpeed: 2.1
+  target: {fileID: 0}
 --- !u!4 &603527596
 Transform:
   m_ObjectHideFlags: 0
@@ -1436,7 +1440,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodAmount: 50
   isEaten: 0
-  requiresDestroying: 1
+  requiresKilling: 1
+--- !u!114 &603527599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603527592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610a466ed6aa4ed9b5f3b2acadd4e323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0
+  cost: 1
+  target: {fileID: 0}
+  staminaCost: 5
+--- !u!114 &603527600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603527592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6243e973f83441095d222ff9f39424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0
+  cost: 1
+  target: {fileID: 0}
+  foodTarget: {fileID: 0}
 --- !u!1 &611722484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,7 +2108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodAmount: 10
   isEaten: 0
-  requiresDestroying: 0
+  requiresKilling: 0
 --- !u!1 &962971008
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,6 +3808,7 @@ GameObject:
   - component: {fileID: 1634919228}
   - component: {fileID: 1634919227}
   - component: {fileID: 1634919229}
+  - component: {fileID: 1634919230}
   m_Layer: 9
   m_Name: Player
   m_TagString: player
@@ -3835,6 +3872,21 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &1634919230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634919226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7595cdad74b234187a5d9b80435258e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodAmount: 10
+  isEaten: 0
+  requiresKilling: 1
 --- !u!1 &1642929445
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,7 +4025,7 @@ GameObject:
   - component: {fileID: 1772740006}
   m_Layer: 0
   m_Name: Fly
-  m_TagString: fly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4014,6 +4066,7 @@ MonoBehaviour:
   stamina: 100
   staminaRegenRate: 2
   moveSpeed: 5
+  target: {fileID: 0}
 --- !u!114 &1772740003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4021,7 +4074,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772740000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9a07630984c23e48a79079359aca64c, type: 3}
   m_Name: 
@@ -4072,7 +4125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodAmount: 20
   isEaten: 0
-  requiresDestroying: 1
+  requiresKilling: 1
 --- !u!1 &1895476054
 GameObject:
   m_ObjectHideFlags: 0
@@ -4749,7 +4802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &919132148287761627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4975,6 +5028,7 @@ MonoBehaviour:
   stamina: 100
   staminaRegenRate: 2
   moveSpeed: 0.01
+  target: {fileID: 0}
 --- !u!114 &919132148287761633
 MonoBehaviour:
   m_ObjectHideFlags: 0

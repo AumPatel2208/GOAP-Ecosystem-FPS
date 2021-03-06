@@ -12,6 +12,8 @@ namespace Creatures {
         public Action_EatFood() {
             // commented out as need to change this to work separately
             // addPrecondition("isHungry", true);
+            addPrecondition("foodFound", true);
+            addPrecondition("preyDead", true);
 
             addEffect("isHungry", false);
             cost = 1f;
@@ -33,50 +35,22 @@ namespace Creatures {
         }
 
         public override bool checkProceduralPrecondition(GameObject agent) {
-            //TODO make it food with a different amount of hunger fill up and with a food chain so food is defined
-            // TODO Use the FoodChain Object to calculate what is food
-
-            // find a food
-
-            GameObject tempTarget = null;
-            // GameObject.FindGameObjectsWithTag(food[])
-            foreach (var f in food) {
-                float distance = 0;
-                if (tempTarget != null) {
-                    distance = Vector3.Distance(tempTarget.transform.position, transform.position);
-                }
-                foreach (var o in GameObject.FindGameObjectsWithTag(f)) {
-                    if (tempTarget == null) {
-                        tempTarget = o;
-                    }
-                    else {
-                        // check distance if it is greater than tempTarget's distance
-                        if (distance > Vector3.Distance(o.transform.position, transform.position)) {
-                            tempTarget = o;
-                        }
-                    }
-                }
-            }
+           
+            target = agent.GetComponent<Creature>().target;
             //
-            // if (tempTarget.GetComponent<Food>().requiresDestroying) {
-            //     // addPrecondition("targetDestroyed", true);
-            // }
-            //
-            //
-            // target = GameObject.Find("Food");
-            target = tempTarget;
-
-            if (target != null) {
-                return true;
-            }
-            else {
-                return false;
-            }
+            return target != null;
+            // return true;
         }
 
         public override bool perform(GameObject agent) {
-            Creature currentAgent = agent.GetComponent<Creature>();
+            // Creature currentAgent = agent.GetComponent<Creature>();
 
+            target = agent.GetComponent<Creature>().target;
+
+            if (target== null) {
+                return false;
+            }
+            
             // do the action
             foodIsEaten = true;
             agent.GetComponent<Creature>().hunger += target.GetComponent<Food>().foodAmount;

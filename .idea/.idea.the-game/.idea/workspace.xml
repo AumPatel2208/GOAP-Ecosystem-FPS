@@ -5,25 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_LizardAttack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_LizardAttack.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/ActionEatFood.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/ActionEatFood.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/GOAP/GoapPlanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/GOAP/GoapPlanner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Creature.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Lizard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Lizard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/LizardAttackAction.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/LizardAttackAction.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Food.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Food.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FoodChain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FoodChain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LizardMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LizardMove.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +37,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DC77650D-0349-4034-8F31-3461908BD465/d7/7e895d1c/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/351E49E2-A5BF-4FD6-BEAB-B458CE2255F3/3d/24c944f9/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FoodChain.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/55/123dd69c/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Food.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F7599570-39B4-4A01-90B1-110FDFE3030F/bb/8d9a74a4/Action.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LegMove.cs" root0="FORCE_HIGHLIGHTING" />
@@ -61,7 +53,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/Conditions.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIOwnWorldState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIAction.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/LizardMove.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/Lizard/Lizard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIWorldState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIGOAPAgent.cs" />
@@ -74,7 +65,6 @@
       <option value="$PROJECT_DIR$/Assets/ReGoap/ReGoap/Unity/FSM/SmState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/FSM/FSM.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/FSM/FSMState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/GOAP/GoapPlanner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/GOAP/IGoap.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/LizardActionMove.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/LizardAttack.cs" />
@@ -87,17 +77,19 @@
       <option value="$PROJECT_DIR$/Assets/FoodChain.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/GOAP/GoapAgent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StatsUIController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Food.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/ActionEatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_LizardAttack.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_KillPrey.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Creature.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Attack.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FoodChain.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Food.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LizardMove.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/GOAP/GoapPlanner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Creature.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Lizard.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nqDH9RbKCaths3dqmALE3xCfzt" />
@@ -181,7 +173,9 @@
       <workItem from="1614701100406" duration="18000" />
       <workItem from="1614701302089" duration="1076000" />
       <workItem from="1614775170117" duration="112000" />
-      <workItem from="1614783180535" duration="9764000" />
+      <workItem from="1614783180535" duration="13136000" />
+      <workItem from="1614959136251" duration="4264000" />
+      <workItem from="1615051059761" duration="542000" />
     </task>
     <servers />
   </component>

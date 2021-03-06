@@ -24,20 +24,18 @@ namespace Creatures.Actions {
 
         public override bool checkProceduralPrecondition(GameObject agent) {
             target = agent.GetComponent<Creature>().target; // get target from parent component
-            
-            // add stamina check here as well
-            if (target!=null) {
-                return true;
-            }
-            else {
-                return false;
-            }
+            //
+            // // add stamina check here as well
+            return target!=null;
+
+            // return true;
         }
 
         public override bool perform(GameObject agent) {
             // Lizard currentAgent = agent.GetComponent<Lizard> ();
             agent.GetComponent<Creature>().stamina -= staminaCost; // maybe add a stamina cost scaling to the different actions
-
+            
+            target = agent.GetComponent<Creature>().target; // get target from parent component
             /*need to add the animation here to move the head.*/
 
             attacked = true;

@@ -33,7 +33,8 @@ namespace Creatures.Actions {
         }
 
         public override bool checkProceduralPrecondition(GameObject agent) {
-            return food != null;
+            // return food != null;
+            return true;
         }
 
         public override bool perform(GameObject agent) {

@@ -32,18 +32,39 @@ namespace Creatures {
             worldData.Add(new KeyValuePair<string, object>("isHungry", (hunger < hungerThreshold)));
             // worldData.Add(new KeyValuePair<string, object>("isHurt", (health < healthThreshold)));
 
+            worldData.Add(new KeyValuePair<string, object>("foodFound", target != null));
+            
             // TODO implement does a threat exist
             // worldData.Add(new KeyValuePair<string, object>("noThreatExists", true));
+
+            foreach (KeyValuePair<string,object> pair in iGetWorldState()) {
+                worldData.Add(pair);
+            }
             return worldData;
         }
+
+        public virtual HashSet<KeyValuePair<string, object>> iGetWorldState() {
+            return new HashSet<KeyValuePair<string, object>>();
+        }
+            
+        
         
         public HashSet<KeyValuePair<string, object>> createGoalState() {
             // create the desired goal state
             HashSet<KeyValuePair<string, object>> goal = new HashSet<KeyValuePair<string, object>>();
-            // goal.Add(new KeyValuePair<string, object>("eatFood", true));
-            // goal.Add(new KeyValuePair<string, object>("noThreatExists", true));
+
+            goal.Add(new KeyValuePair<string, object>("foodFound", true));
             goal.Add(new KeyValuePair<string, object>("isHungry", false));
+
+            foreach (KeyValuePair<string,object> pair in iCreateGoalState()) {
+                goal.Add(pair);
+            }
+            
             return goal;
+        }
+
+        public virtual HashSet<KeyValuePair<string, object>> iCreateGoalState() {
+            return new HashSet<KeyValuePair<string, object>>();
         }
  
         public void planFailed(HashSet<KeyValuePair<string, object>> failedGoal) {

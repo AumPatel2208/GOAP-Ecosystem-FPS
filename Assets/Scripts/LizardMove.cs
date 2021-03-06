@@ -52,7 +52,7 @@ public class LizardMove : MonoBehaviour {
     }
 
     private float CalculateHeight() {
-        float newHeight = 0;
+        // float newHeight = 0;
 
         float average = 0;
         foreach (Transform foot in feet) {
