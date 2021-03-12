@@ -1,13 +1,13 @@
 using UnityEngine;
 
 namespace Creatures {
-    public class Action_LizardAttack : GoapAction {
+    public class OLDAction_LizardAttack : GoapAction {
 
         private bool attacked = false;
         public float staminaCost = 5f;
         // public float radius = 0.5f;
         
-        public Action_LizardAttack() {
+        public OLDAction_LizardAttack() {
             // add preconditions
             // should not need to add if in range as that is a common thing it should be handled elsewhere           
             
@@ -30,7 +30,7 @@ namespace Creatures {
 
         public override bool checkProceduralPrecondition(GameObject agent) {
             target = GameObject.Find("Player");
-            Lizard currentAgent = agent.GetComponent<Lizard>();
+            OLDLizard currentAgent = agent.GetComponent<OLDLizard>();
 
             if (target!=null) {
                 return true;
@@ -43,7 +43,7 @@ namespace Creatures {
 
         public override bool perform(GameObject agent) {
             // throw new System.NotImplementedException();
-            Lizard currentAgent = agent.GetComponent<Lizard> ();
+            OLDLizard currentAgent = agent.GetComponent<OLDLizard> ();
             currentAgent.stamina -= staminaCost; // maybe add a stamina cost scaling to the different actions
 
             // Animator currAnim = GetComponentInParent<Animator> ();

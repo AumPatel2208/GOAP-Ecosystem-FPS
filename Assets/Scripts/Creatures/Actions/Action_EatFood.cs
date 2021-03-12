@@ -1,64 +1,62 @@
-using System;
+﻿using System.Collections;
 using System.Collections.Generic;
+using Creatures;
 using UnityEngine;
 
-namespace Creatures {
-    public class Action_EatFood : GoapAction {
-        private HashSet<string> food;
+public class Action_EatFood : GoapAction {
+    // private string agentName;
+    private bool foodIsEaten = false;
 
-        // private string agentName;
-        private bool foodIsEaten = false;
 
-        public Action_EatFood() {
-            // commented out as need to change this to work separately
-            // addPrecondition("isHungry", true);
-            addPrecondition("foodFound", true);
-            addPrecondition("preyDead", true);
+    public Action_EatFood() {
+        addPrecondition("isHungry", true);
+        // addPrecondition("foodIsReady", true);
 
-            addEffect("isHungry", false);
-            cost = 1f;
-        }
+        addEffect("isHungry", false);
+        cost = 1f;
+    }
 
-        public void Start() {
-            FoodChain foodChain = GameObject.Find("FoodChain").GetComponent<FoodChain>();
-            food = foodChain.GetFood(gameObject.tag);
-            // Debug.Log("TAG:" + gameObject.tag + " FOOD: " + food);
-        }
+    public override void reset() {
+        foodIsEaten = false;
+        target = null;
+    }
 
-        public override void reset() {
-            foodIsEaten = false;
-            target = null;
-        }
+    public override bool isDone() {
+        return foodIsEaten;
+    }
 
-        public override bool isDone() {
-            return foodIsEaten;
-        }
+    public override bool checkProceduralPrecondition(GameObject agent) {
+        // target = GameObject.FindGameObjectWithTag("plant");
+        target = agent.GetComponent<Food>().targetFood;
+        if (target == null)
+            return false;
 
-        public override bool checkProceduralPrecondition(GameObject agent) {
-           
-            target = agent.GetComponent<Creature>().target;
-            //
-            return target != null;
-            // return true;
-        }
+        // return true;
 
-        public override bool perform(GameObject agent) {
-            // Creature currentAgent = agent.GetComponent<Creature>();
-
-            target = agent.GetComponent<Creature>().target;
-
-            if (target== null) {
-                return false;
-            }
-            
-            // do the action
-            foodIsEaten = true;
-            agent.GetComponent<Creature>().hunger += target.GetComponent<Food>().foodAmount;
-            return foodIsEaten;
-        }
-
-        public override bool requiresInRange() {
+        if (target.GetComponent<FoodStats>().isReadyToEat)
             return true;
+        else
+            return false;
+
+    }
+
+    public override bool perform(GameObject agent) {
+
+        if (target== null) {
+            return false;
         }
+            
+        // do the action
+        foodIsEaten = true;
+        agent.GetComponent<Stats>().hunger += target.GetComponent<FoodStats>().foodAmount;
+        
+        // sets the food back to null because it has eaten it
+        // agent.GetComponent<Food>().targetFood = null;
+        // Debug.Log("EATEN");
+        return foodIsEaten;
+    }
+
+    public override bool requiresInRange() {
+        return true;
     }
 }

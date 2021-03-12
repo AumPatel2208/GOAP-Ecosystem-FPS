@@ -36,6 +36,8 @@ Keep everything simple so that interaction between systems is possible.
   - Article should be enough to find a way to solve this
 - Stealth game enemy detection Unity
   - https://www.youtube.com/watch?v=mBGUY7EUxXQ
+- Crash beaterbashdown goap AI reasons for switching
+  - https://www.reddit.com/r/Unity3D/comments/6y99wk/a_new_open_source_goal_oriented_action_planning/
 
 # TODO
 

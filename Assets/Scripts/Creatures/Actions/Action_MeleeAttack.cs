@@ -1,49 +1,57 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Creatures.Actions {
-    public class Action_MeleeAttack : GoapAction {
-        private bool attacked = false;
-        public float staminaCost = 5f;
+public class Action_MeleeAttack : GoapAction {
+    // private string agentName;
+    private bool hasAttacked = false;
+    public float attackDamage = 10f;
 
-        public void Start() {
-            // no precondition for this as of now
-            
-            // effects
-            addEffect("preyDead", true);
+    public Action_MeleeAttack() {
+        addPrecondition("foodFound", true);
+        addPrecondition("foodIsReady", false);
 
-            cost = 1f;
+        addEffect("foodIsReady", true);
+        cost = 1f;
+    }
+
+    public override void reset() {
+        hasAttacked = false;
+        target = null;
+    }
+
+    public override bool isDone() {
+        return hasAttacked;
+    }
+
+    public override bool checkProceduralPrecondition(GameObject agent) {
+        // target = GameObject.FindGameObjectWithTag("plant");
+        target = agent.GetComponent<Food>().targetFood;
+        if (target == null)
+            return false;
+
+        return true;
+
+        // if (target.GetComponent<FoodStats>().isReadyToEat)
+        //     return true;
+        // else
+        //     return false;
+    }
+
+    public override bool perform(GameObject agent) {
+        if (target == null) {
+            return false;
         }
 
-        public override void reset() {
-            target = null;
-        }
+        // do the action
+        hasAttacked = true;
+        target.GetComponent<Stats>().ApplyDamage(attackDamage);
 
-        public override bool isDone() {
-            return attacked;
-        }
+        // Debug.Log("EATEN");
+        return hasAttacked;
+    }
 
-        public override bool checkProceduralPrecondition(GameObject agent) {
-            target = agent.GetComponent<Creature>().target; // get target from parent component
-            //
-            // // add stamina check here as well
-            return target!=null;
-
-            // return true;
-        }
-
-        public override bool perform(GameObject agent) {
-            // Lizard currentAgent = agent.GetComponent<Lizard> ();
-            agent.GetComponent<Creature>().stamina -= staminaCost; // maybe add a stamina cost scaling to the different actions
-            
-            target = agent.GetComponent<Creature>().target; // get target from parent component
-            /*need to add the animation here to move the head.*/
-
-            attacked = true;
-            return attacked;
-        }
-
-        public override bool requiresInRange() {
-            return true;
-        }
+    public override bool requiresInRange() {
+        return true;
     }
 }

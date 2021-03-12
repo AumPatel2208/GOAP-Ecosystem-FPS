@@ -79,7 +79,7 @@ public sealed class GoapAgent : MonoBehaviour {
             }
             else {
                 // ugh, we couldn't get a plan
-                Debug.Log(gameObject.name + ": <color=orange>Failed Plan:</color>" + prettyPrint(goal));
+                Debug.Log(gameObject.name + ": <color=orange>Failed Plan:</color>. Goals: " + prettyPrint(goal) + " ; World State: " + prettyPrint(worldState));
                 dataProvider.planFailed(goal);
                 fsm.popState(); // move back to IdleAction state
                 fsm.pushState(idleState);

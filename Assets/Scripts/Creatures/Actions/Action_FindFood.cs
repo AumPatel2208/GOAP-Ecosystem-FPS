@@ -1,74 +1,69 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Creatures.Actions {
-    public class Action_FindFood : GoapAction {
-        // Start is called before the first frame update
+public class Action_FindFood : GoapAction {
+    private bool foodFound = false;
+    private HashSet<string> validFoods;
 
-        private HashSet<string> food;
+    public Action_FindFood() {
+        addEffect("foodFound", true);
 
+    }
 
-        public GameObject foodTarget = null;
+    public void Start() {
+        FoodChain foodChain = GameObject.FindGameObjectWithTag("foodchain").GetComponent<FoodChain>();
+        validFoods = foodChain.GetFood(gameObject.tag);
+    }
 
-        void Start() {
-            // Pre-conditions
-            addPrecondition("isHungry", true);
+    public override void reset() {
+        foodFound = false;
+        target = null;
+    }
 
-            FoodChain foodChain = GameObject.Find("FoodChain").GetComponent<FoodChain>();
-            food = foodChain.GetFood(gameObject.tag);
-            // Debug.Log("TAG:" + gameObject.tag + " FOOD: " + food);
+    public override bool isDone() {
+        return foodFound;
+    }
 
-            // Effects
-            // Either food needs to be destroyed, or it is found
-            addEffect("foodFound", true);
-        }
+    public override bool checkProceduralPrecondition(GameObject agent) {
+        // target = GameObject.FindGameObjectWithTag("plant");
 
-        public override void reset() {
-            // // might break the program so remove if so
-            // foodTarget = null;
-        }
+        return agent.GetComponent<Food>().targetFood == null;
+    }
 
-        public override bool isDone() {
-            return foodTarget != null;
-        }
+    public override bool perform(GameObject agent) {
+        GameObject food = null;
 
-        public override bool checkProceduralPrecondition(GameObject agent) {
-            // return food != null;
-            return true;
-        }
+        // GameObject tempFoodTarget = null;
+        foreach (var f in validFoods) {
+            float distance = 0;
+            if (food != null) {
+                distance = Vector3.Distance(food.transform.position, transform.position);
+            }
 
-        public override bool perform(GameObject agent) {
-            foodTarget = null; // making the foodTarget null here as to reset it, not sure if it works tho
-
-            GameObject tempFoodTarget = null;
-            // GameObject.FindGameObjectsWithTag(food[])
-            foreach (var f in food) {
-                float distance = 0;
-                if (tempFoodTarget != null) {
-                    distance = Vector3.Distance(tempFoodTarget.transform.position, transform.position);
+            foreach (var o in GameObject.FindGameObjectsWithTag(f)) {
+                if (food == null) {
+                    food = o;
                 }
-
-                foreach (var o in GameObject.FindGameObjectsWithTag(f)) {
-                    if (tempFoodTarget == null) {
-                        tempFoodTarget = o;
-                    }
-                    else {
-                        // check distance if it is greater than tempFoodTarget's distance
-                        if (distance > Vector3.Distance(o.transform.position, transform.position)) {
-                            tempFoodTarget = o;
-                        }
+                else {
+                    // check distance if it is greater than tempFoodTarget's distance
+                    if (distance > Vector3.Distance(o.transform.position, transform.position)) {
+                        food = o;
                     }
                 }
             }
-
-            foodTarget = tempFoodTarget;
-        
-            agent.GetComponent<Creature>().target = foodTarget;
-            return foodTarget != null;
         }
 
-        public override bool requiresInRange() {
+        if (food == null)
             return false;
-        }
+
+        agent.GetComponent<Food>().targetFood = food;
+        foodFound = true;
+        return true;
+    }
+
+    public override bool requiresInRange() {
+        return false;
     }
 }

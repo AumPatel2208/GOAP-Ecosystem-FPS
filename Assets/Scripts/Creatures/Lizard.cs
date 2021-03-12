@@ -1,74 +1,92 @@
-using System;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Creatures {
-    [RequireComponent(typeof(LizardMove))]
-    public class Lizard : Creature {
-        private LizardMove lizardMove;
+public class Lizard : MonoBehaviour, IGoap {
+    // public float hunger = 100;
+    // public float hungerThreshold = 80;
+    // public float moveSpeed = 2;
+    public Stats stats;
+    // public GameObject targetFood;
 
-        public void Start() {
-            // lizardMove = gameObject.GetComponent(typeof(LizardMove)) as LizardMove;
-            lizardMove = gameObject.GetComponent<LizardMove>();
-            // target = GameObject.Find("Fly");
+    private void Awake() {
+        if (gameObject.GetComponent<Stats>() == null)
+            stats = gameObject.AddComponent<Stats>();
+    }
+
+    // Start is called before the first frame update
+    void Start() {
+    }
+
+    private void FixedUpdate() {
+        stats.hunger -= 0.01f;
+    }
+
+
+    public HashSet<KeyValuePair<string, object>> getWorldState() {
+        HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
+        worldData.Add(new KeyValuePair<string, object>("isHungry", (stats.hunger < stats.hungerThreshold)));
+        worldData.Add(new KeyValuePair<string, object>("foodFound", (gameObject.GetComponent<Food>().targetFood != null)));
+
+        worldData.Add(gameObject.GetComponent<Food>().targetFood != null
+            ? new KeyValuePair<string, object>("foodIsReady", (gameObject.GetComponent<Food>().targetFood.GetComponent<FoodStats>().isReadyToEat))
+            : new KeyValuePair<string, object>("foodIsReady", true));
+
+
+        return worldData;
+    }
+
+    public HashSet<KeyValuePair<string, object>> createGoalState() {
+        HashSet<KeyValuePair<string, object>> goal = new HashSet<KeyValuePair<string, object>>();
+
+        goal.Add(new KeyValuePair<string, object>("isHungry", false));
+        goal.Add(new KeyValuePair<string, object>("foodFound", true));
+        goal.Add(new KeyValuePair<string, object>("foodIsReady", true));
+
+        return goal;
+    }
+
+    // MOVE
+    public bool moveAgent(GoapAction nextAction) {
+        // move towards the NextAction's target
+        float step = stats.moveSpeed * Time.deltaTime;
+
+        float distance = Vector3.Distance(gameObject.transform.position, nextAction.target.transform.position);
+        // check the distance of the player
+        if (distance < nextAction.radius) {
+            // we are at the target location, we are done
+            nextAction.setInRange(true);
+            return true;
         }
-
-        public override HashSet<KeyValuePair<string, object>> iGetWorldState() {
-            // HashSet<KeyValuePair<string, object>> worldData = base.getWorldState();
-            HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
-            // worldData.Add(new KeyValuePair<string, object>("damagePlayer", false)); //to-do: change player's state for world data here
-
-            // worldData.Add(new KeyValuePair<string, object>("foodFound", false))
-
-            //
-            // if (target != null) {
-            //     worldData.Add(new KeyValuePair<string, object>("preyDead", target.GetComponent<Food>().requiresKilling));
-            // }
-            // else {
-            //     worldData.Add(new KeyValuePair<string, object>("preyDead", true)); // true so it doesnt have to do it
-            // }
-
-            if (target != null) {
-                worldData.Add(new KeyValuePair<string, object>("preyDead", target.GetComponent<Food>().requiresKilling));
-            }
-            else {
-            }
-
-
-            return worldData;
+        else {
+            Debug.Log("Distance: " + distance);
+            Debug.Log("NextAction Radius: " + nextAction.radius);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, nextAction.target.transform.position, step);
+            return false;
         }
+    }
 
 
-        public override HashSet<KeyValuePair<string, object>> iCreateGoalState() {
-            // HashSet<KeyValuePair<string, object>> goal = base.createGoalState();
-            HashSet<KeyValuePair<string, object>> goal = new HashSet<KeyValuePair<string, object>>();
-            // goal.Add(new KeyValuePair<string, object>("damagePlayer", true));
+    public void planFailed(HashSet<KeyValuePair<string, object>> failedGoal) {
+        // throw new NotImplementedException();
+        Debug.Log(gameObject.name + ": <color=red>Plan Failed</color> " + GoapAgent.prettyPrint(failedGoal));
+    }
 
-            goal.Add(new KeyValuePair<string, object>("preyDead", true));
 
-            return goal;
-        }
+    public void planFound(HashSet<KeyValuePair<string, object>> goal, Queue<GoapAction> actions) {
+        // Yay we found a plan for our goal
+        Debug.Log(gameObject.name + ": <color=green>Plan found</color> " + GoapAgent.prettyPrint(actions));
+    }
 
-        public override bool moveAgent(GoapAction nextAction) {
-            // move towards the NextAction's target
-            float step = moveSpeed * Time.deltaTime;
+    public void actionsFinished() {
+        // Everything is done, we completed our actions for this gool. Hooray!
+        Debug.Log(gameObject.name + ": <color=blue>Actions completed</color>");
+    }
 
-            // check the distance of the player
-            if (Vector3.Distance(gameObject.transform.position, nextAction.target.transform.position) < nextAction.radius) {
-                // we are at the target location, we are done
-                nextAction.setInRange(true);
-                return true;
-            }
-            else {
-                if (lizardMove != null) {
-                    lizardMove.speed = moveSpeed;
-                }
-                else {
-                    gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, nextAction.target.transform.position, step);
-                }
-
-                return false;
-            }
-        }
+    public void planAborted(GoapAction aborter) {
+        // An action bailed out of the plan. State has been reset to plan again.
+        // Take note of what happened and make sure if you run the same goal again
+        // that it can succeed.
+        Debug.Log(gameObject.name + ": <color=red>Plan Aborted</color> " + GoapAgent.prettyPrint(aborter));
     }
 }

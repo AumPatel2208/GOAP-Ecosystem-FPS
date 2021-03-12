@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Creatures.Actions;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,9 @@ namespace Creatures {
 
         public void FixedUpdate() {
             DepleteHunger();
+            // if (target == null) {
+            //     GetComponent<Action_EatFood>().perform(gameObject);
+            // }
         }
 
         public HashSet<KeyValuePair<string, object>> getWorldState() {

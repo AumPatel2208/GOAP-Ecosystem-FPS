@@ -8,6 +8,7 @@ TagManager:
   - player
   - plant
   - fly
+  - foodchain
   layers:
   - Default
   - TransparentFX
