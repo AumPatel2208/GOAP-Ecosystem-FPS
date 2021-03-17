@@ -38,6 +38,8 @@ Keep everything simple so that interaction between systems is possible.
   - https://www.youtube.com/watch?v=mBGUY7EUxXQ
 - Crash beaterbashdown goap AI reasons for switching
   - https://www.reddit.com/r/Unity3D/comments/6y99wk/a_new_open_source_goal_oriented_action_planning/
+- https://arongranberg.com/astar/
+- https://rkuhlf-assets.itch.io/ice-age
 
 # TODO
 

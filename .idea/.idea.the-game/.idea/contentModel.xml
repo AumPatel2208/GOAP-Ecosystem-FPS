@@ -368,6 +368,7 @@
             <e p="Fly.cs" t="Include" />
             <e p="Lizard.cs" t="Include" />
             <e p="OLDLizard.cs" t="Include" />
+            <e p="Sabertooth.cs" t="Include" />
           </e>
           <e p="Food.cs" t="Include" />
           <e p="FoodChain.cs" t="Include" />

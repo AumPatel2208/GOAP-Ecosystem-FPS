@@ -46,6 +46,10 @@ public class Action_MeleeAttack : GoapAction {
         // do the action
         hasAttacked = true;
         target.GetComponent<Stats>().ApplyDamage(attackDamage);
+        // animate
+        if (gameObject.GetComponent<Animator>() != null) {
+            gameObject.GetComponent<Animator>().Play("Bite");
+        }
 
         // Debug.Log("EATEN");
         return hasAttacked;

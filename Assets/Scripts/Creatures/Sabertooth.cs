@@ -1,12 +1,16 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lizard : MonoBehaviour, IGoap {
+public class SaberTooth : MonoBehaviour, IGoap {
     // public float hunger = 100;
     // public float hungerThreshold = 80;
     // public float moveSpeed = 2;
     public Stats stats;
+
+    private Animator animator;
+
+    private static readonly int anim_MovementState = Animator.StringToHash("Movement State");
     // public GameObject targetFood;
 
     private void Awake() {
@@ -16,6 +20,8 @@ public class Lizard : MonoBehaviour, IGoap {
 
     // Start is called before the first frame update
     void Start() {
+        if (gameObject.GetComponent<Animator>() != null)
+            animator = gameObject.GetComponent<Animator>();
     }
 
     private void FixedUpdate() {
@@ -56,26 +62,26 @@ public class Lizard : MonoBehaviour, IGoap {
         if (distance < nextAction.radius) {
             // we are at the target location, we are done
             nextAction.setInRange(true);
-            if (gameObject.GetComponent<Animator>() != null) {
-                gameObject.GetComponent<Animator>().SetInteger("Movement State", 0);
-            }
+
+            // animate
+            // idle
+            animator.SetInteger(anim_MovementState, 0);
+
             return true;
         }
         else {
-            // Debug.Log("Distance: " + distance);
-            // Debug.Log("NextAction Radius: " + nextAction.radius);
-            
-            var damping=2;
+            var damping = 2;
             var lookPos = nextAction.target.transform.position - transform.position;
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping); 
-            
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, nextAction.target.transform.position, step);
 
-            if (gameObject.GetComponent<Animator>() != null) {
-                gameObject.GetComponent<Animator>().SetInteger("Movement State", 1);
-            }
+            // animate
+            // walk
+            animator.SetInteger(anim_MovementState, 1);
+
             return false;
         }
     }
