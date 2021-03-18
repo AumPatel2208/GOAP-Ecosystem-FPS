@@ -50,6 +50,11 @@ public class Action_EatFood : GoapAction {
         foodIsEaten = true;
         agent.GetComponent<Stats>().hunger += target.GetComponent<FoodStats>().foodAmount;
         
+        // animate
+        if (GetComponent<Animator>() != null) {
+            GetComponent<Animator>().Play("Bite");
+        }
+        
         // sets the food back to null because it has eaten it
         // agent.GetComponent<Food>().targetFood = null;
         // Debug.Log("EATEN");

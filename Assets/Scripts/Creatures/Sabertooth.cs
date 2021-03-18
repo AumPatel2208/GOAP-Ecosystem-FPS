@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
-public class SaberTooth : MonoBehaviour, IGoap {
+public class Sabertooth : MonoBehaviour, IGoap {
     // public float hunger = 100;
     // public float hungerThreshold = 80;
     // public float moveSpeed = 2;
     public Stats stats;
 
     private Animator animator;
+    private AIDestinationSetter destinationSetter;
+    private AIPath movementController;
 
     private static readonly int anim_MovementState = Animator.StringToHash("Movement State");
-    // public GameObject targetFood;
 
     private void Awake() {
         if (gameObject.GetComponent<Stats>() == null)
@@ -20,8 +22,12 @@ public class SaberTooth : MonoBehaviour, IGoap {
 
     // Start is called before the first frame update
     void Start() {
-        if (gameObject.GetComponent<Animator>() != null)
-            animator = gameObject.GetComponent<Animator>();
+        // get rid of the IF as I would like an error if it doesnt work
+        // if (gameObject.GetComponent<Animator>() != null)
+        animator = GetComponent<Animator>();
+
+        destinationSetter = GetComponent<AIDestinationSetter>();
+        movementController = GetComponent<AIPath>();
     }
 
     private void FixedUpdate() {
@@ -63,6 +69,12 @@ public class SaberTooth : MonoBehaviour, IGoap {
             // we are at the target location, we are done
             nextAction.setInRange(true);
 
+            // set astar target to null
+            destinationSetter.target = null;
+
+            // stop moving
+            movementController.canMove = false;
+
             // animate
             // idle
             animator.SetInteger(anim_MovementState, 0);
@@ -70,13 +82,20 @@ public class SaberTooth : MonoBehaviour, IGoap {
             return true;
         }
         else {
-            var damping = 2;
-            var lookPos = nextAction.target.transform.position - transform.position;
-            lookPos.y = 0;
-            var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+            // var damping = 2;
+            // var lookPos = nextAction.target.transform.position - transform.position;
+            // lookPos.y = 0;
+            // var rotation = Quaternion.LookRotation(lookPos);
+            // transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+            //
+            // gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, nextAction.target.transform.position, step);
 
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, nextAction.target.transform.position, step);
+
+            if (destinationSetter.target == null) {
+                destinationSetter.target = nextAction.target.transform;
+            }
+
+            movementController.canMove = true;
 
             // animate
             // walk

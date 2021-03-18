@@ -9,6 +9,7 @@ TagManager:
   - plant
   - fly
   - foodchain
+  - sword
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Ground
   - Player
-  - 
+  - Obstacle
   - 
   - 
   - 
