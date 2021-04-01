@@ -563,6 +563,7 @@
               <e p="Action_EatFood.cs" t="Include" />
               <e p="Action_FindFood.cs" t="Include" />
               <e p="Action_MeleeAttack.cs" t="Include" />
+              <e p="Action_Roam.cs" t="Include" />
               <e p="OLDAction_BasicEatFood.cs" t="Include" />
               <e p="OLDAction_EatFood.cs" t="Include" />
               <e p="OLDAction_FindFood.cs" t="Include" />

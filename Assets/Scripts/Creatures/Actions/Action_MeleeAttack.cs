@@ -51,7 +51,6 @@ public class Action_MeleeAttack : GoapAction {
             gameObject.GetComponent<Animator>().Play("Bite");
         }
 
-        // Debug.Log("EATEN");
         return hasAttacked;
     }
 
