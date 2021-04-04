@@ -17,7 +17,7 @@ public class FoodStats : MonoBehaviour {
     }
 
     private void Update() {
-        isReadyToEat = gameObject.GetComponent<Stats>().health <= 0;
+        isReadyToEat = gameObject.GetComponent<Stats>().IsDead();
         
         // Destroy this as this food is finished
         if (totalFoodAmount <= 0) {

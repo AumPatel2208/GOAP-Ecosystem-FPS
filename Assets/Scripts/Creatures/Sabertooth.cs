@@ -4,9 +4,8 @@ using Pathfinding;
 using UnityEngine;
 
 public class Sabertooth : MonoBehaviour, IGoap {
-    // public float hunger = 100;
-    // public float hungerThreshold = 80;
-    // public float moveSpeed = 2;
+    public bool enableDebugging = true;
+
     public Stats stats;
 
     private Animator animator;
@@ -31,13 +30,14 @@ public class Sabertooth : MonoBehaviour, IGoap {
     }
 
     private void FixedUpdate() {
-        stats.hunger -= 0.01f;
+        // stats.hunger -= 0.01f;
+        stats.DepleteHunger(0.01f);
     }
 
 
     public HashSet<KeyValuePair<string, object>> getWorldState() {
         HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
-        worldData.Add(new KeyValuePair<string, object>("isHungry", (stats.hunger < stats.hungerThreshold)));
+        worldData.Add(new KeyValuePair<string, object>("isHungry", stats.IsHungry()));
         worldData.Add(new KeyValuePair<string, object>("foodFound", (gameObject.GetComponent<Food>().targetFood != null)));
 
         worldData.Add(gameObject.GetComponent<Food>().targetFood != null
@@ -61,7 +61,7 @@ public class Sabertooth : MonoBehaviour, IGoap {
     // MOVE
     public bool moveAgent(GoapAction nextAction) {
         // move towards the NextAction's target
-        float step = stats.moveSpeed * Time.deltaTime;
+        float step = stats.GetProperSpeed();
 
         float distance = Vector3.Distance(gameObject.transform.position, nextAction.target.transform.position);
         // check the distance of the player
@@ -107,10 +107,8 @@ public class Sabertooth : MonoBehaviour, IGoap {
 
 
     public void planFailed(HashSet<KeyValuePair<string, object>> failedGoal) {
-        // throw new NotImplementedException();
         Debug.Log(gameObject.name + ": <color=red>Plan Failed</color> " + GoapAgent.prettyPrint(failedGoal));
     }
-
 
     public void planFound(HashSet<KeyValuePair<string, object>> goal, Queue<GoapAction> actions) {
         // Yay we found a plan for our goal
@@ -118,7 +116,7 @@ public class Sabertooth : MonoBehaviour, IGoap {
     }
 
     public void actionsFinished() {
-        // Everything is done, we completed our actions for this gool. Hooray!
+        // Everything is done, we completed our actions for this gool.
         Debug.Log(gameObject.name + ": <color=blue>Actions completed</color>");
     }
 

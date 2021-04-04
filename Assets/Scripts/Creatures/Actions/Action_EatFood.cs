@@ -48,7 +48,8 @@ public class Action_EatFood : GoapAction {
             
         // do the action
         foodIsEaten = true;
-        agent.GetComponent<Stats>().hunger += target.GetComponent<FoodStats>().foodAmount;
+        // agent.GetComponent<Stats>().hunger += target.GetComponent<FoodStats>().foodAmount;
+        agent.GetComponent<Stats>().AddFoodAmount(target.GetComponent<FoodStats>().foodAmount); 
         target.GetComponent<FoodStats>().totalFoodAmount -= target.GetComponent<FoodStats>().foodAmount;
         
         // animate

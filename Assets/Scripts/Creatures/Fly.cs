@@ -21,13 +21,14 @@ public class Fly : MonoBehaviour, IGoap {
     }
 
     private void FixedUpdate() {
-        stats.hunger -= 0.01f;
+        // stats.hunger -= 0.01f;
+        stats.DepleteHunger(0.01f);
     }
 
 
     public HashSet<KeyValuePair<string, object>> getWorldState() {
         HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
-        worldData.Add(new KeyValuePair<string, object>("isHungry", (stats.hunger < stats.hungerThreshold)));
+        worldData.Add(new KeyValuePair<string, object>("isHungry", stats.IsHungry()));
         worldData.Add(new KeyValuePair<string, object>("foodFound", (gameObject.GetComponent<Food>().targetFood != null)));
 
         return worldData;
@@ -45,7 +46,7 @@ public class Fly : MonoBehaviour, IGoap {
     // MOVE
     public bool moveAgent(GoapAction nextAction) {
         // move towards the NextAction's target
-        float step = stats.moveSpeed * Time.deltaTime;
+        float step = stats.GetProperSpeed();
 
         float distance = Vector3.Distance(gameObject.transform.position, nextAction.target.transform.position);
         // check the distance of the player
