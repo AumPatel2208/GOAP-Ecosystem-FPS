@@ -20,7 +20,7 @@ public class Action_Roam : GoapAction {
 
     public override bool checkProceduralPrecondition(GameObject agent) {
         // pick a random spot on the path.
-        target = 
+        // target = 
         
         return true;
     }

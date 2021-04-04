@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SwordAttack : MonoBehaviour {
     public Animator animator;
+    public float attackDamage = 10f;
+
     private static readonly int hIsAttacking = Animator.StringToHash("isAttacking");
 
     // private float animationTimer = 0f;
@@ -25,13 +28,47 @@ public class SwordAttack : MonoBehaviour {
     void Update() {
         // https://youtu.be/NWt84YCMHHE Reference
         if (Input.GetButtonDown("Fire1")) {
-            
-            Debug.Log("Fire: canClick: " + canClick+ " noOfClicks: " + noOfClicks+ ". Current Animation:" + animator.GetInteger(hAttackNo) );
+            Debug.Log("Fire: canClick: " + canClick + " noOfClicks: " + noOfClicks + ". Current Animation:" + animator.GetInteger(hAttackNo));
             ComboStarter();
         }
-
-        
     }
+    //
+    // private void OnCollisionEnter(Collision other) {
+    //     Debug.Log("DAMAGEEEEEEEEEEEEEEE");
+    //     // if the player is in a state of attacking 
+    //     if (animator.GetInteger(hAttackNo) > 0) {
+    //         // 11 is life layer
+    //         if (other.gameObject.layer == 11) {
+    //             other.gameObject.GetComponent<Stats>().ApplyDamage(attackDamage);
+    //         }
+    //     }
+    // }
+
+    private void OnTriggerEnter(Collider other) {
+
+        // if the player is in a state of attacking 
+        if (animator.GetInteger(hAttackNo) > 0) {
+            // 11 is life layer
+            if (other.gameObject.layer == 11) {
+                if (other.gameObject.GetComponent<Stats>() != null){
+                    other.gameObject.GetComponent<Stats>().ApplyDamage(attackDamage);
+                    // instantiate particles when damaged
+                    Instantiate(other.gameObject.GetComponent<Stats>().bloodParticle,other.bounds.center, other.gameObject.transform.rotation);
+                }
+                
+                // RaycastHit hit;
+                // if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit)) {
+                //     Debug.Log("Point of contact: "+hit.point);
+                //     var rot = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                //     Instantiate(hit.transform.gameObject.GetComponent<Stats>().bloodParticle, hit.point, rot);
+                // }
+
+            }
+        }
+    }
+
+ 
+
 
     private void ComboStarter() {
         if (canClick) {
@@ -48,7 +85,6 @@ public class SwordAttack : MonoBehaviour {
         canClick = false;
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("swing_1") && noOfClicks == 1) {
-            
             // set to idle
             animator.SetInteger(hAttackNo, 0);
 
@@ -64,7 +100,6 @@ public class SwordAttack : MonoBehaviour {
             canClick = true;
         }
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("swing_2") && noOfClicks == 2) {
-            
             Debug.Log("swing2 and noCLicks 2");
             // set to idle
             animator.SetInteger(hAttackNo, 0);
@@ -80,7 +115,7 @@ public class SwordAttack : MonoBehaviour {
             //reset
             canClick = true;
         }
-        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("swing_3") ) {
+        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("swing_3")) {
             // set to idle
             animator.SetInteger(hAttackNo, 0);
 

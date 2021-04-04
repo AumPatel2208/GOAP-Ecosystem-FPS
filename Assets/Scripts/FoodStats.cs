@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FoodStats : MonoBehaviour {
     public float foodAmount = 10;
+    public float totalFoodAmount = 100;
     public bool isEaten = false;
     public bool requiresKilling = false;
     public bool isReadyToEat = true;
@@ -16,6 +17,11 @@ public class FoodStats : MonoBehaviour {
     }
 
     private void Update() {
-        isReadyToEat = gameObject.GetComponent<Stats>().health == 0;
+        isReadyToEat = gameObject.GetComponent<Stats>().health <= 0;
+        
+        // Destroy this as this food is finished
+        if (totalFoodAmount <= 0) {
+            Destroy(gameObject);
+        }
     }
 }

@@ -16,8 +16,12 @@ public class Stats : MonoBehaviour
     public float staminaRegenRate = 2;
     public float moveSpeed = 5;
 
+    public GameObject bloodParticle;
+    
     public void ApplyDamage(float damage) {
         health -= damage;
+         
+    
     }
     
 }

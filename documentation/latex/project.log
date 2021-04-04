@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.8)  20 FEB 2021 00:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.8)  1 APR 2021 11:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -191,46 +191,53 @@ Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+) (/usr/local/texlive/2020basic/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count266
+\float@exts=\toks19
+\float@box=\box47
+\@float@everytoks=\toks20
+\@floatcapt=\box48
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 25.
+Package hyperref Info: Option `colorlinks' set `true' on input line 30.
  (/usr/local/texlive/2020basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-02-06 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count266
-\l__pdf_internal_box=\box47
+\l__color_backend_stack_int=\count267
+\l__pdf_internal_box=\box49
 ) (./project.aux)
 \openout1 = `project.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
  (/usr/local/texlive/2020basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count267
+\scratchcounter=\count268
 \scratchdimen=\dimen153
-\scratchbox=\box48
-\nofMPsegments=\count268
-\nofMParguments=\count269
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count270
+\scratchbox=\box50
+\nofMPsegments=\count269
+\nofMParguments=\count270
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count271
 \MPscratchDim=\dimen154
-\MPnumerator=\count271
-\makeMPintoPDFobject=\count272
-\everyMPtoPDFconversion=\toks20
+\MPnumerator=\count272
+\makeMPintoPDFobject=\count273
+\everyMPtoPDFconversion=\toks22
 ) (/usr/local/texlive/2020basic/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -278,7 +285,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 36.
+Package hyperref Info: Link coloring ON on input line 41.
  (/usr/local/texlive/2020basic/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2020basic/texmf-dist/tex/latex/refcount/refcount.sty
@@ -286,11 +293,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2020basic/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count273
+\c@section@level=\count274
 )
-LaTeX Info: Redefining \ref on input line 36.
-LaTeX Info: Redefining \pageref on input line 36.
-LaTeX Info: Redefining \nameref on input line 36.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
  (./project.out) (./project.out)
 \@outlinefile=\write3
 \openout3 = `project.out'.
@@ -309,7 +316,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.43 \chapter
+l.50 \chapter
              {Abstract} [1
 
 ]
@@ -332,49 +339,69 @@ Chapter 4.
 Chapter 5.
 [7
 
-] [8] [9]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 119.
+] [8]
+<../images//ActionPlans.jpg, id=150, 864.22874pt x 667.49374pt>
+File: ../images//ActionPlans.jpg Graphic file (type jpg)
+<use ../images//ActionPlans.jpg>
+Package pdftex.def Info: ../images//ActionPlans.jpg  used on input line 127.
+(pdftex.def)             Requested size: 284.52756pt x 219.75418pt.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.133 
+       <../images//ActionPlans.jpg>]
+<../images//ClassDiagram.jpg, id=159, 1600.98125pt x 861.2175pt>
+File: ../images//ClassDiagram.jpg Graphic file (type jpg)
+<use ../images//ClassDiagram.jpg>
+Package pdftex.def Info: ../images//ClassDiagram.jpg  used on input line 136.
+(pdftex.def)             Requested size: 412.56496pt x 221.92696pt.
+ [10pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.144 \begin{thebibliography}{}
+                                <../images//ClassDiagram.jpg>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 146.
  (/usr/local/texlive/2020basic/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
 []\T1/cmr/m/n/10 Orkin, J., n.d. Ap-ply-ing Goal-Oriented Ac-tion Plan-ning to Games. [on-line]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 \T1/cmtt/m/n/10 20200507 / 362417 / Building _ the _ AI _ of _ FEAR _ with _ Goal _ Oriented _ Action _ Planning . php$[][]
  []
 
 
-Underfull \hbox (badness 2173) in paragraph at lines 139--140
+Underfull \hbox (badness 2173) in paragraph at lines 166--167
 \T1/cmtt/m/n/10 filefront . com / file / FEAR _ v108 _ SDK ; 71433$[][] \T1/cmr/m/n/10 and [][]$\T1/cmtt/m/n/10 https : / / github . com / xfw5 / Fear-[]SDK-[]1 .
  []
 
-[10
+[11
 
 ]
-Underfull \hbox (badness 1215) in paragraph at lines 145--146
+Underfull \hbox (badness 1215) in paragraph at lines 172--173
 \T1/cmtt/m/n/10 goal-[]oriented-[]action-[]planning-[]for-[]a-[]smarter-[]ai-[]-[]cms-[]20793$[][] \T1/cmr/m/n/10 [Ac-cessed 13 Febru-ary
  []
 
-[11] (./project.aux)
+[12] (./project.aux)
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: F9BF5C65EF0F5B27338A37D0D05145A9;1749.
  ) 
 Here is how much of TeX's memory you used:
- 9131 strings out of 480750
- 134960 string characters out of 5901292
- 433579 words of memory out of 5000000
- 25956 multiletter control sequences out of 15000+600000
+ 9211 strings out of 480750
+ 136190 string characters out of 5901292
+ 435045 words of memory out of 5000000
+ 26023 multiletter control sequences out of 15000+600000
  412147 words of font info for 39 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 71i,6n,74p,2376b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,7n,74p,2376b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </Users/hasu/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk>
-Output written on project.pdf (12 pages, 107454 bytes).
+Output written on project.pdf (13 pages, 309279 bytes).
 PDF statistics:
- 512 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
- 44 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 526 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

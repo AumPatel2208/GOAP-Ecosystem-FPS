@@ -10,10 +10,15 @@
 \usepackage{pdflscape} % making a page landscape
 % \usepackage{microtype} % used for formatting nicely and getting rid of hbox badness
 % \usepackage{natbib}
+\usepackage{float} % to place figures in place
+
+\graphicspath{{../images/}}
+
 \renewcommand{\bibname}{References}
 \renewcommand{\baselinestretch}{1.5}
 
 \bibliographystyle{unsrtnat}
+\graphicspath{{../images/}}
 
 % hyperlink setup
 \hypersetup{
@@ -39,7 +44,9 @@ bottom=25mm
 \center
 {\huge\bfseries Report}  
 \end{titlepage}
+
 \tableofcontents
+
 \chapter{Abstract}
 This project aim is to create a Souls-Like game with an AI system that allows for in-fighting between creatures based on a food chain. I researched different AI techniques to pull this off and landed on GOAP - Goal Oriented Action Planning - as the system I would use in this game.
 \chapter{Introduction}
@@ -112,7 +119,27 @@ On Jeff Orkin's website, there was a reference to ReGOAP by Luciano Ferraro, whi
 Based on all this I started creating my own GOAP system, however, it became very time consuming to create, and based on the gannt chart I had made, I was running behind on schedule; as the main focus of the project is to create the interaction between these different AI agents, and not the core AI system itself, I decided to use the implementation provided by Brent Owens \cite{brentOwensGoapCode} which is under the MIT licence. This is a very bare bones implementation only consisting of 6 scripts, and with the video explanation by TheHappieCat this was the simplest one I could implement and still have a great amount of flexibility in modifying the code due to its loosely coupled nature.
 
 After I landed on this implementation of GOAP, I decided to start modelling out the different actions (with their preconditions and effects (post-conditions)), different creatures with their world state and the list of goals they would like to achieve. As Unity works with game objects made up of components, I decided to plan out the agents in an unconventional manner before creating the class diagrams. 
-% Use case diagrams: 
+\subsubsection{Modelling the Actions}
+I abstracted the idea into the different actions the AI will be performing and the goals it will use to plan out the course of action. This simple set of action and goals is sufficient for the first build and will have the ground work to expand upon the next build.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 10cm ]{ActionPlans.jpg}}
+    \caption{Goals and Actions}
+\end{figure}
+
+\subsubsection{Class Diagram}
+Games in Unity are built on a system of composition and avoiding inheritance is promoted. It allows for greater flexibility as unlike inheritance where you 'inherit' all features at once, you build the game object using components(C\# classes) that you build that are fulfil a very specific purpose. This leads to code being very modular and less coupled, leading to faster development as changing one component will not have a ripple effect on others. A game object can be saved as a prefab, which can then be reused, an example would be creating an enemy prefab, and then creating an enemy spawner that loads copies of that prefab into the scene.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 14.5cm ]{ClassDiagram.jpg}}
+    \caption{Class Diagram}
+\end{figure}
+
+The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature.
+
+
 
 \begin{thebibliography}{}
     \bibitem{doom93}

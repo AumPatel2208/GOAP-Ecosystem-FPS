@@ -5,16 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/little_lizard_01 1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/little_lizard_01 1.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodPoolParticle.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodPoolParticle.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodSplashParticle.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodSplashParticle.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodSplatParticle.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodSplatParticle.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodStreamParticle.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodStreamParticle.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Prefabs/BloodSprayEffect.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Prefabs/BloodSprayEffect.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Prefabs/BloodStreamEffect.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Prefabs/BloodStreamEffect.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodDropAlbedo.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodDropAlbedo.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodDropNormals.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodDropNormals.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodPoolAlbedo.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodPoolAlbedo.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodPoolNormals.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodPoolNormals.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodSprayNormals.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodSprayNormals.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodStreamAlbedo.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Textures/BloodStreamAlbedo.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Blood.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Blood.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Blood.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Blood.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/BloodParticles.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/BloodParticles.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/TODO.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/images/ActionPlans.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/images/ClassDiagram.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/IceAge/Animators/Sloth Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IceAge/Animators/Sloth Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sloth Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sloth Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FoodStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FoodStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/ClassDiagram.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/actionPlans_the-game.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/actionPlans_the-game.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.aux" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.tex" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.toc" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.toc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +101,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/ReGoap/ReGoap/Unity/Editor/Test/ReGoapBenchmarkTests.cs" />
       <option value="$PROJECT_DIR$/Assets/ReGoap/ReGoap/Unity/FSM/ISMState.cs" />
       <option value="$PROJECT_DIR$/Assets/ReGoap/ReGoap/Unity/FSM/SmState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/FSM/FSM.cs" />
@@ -95,17 +140,18 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/OLDLizard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Fly.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/GAgentVisual.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Stats.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/FoodStats.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Lizard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AStarMovement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SwordCollision.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Sabertooth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Sloth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/FoodStats.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Stats.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nqDH9RbKCaths3dqmALE3xCfzt" />
@@ -199,6 +245,9 @@
       <workItem from="1616159194605" duration="787000" />
       <workItem from="1617044452418" duration="480000" />
       <workItem from="1617215314216" duration="3407000" />
+      <workItem from="1617272223271" duration="273000" />
+      <workItem from="1617454983966" duration="5750000" />
+      <workItem from="1617546542673" duration="1704000" />
     </task>
     <servers />
   </component>
