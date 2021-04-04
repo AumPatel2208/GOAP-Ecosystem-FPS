@@ -2545,53 +2545,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114773818, guid: 0adf28e64e9244389b7b6465e36dfed0, type: 3}
-      propertyPath: isReadyToEat
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114773819, guid: 0adf28e64e9244389b7b6465e36dfed0, type: 3}
-      propertyPath: bloodParticle
-      value: 
-      objectReference: {fileID: 7961427485859003019, guid: 4800b1317069c4704b9fd11904f06511,
-        type: 3}
-    - target: {fileID: 927215559, guid: 0adf28e64e9244389b7b6465e36dfed0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 927215559, guid: 0adf28e64e9244389b7b6465e36dfed0, type: 3}
-      propertyPath: groundMask.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 230963313462143422, guid: 0adf28e64e9244389b7b6465e36dfed0,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.1865861
-      objectReference: {fileID: 0}
-    - target: {fileID: 230963313462143422, guid: 0adf28e64e9244389b7b6465e36dfed0,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2.262327
-      objectReference: {fileID: 0}
-    - target: {fileID: 230963313462143422, guid: 0adf28e64e9244389b7b6465e36dfed0,
-        type: 3}
-      propertyPath: m_Center.x
-      value: -0.005105297
-      objectReference: {fileID: 0}
-    - target: {fileID: 230963313462143422, guid: 0adf28e64e9244389b7b6465e36dfed0,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.47448397
-      objectReference: {fileID: 0}
-    - target: {fileID: 230963313462143422, guid: 0adf28e64e9244389b7b6465e36dfed0,
-        type: 3}
-      propertyPath: m_Center.z
-      value: 0.036233068
-      objectReference: {fileID: 0}
-    - target: {fileID: 230963313462143422, guid: 0adf28e64e9244389b7b6465e36dfed0,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5316598531506200192, guid: 0adf28e64e9244389b7b6465e36dfed0,
         type: 3}
       propertyPath: m_RootOrder
@@ -2647,15 +2600,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7151068034248004217, guid: 0adf28e64e9244389b7b6465e36dfed0,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.00040428885
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151068034248004217, guid: 0adf28e64e9244389b7b6465e36dfed0,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.0015293509
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151068034248004217, guid: 0adf28e64e9244389b7b6465e36dfed0,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.005661081
+      objectReference: {fileID: 0}
     - target: {fileID: 9192695571379170451, guid: 0adf28e64e9244389b7b6465e36dfed0,
         type: 3}
       propertyPath: m_Name
       value: Sabertooth
-      objectReference: {fileID: 0}
-    - target: {fileID: 9192695571379170451, guid: 0adf28e64e9244389b7b6465e36dfed0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0adf28e64e9244389b7b6465e36dfed0, type: 3}
