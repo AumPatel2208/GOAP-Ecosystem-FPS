@@ -544,6 +544,7 @@
             </e>
           </e>
         </e>
+        <e p="RagdollToggle.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AI" t="Include">
             <e p="FSM" t="Include">

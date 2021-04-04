@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,11 +18,18 @@ public class Stats : MonoBehaviour
     public float moveSpeed = 5;
 
     public GameObject bloodParticle;
+
     
     public void ApplyDamage(float damage) {
         health -= damage;
-         
-    
     }
-    
+
+    public void Update() {
+        if (health <= 0) {
+            GetComponent<RagdollToggle>().EnableRagdoll(true);
+        }
+        else {
+            GetComponent<RagdollToggle>().EnableRagdoll(false);
+        }
+    }
 }

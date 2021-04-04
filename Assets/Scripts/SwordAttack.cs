@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour {
     public Animator animator;
-    public float attackDamage = 10f;
+    public float attackDamage = 50f;
 
     private static readonly int hIsAttacking = Animator.StringToHash("isAttacking");
 
