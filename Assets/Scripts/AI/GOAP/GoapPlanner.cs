@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Creatures;
 using UnityEngine;
 
 /**
@@ -38,7 +39,8 @@ public class GoapPlanner {
 
         if (!success) {
             // oh no, we didn't get a plan
-            Debug.Log(agent.name+ ": NO PLAN");
+            if(agent.GetComponent<BaseAIGoap>().enableDebugging)
+                Debug.Log(agent.name+ ": NO PLAN");
             return null;
         }
 

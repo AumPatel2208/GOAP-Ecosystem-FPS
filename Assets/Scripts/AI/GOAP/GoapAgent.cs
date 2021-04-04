@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using Creatures;
 
 
 public sealed class GoapAgent : MonoBehaviour {
@@ -79,7 +80,9 @@ public sealed class GoapAgent : MonoBehaviour {
             }
             else {
                 // ugh, we couldn't get a plan
-                Debug.Log(gameObject.name + ": <color=orange>Failed Plan:</color>. Goals: " + prettyPrint(goal) + " ; World State: " + prettyPrint(worldState));
+                if (((BaseAIGoap) dataProvider).enableDebugging)
+                    Debug.Log(gameObject.name + ": <color=orange>Failed Plan:</color>. Goals: " + prettyPrint(goal) + " ; World State: " + prettyPrint(worldState));
+                
                 dataProvider.planFailed(goal);
                 fsm.popState(); // move back to IdleAction state
                 fsm.pushState(idleState);
@@ -90,10 +93,10 @@ public sealed class GoapAgent : MonoBehaviour {
     private void createMoveToState() {
         moveToState = (fsm, gameObj) => {
             // move the game object
-
             GoapAction action = currentActions.Peek();
             if (action.requiresInRange() && action.target == null) {
-                Debug.Log(gameObject.name + ": <color=red>Fatal error:</color> Action requires a target but has none. Planning failed. You did not assign the target in your Action.checkProceduralPrecondition()");
+                if (((BaseAIGoap) dataProvider).enableDebugging)
+                    Debug.Log(gameObject.name + ": <color=red>Fatal error:</color> Action requires a target but has none. Planning failed. You did not assign the target in your Action.checkProceduralPrecondition()");
                 fsm.popState(); // move
                 fsm.popState(); // perform
                 fsm.pushState(idleState);
@@ -131,7 +134,8 @@ public sealed class GoapAgent : MonoBehaviour {
 
             if (!hasActionPlan()) {
                 // no actions to perform
-                Debug.Log(gameObject.name + ": <color=red>Done actions</color>");
+                if (((BaseAIGoap) dataProvider).enableDebugging)
+                    Debug.Log(gameObject.name + ": <color=red>Done actions</color>");
                 fsm.popState();
                 fsm.pushState(idleState);
                 dataProvider.actionsFinished();
@@ -189,8 +193,8 @@ public sealed class GoapAgent : MonoBehaviour {
         foreach (GoapAction a in actions) {
             availableActions.Add(a);
         }
-
-        Debug.Log("Found actions: " + prettyPrint(actions));
+        if (((BaseAIGoap) dataProvider).enableDebugging)
+            Debug.Log("Found actions: " + prettyPrint(actions));
     }
 
     public static string prettyPrint(HashSet<KeyValuePair<string, object>> state) {

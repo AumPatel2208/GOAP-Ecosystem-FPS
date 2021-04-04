@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Creatures;
 using Pathfinding;
 using UnityEngine;
 
-public class Sabertooth : MonoBehaviour, IGoap {
-    public bool enableDebugging = true;
+public class Sabertooth : BaseAIGoap {
 
     public Stats stats;
 
@@ -35,7 +35,7 @@ public class Sabertooth : MonoBehaviour, IGoap {
     }
 
 
-    public HashSet<KeyValuePair<string, object>> getWorldState() {
+    public override HashSet<KeyValuePair<string, object>> getWorldState() {
         HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
         worldData.Add(new KeyValuePair<string, object>("isHungry", stats.IsHungry()));
         worldData.Add(new KeyValuePair<string, object>("foodFound", (gameObject.GetComponent<Food>().targetFood != null)));
@@ -48,7 +48,7 @@ public class Sabertooth : MonoBehaviour, IGoap {
         return worldData;
     }
 
-    public HashSet<KeyValuePair<string, object>> createGoalState() {
+    public override HashSet<KeyValuePair<string, object>> createGoalState() {
         HashSet<KeyValuePair<string, object>> goal = new HashSet<KeyValuePair<string, object>>();
 
         goal.Add(new KeyValuePair<string, object>("isHungry", false));
@@ -59,7 +59,7 @@ public class Sabertooth : MonoBehaviour, IGoap {
     }
 
     // MOVE
-    public bool moveAgent(GoapAction nextAction) {
+    public override bool moveAgent(GoapAction nextAction) {
         // move towards the NextAction's target
         float step = stats.GetProperSpeed();
 
@@ -105,25 +105,4 @@ public class Sabertooth : MonoBehaviour, IGoap {
         }
     }
 
-
-    public void planFailed(HashSet<KeyValuePair<string, object>> failedGoal) {
-        Debug.Log(gameObject.name + ": <color=red>Plan Failed</color> " + GoapAgent.prettyPrint(failedGoal));
-    }
-
-    public void planFound(HashSet<KeyValuePair<string, object>> goal, Queue<GoapAction> actions) {
-        // Yay we found a plan for our goal
-        Debug.Log(gameObject.name + ": <color=green>Plan found</color> " + GoapAgent.prettyPrint(actions));
-    }
-
-    public void actionsFinished() {
-        // Everything is done, we completed our actions for this gool.
-        Debug.Log(gameObject.name + ": <color=blue>Actions completed</color>");
-    }
-
-    public void planAborted(GoapAction aborter) {
-        // An action bailed out of the plan. State has been reset to plan again.
-        // Take note of what happened and make sure if you run the same goal again
-        // that it can succeed.
-        Debug.Log(gameObject.name + ": <color=red>Plan Aborted</color> " + GoapAgent.prettyPrint(aborter));
-    }
 }

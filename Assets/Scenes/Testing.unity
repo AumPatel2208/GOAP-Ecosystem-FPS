@@ -2479,6 +2479,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4926187478273120982, guid: b0652642dd5e449cbaa4c34199f2ad7d,
+        type: 3}
+      propertyPath: attackDamage
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0652642dd5e449cbaa4c34199f2ad7d, type: 3}
 --- !u!1001 &6752941639227382639
@@ -2616,6 +2621,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7378554617341923612, guid: 0adf28e64e9244389b7b6465e36dfed0,
+        type: 3}
+      propertyPath: enableDebugging
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9192695571379170451, guid: 0adf28e64e9244389b7b6465e36dfed0,
         type: 3}
       propertyPath: m_Name
@@ -2639,6 +2649,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7961427485859003019, guid: 4800b1317069c4704b9fd11904f06511,
         type: 3}
+    - target: {fileID: 1885867500, guid: 8596a18d434054cdbb0b1ad72609c26a, type: 3}
+      propertyPath: enableDebugging
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 801462931953482524, guid: 8596a18d434054cdbb0b1ad72609c26a,
         type: 3}
       propertyPath: m_Enabled
