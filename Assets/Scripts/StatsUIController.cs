@@ -21,7 +21,7 @@ public class StatsUIController : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
-        Creature creature = gameObject.GetComponent<Creature>();
+        Stats creature = gameObject.GetComponent<Stats>();
         healthBar.fillAmount = creature.health / 100;
         staminaBar.fillAmount = creature.stamina / 100;
         hungerBar.fillAmount = creature.hunger / 100;

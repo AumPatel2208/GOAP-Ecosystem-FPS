@@ -50,9 +50,10 @@ public class Action_EatFood : GoapAction {
         foodIsEaten = true;
         // agent.GetComponent<Stats>().hunger += target.GetComponent<FoodStats>().foodAmount;
         agent.GetComponent<Stats>().AddFoodAmount(target.GetComponent<FoodStats>().foodAmount); 
-        target.GetComponent<FoodStats>().totalFoodAmount -= target.GetComponent<FoodStats>().foodAmount;
+        target.GetComponent<FoodStats>().DepleteTotalFoodAmount(target.GetComponent<FoodStats>().foodAmount);
         
         // animate
+        // will only work with the ones with a bite animation
         if (GetComponent<Animator>() != null) {
             GetComponent<Animator>().Play("Bite");
         }

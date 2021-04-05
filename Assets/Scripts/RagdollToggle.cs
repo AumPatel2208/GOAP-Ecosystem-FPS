@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -17,7 +18,7 @@ public class RagdollToggle : MonoBehaviour {
     protected Collider[] childrenColliders;
     protected Rigidbody[] childrenRigidbodies;
 
-    public bool currentState;
+    private bool currentState;
     
     
     void Awake() {
@@ -26,7 +27,12 @@ public class RagdollToggle : MonoBehaviour {
         boxCollider = GetComponent<BoxCollider>();
         // aiComponent = GetComponent<Sabertooth>();
 
-        childrenColliders = GetComponentsInChildren<Collider>();
+        // childrenColliders = GetComponentsInChildren<Collider>();
+        
+        // Using System.Linq to avoid getting the parent in the children list:
+        // http://answers.unity.com/answers/1248479/view.html
+        childrenColliders = this.GetComponentsInChildren<Collider>(true).Where(x => x.gameObject.transform.parent != transform.parent).ToArray();
+        
         childrenRigidbodies = GetComponentsInChildren<Rigidbody>();
     }
 
@@ -41,6 +47,7 @@ public class RagdollToggle : MonoBehaviour {
     public void EnableRagdoll(bool isActive) {
 
         if (currentState != isActive) {
+            
             // children
             foreach (var collider in childrenColliders) {
                 collider.enabled = isActive;
@@ -57,6 +64,8 @@ public class RagdollToggle : MonoBehaviour {
             // rigidbody.detectCollisions = !isActive;
             // rigidbody.isKinematic = isActive;
             boxCollider.enabled = !isActive;
+            // boxCollider.isTrigger = isActive;
+            
             aiComponent.enabled = !isActive;
 
             // for efficiency 
@@ -66,6 +75,16 @@ public class RagdollToggle : MonoBehaviour {
     
     // Update is called once per frame
     void Update() {
-        
+        // if the ragdolls are on
+        // if (currentState) {
+        //     var centerPoint = new Vector3(0f,0f,0f);
+        //     foreach (Collider childrenCollider in childrenColliders) {
+        //         centerPoint += childrenCollider.bounds.center;
+        //     }
+        //     centerPoint = centerPoint/childrenColliders.Length;
+        //
+        //     // move the box collider
+        //     boxCollider.center = centerPoint;
+        // }
     }
 }

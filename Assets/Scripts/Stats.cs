@@ -28,7 +28,10 @@ public class Stats : MonoBehaviour {
         }
     }
 
-
+    public void SetHealth(float amount) {
+        health = amount;
+    }
+    
     public void ApplyDamage(float damage) {
         health -= damage;
     }

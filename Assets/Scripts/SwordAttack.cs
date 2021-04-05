@@ -52,17 +52,9 @@ public class SwordAttack : MonoBehaviour {
             if (other.gameObject.layer == 11) {
                 if (other.gameObject.GetComponent<Stats>() != null){
                     other.gameObject.GetComponent<Stats>().ApplyDamage(attackDamage);
-                    // instantiate particles when damaged
+                    // instantiate blood particles when damaged
                     Instantiate(other.gameObject.GetComponent<Stats>().bloodParticle,other.bounds.center, other.gameObject.transform.rotation);
                 }
-                
-                // RaycastHit hit;
-                // if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit)) {
-                //     Debug.Log("Point of contact: "+hit.point);
-                //     var rot = Quaternion.FromToRotation(Vector3.up, hit.normal);
-                //     Instantiate(hit.transform.gameObject.GetComponent<Stats>().bloodParticle, hit.point, rot);
-                // }
-
             }
         }
     }

@@ -208,7 +208,6 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
-        <e p="RagdollToggle.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AI" t="Include">
             <e p="FSM" t="Include">
@@ -229,17 +228,10 @@
               <e p="Action_FindFood.cs" t="Include" />
               <e p="Action_MeleeAttack.cs" t="Include" />
               <e p="Action_Roam.cs" t="Include" />
-              <e p="OLDAction_BasicEatFood.cs" t="Include" />
-              <e p="OLDAction_EatFood.cs" t="Include" />
-              <e p="OLDAction_FindFood.cs" t="Include" />
-              <e p="OLDAction_LizardAttack.cs" t="Include" />
-              <e p="OLDAction_MeleeAttack.cs" t="Include" />
             </e>
             <e p="BaseAIGoap.cs" t="Include" />
-            <e p="Creature.cs" t="Include" />
             <e p="Fly.cs" t="Include" />
             <e p="Lizard.cs" t="Include" />
-            <e p="OLDLizard.cs" t="Include" />
             <e p="Sabertooth.cs" t="Include" />
             <e p="Sloth.cs" t="Include" />
           </e>
@@ -251,7 +243,9 @@
           <e p="LegMove.cs" t="Include" />
           <e p="LizardMove.cs" t="Include" />
           <e p="MouseLook.cs" t="Include" />
+          <e p="PlayerEatFood.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
+          <e p="RagdollToggle.cs" t="Include" />
           <e p="Stats.cs" t="Include" />
           <e p="StatsUIController.cs" t="Include" />
           <e p="SwordAttack.cs" t="Include" />
