@@ -16,6 +16,7 @@ public class Stats : MonoBehaviour {
     public float staminaRegenRate = 2;
     public float moveSpeed = 5;
 
+    // Particles
     public GameObject bloodParticle;
 
     protected RagdollToggle ragdoll;
@@ -31,7 +32,7 @@ public class Stats : MonoBehaviour {
     public void SetHealth(float amount) {
         health = amount;
     }
-    
+
     public void ApplyDamage(float damage) {
         health -= damage;
     }
@@ -57,15 +58,19 @@ public class Stats : MonoBehaviour {
             Death();
         }
     }
-    
+
     // get a speed relative to time
     public float GetProperSpeed() {
         return moveSpeed * Time.deltaTime;
     }
-    
+
     // if they die, we want to deactivate most things and let them be eaten
     private void Death() {
         if (isThereRagdoll)
             ragdoll.EnableRagdoll(true);
+    }
+
+    public void SpawnBloodParticles(Vector3 centerPosition, Quaternion rotation) {
+        Instantiate(bloodParticle, centerPosition, rotation);
     }
 }

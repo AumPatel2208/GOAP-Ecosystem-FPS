@@ -22,7 +22,7 @@ public class RagdollToggle : MonoBehaviour {
     
     
     void Awake() {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         // rigidbody = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         // aiComponent = GetComponent<Sabertooth>();

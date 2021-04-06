@@ -19,7 +19,7 @@ public class SwordAttack : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         animator.GetComponent<Animator>();
-
+        
         noOfClicks = 0;
         canClick = true;
     }
@@ -39,17 +39,7 @@ public class SwordAttack : MonoBehaviour {
             canClick = true;
         }
     }
-    //
-    // private void OnCollisionEnter(Collision other) {
-    //     Debug.Log("DAMAGEEEEEEEEEEEEEEE");
-    //     // if the player is in a state of attacking 
-    //     if (animator.GetInteger(hAttackNo) > 0) {
-    //         // 11 is life layer
-    //         if (other.gameObject.layer == 11) {
-    //             other.gameObject.GetComponent<Stats>().ApplyDamage(attackDamage);
-    //         }
-    //     }
-    // }
+
 
     private void OnTriggerEnter(Collider other) {
 
@@ -59,15 +49,14 @@ public class SwordAttack : MonoBehaviour {
             if (other.gameObject.layer == 11) {
                 if (other.gameObject.GetComponent<Stats>() != null){
                     other.gameObject.GetComponent<Stats>().ApplyDamage(attackDamage);
+                    
                     // instantiate blood particles when damaged
-                    Instantiate(other.gameObject.GetComponent<Stats>().bloodParticle,other.bounds.center, other.gameObject.transform.rotation);
+                    // Instantiate(other.gameObject.GetComponent<Stats>().bloodParticle,other.bounds.center, other.gameObject.transform.rotation);
+                    other.GetComponent<Stats>().SpawnBloodParticles(other.bounds.center, other.transform.rotation);
                 }
             }
         }
     }
-
- 
-
 
     private void ComboStarter() {
         if (canClick) {
