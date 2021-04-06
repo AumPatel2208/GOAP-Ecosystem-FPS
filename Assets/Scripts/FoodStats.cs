@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class FoodStats : MonoBehaviour {
@@ -10,9 +11,16 @@ public class FoodStats : MonoBehaviour {
     // public bool requiresKilling = false;
     public bool isReadyToEat = true;
 
+    public GameObject foodParticles;
+    
     private void Start() {
         if (isReadyToEat) {
             gameObject.GetComponent<Stats>().SetHealth(0f);
+        }
+        
+        // Get default particles if they haven't been set
+        if (foodParticles == null) {
+            foodParticles = PrefabUtility.LoadPrefabContents("Assets/Prefabs/Particles/FoodParticles.prefab");
         }
     }
 
@@ -34,6 +42,10 @@ public class FoodStats : MonoBehaviour {
     }   
     public void DepleteTotalFoodAmount() {
         totalFoodAmount -= foodAmount;
+    }
+    
+    public void SpawnFoodParticles(Vector3 centerPosition, Quaternion rotation) {
+        Instantiate(foodParticles, centerPosition, rotation);
     }
     
 }

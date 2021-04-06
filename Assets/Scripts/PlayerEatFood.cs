@@ -13,7 +13,7 @@ public class PlayerEatFood : MonoBehaviour {
     private Vector3 direction;
     private float maxDistance = 2.5f; // max distance that the ray can go
     public LayerMask layerMask; // life layer
-
+    public GameObject foodParticles;
     private bool currentUIStatus = true; // true is showing. should toggle off instantly in the update method
 
     public Text interactUI;
@@ -52,6 +52,7 @@ public class PlayerEatFood : MonoBehaviour {
             
             if (Input.GetKeyDown(KeyCode.E)) {
                 stats.AddFoodAmount(hit.transform.root.GetComponent<FoodStats>().foodAmount);
+                hit.transform.root.GetComponent<FoodStats>().SpawnFoodParticles(hit.transform.position, hit.transform.rotation); 
                 hit.transform.root.GetComponent<FoodStats>().DepleteTotalFoodAmount();
             }
         }else toggleUI(false);

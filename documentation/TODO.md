@@ -3,8 +3,9 @@
 - [ ] Roam action
 - [x] Enemy Damage
 - [ ] Death for enemy
-  - [ ] particles for eating
-  - [ ] death for sloth
+  - [x] particles for eating
+  - [x] death for sloth
+  - [ ] STOP THE AI WHEN IT REACHES
 - [ ] Death for player
 - [ ] Eat when there is a ready food until the food is gone
 - [ ] ranged weapon

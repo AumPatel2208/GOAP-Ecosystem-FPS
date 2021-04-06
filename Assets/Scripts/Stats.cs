@@ -66,8 +66,10 @@ public class Stats : MonoBehaviour {
 
     // if they die, we want to deactivate most things and let them be eaten
     private void Death() {
-        if (isThereRagdoll)
+        if (isThereRagdoll) {
             ragdoll.EnableRagdoll(true);
+            // GetComponent<GoapAgent>().enabled = false;
+        }
     }
 
     public void SpawnBloodParticles(Vector3 centerPosition, Quaternion rotation) {

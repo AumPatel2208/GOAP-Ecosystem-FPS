@@ -859,6 +859,8 @@ MonoBehaviour:
   foodAmount: 10
   totalFoodAmount: 100
   isReadyToEat: 1
+  foodParticles: {fileID: 881724516264668282, guid: c719af0b5b648488d80b664c8fb6a86f,
+    type: 3}
 --- !u!114 &891162434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1584,6 +1586,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
+  foodParticles: {fileID: 0}
   interactUI: {fileID: 0}
 --- !u!20 &1719344873 stripped
 Camera:
@@ -1791,7 +1794,7 @@ GameObject:
   - component: {fileID: 1895476057}
   - component: {fileID: 1895476056}
   - component: {fileID: 1895476055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2114,6 +2117,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sloth
       objectReference: {fileID: 0}
+    - target: {fileID: 2752777086730057768, guid: 14c5dc6e8c4014af1839e00c33635c28,
+        type: 3}
+      propertyPath: foodParticles
+      value: 
+      objectReference: {fileID: 881724516264668282, guid: d5557af4e3ed740af85403ba2e4d9978,
+        type: 3}
     - target: {fileID: 2752777086730057811, guid: 14c5dc6e8c4014af1839e00c33635c28,
         type: 3}
       propertyPath: m_RootOrder
@@ -2178,6 +2187,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4926187477672939504, guid: b0652642dd5e449cbaa4c34199f2ad7d,
+        type: 3}
+      propertyPath: foodParticles
+      value: 
+      objectReference: {fileID: 881724516264668282, guid: d5557af4e3ed740af85403ba2e4d9978,
+        type: 3}
     - target: {fileID: 4926187477672939505, guid: b0652642dd5e449cbaa4c34199f2ad7d,
         type: 3}
       propertyPath: bloodParticle
@@ -2338,6 +2353,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7378554617341923605, guid: 0adf28e64e9244389b7b6465e36dfed0,
+        type: 3}
+      propertyPath: foodParticles
+      value: 
+      objectReference: {fileID: 881724516264668282, guid: d5557af4e3ed740af85403ba2e4d9978,
+        type: 3}
     - target: {fileID: 9192695571379170451, guid: 0adf28e64e9244389b7b6465e36dfed0,
         type: 3}
       propertyPath: m_Name
