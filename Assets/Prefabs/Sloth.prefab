@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableDebugging: 0
-  stats: {fileID: 0}
+  stats: {fileID: 2752777086730057770}
 --- !u!114 &2752777086730057764
 MonoBehaviour:
   m_ObjectHideFlags: 0
