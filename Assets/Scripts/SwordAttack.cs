@@ -31,6 +31,13 @@ public class SwordAttack : MonoBehaviour {
             Debug.Log("Fire: canClick: " + canClick + " noOfClicks: " + noOfClicks + ". Current Animation:" + animator.GetInteger(hAttackNo));
             ComboStarter();
         }
+
+        // Added to reset the stuck animation if they click more than 3 times.
+        if (noOfClicks > 3) {
+            animator.SetInteger(hAttackNo, 0);
+            noOfClicks = 0;
+            canClick = true;
+        }
     }
     //
     // private void OnCollisionEnter(Collision other) {
@@ -74,7 +81,9 @@ public class SwordAttack : MonoBehaviour {
 
     public void ComboCheck() {
         // Debug.Log("ComboCheck: " + noOfClicks);
-        canClick = false;
+        
+        // commented out recently, works
+        // canClick = false;
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("swing_1") && noOfClicks == 1) {
             // set to idle
