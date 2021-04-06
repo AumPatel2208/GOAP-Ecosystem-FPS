@@ -54,8 +54,8 @@ public class Action_EatFood : GoapAction {
         
         // animate
         // will only work with the ones with a bite animation
-        if (GetComponent<Animator>() != null) {
-            GetComponent<Animator>().Play("Bite");
+        if (GetComponentInChildren<Animator>() != null) {
+            GetComponentInChildren<Animator>().Play("Bite");
         }
         
         // sets the food back to null because it has eaten it

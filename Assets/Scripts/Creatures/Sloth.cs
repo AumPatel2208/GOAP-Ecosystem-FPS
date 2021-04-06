@@ -21,7 +21,7 @@ public class Sloth : BaseAIGoap {
     }
 
     private void Start() {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
         destinationSetter = GetComponent<AIDestinationSetter>();
         movementController = GetComponent<AIPath>();

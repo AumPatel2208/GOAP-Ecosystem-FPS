@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerEatFood : MonoBehaviour {
     private Stats stats;
@@ -13,14 +14,25 @@ public class PlayerEatFood : MonoBehaviour {
     private float maxDistance = 2.5f; // max distance that the ray can go
     public LayerMask layerMask; // life layer
 
+    private bool currentUIStatus = true; // true is showing. should toggle off instantly in the update method
+
+    public Text interactUI;
 
     private void Awake() {
         stats = GetComponent<Stats>();
         
         layerMask = LayerMask.GetMask("Life");
+        interactUI = GameObject.Find("Text_E").GetComponent<Text>();
+        
     }
 
-
+    private void toggleUI(bool isActive) {
+        if (isActive != currentUIStatus) {
+            interactUI.enabled = isActive;
+            currentUIStatus = isActive;
+        }
+    }
+    
     // Update is called once per frame
     void Update() {
         direction = Camera.main.transform.forward;
@@ -31,10 +43,18 @@ public class PlayerEatFood : MonoBehaviour {
             // Debug.Log(hit.transform.root.gameObject.name);
             // interact with it
             // press E to eat
+            
+            // var root = hit.transform.root;
+            // interactUI.gameObject.transform.position = root.position + root.up.normalized * 0.5f;
+            // interactUI.gameObject.transform.forward = Camera.main.transform.forward;
+            
+            toggleUI(true);
+            
             if (Input.GetKeyDown(KeyCode.E)) {
                 stats.AddFoodAmount(hit.transform.root.GetComponent<FoodStats>().foodAmount);
                 hit.transform.root.GetComponent<FoodStats>().DepleteTotalFoodAmount();
             }
-        }
+        }else toggleUI(false);
+  
     }
 }
