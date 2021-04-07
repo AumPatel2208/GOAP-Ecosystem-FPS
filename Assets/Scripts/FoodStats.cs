@@ -20,7 +20,7 @@ public class FoodStats : MonoBehaviour {
         
         // Get default particles if they haven't been set
         if (foodParticles == null) {
-            foodParticles = PrefabUtility.LoadPrefabContents("Assets/Prefabs/Particles/FoodParticles.prefab");
+            // foodParticles = PrefabUtility.LoadPrefabContents("Assets/Prefabs/Particles/FoodParticles.prefab");
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class Stats : MonoBehaviour {
@@ -21,8 +22,12 @@ public class Stats : MonoBehaviour {
 
     protected RagdollToggle ragdoll;
     protected bool isThereRagdoll = false;
+    private bool isGoapAgentNotNull;
+    private bool isAIPathNotNull;
 
     public void Awake() {
+        isAIPathNotNull = GetComponent<AIPath>() != null;
+        isGoapAgentNotNull = GetComponent<GoapAgent>() != null;
         ragdoll = GetComponent<RagdollToggle>();
         if (ragdoll != null) {
             isThereRagdoll = true;
@@ -35,6 +40,11 @@ public class Stats : MonoBehaviour {
 
     public void ApplyDamage(float damage) {
         health -= damage;
+    }
+    
+    public void ApplyDamage(float damage, Vector3 centerPosition, Quaternion rotation) {
+        health -= damage;
+        SpawnBloodParticles(centerPosition, rotation);
     }
 
     public void DepleteHunger(float decrement) {
@@ -68,7 +78,10 @@ public class Stats : MonoBehaviour {
     private void Death() {
         if (isThereRagdoll) {
             ragdoll.EnableRagdoll(true);
-            // GetComponent<GoapAgent>().enabled = false;
+            if(isGoapAgentNotNull)
+                GetComponent<GoapAgent>().enabled = false;
+            if(isAIPathNotNull)
+                GetComponent<AIPath>().enabled = false;
         }
     }
 

@@ -402,6 +402,8 @@ MonoBehaviour:
   foodAmount: 10
   totalFoodAmount: 100
   isReadyToEat: 0
+  foodParticles: {fileID: 881724516264668282, guid: d5557af4e3ed740af85403ba2e4d9978,
+    type: 3}
 --- !u!114 &2752777086730057769
 MonoBehaviour:
   m_ObjectHideFlags: 0

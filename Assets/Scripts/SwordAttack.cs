@@ -28,7 +28,7 @@ public class SwordAttack : MonoBehaviour {
     void Update() {
         // https://youtu.be/NWt84YCMHHE Reference
         if (Input.GetButtonDown("Fire1")) {
-            Debug.Log("Fire: canClick: " + canClick + " noOfClicks: " + noOfClicks + ". Current Animation:" + animator.GetInteger(hAttackNo));
+            // Debug.Log("Fire: canClick: " + canClick + " noOfClicks: " + noOfClicks + ". Current Animation:" + animator.GetInteger(hAttackNo));
             ComboStarter();
         }
 
@@ -48,11 +48,10 @@ public class SwordAttack : MonoBehaviour {
             // 11 is life layer
             if (other.gameObject.layer == 11) {
                 if (other.gameObject.GetComponent<Stats>() != null){
-                    other.gameObject.GetComponent<Stats>().ApplyDamage(attackDamage);
-                    
+                    other.gameObject.GetComponent<Stats>().ApplyDamage(attackDamage, other.bounds.center, other.transform.rotation);
                     // instantiate blood particles when damaged
                     // Instantiate(other.gameObject.GetComponent<Stats>().bloodParticle,other.bounds.center, other.gameObject.transform.rotation);
-                    other.GetComponent<Stats>().SpawnBloodParticles(other.bounds.center, other.transform.rotation);
+                    // other.GetComponent<Stats>().SpawnBloodParticles(other.bounds.center, other.transform.rotation);
                 }
             }
         }
@@ -90,7 +89,7 @@ public class SwordAttack : MonoBehaviour {
             canClick = true;
         }
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("swing_2") && noOfClicks == 2) {
-            Debug.Log("swing2 and noCLicks 2");
+            // Debug.Log("swing2 and noCLicks 2");
             // set to idle
             animator.SetInteger(hAttackNo, 0);
 

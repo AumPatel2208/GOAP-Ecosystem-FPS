@@ -100,26 +100,6 @@
             </e>
             <e p="SeekerEditor.cs" t="Include" />
           </e>
-          <e p="ExampleScenes" t="Include">
-            <e p="_Example Scenes.txt" t="Include" />
-            <e p="Example12_Procedural" t="Include">
-              <e p="ProceduralGridMover.cs" t="Include" />
-              <e p="ProceduralWorld.cs" t="Include" />
-            </e>
-            <e p="ExampleScripts" t="Include">
-              <e p="AstarSmoothFollow2.cs" t="Include" />
-              <e p="DoorController.cs" t="Include" />
-              <e p="DynamicGridObstacle.cs" t="Include" />
-              <e p="MineBotAI.cs" t="Include" />
-              <e p="MineBotAnimation.cs" t="Include" />
-              <e p="ObjectPlacer.cs" t="Include" />
-              <e p="TargetMover.cs" t="Include" />
-            </e>
-            <e p="Materials" t="Include">
-              <e p="DiffuseAlwaysVisible.shader" t="Include" />
-              <e p="Projector Light.shader" t="Include" />
-            </e>
-          </e>
           <e p="Generators" t="Include">
             <e p="Base.cs" t="Include" />
             <e p="GridGenerator.cs" t="Include" />
@@ -221,6 +201,8 @@
               <e p="IGoap.cs" t="Include" />
             </e>
           </e>
+          <e p="Arrow.cs" t="Include" />
+          <e p="ArrowAttack.cs" t="Include" />
           <e p="AStarMovement.cs" t="Include" />
           <e p="Creatures" t="Include">
             <e p="Actions" t="Include">
@@ -250,6 +232,18 @@
           <e p="StatsUIController.cs" t="Include" />
           <e p="SwordAttack.cs" t="Include" />
           <e p="SwordCollision.cs" t="Include" />
+        </e>
+        <e p="Stylized Grass" t="Include">
+          <e p="Demo" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="SimpleCameraController.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Materials" t="Include">
+            <e p="Shader" t="Include">
+              <e p="GetMainLight.hlsl" t="Include" />
+            </e>
+          </e>
         </e>
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />

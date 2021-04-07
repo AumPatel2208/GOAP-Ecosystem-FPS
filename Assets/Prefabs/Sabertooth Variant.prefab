@@ -102,7 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiComponent: {fileID: 7378554617341923612}
-  currentState: 0
 --- !u!1001 &7378554617378676271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,6 +113,11 @@ PrefabInstance:
       propertyPath: enableDebugging
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114773818, guid: 465197a1bef4f8f4082b46fda460ee37, type: 3}
+      propertyPath: foodParticles
+      value: 
+      objectReference: {fileID: 881724516264668282, guid: d5557af4e3ed740af85403ba2e4d9978,
+        type: 3}
     - target: {fileID: 63631674567897663, guid: 465197a1bef4f8f4082b46fda460ee37,
         type: 3}
       propertyPath: m_Layer

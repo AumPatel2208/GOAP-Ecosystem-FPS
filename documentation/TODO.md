@@ -2,13 +2,16 @@
 
 - [ ] Roam action
 - [x] Enemy Damage
-- [ ] Death for enemy
+- [x] Death for enemy
   - [x] particles for eating
   - [x] death for sloth
-  - [ ] STOP THE AI WHEN IT REACHES
+  - [x] STOP THE AI WHEN IT DIES
 - [ ] Death for player
 - [ ] Eat when there is a ready food until the food is gone
 - [ ] ranged weapon
+  - [ ] Model
+  - [ ] Animation
+  - [ ] 
 - [ ] VISIBILITY
   - [ ] areas where there is low visibility
   - [ ] refine the find food to only find food based on the visibility

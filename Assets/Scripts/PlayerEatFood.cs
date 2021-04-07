@@ -20,10 +20,9 @@ public class PlayerEatFood : MonoBehaviour {
 
     private void Awake() {
         stats = GetComponent<Stats>();
-        
+
         layerMask = LayerMask.GetMask("Life");
         interactUI = GameObject.Find("Text_E").GetComponent<Text>();
-        
     }
 
     private void toggleUI(bool isActive) {
@@ -32,7 +31,7 @@ public class PlayerEatFood : MonoBehaviour {
             currentUIStatus = isActive;
         }
     }
-    
+
     // Update is called once per frame
     void Update() {
         direction = Camera.main.transform.forward;
@@ -43,19 +42,22 @@ public class PlayerEatFood : MonoBehaviour {
             // Debug.Log(hit.transform.root.gameObject.name);
             // interact with it
             // press E to eat
-            
+
             // var root = hit.transform.root;
             // interactUI.gameObject.transform.position = root.position + root.up.normalized * 0.5f;
             // interactUI.gameObject.transform.forward = Camera.main.transform.forward;
-            
-            toggleUI(true);
-            
-            if (Input.GetKeyDown(KeyCode.E)) {
-                stats.AddFoodAmount(hit.transform.root.GetComponent<FoodStats>().foodAmount);
-                hit.transform.root.GetComponent<FoodStats>().SpawnFoodParticles(hit.transform.position, hit.transform.rotation); 
-                hit.transform.root.GetComponent<FoodStats>().DepleteTotalFoodAmount();
+            if (hit.transform.root.GetComponent<FoodStats>().isReadyToEat) {
+                toggleUI(true);
+
+                if (Input.GetKeyDown(KeyCode.E)) {
+                    stats.AddFoodAmount(hit.transform.root.GetComponent<FoodStats>().foodAmount);
+                    hit.transform.root.GetComponent<FoodStats>().SpawnFoodParticles(hit.transform.position, hit.transform.rotation);
+                    hit.transform.root.GetComponent<FoodStats>().DepleteTotalFoodAmount();
+                }
             }
-        }else toggleUI(false);
-  
+        }
+        else {
+            toggleUI(false);
+        }
     }
 }
