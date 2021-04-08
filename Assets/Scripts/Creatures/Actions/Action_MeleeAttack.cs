@@ -27,6 +27,9 @@ public class Action_MeleeAttack : GoapAction {
     public override bool checkProceduralPrecondition(GameObject agent) {
         // target = GameObject.FindGameObjectWithTag("plant");
         target = agent.GetComponent<Food>().targetFood;
+        if (gameObject.GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Bite")) {
+            return false;
+        }
         if (target == null)
             return false;
 
@@ -45,10 +48,10 @@ public class Action_MeleeAttack : GoapAction {
 
         // do the action
         hasAttacked = true;
-        target.GetComponent<Stats>().ApplyDamage(attackDamage);
+        target.GetComponent<Stats>().ApplyDamage(attackDamage, target.transform.position, target.transform.rotation);
         // animate
-        if (gameObject.GetComponent<Animator>() != null) {
-            gameObject.GetComponent<Animator>().Play("Bite");
+        if (gameObject.GetComponentInChildren<Animator>() != null) {
+            gameObject.GetComponentInChildren<Animator>().Play("Bite");
         }
 
         return hasAttacked;

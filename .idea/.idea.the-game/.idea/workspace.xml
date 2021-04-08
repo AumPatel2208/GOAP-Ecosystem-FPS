@@ -5,303 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/ao.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/ao.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/crossbow.blend" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/crossbow.blend.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/crossbow.blend1.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/crossbow.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/crossbow.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/low_Material_BaseColor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/low_Material_BaseColor.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/low_Material_Height.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/low_Material_Height.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/low_Material_Metallic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/low_Material_Metallic.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/low_Material_Normalnew.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/low_Material_Normalnew.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/low_Material_Roughness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/crossbow/low_Material_Roughness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/arrow.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/arrow.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Grass.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Grass.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ArrowAttack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/GrassDemoScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/GrassDemoScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/GrassLayer.terrainlayer" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/GrassLayer.terrainlayer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/GrassSceneProfile.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/GrassSceneProfile.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/GrassTerain.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/GrassTerain.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/Grass_Skybox.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/Grass_Skybox.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/Scripts/SimpleCameraController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Demo/Scripts/SimpleCameraController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Grass.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Grass.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/MatGrass 1.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/MatGrass 1.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/MatGrass.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/MatGrass.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/MatGrass_LOD1.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/MatGrass_LOD1.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/Shader.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/Shader/GetMainLight.hlsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/Shader/GetMainLight.hlsl.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/Shader/GrassShader.shadergraph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Materials/Shader/GrassShader.shadergraph.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Mesh.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Mesh/Grass.FBX" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Mesh/Grass.FBX.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Textures/GrassDetail.TGA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Textures/GrassDetail.TGA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Textures/GrassOpacity.TGA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Textures/GrassOpacity.TGA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Textures/TerrainGrasTex.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/Textures/TerrainGrasTex.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/readme.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stylized Grass/readme.pdf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset_Renderer.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset_Renderer.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelling/crossbow/ao.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelling/crossbow/crossbow.blend" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelling/crossbow/crossbow.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelling/crossbow/low_Material_BaseColor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelling/crossbow/low_Material_Height.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelling/crossbow/low_Material_Metallic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelling/crossbow/low_Material_Normalnew.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelling/crossbow/low_Material_Roughness.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/Procedural.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/Procedural.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralGridMover.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralGridMover.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralGround.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralGround.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab3.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab3.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab4.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralPrefab4.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralWorld.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralWorld.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/TopDownOverlay.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/TopDownOverlay.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/cylinder.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example12_Procedural/cylinder.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example15_2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example15_2D/2D.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example15_2D/2D.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example2_Terrain.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example2_Terrain/Example2.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example2_Terrain/Example2.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example2_Terrain/Pathfinding_Terrain.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example2_Terrain/Pathfinding_Terrain.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example2_Terrain/checkerGround.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example2_Terrain/checkerGround.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example2_Terrain/dynamicObstacle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example2_Terrain/dynamicObstacle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph/ListCubes.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph/ListCubes.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph/PointGraphExample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph/PointGraphExample.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph/blackText.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph/blackText.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph/ex5Ground.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph/ex5Ground.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph/ground.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example5_PointGraph/ground.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example6_Navmesh.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/Materials/navmesh-navmesh_example6navmeshMat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/Materials/navmesh-navmesh_example6navmeshMat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/NavmeshExample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/NavmeshExample.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/navmesh.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/navmesh.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example9_Penalties.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example9_Penalties/PenaltiesExample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Example9_Penalties/PenaltiesExample.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/AstarSmoothFollow2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/AstarSmoothFollow2.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/DoorController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/DoorController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/DynamicGridObstacle.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/DynamicGridObstacle.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/MineBotAI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/MineBotAI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/MineBotAnimation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/MineBotAnimation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/ObjectPlacer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/ObjectPlacer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/TargetMover.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/TargetMover.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/AI.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/AI.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/BlueBox.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/BlueBox.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/BlueCheckerGround.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/BlueCheckerGround.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/BlueGround.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/BlueGround.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/DiffuseAlwaysVisible.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/DiffuseAlwaysVisible.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Door.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Door.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Ground.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Ground.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/GroundRTS.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/GroundRTS.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/OrangeGround.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/OrangeGround.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/PathBlueArea.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/PathBlueArea.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/PathGreyCube.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/PathGreyCube.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/PathRedArea.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/PathRedArea.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Projector Light.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Projector Light.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/SomeBox.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/SomeBox.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Textures/Falloff-Reflected.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Textures/Falloff-Reflected.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Textures/Falloff.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Textures/Falloff.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Textures/Shadow.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Textures/Shadow.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Wall.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Materials/Wall.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/DynamicObstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/DynamicObstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/Minebot.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/Minebot.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/Minebot_NRM.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/Minebot_NRM.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot-minebot.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot-minebot.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@awake-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@awake-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@back-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@back-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@forward 1-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@forward 1-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@forward-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@forward-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@left-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@left-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@right-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/Materials/mine_bot@right-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@awake.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@awake.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@back.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@back.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@forward.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@forward.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@left.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@left.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@right.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@right.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/SomeBox.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/SomeBox.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/TargetReachedEffect.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/Prefabs/TargetReachedEffect.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/_Example Scenes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/_Example Scenes.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodPoolParticle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodPoolParticle.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodSplashParticle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodSplashParticle.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodSplatParticle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodSplatParticle.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodStreamParticle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Blood/Materials/BloodStreamParticle.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/FutureTarget.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/FutureTarget.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Ground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Ground.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Player.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Player.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Blue2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Blue2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Blue3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Blue3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Brown.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Brown.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Cyan.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Cyan.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Green1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Green1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Green2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Green2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Grey1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Grey1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Grey2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Grey2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Grey3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Grey3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Grey4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Grey4.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Orange.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Purple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Purple.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_White.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Prototype_512x512_Yellow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Target.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Target.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/sword/Material.002.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/sword/Material.002.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/Materials/Blood.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Materials/Blood.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/Materials/Food.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Materials/Food.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/Materials/Plant.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Materials/Plant.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sabertooth Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sabertooth Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sloth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sloth.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Sabertooth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Sabertooth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FoodStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FoodStats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerEatFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerEatFood.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Demo/Prototype Materials Demo/GI Blocker.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Demo/Prototype Materials Demo/GI Blocker.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Demo/Prototype Materials Demo/Neon Light.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Demo/Prototype Materials Demo/Neon Light.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Brown.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Brown.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Cyan.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Cyan.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Green1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Green1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Green2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Green2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey4.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Orange.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Purple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Purple.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_White.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Yellow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/documentation/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/TODO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/the-game.sln" beforeDir="false" afterPath="$PROJECT_DIR$/the-game.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelling/crossbow/crossbow.blend" beforeDir="false" afterPath="$PROJECT_DIR$/modelling/crossbow/crossbow.blend" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,30 +89,30 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Food.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/OLDLizard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/GAgentVisual.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AStarMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SwordCollision.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs" />
       <option value="$PROJECT_DIR$/Assets/RagdollToggle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Fly.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Lizard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/GOAP/IGoap.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/BaseCreature.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Sabertooth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/BaseAIGoap.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/GOAP/GoapAgent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/GOAP/GoapPlanner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StatsUIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Sloth.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RagdollToggle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/FoodStats.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerEatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ArrowAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Stats.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Sabertooth.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/FoodStats.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerEatFood.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nqDH9RbKCaths3dqmALE3xCfzt" />
@@ -436,10 +150,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1312">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="1312" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -506,7 +220,8 @@
       <workItem from="1617625541723" duration="12808000" />
       <workItem from="1617671096814" duration="963000" />
       <workItem from="1617726100596" duration="6421000" />
-      <workItem from="1617807635163" duration="4325000" />
+      <workItem from="1617807635163" duration="5218000" />
+      <workItem from="1617888370239" duration="9106000" />
     </task>
     <servers />
   </component>

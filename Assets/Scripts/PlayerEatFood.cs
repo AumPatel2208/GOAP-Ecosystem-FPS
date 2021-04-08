@@ -12,7 +12,7 @@ public class PlayerEatFood : MonoBehaviour {
     private Vector3 origin;
     private Vector3 direction;
     private float maxDistance = 2.5f; // max distance that the ray can go
-    public LayerMask layerMask; // life layer
+    public LayerMask lifeLayerMask; // life layer
     public GameObject foodParticles;
     private bool currentUIStatus = true; // true is showing. should toggle off instantly in the update method
 
@@ -21,7 +21,7 @@ public class PlayerEatFood : MonoBehaviour {
     private void Awake() {
         stats = GetComponent<Stats>();
 
-        layerMask = LayerMask.GetMask("Life");
+        lifeLayerMask = LayerMask.GetMask("Life");
         interactUI = GameObject.Find("Text_E").GetComponent<Text>();
     }
 
@@ -37,7 +37,7 @@ public class PlayerEatFood : MonoBehaviour {
         direction = Camera.main.transform.forward;
         origin = Camera.main.transform.position;
         RaycastHit hit;
-        if (Physics.SphereCast(origin, thickness, direction, out hit, maxDistance, layerMask)) {
+        if (Physics.SphereCast(origin, thickness, direction, out hit, maxDistance, lifeLayerMask)) {
             // NOTE : WILL NOT WORK IF THE FOOD IS NOT ON THE ROOT
             // Debug.Log(hit.transform.root.gameObject.name);
             // interact with it
@@ -51,8 +51,8 @@ public class PlayerEatFood : MonoBehaviour {
 
                 if (Input.GetKeyDown(KeyCode.E)) {
                     stats.AddFoodAmount(hit.transform.root.GetComponent<FoodStats>().foodAmount);
-                    hit.transform.root.GetComponent<FoodStats>().SpawnFoodParticles(hit.transform.position, hit.transform.rotation);
-                    hit.transform.root.GetComponent<FoodStats>().DepleteTotalFoodAmount();
+                    // hit.transform.root.GetComponent<FoodStats>().SpawnFoodParticles(hit.transform.position, hit.transform.rotation);
+                    hit.transform.root.GetComponent<FoodStats>().DepleteTotalFoodAmount(hit.transform.position, hit.transform.rotation);
                 }
             }
         }

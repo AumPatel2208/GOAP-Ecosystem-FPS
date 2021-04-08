@@ -42,6 +42,10 @@ public class FoodStats : MonoBehaviour {
     }   
     public void DepleteTotalFoodAmount() {
         totalFoodAmount -= foodAmount;
+    }   
+    public void DepleteTotalFoodAmount(Vector3 centerPosition, Quaternion rotation) {
+        totalFoodAmount -= foodAmount;
+        SpawnFoodParticles(centerPosition, rotation);
     }
     
     public void SpawnFoodParticles(Vector3 centerPosition, Quaternion rotation) {

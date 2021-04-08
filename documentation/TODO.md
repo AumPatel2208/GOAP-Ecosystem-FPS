@@ -1,5 +1,10 @@
 # TODO
 
+## PROJECT
+- [ ] When talking about design patterns, mention how unity uses an Entity Component System.
+- [ ] 
+
+## CODE
 - [ ] Roam action
 - [x] Enemy Damage
 - [x] Death for enemy

@@ -209,7 +209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290227260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: -9.15}
+  m_LocalPosition: {x: 0.37, y: 5, z: -9.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -805,13 +805,14 @@ GameObject:
   - component: {fileID: 891162432}
   - component: {fileID: 891162433}
   - component: {fileID: 891162434}
+  - component: {fileID: 891162435}
   m_Layer: 11
   m_Name: Plant
   m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &891162432
 Transform:
   m_ObjectHideFlags: 0
@@ -820,7 +821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891162431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.58, y: 2.06, z: 5.19}
+  m_LocalPosition: {x: 10.58, y: 2.06, z: 5.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2074125419}
@@ -866,6 +867,19 @@ MonoBehaviour:
   staminaRegenRate: 2
   moveSpeed: 5
   bloodParticle: {fileID: 0}
+--- !u!135 &891162435
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891162431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1013629288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,7 +2051,6 @@ GameObject:
   - component: {fileID: 2074125419}
   - component: {fileID: 2074125422}
   - component: {fileID: 2074125421}
-  - component: {fileID: 2074125420}
   m_Layer: 11
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -2053,25 +2066,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074125418}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.99, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 891162432}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2074125420
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074125418}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2074125421
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2174,7 +2174,7 @@ PrefabInstance:
     - target: {fileID: 2752777086730057811, guid: 14c5dc6e8c4014af1839e00c33635c28,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.218929
+      value: 3.21
       objectReference: {fileID: 0}
     - target: {fileID: 2752777086730057811, guid: 14c5dc6e8c4014af1839e00c33635c28,
         type: 3}
@@ -2184,7 +2184,7 @@ PrefabInstance:
     - target: {fileID: 2752777086730057811, guid: 14c5dc6e8c4014af1839e00c33635c28,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.95
+      value: 42.74
       objectReference: {fileID: 0}
     - target: {fileID: 2752777086730057811, guid: 14c5dc6e8c4014af1839e00c33635c28,
         type: 3}
@@ -2238,17 +2238,17 @@ PrefabInstance:
     - target: {fileID: 4926187477672939506, guid: b0652642dd5e449cbaa4c34199f2ad7d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -15.57
       objectReference: {fileID: 0}
     - target: {fileID: 4926187477672939506, guid: b0652642dd5e449cbaa4c34199f2ad7d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 4.95
       objectReference: {fileID: 0}
     - target: {fileID: 4926187477672939506, guid: b0652642dd5e449cbaa4c34199f2ad7d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 7.69
       objectReference: {fileID: 0}
     - target: {fileID: 4926187477672939506, guid: b0652642dd5e449cbaa4c34199f2ad7d,
         type: 3}
@@ -2290,6 +2290,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4926187477672939508, guid: b0652642dd5e449cbaa4c34199f2ad7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926187478881888590, guid: b0652642dd5e449cbaa4c34199f2ad7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0652642dd5e449cbaa4c34199f2ad7d, type: 3}
 --- !u!1001 &7378554616092697144
@@ -2317,7 +2327,7 @@ PrefabInstance:
     - target: {fileID: 5316598531506200192, guid: 0adf28e64e9244389b7b6465e36dfed0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 39.61
+      value: 35.67
       objectReference: {fileID: 0}
     - target: {fileID: 5316598531506200192, guid: 0adf28e64e9244389b7b6465e36dfed0,
         type: 3}

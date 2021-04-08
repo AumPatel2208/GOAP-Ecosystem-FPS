@@ -28,6 +28,11 @@ public class Action_EatFood : GoapAction {
     public override bool checkProceduralPrecondition(GameObject agent) {
         // target = GameObject.FindGameObjectWithTag("plant");
         target = agent.GetComponent<Food>().targetFood;
+
+        if (gameObject.GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Bite")) {
+            return false;
+        }
+
         if (target == null)
             return false;
 
@@ -50,7 +55,7 @@ public class Action_EatFood : GoapAction {
         foodIsEaten = true;
         // agent.GetComponent<Stats>().hunger += target.GetComponent<FoodStats>().foodAmount;
         agent.GetComponent<Stats>().AddFoodAmount(target.GetComponent<FoodStats>().foodAmount); 
-        target.GetComponent<FoodStats>().DepleteTotalFoodAmount(target.GetComponent<FoodStats>().foodAmount);
+        target.GetComponent<FoodStats>().DepleteTotalFoodAmount(target.transform.position, target.transform.rotation);
         
         // animate
         // will only work with the ones with a bite animation

@@ -113,6 +113,22 @@ PrefabInstance:
       propertyPath: enableDebugging
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114773817, guid: 465197a1bef4f8f4082b46fda460ee37, type: 3}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 7768463473234229675}
+    - target: {fileID: 114773817, guid: 465197a1bef4f8f4082b46fda460ee37, type: 3}
+      propertyPath: viewAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114773817, guid: 465197a1bef4f8f4082b46fda460ee37, type: 3}
+      propertyPath: sphereRadius
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114773817, guid: 465197a1bef4f8f4082b46fda460ee37, type: 3}
+      propertyPath: lifeLayerMask.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 114773818, guid: 465197a1bef4f8f4082b46fda460ee37, type: 3}
       propertyPath: foodParticles
       value: 
@@ -371,7 +387,7 @@ PrefabInstance:
     - target: {fileID: 3435611440065986735, guid: 465197a1bef4f8f4082b46fda460ee37,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 39.61
+      value: 35.67
       objectReference: {fileID: 0}
     - target: {fileID: 3435611440065986735, guid: 465197a1bef4f8f4082b46fda460ee37,
         type: 3}
@@ -556,17 +572,17 @@ PrefabInstance:
     - target: {fileID: 7257788564480883425, guid: 465197a1bef4f8f4082b46fda460ee37,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 2.3283064e-10
+      value: 2.910383e-11
       objectReference: {fileID: 0}
     - target: {fileID: 7257788564480883425, guid: 465197a1bef4f8f4082b46fda460ee37,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0033220195
+      value: 0.003322024
       objectReference: {fileID: 0}
     - target: {fileID: 7257788564480883425, guid: 465197a1bef4f8f4082b46fda460ee37,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.0000000018626451
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7320318286063905833, guid: 465197a1bef4f8f4082b46fda460ee37,
         type: 3}
@@ -690,6 +706,12 @@ Rigidbody:
 --- !u!1 &3609731977593768617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6088229319005754502, guid: 465197a1bef4f8f4082b46fda460ee37,
+    type: 3}
+  m_PrefabInstance: {fileID: 7378554617378676271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7768463473234229675 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 984815017374623620, guid: 465197a1bef4f8f4082b46fda460ee37,
     type: 3}
   m_PrefabInstance: {fileID: 7378554617378676271}
   m_PrefabAsset: {fileID: 0}
