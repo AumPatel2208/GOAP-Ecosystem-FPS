@@ -37,5 +37,6 @@ namespace Creatures {
         }
 
         public abstract bool moveAgent(GoapAction nextAction);
+        protected abstract void StartMoving(bool toMove, Transform target);
     }
 }

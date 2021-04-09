@@ -141,7 +141,7 @@ public sealed class GoapAgent : MonoBehaviour {
                 dataProvider.actionsFinished();
                 return;
             }
-
+            
             GoapAction action = currentActions.Peek();
             if (action.isDone()) {
                 // the action is done. Remove it so we can perform the next one

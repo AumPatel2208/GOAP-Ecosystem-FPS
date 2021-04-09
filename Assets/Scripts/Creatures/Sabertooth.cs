@@ -68,33 +68,42 @@ namespace Creatures {
                 // we are at the target location, we are done
                 nextAction.setInRange(true);
 
-                // set astar target to null
-                destinationSetter.target = null;
+                // // set astar target to null
+                // destinationSetter.target = null;
+                //
+                // // stop moving
+                // movementController.canMove = false;
+                //
+                // // animate
+                // // idle
+                // animator.SetInteger(anim_MovementState, 0);
 
-                // stop moving
-                movementController.canMove = false;
-
-                // animate
-                // idle
-                animator.SetInteger(anim_MovementState, 0);
-
+                StartMoving(false, null);
+                
                 return true;
             }
             else {
 
-                if (destinationSetter.target == null) {
-                    destinationSetter.target = nextAction.target.transform;
-                }
+                // if (destinationSetter.target == null) {
+                //     destinationSetter.target = nextAction.target.transform;
+                // }
+                //
+                // movementController.canMove = true;
+                //
+                // // animate
+                // // walk
+                // animator.SetInteger(anim_MovementState, 1);
 
-                movementController.canMove = true;
-
-                // animate
-                // walk
-                animator.SetInteger(anim_MovementState, 1);
-
+                StartMoving(true, nextAction.target.transform);
+                
                 return false;
             }
         }
 
+        protected override void StartMoving(bool toMove, Transform target) {
+            destinationSetter.target = target;
+            movementController.canMove = toMove;
+            animator.SetInteger(anim_MovementState,toMove?1:0);
+        }
     }
 }

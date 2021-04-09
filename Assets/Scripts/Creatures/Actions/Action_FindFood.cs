@@ -72,7 +72,7 @@ public class Action_FindFood : GoapAction {
 
         foreach (Collider collider in hitColliders) {
             if (collider.transform.parent == null && !collider.CompareTag(transform.tag)) {
-                Debug.Log("Collider Name: " + collider.gameObject.name);
+                // Debug.Log("Collider Name: " + collider.gameObject.name);
                 // check angle
                 Vector3 targetDir = collider.transform.position - head.position;
                 float angle = Vector3.Angle(targetDir, head.forward);
@@ -95,7 +95,7 @@ public class Action_FindFood : GoapAction {
                 // check the angle
                 // does not check if there are obstacles in the way
                 if (viewAngle < angle ) {
-                    print("close");
+                    // print("close");
 
                     // get distance for current food
                     if (food != null) {

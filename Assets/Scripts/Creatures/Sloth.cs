@@ -13,11 +13,13 @@ public class Sloth : BaseAIGoap {
     private Animator animator;
     private AIDestinationSetter destinationSetter;
     private AIPath movementController;
+    private GoapAgent goapAgent;
 
 
     private void Awake() {
         if (gameObject.GetComponent<Stats>() == null)
             stats = gameObject.AddComponent<Stats>();
+        goapAgent = GetComponent<GoapAgent>();
     }
 
     private void Start() {
@@ -30,6 +32,10 @@ public class Sloth : BaseAIGoap {
     private void FixedUpdate() {
         // stats.hunger -= 0.01f;
         stats.DepleteHunger(0.01f);
+
+        // if there is no action, pick a random destination to move to.
+        if (destinationSetter.target == null) {
+        }
     }
 
 
@@ -62,32 +68,39 @@ public class Sloth : BaseAIGoap {
             nextAction.setInRange(true);
 
             // set astar target to null
-            destinationSetter.target = null;
+            // destinationSetter.target = null;
+            //
+            // // stop moving
+            // movementController.canMove = false;
+            //
+            // // animate
+            // // idle
+            // animator.SetBool("Moving", false);
 
-            // stop moving
-            movementController.canMove = false;
-
-            // animate
-            // idle
-            animator.SetBool("Moving", false);
-
+            StartMoving(false,null);
             return true;
         }
         else {
-            if (destinationSetter.target == null) {
-                destinationSetter.target = nextAction.target.transform;
-            }
-
-            movementController.canMove = true;
-
-            // animate
-            // walk
-            animator.SetBool("Moving", true);
-
+            // if (destinationSetter.target == null) {
+            //     destinationSetter.target = nextAction.target.transform;
+            // }
+            //
+            // movementController.canMove = true;
+            //
+            // // animate
+            // // walk
+            // animator.SetBool("Moving", true);
+            
+            StartMoving(true,nextAction.target.transform);
+            
             // gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, nextAction.target.transform.position, step);
             return false;
         }
     }
 
-
+    protected override void StartMoving(bool toMove, Transform target) {
+        destinationSetter.target = target;
+        movementController.canMove = toMove;
+        animator.SetBool("Moving",toMove);
+    }
 }
