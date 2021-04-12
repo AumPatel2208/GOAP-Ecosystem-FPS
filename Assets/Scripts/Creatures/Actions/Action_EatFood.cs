@@ -66,6 +66,8 @@ public class Action_EatFood : GoapAction {
         // sets the food back to null because it has eaten it
         // agent.GetComponent<Food>().targetFood = null;
         // Debug.Log("EATEN");
+               
+        
         return foodIsEaten;
     }
 

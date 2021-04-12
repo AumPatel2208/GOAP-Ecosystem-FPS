@@ -59,6 +59,21 @@ public class Stats : MonoBehaviour {
         return hunger < hungerThreshold;
     }
 
+    public float GetHealth() {
+        return health;
+    }  
+    public float GetStamina() {
+        return stamina;
+    }
+    public float GetHunger() {
+        return hunger;
+    } 
+    public float GetHungerThreshold() {
+        return hungerThreshold;
+    }
+    
+    
+    
     public bool IsDead() {
         return health <= 0;
     }

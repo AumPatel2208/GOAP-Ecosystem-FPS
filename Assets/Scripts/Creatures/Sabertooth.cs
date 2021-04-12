@@ -100,9 +100,14 @@ namespace Creatures {
             }
         }
 
-        protected override void StartMoving(bool toMove, Transform target) {
+        public override void StartMoving(bool toMove, Transform target) {
+            // set astar target to null
             destinationSetter.target = target;
+            
+            // stop moving
             movementController.canMove = toMove;
+            
+            // animate
             animator.SetInteger(anim_MovementState,toMove?1:0);
         }
     }
