@@ -17,7 +17,8 @@ public class Sloth : BaseAIGoap {
     private GoapAgent goapAgent;
     private static readonly int hMoving = Animator.StringToHash("Moving");
     private GameObject randomPositionObj;
-
+    
+    public LayerMask lifeLayerMask;
 
     private void Awake() {
         if (gameObject.GetComponent<Stats>() == null)
@@ -34,33 +35,12 @@ public class Sloth : BaseAIGoap {
     }
 
     private void FixedUpdate() {
-        // stats.hunger -= 0.01f;
         stats.DepleteHunger(0.01f);
-    
-        // RandomlyRoam();
+        
+        
+        // Collider[] hitColliders = Physics.OverlapSphere(transform.position, 80, lifeLayerMask);
     }
-    //
-    // private void RandomlyRoam() {
-    //     // if the destinationSetter's target position is the same as/close to the creature's position then make it null
-    //     if (Vector3.Distance(transform.position, randomPositionObj.transform.position) < 2f) {
-    //         // destinationSetter.target = null;
-    //         StartMoving(false,null );
-    //     }
-    //     
-    //     // if there is no action, pick a random destination to move to.
-    //     if (destinationSetter.target == null) {
-    //         // https://arongranberg.com/astar/documentation/dev_4_3_8_84e2f938/old/wander.php
-    //         GraphNode randomNode;
-    //         // For grid graphs
-    //         var grid = AstarPath.active.data.gridGraph;
-    //         randomNode = grid.nodes[Random.Range(0, grid.nodes.Length)];
-    //         // Use the center of the node as the destination for example
-    //         var randomNodePosition = (Vector3)randomNode.position;
-    //         
-    //         randomPositionObj.transform.position = randomNodePosition;
-    //         StartMoving(true,randomPositionObj.transform );
-    //     } 
-    // }
+
 
     public override HashSet<KeyValuePair<string, object>> getWorldState() {
         HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();

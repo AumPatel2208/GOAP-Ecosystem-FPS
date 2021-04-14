@@ -5,20 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Stats.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Stats.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RandomlyRoam.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RandomlyRoam.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RandomlyRoam.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sabertooth Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sabertooth Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sloth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sloth.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Stats.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Stats.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RandomlyRoam.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RandomlyRoam.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/BaseAIGoap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/BaseAIGoap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Sabertooth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Sabertooth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Sloth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Sloth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatsUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StatsUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/TODO.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +62,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C329B191-02C4-4F90-9872-5BD81AAF841F/2d/a19fc951/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeepOnFloor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///Applications/Unity/Hub/Editor/2019.4.19f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/RandomlyRoam.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/55/123dd69c/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -104,19 +105,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/RagdollToggle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ArrowAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SwordAttack.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FoodStats.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerEatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/GOAP/GoapAgent.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Stats.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StatsUIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/BaseAIGoap.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Sloth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Sabertooth.cs" />
       <option value="$PROJECT_DIR$/Assets/RandomlyRoam.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Stats.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Sloth.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nqDH9RbKCaths3dqmALE3xCfzt" />
@@ -229,7 +230,9 @@
       <workItem from="1617974276937" duration="528000" />
       <workItem from="1617975017096" duration="1413000" />
       <workItem from="1617989861440" duration="2336000" />
-      <workItem from="1618247079715" duration="2376000" />
+      <workItem from="1618247079715" duration="4375000" />
+      <workItem from="1618307897844" duration="1649000" />
+      <workItem from="1618392753171" duration="232000" />
     </task>
     <servers />
   </component>

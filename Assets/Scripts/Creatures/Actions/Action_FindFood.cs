@@ -83,7 +83,7 @@ public class Action_FindFood : GoapAction {
                 // gameObject.layer = LayerMask.GetMask("Ignore Raycast");
                 // bool didRaycastHit = Physics.Raycast(transform.position, targetDir, sphereRadius, lifeLayerMask);
                 // gameObject.layer = originalLayerMask;
-                
+
                 // RaycastHit hit;
                 // if (Physics.Raycast(transform.position, targetDir, out hit, sphereRadius, lifeLayerMask)) {
                 //     Debug.Log("Hit Info: " + hit.transform.name);
@@ -91,12 +91,10 @@ public class Action_FindFood : GoapAction {
 
                 // && Physics.Raycast(transform.position, targetDir, sphereRadius, lifeLayerMask)
                 // && didRaycastHit
-                
+
                 // check the angle
                 // does not check if there are obstacles in the way
-                if (viewAngle < angle ) {
-                    // print("close");
-
+                if (viewAngle < angle) {
                     // get distance for current food
                     if (food != null) {
                         selectedFoodDistance = Vector3.Distance(food.transform.position, head.position);

@@ -16,6 +16,8 @@ public class Stats : MonoBehaviour {
     public float stamina = 100;
     public float staminaRegenRate = 2;
     public float moveSpeed = 5;
+    public float threatLevel = 0f;
+    public float[] threatThresholds;
 
     // Particles
     public GameObject bloodParticle;
@@ -33,7 +35,13 @@ public class Stats : MonoBehaviour {
             isThereRagdoll = true;
         }
     }
-
+    
+    public void Update() {
+        if (IsDead()) {
+            Death();
+        }
+    }
+    
     public void SetHealth(float amount) {
         health = amount;
     }
@@ -71,19 +79,28 @@ public class Stats : MonoBehaviour {
     public float GetHungerThreshold() {
         return hungerThreshold;
     }
-    
-    
+
+    public void IncreaseThreatLevel(float amount) {
+        threatLevel += amount;
+    }
+
+    public float GetThreatLevel() {
+        return threatLevel;
+    }
+
+    public int IsThreatPastThreshold() {
+        for (int i = 0; i < threatThresholds.Length; i++) {
+            if (threatLevel > threatThresholds[i])
+                return i;
+        }
+
+        return -1;
+    }
     
     public bool IsDead() {
         return health <= 0;
     }
-
-    public void Update() {
-        if (IsDead()) {
-            Death();
-        }
-    }
-
+    
     // get a speed relative to time
     public float GetProperSpeed() {
         return moveSpeed * Time.deltaTime;
