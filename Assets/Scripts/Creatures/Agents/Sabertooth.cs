@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using Pathfinding;
+using Stats;
 using UnityEngine;
 
-namespace Creatures {
+namespace Creatures.Agents {
     public class Sabertooth : BaseAIGoap {
 
-        public Stats stats;
+        public Stats.Stats stats;
 
         private Animator animator;
         private AIDestinationSetter destinationSetter;
@@ -14,8 +15,8 @@ namespace Creatures {
         private static readonly int anim_MovementState = Animator.StringToHash("Movement State");
 
         private void Awake() {
-            if (gameObject.GetComponent<Stats>() == null)
-                stats = gameObject.AddComponent<Stats>();
+            if (gameObject.GetComponent<Stats.Stats>() == null)
+                stats = gameObject.AddComponent<Stats.Stats>();
         }
 
         // Start is called before the first frame update

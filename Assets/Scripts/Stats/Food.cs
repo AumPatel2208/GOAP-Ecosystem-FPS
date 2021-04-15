@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Food : MonoBehaviour {
-    public GameObject targetFood;
+namespace Stats {
+    public class Food : MonoBehaviour {
+        public GameObject targetFood;
+    }
 }

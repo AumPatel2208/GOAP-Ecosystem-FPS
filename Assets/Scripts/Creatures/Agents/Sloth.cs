@@ -1,95 +1,93 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Creatures;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using System.Collections.Generic;
 using Pathfinding;
-using Random = UnityEngine.Random;
+using Stats;
+using UnityEngine;
 
 
-public class Sloth : BaseAIGoap {
-    public Stats stats;
+namespace Creatures.Agents {
+    public class Sloth : BaseAIGoap {
+        public Stats.Stats stats;
 
-    private Animator animator;
-    private AIDestinationSetter destinationSetter;
-    private AIPath movementController;
-    private GoapAgent goapAgent;
-    private static readonly int hMoving = Animator.StringToHash("Moving");
-    private GameObject randomPositionObj;
+        private Animator animator;
+        private AIDestinationSetter destinationSetter;
+        private AIPath movementController;
+        private GoapAgent goapAgent;
+        private static readonly int hMoving = Animator.StringToHash("Moving");
+        private GameObject randomPositionObj;
     
-    public LayerMask lifeLayerMask;
+        public LayerMask lifeLayerMask;
 
-    private void Awake() {
-        if (gameObject.GetComponent<Stats>() == null)
-            stats = gameObject.AddComponent<Stats>();
-        goapAgent = GetComponent<GoapAgent>();
-    }
-
-    private void Start() {
-        animator = GetComponentInChildren<Animator>();
-
-        destinationSetter = GetComponent<AIDestinationSetter>();
-        movementController = GetComponent<AIPath>();
-        randomPositionObj = new GameObject("Random_Position");
-    }
-
-    private void FixedUpdate() {
-        stats.DepleteHunger(0.01f);
-        
-        
-        // Collider[] hitColliders = Physics.OverlapSphere(transform.position, 80, lifeLayerMask);
-    }
-
-
-    public override HashSet<KeyValuePair<string, object>> getWorldState() {
-        HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
-        worldData.Add(new KeyValuePair<string, object>("isHungry", stats.IsHungry()));
-        worldData.Add(new KeyValuePair<string, object>("foodFound", (gameObject.GetComponent<Food>().targetFood != null)));
-
-        return worldData;
-    }
-
-    public override HashSet<KeyValuePair<string, object>> createGoalState() {
-        HashSet<KeyValuePair<string, object>> goal = new HashSet<KeyValuePair<string, object>>();
-
-        goal.Add(new KeyValuePair<string, object>("isHungry", false));
-        goal.Add(new KeyValuePair<string, object>("foodFound", true));
-
-        return goal;
-    }
-
-    // MOVE
-    public override bool moveAgent(GoapAction nextAction) {
-        // move towards the NextAction's target
-        float step = stats.GetProperSpeed();
-
-        float distance = Vector3.Distance(gameObject.transform.position, nextAction.target.transform.position);
-        // check the distance of the player
-        if (distance < nextAction.radius) {
-            // we are at the target location, we are done
-            nextAction.setInRange(true);
-
-            StartMoving(false, null);
-            return true;
+        private void Awake() {
+            if (gameObject.GetComponent<Stats.Stats>() == null)
+                stats = gameObject.AddComponent<Stats.Stats>();
+            goapAgent = GetComponent<GoapAgent>();
         }
-        else {
 
-            StartMoving(true, nextAction.target.transform);
+        private void Start() {
+            animator = GetComponentInChildren<Animator>();
 
-            return false;
+            destinationSetter = GetComponent<AIDestinationSetter>();
+            movementController = GetComponent<AIPath>();
+            randomPositionObj = new GameObject("Random_Position");
         }
-    }
 
-    public override void StartMoving(bool toMove, Transform target) {
+        private void FixedUpdate() {
+            stats.DepleteHunger(0.01f);
         
-        // set astar target to null
-        destinationSetter.target = target;
         
-        // stop moving
-        movementController.canMove = toMove;
+            // Collider[] hitColliders = Physics.OverlapSphere(transform.position, 80, lifeLayerMask);
+        }
+
+
+        public override HashSet<KeyValuePair<string, object>> getWorldState() {
+            HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
+            worldData.Add(new KeyValuePair<string, object>("isHungry", stats.IsHungry()));
+            worldData.Add(new KeyValuePair<string, object>("foodFound", (gameObject.GetComponent<Food>().targetFood != null)));
+
+            return worldData;
+        }
+
+        public override HashSet<KeyValuePair<string, object>> createGoalState() {
+            HashSet<KeyValuePair<string, object>> goal = new HashSet<KeyValuePair<string, object>>();
+
+            goal.Add(new KeyValuePair<string, object>("isHungry", false));
+            goal.Add(new KeyValuePair<string, object>("foodFound", true));
+
+            return goal;
+        }
+
+        // MOVE
+        public override bool moveAgent(GoapAction nextAction) {
+            // move towards the NextAction's target
+            float step = stats.GetProperSpeed();
+
+            float distance = Vector3.Distance(gameObject.transform.position, nextAction.target.transform.position);
+            // check the distance of the player
+            if (distance < nextAction.radius) {
+                // we are at the target location, we are done
+                nextAction.setInRange(true);
+
+                StartMoving(false, null);
+                return true;
+            }
+            else {
+
+                StartMoving(true, nextAction.target.transform);
+
+                return false;
+            }
+        }
+
+        public override void StartMoving(bool toMove, Transform target) {
         
-        // animate
-        animator.SetBool(hMoving, toMove);
+            // set astar target to null
+            destinationSetter.target = target;
+        
+            // stop moving
+            movementController.canMove = toMove;
+        
+            // animate
+            animator.SetBool(hMoving, toMove);
+        }
     }
 }
