@@ -5,26 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.collabignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sabertooth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sabertooth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sloth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sloth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/RagdollToggle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/RagdollToggle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/Arrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/ArrowAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/ArrowAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/SwordAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/SwordAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEatFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEatFood.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/Food.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/Food.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/FoodStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/FoodStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/Stats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/StatsUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/StatsUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/TODO.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +97,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Attack/Arrow.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Attack/ArrowAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Attack/SwordAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sabertooth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sloth.cs" />
@@ -119,6 +104,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Attack/ArrowAttack.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nqDH9RbKCaths3dqmALE3xCfzt" />
@@ -234,7 +220,7 @@
       <workItem from="1618247079715" duration="4375000" />
       <workItem from="1618307897844" duration="1649000" />
       <workItem from="1618392753171" duration="3673000" />
-      <workItem from="1618509904302" duration="3097000" />
+      <workItem from="1618509904302" duration="4749000" />
     </task>
     <servers />
   </component>
