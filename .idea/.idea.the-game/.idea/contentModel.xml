@@ -201,8 +201,6 @@
               <e p="IGoap.cs" t="Include" />
             </e>
           </e>
-          <e p="Arrow.cs" t="Include" />
-          <e p="ArrowAttack.cs" t="Include" />
           <e p="AStarMovement.cs" t="Include" />
           <e p="Creatures" t="Include">
             <e p="Actions" t="Include">
@@ -211,28 +209,36 @@
               <e p="Action_MeleeAttack.cs" t="Include" />
               <e p="Action_Roam.cs" t="Include" />
             </e>
+            <e p="Agents" t="Include">
+              <e p="Sabertooth.cs" t="Include" />
+              <e p="Sloth.cs" t="Include" />
+            </e>
             <e p="BaseAIGoap.cs" t="Include" />
-            <e p="Fly.cs" t="Include" />
-            <e p="Lizard.cs" t="Include" />
-            <e p="Sabertooth.cs" t="Include" />
-            <e p="Sloth.cs" t="Include" />
+            <e p="RagdollToggle.cs" t="Include" />
+            <e p="RandomlyRoam.cs" t="Include" />
           </e>
-          <e p="Food.cs" t="Include" />
           <e p="FoodChain.cs" t="Include" />
-          <e p="FoodStats.cs" t="Include" />
-          <e p="InPlaceOfPlayer.cs" t="Include" />
-          <e p="KeepOnFloor.cs" t="Include" />
-          <e p="LegMove.cs" t="Include" />
-          <e p="LizardMove.cs" t="Include" />
-          <e p="MouseLook.cs" t="Include" />
-          <e p="PlayerEatFood.cs" t="Include" />
-          <e p="PlayerMovement.cs" t="Include" />
-          <e p="RagdollToggle.cs" t="Include" />
-          <e p="RandomlyRoam.cs" t="Include" />
-          <e p="Stats.cs" t="Include" />
-          <e p="StatsUIController.cs" t="Include" />
-          <e p="SwordAttack.cs" t="Include" />
-          <e p="SwordCollision.cs" t="Include" />
+          <e p="IK Delete" t="Include">
+            <e p="KeepOnFloor.cs" t="Include" />
+            <e p="LegMove.cs" t="Include" />
+            <e p="LizardMove.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
+            <e p="Attack" t="Include">
+              <e p="Arrow.cs" t="Include" />
+              <e p="ArrowAttack.cs" t="Include" />
+              <e p="SwordAttack.cs" t="Include" />
+            </e>
+            <e p="MouseLook.cs" t="Include" />
+            <e p="PlayerEatFood.cs" t="Include" />
+            <e p="PlayerMovement.cs" t="Include" />
+          </e>
+          <e p="Stats" t="Include">
+            <e p="Food.cs" t="Include" />
+            <e p="FoodStats.cs" t="Include" />
+            <e p="Stats.cs" t="Include" />
+            <e p="StatsUIController.cs" t="Include" />
+          </e>
         </e>
         <e p="Stylized Grass" t="Include">
           <e p="Demo" t="Include">

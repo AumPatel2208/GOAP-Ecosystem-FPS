@@ -42,7 +42,10 @@ public class SwordAttack : MonoBehaviour {
 
 
     private void OnTriggerEnter(Collider other) {
-
+        // If it is the player then ignore
+        if (other.CompareTag(transform.root.tag))
+            return;
+        
         // if the player is in a state of attacking 
         if (animator.GetInteger(hAttackNo) > 0) {
             // 11 is life layer

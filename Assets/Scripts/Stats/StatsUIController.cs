@@ -14,10 +14,6 @@ public class StatsUIController : MonoBehaviour {
     
     // Start is called before the first frame update
     void Awake() {
-      // healthBar =  transform.Find("StatsCanvas").Find("HealthBG").Find("HealthBar").gameObject.GetComponent<Image>();
-      // staminaBar =  transform.Find("StatsCanvas").Find("StaminaBG").Find("StaminaBar").gameObject.GetComponent<Image>();
-      // hungerBar =  transform.Find("StatsCanvas").Find("HungerBG").Find("HungerBar").gameObject.GetComponent<Image>();
-      // hungerThresholdBar =  transform.Find("StatsCanvas").Find("HungerBG").Find("HungerThresholdBar").gameObject.GetComponent<Image>();
        creature = gameObject.GetComponent<Stats>();
     }
 

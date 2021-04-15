@@ -12,10 +12,7 @@ public class GoapPlanner {
 	 * Returns null if a plan could not be found, or a list of the actions
 	 * that must be performed, in order, to fulfill the goal.
 	 */
-    public Queue<GoapAction> plan(GameObject agent,
-        HashSet<GoapAction> availableActions,
-        HashSet<KeyValuePair<string, object>> worldState,
-        HashSet<KeyValuePair<string, object>> goal) {
+    public Queue<GoapAction> plan(GameObject agent, HashSet<GoapAction> availableActions, HashSet<KeyValuePair<string, object>> worldState, HashSet<KeyValuePair<string, object>> goal) {
         // reset the actions so we can start fresh with them
         foreach (GoapAction a in availableActions) {
             a.doReset();
@@ -39,8 +36,8 @@ public class GoapPlanner {
 
         if (!success) {
             // oh no, we didn't get a plan
-            if(agent.GetComponent<BaseAIGoap>().enableDebugging)
-                Debug.Log(agent.name+ ": NO PLAN");
+            if (agent.GetComponent<BaseAIGoap>().enableDebugging)
+                Debug.Log(agent.name + ": NO PLAN");
             return null;
         }
 
@@ -87,15 +84,27 @@ public class GoapPlanner {
 
         // go through each action available at this node and see if we can use it here
         foreach (GoapAction action in usableActions) {
+            bool partial = false;
             // if the parent state has the conditions for this action's preconditions, we can use it here
-            if (inState(action.Preconditions, parent.state)) {
+            if (inState(action.Preconditions, parent.state, ref partial)) {
                 // apply the action's effects to the parent state
                 HashSet<KeyValuePair<string, object>> currentState = populateState(parent.state, action.Effects);
                 //Debug.Log(GoapAgent.prettyPrint(currentState));
                 Node node = new Node(parent, parent.runningCost + action.cost, currentState, action);
+                partial = false;
 
-                if (inState(goal, currentState)) {
+                if (inState(goal, currentState, ref partial)) {
                     // we found a solution!
+                    leaves.Add(node);
+                    foundOne = true;
+                }
+                // if it is a partial match, then It will scale the value by 3
+                else if (partial) {
+                    // we found a partial solution
+                    
+                    Debug.Log("Partial");
+                    // scale the running cost if it is a partial match, therefore prioritising full matches
+                    node.runningCost *= 10; 
                     leaves.Add(node);
                     foundOne = true;
                 }
@@ -129,13 +138,14 @@ public class GoapPlanner {
 	 * Check that all items in 'test' are in 'state'. If just one does not match or is not there
 	 * then this returns false.
 	 */
-    private bool inState(HashSet<KeyValuePair<string, object>> test, HashSet<KeyValuePair<string, object>> state) {
+    private bool inState(HashSet<KeyValuePair<string, object>> test, HashSet<KeyValuePair<string, object>> state, ref bool partialMatch) {
         bool allMatch = true;
         foreach (KeyValuePair<string, object> t in test) {
             bool match = false;
             foreach (KeyValuePair<string, object> s in state) {
                 if (s.Equals(t)) {
                     match = true;
+                    partialMatch = true;
                     break;
                 }
             }

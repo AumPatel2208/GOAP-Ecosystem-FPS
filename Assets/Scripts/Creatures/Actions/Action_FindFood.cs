@@ -14,7 +14,7 @@ public class Action_FindFood : GoapAction {
 
     public Action_FindFood() {
         addEffect("foodFound", true);
-        addEffect("isHungry", false);
+        // addEffect("isHungry", false);
     }
 
     public void Start() {

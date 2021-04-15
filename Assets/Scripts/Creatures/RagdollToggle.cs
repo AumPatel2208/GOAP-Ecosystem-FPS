@@ -23,11 +23,8 @@ public class RagdollToggle : MonoBehaviour {
     
     void Awake() {
         animator = GetComponentInChildren<Animator>();
-        // rigidbody = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-        // aiComponent = GetComponent<Sabertooth>();
 
-        // childrenColliders = GetComponentsInChildren<Collider>();
         
         // Using System.Linq to avoid getting the parent in the children list:
         // http://answers.unity.com/answers/1248479/view.html
@@ -73,18 +70,4 @@ public class RagdollToggle : MonoBehaviour {
         }
     }
     
-    // Update is called once per frame
-    void Update() {
-        // if the ragdolls are on
-        // if (currentState) {
-        //     var centerPoint = new Vector3(0f,0f,0f);
-        //     foreach (Collider childrenCollider in childrenColliders) {
-        //         centerPoint += childrenCollider.bounds.center;
-        //     }
-        //     centerPoint = centerPoint/childrenColliders.Length;
-        //
-        //     // move the box collider
-        //     boxCollider.center = centerPoint;
-        // }
-    }
 }

@@ -1,17 +1,25 @@
-\contentsline {chapter}{\numberline {1}Abstract}{2}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Introduction}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Output Summary}{4}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Literature Review}{5}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Methodology}{7}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Software Design Methodology}{7}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Tools}{7}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Unity (Game Engine)}{7}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}JetBrains Rider (IDE)}{7}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}GitHub}{8}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Blender}{8}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Adobe Photoshop}{8}{subsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.2.6}}{8}{subsection.5.2.6}%
-\contentsline {section}{\numberline {5.3}Milestone 1}{8}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Planning}{8}{subsection.5.3.1}%
-\contentsline {subsubsection}{Modelling the Actions}{9}{section*.2}%
-\contentsline {subsubsection}{Class Diagram}{9}{section*.3}%
+\contentsline {chapter}{\numberline {1}Abstract}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Introduction}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Output Summary}{5}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Literature Review}{6}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Method}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Software Design Methodology}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Tools}{9}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Unity (Game Engine)}{9}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}JetBrains Rider (IDE)}{10}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}GitHub}{10}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Blender}{10}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Adobe Photoshop}{10}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Adobe Illustrator}{11}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.7}diagrams.net}{11}{subsection.5.2.7}%
+\contentsline {section}{\numberline {5.3}Programming Patterns}{11}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Software Design}{13}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Modelling Actions}{13}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Class Diagrams}{13}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}User Interface}{13}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Misc}{13}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Planning}{13}{subsection.5.4.5}%
+\contentsline {section}{\numberline {5.5}Milestone 1}{13}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Planning}{13}{subsection.5.5.1}%
+\contentsline {subsubsection}{Modelling the Actions}{14}{section*.2}%
+\contentsline {subsubsection}{Class Diagram}{15}{section*.3}%

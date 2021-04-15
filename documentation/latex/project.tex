@@ -1,4 +1,6 @@
-\documentclass[10pt]{report}
+% changing latex compiler for use with external fonts
+% !TEX TS-program = xelatex
+\documentclass[12pt]{report}
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
@@ -8,6 +10,11 @@
 \usepackage{geometry} % shapes
 \usepackage{hyperref} % Links
 \usepackage{pdflscape} % making a page landscape
+\usepackage{listings} % writing code snippets
+\usepackage{fancyvrb} % extra functionality for verbatim
+% \usepackage{fontspec} % changing fonts
+\usepackage[]{microtype} %
+
 % \usepackage{microtype} % used for formatting nicely and getting rid of hbox badness
 % \usepackage{natbib}
 \usepackage{float} % to place figures in place
@@ -17,8 +24,24 @@
 \renewcommand{\bibname}{References}
 \renewcommand{\baselinestretch}{1.5}
 
+% font family change
+% \setmainfont{Times New Roman}
+
+
+
 \bibliographystyle{unsrtnat}
 \graphicspath{{../images/}}
+
+% setup the styling for code snippets
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+
 
 % hyperlink setup
 \hypersetup{
@@ -32,9 +55,9 @@
 % margins and page size
 \geometry{
 a4paper,
-left=30mm,
+left=25mm,
 top=25mm,
-right=30mm,
+right=25mm,
 bottom=25mm
 }
 
@@ -66,11 +89,12 @@ Finite state machines are the most rudimentary AI system, it is a system that I 
 Behaviour Trees were popularised by Halo 2\cite{halo2} and are now the most common AI technique used in modern games, this is due to there being a streamlined flow/logic to the readability of the AI, this makes it easier to expand while keeping debugging simple. The design is built using nodes as modules, allowing nodes to be reused with minimal effort. There is also a 'blackboard' where shared knowledge is kept which the AI uses to make 'smarter' decisions while keeping memory usage to a minimum. This all happens while keeping a low computational overhead if implemented correctly. \cite{behaviourTrees}
 
 Goal Oriented Action Planning (GOAP) was originally implemented in a game in F.E.A.R (First Encounter Assault Recon) by Jeff Orkin \cite{goap}. It is a system that is made up of many actions, these actions comprise of objects, preconditions and effects; an agent will decide on an action to execute based on their current situation and then work backwards through the preconditions to create an efficient plan of executing the actions. This is done using an A* path finding algorithm, the actions have different weightings based on how easy they are to execute from the current state of the agent. This system can be very easy to scale if the ground work is set up properly as all would have to be done is add more actions in. Similar to behaviour trees (BT), a blackboard is used to store shared data which the AI can use to make decisions. This system can have performance issues, as goals and plans will have to be calculated for every active agent very frequently, so increasing the number of agents in the scene will have a performance hit. This was an issue when F.E.A.R came out as the rats in the game used the same AI system as the enemies, and once a rat had spawn, it would not be destroyed, and this would accumulate over a long play session and cause performance issues. This system can create novel AI behaviour which isn't seen easily in BT and FSM AI design. This is the system I would like to implement as it would be easier to create AI that seems to behave 'organically' like they do in F.E.A.R.. \cite{goapTommyTompson} An example of this is given in Jeff Orkin's 2003 paper on the subject of applying GOAP\cite{applyingGoap}, he talks about a character X running out of ammunition in their weapon, given that their goal is still to eliminate the enemy, the planner will find another way of doing that - in the example, there is a laser that can be activated by both player and enemies - the planner will now find a combination of actions to execute in a particular order for the enemy to activate the laser to eliminate the player. This is a novel idea that the planner came up with by using what was in the environment, behaviour like this would be missed in games using behaviour trees as that particular course of action was not added into the tree.
-%might not need to cite tommy tompson
+%might not need to cite tommy thompson
 
-\chapter{Methodology}
+\chapter{Method}
 % methodology then tools used
 \section{Software Design Methodology}
+% IE. Agile or something
 
 The AI system is based around GOAP which works really well as a modular system that can bring about novel ideas by agents.
 
@@ -104,8 +128,73 @@ I used Blender as my 3D program of choice as it is very intuitive to learn and v
 \subsection{Adobe Photoshop}
 This is my image editor of choice as I am very well versed in it and have been using it over the past 6 years and professionally for the past 2 years.
 
-\subsection{}
+\subsection{Adobe Illustrator}
+Adobe Illustrator was the choice of vector editor used to design any graphical elements that cannot be created in Unity's GUI system and used to design the GUI in the planning phase. 
 
+\subsection{diagrams.net}
+Diagrams.net (formally known as draw.io) was used as the tool to create UML diagrams as it is a lightweight web-application providing all the necessary features and flexibility. The feature that came in most useful was the integration with github; I was able to save my diagrams and version them directly in the same repository.
+
+\section{Programming Patterns}
+The programming paradigm used was based around an Entity Component System (ECS) design where there are Entities in the world (the game objects) that are built up of components.
+Games in Unity are built around this paradigm, preferring a system of composition over inheritance. It allows for greater flexibility as unlike inheritance where you 'inherit' all features at once, you build the game object using components(C\# classes) that you build that are fulfil a very specific purpose. This leads to code being very modular and less coupled, leading to faster development as changing one component will not have a ripple effect on others. 
+The following shows the flaws with inheritance for development\cite{CompOverInherit}:
+\begin{lstlisting}
+ROBOT // parent class
+    .drive()
+        MurderRobot // inherited class
+            .kill()
+        
+        CleaningRobot // inherited class
+            .clean()
+
+ANIMAL // parent class
+    .poop()
+        Dog // inherited class
+            .bark()
+
+        Cat // inherited class
+            .meow()
+\end{lstlisting}
+Now the above works great and would serve you through most of the project, but the problem arises if down the line you would like to create a \lstinline{MurderRobotDog} that can \lstinline{drive()}, \lstinline{kill()} and \lstinline{bark()}, however being a robot it cannot  \lstinline{poop()}. There are only a few solutions around this, 
+
+1. you do a multiple inheritance and accept that you will have extra unnecessary functionality, 
+
+2. you create a new Robot inherited from  \lstinline{MurderRobot} and duplicate the  \lstinline{bark()} functionality, 
+
+3. you create a superclass of both that has a  \lstinline{bark()} functionality, this leads to unnecessary functionality in most instances. 
+
+To solve this problem you will have to take time out from creating new features and refactor the codebase to work within good coding standards\cite{codingPractices}.
+
+If designed using composition, it would look like the following \cite{CompOverInherit}:
+\begin{Verbatim}[frame=single]
+ENTITIES          COMPONENTS (in the form of classes)
+Dog             : pooper + barker
+Cat             : pooper + meower
+CleaningRobot   : driver + cleaner
+MurderRobot     : driver + killer
+MurderRobotDog  : driver + killer + barker
+\end{Verbatim}
+This provides you with the most flexibility to create whatever type of game object you would like while being loosely coupled and avoiding duplication.
+
+Inheritance was not abandoned and was used in the places necessary, like creating the \\ \lstinline{BaseAIGoap} class. %\\ to fix overfull h-box
+
+A game object with components can be saved as a prefab, which can then be reused, an example would be creating an enemy prefab, and then creating an enemy spawner that loads copies of that prefab into the scene.
+
+\section{Software Design}
+
+\subsection{Modelling Actions}
+The actions for the AI agents were modelled before modelling the class diagrams 
+
+\subsection{Class Diagrams}
+Class diagrams are a great to draw out a visual plan of what the system will look like. As I am using an ECS form of design
+
+\subsection{User Interface}
+Adobe Illustrator was used to draft out the user interface
+
+\subsection{Misc}
+
+\subsection{Planning}
+In the planning phase of starting the Unity Project, the 
 
 \section{Milestone 1}
 
@@ -119,6 +208,7 @@ On Jeff Orkin's website, there was a reference to ReGOAP by Luciano Ferraro, whi
 Based on all this I started creating my own GOAP system, however, it became very time consuming to create, and based on the gannt chart I had made, I was running behind on schedule; as the main focus of the project is to create the interaction between these different AI agents, and not the core AI system itself, I decided to use the implementation provided by Brent Owens \cite{brentOwensGoapCode} which is under the MIT licence. This is a very bare bones implementation only consisting of 6 scripts, and with the video explanation by TheHappieCat this was the simplest one I could implement and still have a great amount of flexibility in modifying the code due to its loosely coupled nature.
 
 After I landed on this implementation of GOAP, I decided to start modelling out the different actions (with their preconditions and effects (post-conditions)), different creatures with their world state and the list of goals they would like to achieve. As Unity works with game objects made up of components, I decided to plan out the agents in an unconventional manner before creating the class diagrams. 
+
 \subsubsection{Modelling the Actions}
 I abstracted the idea into the different actions the AI will be performing and the goals it will use to plan out the course of action. This simple set of action and goals is sufficient for the first build and will have the ground work to expand upon the next build.
 
@@ -129,7 +219,6 @@ I abstracted the idea into the different actions the AI will be performing and t
 \end{figure}
 
 \subsubsection{Class Diagram}
-Games in Unity are built on a system of composition and avoiding inheritance is promoted. It allows for greater flexibility as unlike inheritance where you 'inherit' all features at once, you build the game object using components(C\# classes) that you build that are fulfil a very specific purpose. This leads to code being very modular and less coupled, leading to faster development as changing one component will not have a ripple effect on others. A game object can be saved as a prefab, which can then be reused, an example would be creating an enemy prefab, and then creating an enemy spawner that loads copies of that prefab into the scene.
 
 \begin{figure}[H]
     \centering
@@ -139,11 +228,12 @@ Games in Unity are built on a system of composition and avoiding inheritance is 
 
 The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature.
 
-
+% \begin{glossary}
+% \end{glossary}
 
 \begin{thebibliography}{}
     \bibitem{doom93}
-    id Software, id Software, (1993). DOOM. [computer game]. Available at: \url{https://store.bethesda.net/store/bethesda/en_IE/pd/productID.5361563100/currency.GBP}
+    id Software, id Software, (1993). DOOM. [computer game]. \\Available at: \url{https://store.bethesda.net/store/bethesda/en_IE/pd/productID.5361563100/currency.GBP}
     \bibitem{farcry}
     Ubisoft.com. 2021. Far Cry franchise. [online] Available at: \url{https://www.ubisoft.com/en-gb/franchise/far-cry/} [Accessed 9 February 2021].
     \bibitem{farCryPrimalCompanions}
@@ -157,9 +247,9 @@ The Food Chain game object is unique in that there is only one required in a sce
     \bibitem{behaviourTrees}
     Simpson, C., 2014. Behavior trees for AI: How they work. [online] Gamasutra.com. Available at: \url{https://www.gamasutra.com/blogs/ChrisSimpson/20140717/221339/Behavior_trees_for_AI_How_they_work.php} [Accessed 12 February 2021].
     \bibitem{goap}
-    Orkin, J., n.d. Goal-Oriented Action Planning (GOAP). [online] Alumni.media.mit.edu. Available at: \url{http://alumni.media.mit.edu/~jorkin/goap.html} [Accessed 12 February 2021].
+    Orkin, J., n.d. Goal-Oriented Action Planning (GOAP). [online] \\Alumni.media.mit.edu. Available at: \url{http://alumni.media.mit.edu/~jorkin/goap.html} [Accessed 12 February 2021].
     \bibitem{applyingGoap}
-    Orkin, J., n.d. Applying Goal-Oriented Action Planning to Games. [online] Alumni.media.mit.edu. Available at: \url{http://alumni.media.mit.edu/~jorkin/GOAP_draft_AIWisdom2_2003.pdf} [Accessed 12 February 2021].
+    Orkin, J., n.d. Applying Goal-Oriented Action Planning to Games. [online] \\Alumni.media.mit.edu. Available at: \url{http://alumni.media.mit.edu/~jorkin/GOAP_draft_AIWisdom2_2003.pdf} [Accessed 12 February 2021].
     \bibitem{goapTommyTompson}
     Thompson, T., 2020. Building the AI of F.E.A.R. with Goal Oriented Action Planning. [online] Gamasutra.com. Available at: \url{https://www.gamasutra.com/blogs/TommyThompson/20200507/362417/Building_the_AI_of_FEAR_with_Goal_Oriented_Action_Planning.php} [Accessed 13 February 2021].
     \bibitem{fearSDK}
@@ -172,7 +262,12 @@ The Food Chain game object is unique in that there is only one required in a sce
     Owens, B., 2014. Goal Oriented Action Planning for a Smarter AI. [online] Game Development Envato Tuts+. Available at: \url{https://gamedevelopment.tutsplus.com/tutorials/goal-oriented-action-planning-for-a-smarter-ai--cms-20793} [Accessed 13 February 2021].
     \bibitem{brentOwensGoapCode}
     Owens, B., 2014. Goal Oriented Action Planning for a Smarter AI. [code]. Available at: \url{https://github.com/sploreg/goap} [Accessed 13 February 2021].
-
+    \bibitem{drawIo}
+    App.diagrams.net. 2021. Flowchart Maker \& Online Diagram Software. [online] Available at: \url{https://app.diagrams.net/} [Accessed 20 February 2021].
+    \bibitem{codingPractices}
+    En.wikipedia.org. n.d. Coding best practices - Wikipedia. [online] Available at: \url{https://en.wikipedia.org/wiki/Coding_best_practices} [Accessed 15 April 2021].
+    \bibitem{CompOverInherit}
+    Youtu.be. 2021. Composition over Inheritance. [online] Available at: \url{https://youtu.be/wfMtDGfHWpA} [Accessed 15 April 2021].
 
 \end{thebibliography}
 \end{document}
