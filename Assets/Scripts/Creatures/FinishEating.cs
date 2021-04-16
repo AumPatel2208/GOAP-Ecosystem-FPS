@@ -29,11 +29,14 @@ namespace Creatures {
             else {
                 // if within the distance than perform the action
                 if (destinationSetter.target != null) {
-                    if (Vector3.Distance(destinationSetter.target.position, transform.position) < eatAction.radius) {
-                        eatAction.perform(gameObject);
+                    if (!gameObject.GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Bite")) {
+                        if (Vector3.Distance(destinationSetter.target.position, transform.position) < eatAction.radius) {
+                            eatAction.perform(gameObject);
+                        }
+                        isInProgress = true;
                     }
 
-                    isInProgress = true;
+            
                 }
                 else {
                     isInProgress = false;

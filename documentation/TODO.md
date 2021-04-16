@@ -21,7 +21,7 @@
   - [x] death for sloth
   - [x] STOP THE AI WHEN IT DIES
 - [ ] Death for player
-- [ ] Eat when there is a ready food until the food is gone
+- [x] Eat when there is a ready food until the food is gone
 - [ ] ranged weapon
   - [ ] Model
   - [ ] Animation

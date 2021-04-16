@@ -35,12 +35,7 @@ namespace Creatures.Actions {
             if (target == null)
                 return false;
 
-            // return true;
-
-            if (target.GetComponent<FoodStats>().isReadyToEat)
-                return true;
-            else
-                return false;
+            return target.GetComponent<FoodStats>().isReadyToEat;
 
         }
 

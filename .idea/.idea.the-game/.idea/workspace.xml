@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/FinishEating.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/FinishEating.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/240x240 gradient.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/240x240 gradient.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sloth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sloth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/StatsUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/StatsUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/FinishEating.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/FinishEating.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/documentation/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/TODO.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,14 +95,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Attack/Arrow.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Attack/SwordAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sabertooth.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Attack/ArrowAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Stats/StatsUIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sloth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/FinishEating.cs" />
     </changedPaths>
   </component>
@@ -231,7 +223,7 @@
       <workItem from="1618576855432" duration="816000" />
       <workItem from="1618577746500" duration="55000" />
       <workItem from="1618577819049" duration="122000" />
-      <workItem from="1618577986826" duration="1377000" />
+      <workItem from="1618577986826" duration="1775000" />
     </task>
     <servers />
   </component>

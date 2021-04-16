@@ -30,15 +30,9 @@ namespace Creatures.Actions {
             if (gameObject.GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Bite")) {
                 return false;
             }
-            if (target == null)
-                return false;
+            
+            return target != null;
 
-            return true;
-
-            // if (target.GetComponent<FoodStats>().isReadyToEat)
-            //     return true;
-            // else
-            //     return false;
         }
 
         public override bool perform(GameObject agent) {
