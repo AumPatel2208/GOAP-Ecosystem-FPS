@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
@@ -17,8 +18,14 @@ namespace Player.Attack {
 
         private float arrowForce = 0f;
 
-        public Image arrowCharge;
-        
+        public Image arrowChargeMeter;
+
+        private void Start() {
+            if (arrowChargeMeter == null) {
+                arrowChargeMeter = GameObject.Find("ArrowChargeMeter").GetComponent<Image>();
+            }
+        }
+
         // Update is called once per frame
         void Update() {
             if (Input.GetButtonDown("Fire2")) {
@@ -36,7 +43,7 @@ namespace Player.Attack {
                 arrowForce = 0f;
             }
 
-            arrowCharge.fillAmount = arrowForce / maxArrowForce;
+            arrowChargeMeter.fillAmount = arrowForce / maxArrowForce;
         }
 
         private void FixedUpdate() {
