@@ -30,7 +30,7 @@
   - [ ] areas where there is low visibility
   - [ ] refine the find food to only find food based on the visibility
 - [x] ranged weapon
-  - [ ] Charge the cross bow
+  - [x] Charge the cross bow
   - [ ] 
 - [ ] dark souls like death system
 - [ ] 

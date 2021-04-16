@@ -6,25 +6,38 @@ namespace Creatures {
         private GameObject randomPositionObj;
         private AIDestinationSetter destinationSetter;
         public BaseAIGoap creature;
+        private FinishEating finishEating;
+        private bool isFinishEatingNull;
 
         void Awake() {
             destinationSetter = GetComponent<AIDestinationSetter>();
-            creature= GetComponent<BaseAIGoap>();
+            creature = GetComponent<BaseAIGoap>();
             randomPositionObj = new GameObject("Random_Position");
+            finishEating = GetComponent<FinishEating>();
+            if (finishEating == null)
+                isFinishEatingNull = true;
         }
 
 
         // Update is called once per frame
         void FixedUpdate() {
-            Roam();
+            if (isFinishEatingNull) {
+                Roam();
+            }
+            else {
+                if (!finishEating.IsInProgress()) {
+                    Roam();
+                }
+            }
         }
 
         private void Roam() {
             // if the destinationSetter's target position is the same as/close to the creature's position then make it null
             if (Vector3.Distance(transform.position, randomPositionObj.transform.position) < 2f) {
-                // destinationSetter.target = null;
                 creature.StartMoving(false, null);
             }
+
+            // before randomly roaming, see if there is a food available and start going there and eat it.
 
             // if there is no action, pick a random destination to move to.
             if (destinationSetter.target == null) {

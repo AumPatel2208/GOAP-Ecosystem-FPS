@@ -213,6 +213,7 @@
               <e p="Sloth.cs" t="Include" />
             </e>
             <e p="BaseAIGoap.cs" t="Include" />
+            <e p="FinishEating.cs" t="Include" />
             <e p="RagdollToggle.cs" t="Include" />
             <e p="RandomlyRoam.cs" t="Include" />
           </e>

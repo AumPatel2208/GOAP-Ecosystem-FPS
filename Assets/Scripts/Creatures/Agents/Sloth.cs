@@ -33,6 +33,7 @@ namespace Creatures.Agents {
 
         private void FixedUpdate() {
             stats.DepleteHunger(0.01f);
+            
         
         
             // Collider[] hitColliders = Physics.OverlapSphere(transform.position, 80, lifeLayerMask);
