@@ -51,8 +51,8 @@ MonoBehaviour:
   baseArrowForce: 3
   maxArrowForce: 100
   deleteTime: 2
-  incrementValue: 1
-  arrowCharge: {fileID: 0}
+  incrementValue: 2
+  arrowChargeMeter: {fileID: 0}
 --- !u!1 &4926187477372630956
 GameObject:
   m_ObjectHideFlags: 0

@@ -2609,10 +2609,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1178583939, guid: b0652642dd5e449cbaa4c34199f2ad7d, type: 3}
-      propertyPath: arrowCharge
-      value: 
-      objectReference: {fileID: 1363306588}
     - target: {fileID: 4926187477672939506, guid: b0652642dd5e449cbaa4c34199f2ad7d,
         type: 3}
       propertyPath: m_RootOrder

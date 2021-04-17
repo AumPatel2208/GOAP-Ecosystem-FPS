@@ -21,16 +21,17 @@
   - [x] death for sloth
   - [x] STOP THE AI WHEN IT DIES
 - [ ] Death for player
+  - [ ] Jank right now
 - [x] Eat when there is a ready food until the food is gone
-- [ ] ranged weapon
-  - [ ] Model
-  - [ ] Animation
-  - [ ] 
+- [x] ranged weapon
+  - [x] Model
+  - [x] Code
 - [ ] VISIBILITY
+  - [x] Vision Cone
   - [ ] areas where there is low visibility
   - [ ] refine the find food to only find food based on the visibility
 - [x] ranged weapon
   - [x] Charge the cross bow
   - [ ] 
-- [ ] dark souls like death system
-- [ ] 
+- [ ] Flee action when Threatened 
+  - [ ] 
