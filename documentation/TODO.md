@@ -34,4 +34,5 @@
   - [x] Charge the cross bow
   - [ ] 
 - [ ] Flee action when Threatened 
-  - [ ] 
+- [ ] Sabertooth can attack sabertooths
+- [ ] 
