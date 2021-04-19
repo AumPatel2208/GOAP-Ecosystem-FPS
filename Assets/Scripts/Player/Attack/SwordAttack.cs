@@ -41,6 +41,7 @@ namespace Player.Attack {
 
         private void OnTriggerEnter(Collider other) {
             // If it is the player then ignore
+            
             if (other.CompareTag(transform.root.tag))
                 return;
         

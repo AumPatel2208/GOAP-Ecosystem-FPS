@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class FoodChain : MonoBehaviour {
     public const string NAME_PLAYER = "player";
-    public const string NAME_LIZARD = "lizard";
-    public const string NAME_FLY = "fly";
+    public const string NAME_SABERTOOTH = "sabertooth";
+    public const string NAME_SLOTH = "sloth";
     public const string NAME_PLANT = "plant";
 
     // predators
@@ -17,13 +17,14 @@ public class FoodChain : MonoBehaviour {
 
     public void Awake() {
         // Create the food chain
-        addToChain(NAME_PLAYER,NAME_LIZARD);
-        addToChain(NAME_PLAYER, NAME_FLY);
+        addToChain(NAME_PLAYER,NAME_SABERTOOTH);
+        addToChain(NAME_PLAYER, NAME_SLOTH);
         addToChain(NAME_PLAYER, NAME_PLANT);
-        addToChain(NAME_LIZARD, NAME_PLAYER);
-        addToChain(NAME_LIZARD, NAME_FLY);
+        addToChain(NAME_SABERTOOTH, NAME_PLAYER);
+        addToChain(NAME_SABERTOOTH, NAME_SABERTOOTH);
+        addToChain(NAME_SABERTOOTH, NAME_SLOTH);
         // addToChain(NAME_LIZARD, NAME_PLANT);
-        addToChain(NAME_FLY, NAME_PLANT);
+        addToChain(NAME_SLOTH, NAME_PLANT);
         // Debug.Log(foods);
         // Debug.Log(threats);
         // Debug.Log("Player Threats Count: " + threats[NAME_PLAYER].Count);

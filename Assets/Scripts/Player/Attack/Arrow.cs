@@ -18,6 +18,11 @@ namespace Player.Attack {
         }
 
         private void OnCollisionEnter(Collision other) {
+            
+
+            if (other.collider.CompareTag("player"))
+                return;
+            
             // 11 is life layer
             if (!usedUp && other.gameObject.layer == 11) {
 

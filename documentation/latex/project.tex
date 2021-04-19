@@ -183,22 +183,20 @@ A game object with components can be saved as a prefab, which can then be reused
 \section{Software Design}
 
 \subsection{Modelling Actions}
-The actions for the AI agents were modelled before modelling the class diagrams 
+The actions for the AI agents were modelled before modelling the class diagrams. 
 
 \subsection{Class Diagrams}
-Class diagrams are a great to draw out a visual plan of what the system will look like. As I am using an ECS form of design
+Class diagrams are a great to draw out a visual plan of what the system will look like. As I am using an ECS form of design, the class diagram will mainly consists of many classes with compositional relationships.
 
-\subsection{User Interface}
-Adobe Illustrator was used to draft out the user interface
+\subsection{User Interface (UI)}
+Adobe Illustrator was used to draft out the user interface. Some UI elements will exist within the 3D world space, these are called spacial UI elements; these types of UI elements allow the player to receive the information they require without taking up much space on the orthographic canvas where more player related statistics can go.\cite{UIChoices}
 
 \subsection{Misc}
 
-\subsection{Planning}
-In the planning phase of starting the Unity Project, the 
+\chapter{Result}
+% \section{Milestone 1}
 
-\section{Milestone 1}
-
-\subsection{Planning}
+\section{Planning}
 I did extensive reading through the FEAR SDK\cite{fearSDK} that contains the full AI source code to fully understand the implementation of GOAP.
 I also read up on many other implementations of GOAP and all of them are done in a very similar way with only minor structural differences. 
 Peter Klooster created a multi-threaded GOAP System for Unity3D which he originally used in his game Basher Beatdown \cite{basherGoap}. This is a pretty simple implementation that includes a visualiser for the system as well.
@@ -209,7 +207,7 @@ Based on all this I started creating my own GOAP system, however, it became very
 
 After I landed on this implementation of GOAP, I decided to start modelling out the different actions (with their preconditions and effects (post-conditions)), different creatures with their world state and the list of goals they would like to achieve. As Unity works with game objects made up of components, I decided to plan out the agents in an unconventional manner before creating the class diagrams. 
 
-\subsubsection{Modelling the Actions}
+\section{Modelling the Actions}
 I abstracted the idea into the different actions the AI will be performing and the goals it will use to plan out the course of action. This simple set of action and goals is sufficient for the first build and will have the ground work to expand upon the next build.
 
 \begin{figure}[H]
@@ -218,7 +216,7 @@ I abstracted the idea into the different actions the AI will be performing and t
     \caption{Goals and Actions}
 \end{figure}
 
-\subsubsection{Class Diagram}
+\section{Class Diagram}
 
 \begin{figure}[H]
     \centering
@@ -226,10 +224,35 @@ I abstracted the idea into the different actions the AI will be performing and t
     \caption{Class Diagram}
 \end{figure}
 
-The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature.
+The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature. The circle's are important game objects in the main Unity Scene, and they will be able to access each other.
 
-% \begin{glossary}
-% \end{glossary}
+\subsection{UI}
+For the UI of the game, a decision was made to go without a main menu screen as there is only one level showcasing the use of the AI. 
+
+The first UI designed was for the Creature displaying the stats above their meshes in game. This is one of the spacial UI elements in the game. Below is the initial sketch created in Adobe Illustrator.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 7cm ]{Stats_UI.jpg}}
+    \caption{Creature UI Sketch}
+\end{figure}
+
+In Unity this was done by creating a canvas with multiple image sprites, these image sprites have a fill amount that goes from 0 to 1 which can be easily interpolated between by dividing the current values of the stat by their max value.
+
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Stats_UI_Above_Sloth.png}}
+        \caption{Creature UI in Unity}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 5cm ]{Unity_Image_Panel.png}}
+        \caption{Image Component in Unity}
+    \end{minipage}
+\end{figure}
+
+This canvas is parented to the Creature and the position is offset on the Y axis, so its transformation will follow its parent.
 
 \begin{thebibliography}{}
     \bibitem{doom93}
@@ -268,6 +291,7 @@ The Food Chain game object is unique in that there is only one required in a sce
     En.wikipedia.org. n.d. Coding best practices - Wikipedia. [online] Available at: \url{https://en.wikipedia.org/wiki/Coding_best_practices} [Accessed 15 April 2021].
     \bibitem{CompOverInherit}
     Youtu.be. 2021. Composition over Inheritance. [online] Available at: \url{https://youtu.be/wfMtDGfHWpA} [Accessed 15 April 2021].
-
+    \bibitem{UIChoices}
+    F, J., 2021. What Are Your UI Choices. [online] Medium. Available at: \url{https://medium.com/@gfruity/what-are-your-ui-choices-834ea7d937c} [Accessed 18 April 2021].
 \end{thebibliography}
 \end{document}

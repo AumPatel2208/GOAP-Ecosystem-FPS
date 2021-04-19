@@ -71,7 +71,8 @@ namespace Creatures.Actions {
             float selectedFoodDistance = 0;
 
             foreach (Collider collider in hitColliders) {
-                if (collider.transform.parent == null && !collider.CompareTag(transform.tag)) {
+                // if (collider.transform.parent == null && !collider.CompareTag(transform.tag)) { // taking this out as to be able to target other enemies of the same species
+                if (collider.transform.parent == null ) {
                     // Debug.Log("Collider Name: " + collider.gameObject.name);
                     // check angle
                     Vector3 targetDir = collider.transform.position - head.position;

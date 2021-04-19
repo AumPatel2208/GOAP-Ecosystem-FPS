@@ -49,7 +49,7 @@ namespace Player.Attack {
         private void FixedUpdate() {
             if (isKeyDown && arrowForce<=maxArrowForce) {
                 arrowForce += incrementValue;
-                Debug.Log("Arrow Force: "+ arrowForce);
+                // Debug.Log("Arrow Force: "+ arrowForce);
             }
         }
     }

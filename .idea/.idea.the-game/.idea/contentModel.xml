@@ -218,11 +218,6 @@
             <e p="RandomlyRoam.cs" t="Include" />
           </e>
           <e p="FoodChain.cs" t="Include" />
-          <e p="IK Delete" t="Include">
-            <e p="KeepOnFloor.cs" t="Include" />
-            <e p="LegMove.cs" t="Include" />
-            <e p="LizardMove.cs" t="Include" />
-          </e>
           <e p="Player" t="Include">
             <e p="Attack" t="Include">
               <e p="Arrow.cs" t="Include" />

@@ -361,6 +361,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableDebugging: 0
   stats: {fileID: 2752777086730057770}
+  lifeLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &2752777086730057773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -461,6 +464,8 @@ MonoBehaviour:
   stamina: 100
   staminaRegenRate: 2
   moveSpeed: 5
+  threatLevel: 0
+  threatThresholds: []
   bloodParticle: {fileID: 7961427485859003019, guid: 4800b1317069c4704b9fd11904f06511,
     type: 3}
 --- !u!114 &2752777086730057764
@@ -1682,6 +1687,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stats
+      objectReference: {fileID: 0}
+    - target: {fileID: 522910547430202849, guid: eb74f0a1beb4145ebb72d66a23450483,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb74f0a1beb4145ebb72d66a23450483, type: 3}

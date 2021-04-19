@@ -4,12 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - lizard
   - player
   - plant
-  - fly
   - foodchain
   - sword
+  - sabertooth
+  - sloth
   layers:
   - Default
   - TransparentFX
