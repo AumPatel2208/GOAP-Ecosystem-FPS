@@ -11,6 +11,7 @@
 \usepackage{hyperref} % Links
 \usepackage{pdflscape} % making a page landscape
 \usepackage{listings} % writing code snippets
+\usepackage{color}
 \usepackage{fancyvrb} % extra functionality for verbatim
 % \usepackage{fontspec} % changing fonts
 \usepackage[]{microtype} %
@@ -33,14 +34,29 @@
 \graphicspath{{../images/}}
 
 % setup the styling for code snippets
-\lstset{
-  basicstyle=\ttfamily,
-  columns=fullflexible,
-  frame=single,
-  breaklines=true,
-  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
-}
+% \lstset{
+%   basicstyle=\ttfamily,
+%   columns=fullflexible,
+%   frame=single,
+%   breaklines=true,
+%   postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+% }
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
 
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\ttfamily\footnotesize,    % fixed spaced font familyy  &  size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  frame=single,                    % border
+}
 
 
 % hyperlink setup
@@ -239,7 +255,7 @@ After I landed on this implementation of GOAP, I decided to start modelling out 
 
 As can be seen in the UI figure, the meshes for the creatures were kept simple to ensure that the AI system worked, the movement system was also a trivial direct transformation towards the target for the same reason.
 
-To add GOAP AI behaviour to an Agent, a script had to be attached that implemented the \lstinline{IGoap} interface provided by Brent Owens, and then have the \lstinline{GoapAgent} script attached which uses the \lstinline{GoapPlanner}. Now actions (inherited from \lstinline{GoapAction}) can be attached as scripts to the game object and the planner will automatically consider them. The script that inherits \lstinline{IGoap} will contain the world state and the desired goal state. The \lstinline{GoapAction}s will contain their own \textbf{preconditions} and \textbf{effects} and a \textbf{procedural precondition} method that the planner will consider when choosing the plan of action.
+To add GOAP AI behaviour to an Agent, a script had to be attached that implemented the \lstinline{IGoap} interface provided by Brent Owens, and then have the \lstinline{GoapAgent} script attached which uses the \lstinline{GoapPlanner}. Now actions (inherited from \lstinline{GoapAction}) can be attached as scripts to the game object and the planner will automatically consider them. The script that inherits \lstinline{IGoap} will contain the world state and the desired goal state. The \lstinline{GoapAction} s will contain their own \textbf{preconditions} and \textbf{effects} and a \textbf{procedural precondition} method that the planner will consider when choosing the plan of action. 
 
 \begin{lstlisting}[language=c]
 // inside Creatures : IGoap 
@@ -364,6 +380,7 @@ The saber-tooth (replacing the lizard in the food chain) had 4 animation states,
 The model was imported into Blender, however the model seemed to have an unnecessary number of bones, most of which did not have an effect to the model. Seeing this, the model had to be rigged again and freshly animated. The same process was used as the sword but with a higher complexity.
 
 
+
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
         \centering
@@ -377,8 +394,75 @@ The model was imported into Blender, however the model seemed to have an unneces
     \end{minipage}
 \end{figure}
 
+\subsubsection{Class Diagram Updated}
+
+The class diagram was updated to add in the Attacks for the lizard enemy, the A star game object for the pathfinding and the food chain game object.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 15cm]{ClassDiagram.jpg}}
+    \caption{Updated Class Diagram}
+\end{figure}
+
+
+The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature. Below is the code that is attached to the food chain game object.
+
+On load, it will create a food chain based on the relation ships we provide there. There are constant string references to access the names of the creatures in the food chain at any point.
+
+Any game object in the scene can access this food chain and call GetFood(their name) and get the foods that they can eat, and vice versa with what they consider threats.
+
+\begin{lstlisting}[language=c]
+// FoodChain.cs
+    public const string NAME_PLAYER = "player";
+    public const string NAME_SABERTOOTH = "sabertooth";
+    public const string NAME_SLOTH = "sloth";
+    public const string NAME_PLANT = "plant";
+
+    // predators
+    private Dictionary<String, HashSet<String>> threats = new Dictionary<string, HashSet<string>>();
+
+    // preys
+    private Dictionary<String, HashSet<String>> foods = new Dictionary<string, HashSet<string>>();
+
+    // in the awake method create the food Chain
+    private void Awake() {
+        // Create the food chain
+        addToChain(NAME_PLAYER,NAME_SABERTOOTH);
+        addToChain(NAME_PLAYER, NAME_SLOTH);
+        addToChain(NAME_PLAYER, NAME_PLANT);
+        addToChain(NAME_SABERTOOTH, NAME_PLAYER);
+        addToChain(NAME_SABERTOOTH, NAME_SABERTOOTH);
+        addToChain(NAME_SABERTOOTH, NAME_SLOTH);
+        addToChain(NAME_SLOTH, NAME_PLANT);
+    }
+
+    private void addToChain(String threat, String food) {
+        //add to foods list
+        if (foods.ContainsKey(threat)) 
+            foods[threat].Add(food);
+        else 
+            foods.Add(threat, new HashSet<string>() {food});
+
+        // add to threats list
+        if (threats.ContainsKey(food)) 
+            threats[food].Add(threat);
+        else
+            threats.Add(food, new HashSet<string>() {threat});
+    }
+
+    // Get the the Set of foods for the given creature
+    public HashSet<String> GetFood(String name) {
+        return foods[name];
+    }
+    
+    // Get the the Set of threats for the given creature
+    public HashSet<String> GetThreat(String name) {
+        return threats[name];
+    }
+\end{lstlisting}
+
 \subsubsection{Pathfinding}
-A path finding system was added in to facilitate better movement for the AI Agents. A* Pathfinding Project by Aron Granberg (see asset listings). This is a very nice and free library that provides the generation of many different type of nav meshes, the one used in the game is a Grid Graph, which is the "most straight forward path" and can be updated during runtime if obstacles move, it is not the most performance efficient type of graph as all the nodes in the grid are equidistant from each other, and in a large open space, that amount of detail/resolution in the grid is not required; however for our purposes, this type of graph is more than capable. 
+A path finding system was added (as seen in the updated class diagram) in to facilitate better movement for the AI Agents. A* Pathfinding Project by Aron Granberg (see asset listings). This is a very nice and free library that provides the generation of many different type of nav meshes, the one used in the game is a Grid Graph, which is the "most straight forward path" and can be updated during runtime if obstacles move, it is not the most performance efficient type of graph as all the nodes in the grid are equidistant from each other, and in a large open space, that amount of detail/resolution in the grid is not required; however for our purposes, this type of graph is more than capable. 
 \cite{astarPathfinding}
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
@@ -393,11 +477,20 @@ A path finding system was added in to facilitate better movement for the AI Agen
     \end{minipage}
 \end{figure}
 
-\subsubsection{Class Diagram Updated}
+In figure left you can see the graph being scaled appropriatly for the level, and in figure right are the settings for collision testing and removing obstacles as walkable in the nav-graph. Unity provides the ability to assign a layer to game objects. In this case, a layer called \textbf{Obstacle} has been applied to the blue boxes seen, so this gets masked out of the scan. As seen in height testing, The \textbf{Ground} layer (applied to all grey objects in scene) has been added as the mask to test the height, this avoids any chance of having a floating graph.
 
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 7cm]{Astar_AgentComponents.png}}
+    \caption{Components for Agents to use A Star Pathfinding}
+\end{figure}
 
+Now for the agents to use this graph, a few components provided by the library were attached. As seen in the figure above. The \textbf{AIPath} contains the movement controller for the agent to move along the discovered path and contains the shape(radius and height) of the agent, to ensure it does not go into the obstacles. The \textbf{AI Destination Setter} component contains a \textbf{Target} transform property, this is the transform the seeker will use to find a path. The \textbf{Seeker} component references the target and the A* Graph to find a possible path, which the AIPath component will use. \textbf{Simple Smooth} is an optional component that takes the path produced by seeker and smoothen it out.
 
+\subsubsection{Weapons}
 
+Two colliders were attached to the sword, a box collider to interact with other physics objects; and a mesh collider that conforms around the sword, which behaves as a trigger with no physics interaction. In Unity, when a "GameObject collides with another GameObject, it calls \textbf{OnTriggerEnter}" \cite{UnityTriggerCollider}. On a collider that. When the sword is in a state of attack, there is check in this collision whether it has collided with a game object with a life layer, and apply the damage value.
+ 
 \chapter{Asset Listing}
 
 \begin{thebibliography}{}
@@ -443,5 +536,7 @@ A path finding system was added in to facilitate better movement for the AI Agen
     Grimoirehex.com. 2017. Unity 3D – Combo System Animation – GRIMOIRE. [online] Available at: \url{https://www.grimoirehex.com/unity-3d-combo-animation/} [Accessed 15 February 2021].
     \bibitem{astarPathfinding}
     Granberg, A., 2017. Documentation. [online] Arongranberg.com. Available at: \url{https://arongranberg.com/astar/docs/graphtypes.html} [Accessed 20 April 2021].
+    \bibitem{UnityTriggerCollider}
+    Technologies, U., 2021. Unity - Scripting API: Collider.OnTriggerEnter(Collider). [online] Docs.unity3d.com. Available at: \url{https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html} [Accessed 20 April 2021].
 \end{thebibliography}
 \end{document}

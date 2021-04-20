@@ -43,5 +43,19 @@
 			"\\end{figure}",
 		],
 		"description": "Two Latex Figures side by side"
+	},
+	"Code Block":{
+		"prefix": "code",
+		"body": [
+			"\\begin{lstlisting}[language=$1]",
+			"$0",
+			"\\end{lstlisting}"
+		],
+		"description": "Block of code using listings library"
+	},
+	"Inline Code":{
+		"prefix": "incode",
+		"body": "\\lstinline{$1}$0",
+		"description": "Inline code"
 	}
 }

@@ -131,6 +131,18 @@ MonoBehaviour:
   staminaBar: {fileID: 6999759352895758612}
   hungerBar: {fileID: 6999759354272816963}
   hungerThresholdBar: {fileID: 6999759353089455913}
+--- !u!114 &605045898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9192695571379170451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc8cf8057454a90801b720cb6bce499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7378554617378676271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,6 +319,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sabertooth
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870937498464563900, guid: 465197a1bef4f8f4082b46fda460ee37,
+        type: 3}
+      propertyPath: m_TagString
+      value: sabertooth
       objectReference: {fileID: 0}
     - target: {fileID: 1963079710610625792, guid: 465197a1bef4f8f4082b46fda460ee37,
         type: 3}
@@ -860,7 +877,7 @@ PrefabInstance:
     - target: {fileID: 522910547406002756, guid: eb74f0a1beb4145ebb72d66a23450483,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 522910547406002756, guid: eb74f0a1beb4145ebb72d66a23450483,
         type: 3}

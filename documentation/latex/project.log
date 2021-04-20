@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.15)  20 APR 2021 14:44
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.15)  20 APR 2021 19:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -221,7 +221,13 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
- (/usr/local/texlive/2021basic/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+ (/usr/local/texlive/2021basic/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+ (/usr/local/texlive/2021basic/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: xetex.def on input line 147.
+) (/usr/local/texlive/2021basic/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
 \FV@CodeLineNo=\count274
 \FV@InFile=\read2
@@ -252,7 +258,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks22
 \@floatcapt=\box52
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 53.
+Package hyperref Info: Option `colorlinks' set `true' on input line 69.
  (/usr/local/texlive/2021basic/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
  (|extractbb --version)
@@ -267,30 +273,30 @@ File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 ) (./project.aux)
 \openout1 = `project.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 80.
  (/usr/local/texlive/2021basic/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -326,15 +332,8 @@ LaTeX Font Info:    ... okay on input line 64.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/local/texlive/2021basic/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
- (/usr/local/texlive/2021basic/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: xetex.def on input line 147.
-)
-Package hyperref Info: Link coloring ON on input line 64.
- (/usr/local/texlive/2021basic/texmf-dist/tex/latex/hyperref/nameref.sty
+Package hyperref Info: Link coloring ON on input line 80.
+(/usr/local/texlive/2021basic/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2021basic/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
@@ -343,15 +342,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count287
 )
-LaTeX Info: Redefining \ref on input line 64.
-LaTeX Info: Redefining \pageref on input line 64.
-LaTeX Info: Redefining \nameref on input line 64.
+LaTeX Info: Redefining \ref on input line 80.
+LaTeX Info: Redefining \pageref on input line 80.
+LaTeX Info: Redefining \nameref on input line 80.
  (./project.out) (./project.out)
 \@outlinefile=\write4
 \openout4 = `project.out'.
 
 \c@lstlisting=\count288
-LaTeX Info: Redefining \microtypecontext on input line 64.
+LaTeX Info: Redefining \microtypecontext on input line 80.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -395,7 +394,7 @@ Chapter 5.
 [9
 
 ] [10]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 141.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 157.
  (/usr/local/texlive/2021basic/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -403,6 +402,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 158.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 158.
  [11] [12] [13]
 Chapter 6.
 File: ../images//Actions and food chain build 1.png Graphic file (type bmp)
@@ -422,7 +425,7 @@ File: ../images//SwordBone.png Graphic file (type bmp)
 File: ../images//SwordKeyframes.png Graphic file (type bmp)
 <../images//SwordKeyframes.png>
 
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 268--278
+Overfull \hbox (2.61105pt too wide) in paragraph at lines 284--294
 []$[]$ $[]$ 
  []
 
@@ -432,7 +435,7 @@ File: ../images//Sword_Unity_Animation_Import_Split.png Graphic file (type bmp)
 File: ../images//Sword_Unity_Heirarchy.png Graphic file (type bmp)
 <../images//Sword_Unity_Heirarchy.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 283--293
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 299--309
 []$[]$ $[]$ 
  []
 
@@ -447,12 +450,10 @@ File: ../images//Stats_UI_Build1.png Graphic file (type bmp)
 File: ../images//Unity_Image_Panel.png Graphic file (type bmp)
 <../images//Unity_Image_Panel.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 320--330
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 336--346
 []$[]$ $[]$ 
  []
 
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 337.
 File: ../images//Unity_Scene_Build_1_annotated.jpg Graphic file (type bmp)
 <../images//Unity_Scene_Build_1_annotated.jpg>
 [21] [22]
@@ -461,63 +462,69 @@ File: ../images//Sloth_Model_Messy_Rig.png Graphic file (type bmp)
 File: ../images//Sloth_Model_Clean_Rig.png Graphic file (type bmp)
 <../images//Sloth_Model_Clean_Rig.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 368--378
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 385--395
 []$[]$ $[]$ 
  []
 
+File: ../images//ClassDiagram.jpg Graphic file (type bmp)
+<../images//ClassDiagram.jpg>
+[23] [24]
 File: ../images//AStar_Graph.png Graphic file (type bmp)
 <../images//AStar_Graph.png>
 File: ../images//AStar_CollisionSettings.png Graphic file (type bmp)
 <../images//AStar_CollisionSettings.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 384--394
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 468--478
 []$[]$ $[]$ 
  []
 
-[23] [24]
+[25]
+File: ../images//Astar_AgentComponents.png Graphic file (type bmp)
+<../images//Astar_AgentComponents.png>
+ [26] [27]
 Chapter 7.
-[25
+[28
 
 ]
-Underfull \hbox (badness 3138) in paragraph at lines 409--410
+Underfull \hbox (badness 3138) in paragraph at lines 502--503
 \T1/lmtt/m/n/12 20180906 / 325967 / Primal _ Instinct _ _Companion _ AI _ in _ Far _ Cry _ Primal . php$[][] \T1/lmr/m/n/12 [Ac-
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 411--412
+Underfull \hbox (badness 1297) in paragraph at lines 504--505
 []\T1/lmr/m/n/12 "Le Game-play emer-gent (in French)". jeuxvideo.com. 2006-01-19. Avail-able at:
  []
 
-[26
+[29
 
 ]
-Underfull \hbox (badness 1975) in paragraph at lines 423--424
+Underfull \hbox (badness 1975) in paragraph at lines 516--517
 \T1/lmr/m/n/12 Plan-ning. [on-line] Gama-su-tra.com. Avail-able at: [][]$\T1/lmtt/m/n/12 https : / / www . gamasutra . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
 \T1/lmtt/m/n/12 blogs / TommyThompson / 20200507 / 362417 / Building _ the _ AI _ of _ FEAR _ with _ Goal _
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 441--442
+Underfull \hbox (badness 5578) in paragraph at lines 534--535
 \T1/lmtt/m/n/12 / / medium . com / @gfruity / what-[]are-[]your-[]ui-[]choices-[]834ea7d937c$[][] \T1/lmr/m/n/12 [Ac-cessed 18
  []
 
 Missing character: There is no – ("2013) in font ec-lmr12!
 Missing character: There is no – ("2013) in font ec-lmr12!
-[27] [28] (./project.aux)
+[30] [31] (./project.aux)
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: AE89921C8458DD7091B5A666F9EF8119;3922.
  ) 
 Here is how much of TeX's memory you used:
- 12094 strings out of 478436
- 187669 string characters out of 5853929
- 799707 words of memory out of 5000000
- 31824 multiletter control sequences out of 15000+600000
- 435771 words of font info for 50 fonts, out of 8000000 for 9000
+ 12165 strings out of 478436
+ 188939 string characters out of 5853929
+ 874874 words of memory out of 5000000
+ 31893 multiletter control sequences out of 15000+600000
+ 438443 words of font info for 50 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 71i,10n,77p,2376b,1668s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,10n,77p,2376b,1757s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (29 pages).
+Output written on project.pdf (32 pages).
