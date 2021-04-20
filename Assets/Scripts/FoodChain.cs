@@ -51,5 +51,9 @@ public class FoodChain : MonoBehaviour {
         // Debug.Log("food name: " + name);
         return foods[name];
     }
+    
+    public HashSet<String> GetThreat(String name) {
+        return threats[name];
+    }
 
 }
