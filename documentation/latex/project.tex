@@ -193,10 +193,40 @@ Adobe Illustrator was used to draft out the user interface. Some UI elements wil
 
 \subsection{Misc}
 
+% \section{Project Objectives}
+% The Project objectives can be found in the Project Definition Document (PDD) in Appendix 1
+% \subsection{Minimum Viable Product}
+% \subsection{Creatures}
+
+
 \chapter{Result}
 % \section{Milestone 1}
 
-\section{Planning}
+
+\section{Minimum Viable Product}
+
+\subsection{Modelling the Actions}
+The AI system was abstracted into the different actions the AI will be performing and the goals it will use to plan out the course of action. Seen in the figure below is the simple set of actions and goals sufficient for the first build and will have the ground work to expand upon the next build. The food ready goal and precondition for eat food will be used to add the attacks for the creature's higher in the food chain, like the Lizard, as they should only be able to eat other creatures if they are dead, ie. ready to eat.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 10cm ]{Actions and food chain build 1.png}}
+    \caption{Goals and Actions with Food Chain}
+\end{figure}
+
+\subsection{Class Diagram}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 14.5cm ]{ClassDiagramBuild 1.png}}
+    \caption{Class Diagram build 1}
+\end{figure}
+
+As explained before, Unity uses the Entity Component Paradigm of software design, the Circles represent Game Objects which are the entities in our game scene, and there are classes attached to them using compositional relationships, as you can se, one class is being used multiple times, and due to the lack of inheritance, there is very little interdependency. 
+The Actions are represented by hexagons as at that moment in time, the decision had not been made on how the AI will be implemented.
+
+% The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature. The circle's are important game objects in the main Unity Scene, and they will be able to access each other.
+\subsection{Creatures and AI}
 I did extensive reading through the FEAR SDK\cite{fearSDK} that contains the full AI source code to fully understand the implementation of GOAP.
 I also read up on many other implementations of GOAP and all of them are done in a very similar way with only minor structural differences. 
 Peter Klooster created a multi-threaded GOAP System for Unity3D which he originally used in his game Basher Beatdown \cite{basherGoap}. This is a pretty simple implementation that includes a visualiser for the system as well.
@@ -207,24 +237,71 @@ Based on all this I started creating my own GOAP system, however, it became very
 
 After I landed on this implementation of GOAP, I decided to start modelling out the different actions (with their preconditions and effects (post-conditions)), different creatures with their world state and the list of goals they would like to achieve. As Unity works with game objects made up of components, I decided to plan out the agents in an unconventional manner before creating the class diagrams. 
 
-\section{Modelling the Actions}
-I abstracted the idea into the different actions the AI will be performing and the goals it will use to plan out the course of action. This simple set of action and goals is sufficient for the first build and will have the ground work to expand upon the next build.
+As can be seen in the UI figure, the meshes for the creatures were kept simple to ensure that the AI system worked, the movement system was also a trivial direct transformation towards the target for the same reason.
+
+To add GOAP AI behaviour to an Agent, a script had to be attached that implemented the \lstinline{IGoap} interface provided by Brent Owens, and then have the \lstinline{GoapAgent} script attached which uses the \lstinline{GoapPlanner}. Now actions (inherited from \lstinline{GoapAction}) can be attached as scripts to the game object and the planner will automatically consider them. The script that inherits \lstinline{IGoap} will contain the world state and the desired goal state. The \lstinline{GoapAction}s will contain their own \textbf{preconditions} and \textbf{effects} and a \textbf{procedural precondition} method that the planner will consider when choosing the plan of action.
+
+\begin{lstlisting}[language=c]
+// inside Creatures : IGoap 
+// world state
+worldData.Add(new KeyValuePair<string, object>("isHungry", (hunger < hungerThreshold)));
+// goal
+goal.Add(new KeyValuePair<string, object>("isHungry", false));
+
+// For Lizard that inherits creature
+worldData.Add(new KeyValuePair<string, object>("damagePlayer", false)); 
+goal.Add(new KeyValuePair<string, object>("damagePlayer", true));
+ 
+// inside ActionEatFood.cs
+addPrecondition("isHungry", true);
+addEffect("isHungry", false);
+cost = 1f;
+\end{lstlisting}
+
+This build of the Ai was functional however had a few issues. The Lizard enemy would only choose the player and not the fly, and it would eat anything. A food chain was added in the main build to fix this.
+
+\subsection{Weapon}
+For the melee weapon for the player to attack with, a pre-made sword asset was used (please refer to the asset listing) which was then imported into blender and 4 animation states were created. 
+
+First the model was rigged using one bone, starting from the hilt of the sword. Then 4 different animations were created using key-framing and Blender's Dope Sheet editor, the idle animation and Attack 1 lasted 30 frames each and the Attack 2 and 3 lasted 20 frames each. This was then exported as an FBX file, which supports animations and textures to be baked into it and imported into Unity.
+\begin{figure}[H]
+    \begin{minipage}{.2\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 2cm ]{SwordBone.png}}
+        \caption{Sword model rigged with a single bone}
+    \end{minipage}
+    \begin{minipage}{.8\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 10cm ]{SwordKeyframes.png}}
+        \caption{Dope sheet/Key-frames for 4 animations in Blender}
+    \end{minipage}
+\end{figure}
+
+When importing it into Unity, the animations had to be split up into to 4 different actions as currently they were all done on one track (this was taken note of and the animations for the creatures were created on different tracks withing Blender, allowing an easier import process). In the heirarchy the sword was attached to an Empty called LeftHand to place it in the correct position, and this was parented under the Main Camera, making it so that the sword's transformation follows where the player is looking.
+
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 5cm ]{Sword_Unity_Animation_Import_Split.png}}
+        \caption{Splitting Animations up for the Sword}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 5cm ]{Sword_Unity_Heirarchy.png}}
+        \caption{Sword in the Unity Hierarchy view}
+    \end{minipage}
+\end{figure}
+
+An animation controller had to be created to switch between the different animations and create a combo system so a single click will only lead to the first swing, however clicking more than once will add the clicks to a buffer then swing the sword the appropriate number of times.
+
+A tutorial by GRIMOIRE \cite{comboSystem} was used to understand how to do this inside of Unity and its animation system and implemented it in a similar manner.
 
 \begin{figure}[H]
     \centering
-    \fbox{\includegraphics[width = 10cm ]{ActionPlans.jpg}}
-    \caption{Goals and Actions}
+    \fbox{\includegraphics[width = 10cm ]{Sword_Animator.png}}
+    \caption{Animation Controller attached to the Sword}
 \end{figure}
 
-\section{Class Diagram}
-
-\begin{figure}[H]
-    \centering
-    \fbox{\includegraphics[width = 14.5cm ]{ClassDiagram.jpg}}
-    \caption{Class Diagram}
-\end{figure}
-
-The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature. The circle's are important game objects in the main Unity Scene, and they will be able to access each other.
 
 \subsection{UI}
 For the UI of the game, a decision was made to go without a main menu screen as there is only one level showcasing the use of the AI. 
@@ -242,7 +319,7 @@ In Unity this was done by creating a canvas with multiple image sprites, these i
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
         \centering
-        \fbox{\includegraphics[width = 7cm ]{Stats_UI_Above_Sloth.png}}
+        \fbox{\includegraphics[width = 5cm ]{Stats_UI_Build1.png}}
         \caption{Creature UI in Unity}
     \end{minipage}
     \begin{minipage}{.5\textwidth}
@@ -253,6 +330,53 @@ In Unity this was done by creating a canvas with multiple image sprites, these i
 \end{figure}
 
 This canvas is parented to the Creature and the position is offset on the Y axis, so its transformation will follow its parent.
+
+A script was created to manage the fill amounts, this was done by accessing a reference to the stats component in the parent object and then calculating the fill amount from there (see code snippet below).
+
+\begin{lstlisting}[language=c]
+void FixedUpdate() {
+        healthBar.fillAmount = creatureStats.GetHealth() / 100;
+        staminaBar.fillAmount = creatureStats.GetStamina() / 100;
+        hungerBar.fillAmount = creatureStats.GetHunger() / 100;
+        hungerThresholdBar.fillAmount = creatureStats.GetHungerThreshold() / 100;
+}
+\end{lstlisting}
+
+\subsection{Unity Project}
+
+Below is what the first version of the Unity scene looked like after adding the sword and basic AI components in.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 15cm]{Unity_Scene_Build_1_annotated.jpg}}
+    \caption{Annotated view of Unity Scene}
+\end{figure}
+
+
+\section{Main Product}
+\subsection{Creatures and AI}
+The meshes of the creatures were changed; a set of animated ice age animal meshes by Riley on itch.io (please see in the asset listing). These were aesthetically pleasing while having a low poly count keeping the file size and performance overhead to a minimum. 
+
+The saber-tooth (replacing the lizard in the food chain) had 4 animation states, of which only 3 were required, however the sloth (replacing the fly in the food chain) only had 2 animation states, walk and idle, an additional one for biting was required for when it eats food. 
+
+The model was imported into Blender, however the model seemed to have an unnecessary number of bones, most of which did not have an effect to the model. Seeing this, the model had to be rigged again and freshly animated. The same process was used as the sword but with a higher complexity.
+
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Sloth_Model_Messy_Rig.png}}
+        \caption{Messy Original Sloth Rig}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Sloth_Model_Clean_Rig.png}}
+        \caption{Clean New Sloth Rig}
+    \end{minipage}
+\end{figure}
+
+A path finding system was added in to facilitate better movement for the AI Agents. A* Pathfinding Project by Aron Granberg (see asset listings). This is a very nice and free library that provides the generation of many different type of nav meshes, the one used in the game is a Grid Graph
+
+\chapter{Asset Listing}
 
 \begin{thebibliography}{}
     \bibitem{doom93}
@@ -293,5 +417,7 @@ This canvas is parented to the Creature and the position is offset on the Y axis
     Youtu.be. 2021. Composition over Inheritance. [online] Available at: \url{https://youtu.be/wfMtDGfHWpA} [Accessed 15 April 2021].
     \bibitem{UIChoices}
     F, J., 2021. What Are Your UI Choices. [online] Medium. Available at: \url{https://medium.com/@gfruity/what-are-your-ui-choices-834ea7d937c} [Accessed 18 April 2021].
+    \bibitem{comboSystem}
+    Grimoirehex.com. 2017. Unity 3D – Combo System Animation – GRIMOIRE. [online] Available at: \url{https://www.grimoirehex.com/unity-3d-combo-animation/} [Accessed 15 February 2021].
 \end{thebibliography}
 \end{document}

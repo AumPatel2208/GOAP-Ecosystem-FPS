@@ -11,7 +11,8 @@
       - eg. Find food would not be executed if the creature was hungry and had not found food, so it would just go hungry; in the first build I also added an effect to findFood that was 'isHungry: false', which would fulfil the all 2 conditions 'foodTargetNull: false, isHungry: false', however the action find food does not directly fill the hunger of the creature so providing it with this effect is not truthful, therefore refactoring the system seems to be the best option over providing false effects to actions. 
       - This will make it so when the system gets more complicated than 2 goals and 2 actions, it will still be 'simple' to manage.
     - SOLUTION:
-      - Detect when a plan fails whether the plan that was generated was a partial plan. If so, then multiply the cost for that by an arbritrary amount, in this case 10, and perform the action
+      - Detect when a plan fails whether the plan that was generated was a partial plan. If so, then multiply the cost for that by an arbitrary amount, in this case 10, and perform the action
+- [ ] Change all references to self to make them sound more formal, try to avoid the author however remove I
 
 ## CODE
 - [x] Roam action
