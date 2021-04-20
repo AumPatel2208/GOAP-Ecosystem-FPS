@@ -353,13 +353,16 @@ Below is what the first version of the Unity scene looked like after adding the 
 \end{figure}
 
 
+
 \section{Main Product}
 \subsection{Creatures and AI}
+\subsubsection{Meshes}
 The meshes of the creatures were changed; a set of animated ice age animal meshes by Riley on itch.io (please see in the asset listing). These were aesthetically pleasing while having a low poly count keeping the file size and performance overhead to a minimum. 
 
 The saber-tooth (replacing the lizard in the food chain) had 4 animation states, of which only 3 were required, however the sloth (replacing the fly in the food chain) only had 2 animation states, walk and idle, an additional one for biting was required for when it eats food. 
 
 The model was imported into Blender, however the model seemed to have an unnecessary number of bones, most of which did not have an effect to the model. Seeing this, the model had to be rigged again and freshly animated. The same process was used as the sword but with a higher complexity.
+
 
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
@@ -374,7 +377,26 @@ The model was imported into Blender, however the model seemed to have an unneces
     \end{minipage}
 \end{figure}
 
-A path finding system was added in to facilitate better movement for the AI Agents. A* Pathfinding Project by Aron Granberg (see asset listings). This is a very nice and free library that provides the generation of many different type of nav meshes, the one used in the game is a Grid Graph
+\subsubsection{Pathfinding}
+A path finding system was added in to facilitate better movement for the AI Agents. A* Pathfinding Project by Aron Granberg (see asset listings). This is a very nice and free library that provides the generation of many different type of nav meshes, the one used in the game is a Grid Graph, which is the "most straight forward path" and can be updated during runtime if obstacles move, it is not the most performance efficient type of graph as all the nodes in the grid are equidistant from each other, and in a large open space, that amount of detail/resolution in the grid is not required; however for our purposes, this type of graph is more than capable. 
+\cite{astarPathfinding}
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{AStar_Graph.png}}
+        \caption{A-Star Grid Graph in scene}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{AStar_CollisionSettings.png}}
+        \caption{Settings for collision testing}
+    \end{minipage}
+\end{figure}
+
+\subsubsection{Class Diagram Updated}
+
+
+
 
 \chapter{Asset Listing}
 
@@ -419,5 +441,7 @@ A path finding system was added in to facilitate better movement for the AI Agen
     F, J., 2021. What Are Your UI Choices. [online] Medium. Available at: \url{https://medium.com/@gfruity/what-are-your-ui-choices-834ea7d937c} [Accessed 18 April 2021].
     \bibitem{comboSystem}
     Grimoirehex.com. 2017. Unity 3D – Combo System Animation – GRIMOIRE. [online] Available at: \url{https://www.grimoirehex.com/unity-3d-combo-animation/} [Accessed 15 February 2021].
+    \bibitem{astarPathfinding}
+    Granberg, A., 2017. Documentation. [online] Arongranberg.com. Available at: \url{https://arongranberg.com/astar/docs/graphtypes.html} [Accessed 20 April 2021].
 \end{thebibliography}
 \end{document}

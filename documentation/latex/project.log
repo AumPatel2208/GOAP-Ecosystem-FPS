@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.15)  19 APR 2021 21:41
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.15)  20 APR 2021 14:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -455,60 +455,69 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 337.
 File: ../images//Unity_Scene_Build_1_annotated.jpg Graphic file (type bmp)
 <../images//Unity_Scene_Build_1_annotated.jpg>
-[21]
+[21] [22]
 File: ../images//Sloth_Model_Messy_Rig.png Graphic file (type bmp)
 <../images//Sloth_Model_Messy_Rig.png>
 File: ../images//Sloth_Model_Clean_Rig.png Graphic file (type bmp)
 <../images//Sloth_Model_Clean_Rig.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 365--375
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 368--378
 []$[]$ $[]$ 
  []
 
-[22] [23]
+File: ../images//AStar_Graph.png Graphic file (type bmp)
+<../images//AStar_Graph.png>
+File: ../images//AStar_CollisionSettings.png Graphic file (type bmp)
+<../images//AStar_CollisionSettings.png>
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 384--394
+[]$[]$ $[]$ 
+ []
+
+[23] [24]
 Chapter 7.
-[24
+[25
 
 ]
-Underfull \hbox (badness 3138) in paragraph at lines 387--388
+Underfull \hbox (badness 3138) in paragraph at lines 409--410
 \T1/lmtt/m/n/12 20180906 / 325967 / Primal _ Instinct _ _Companion _ AI _ in _ Far _ Cry _ Primal . php$[][] \T1/lmr/m/n/12 [Ac-
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 389--390
+Underfull \hbox (badness 1297) in paragraph at lines 411--412
 []\T1/lmr/m/n/12 "Le Game-play emer-gent (in French)". jeuxvideo.com. 2006-01-19. Avail-able at:
  []
 
-[25
+[26
 
 ]
-Underfull \hbox (badness 1975) in paragraph at lines 401--402
+Underfull \hbox (badness 1975) in paragraph at lines 423--424
 \T1/lmr/m/n/12 Plan-ning. [on-line] Gama-su-tra.com. Avail-able at: [][]$\T1/lmtt/m/n/12 https : / / www . gamasutra . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 \T1/lmtt/m/n/12 blogs / TommyThompson / 20200507 / 362417 / Building _ the _ AI _ of _ FEAR _ with _ Goal _
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 419--420
+Underfull \hbox (badness 5578) in paragraph at lines 441--442
 \T1/lmtt/m/n/12 / / medium . com / @gfruity / what-[]are-[]your-[]ui-[]choices-[]834ea7d937c$[][] \T1/lmr/m/n/12 [Ac-cessed 18
  []
 
 Missing character: There is no – ("2013) in font ec-lmr12!
 Missing character: There is no – ("2013) in font ec-lmr12!
-[26] [27] (./project.aux)
+[27] [28] (./project.aux)
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: AE89921C8458DD7091B5A666F9EF8119;3922.
  ) 
 Here is how much of TeX's memory you used:
- 12081 strings out of 478436
- 187265 string characters out of 5853929
- 799668 words of memory out of 5000000
- 31813 multiletter control sequences out of 15000+600000
+ 12094 strings out of 478436
+ 187669 string characters out of 5853929
+ 799707 words of memory out of 5000000
+ 31824 multiletter control sequences out of 15000+600000
  435771 words of font info for 50 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  71i,10n,77p,2376b,1668s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (28 pages).
+Output written on project.pdf (29 pages).

@@ -28,4 +28,7 @@
 \contentsline {subsection}{\numberline {6.1.6}Unity Project}{22}{subsection.6.1.6}%
 \contentsline {section}{\numberline {6.2}Main Product}{22}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Creatures and AI}{22}{subsection.6.2.1}%
-\contentsline {chapter}{\numberline {7}Asset Listing}{24}{chapter.7}%
+\contentsline {subsubsection}{Meshes}{22}{section*.2}%
+\contentsline {subsubsection}{Pathfinding}{23}{section*.3}%
+\contentsline {subsubsection}{Class Diagram Updated}{24}{section*.4}%
+\contentsline {chapter}{\numberline {7}Asset Listing}{25}{chapter.7}%
