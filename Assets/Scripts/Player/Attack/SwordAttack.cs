@@ -41,19 +41,14 @@ namespace Player.Attack {
 
         private void OnTriggerEnter(Collider other) {
             // If it is the player then ignore
-            
             if (other.CompareTag(transform.root.tag))
                 return;
-        
             // if the player is in a state of attacking 
             if (animator.GetInteger(hAttackNo) > 0) {
                 // 11 is life layer
                 if (other.gameObject.layer == 11) {
                     if (other.gameObject.GetComponent<Stats.Stats>() != null){
                         other.gameObject.GetComponent<Stats.Stats>().ApplyDamage(attackDamage, other.bounds.center, other.transform.rotation);
-                        // instantiate blood particles when damaged
-                        // Instantiate(other.gameObject.GetComponent<Stats>().bloodParticle,other.bounds.center, other.gameObject.transform.rotation);
-                        // other.GetComponent<Stats>().SpawnBloodParticles(other.bounds.center, other.transform.rotation);
                     }
                 }
             }

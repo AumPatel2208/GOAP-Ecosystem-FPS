@@ -13,6 +13,7 @@
     - SOLUTION:
       - Detect when a plan fails whether the plan that was generated was a partial plan. If so, then multiply the cost for that by an arbitrary amount, in this case 10, and perform the action
 - [ ] Change all references to self to make them sound more formal, try to avoid the author however remove I
+- [ ] Mention Turbosquid as the location for 3d assets
 
 ## CODE
 - [x] Roam action
@@ -21,19 +22,24 @@
   - [x] particles for eating
   - [x] death for sloth
   - [x] STOP THE AI WHEN IT DIES
-- [ ] Death for player
-  - [ ] Jank right now
 - [x] Eat when there is a ready food until the food is gone
 - [x] ranged weapon
   - [x] Model
   - [x] Code
-- [ ] VISIBILITY
-  - [x] Vision Cone
-  - [ ] areas where there is low visibility
-  - [ ] refine the find food to only find food based on the visibility
 - [x] ranged weapon
   - [x] Charge the cross bow
-  - [ ] 
+- [x] Sabertooth can attack sabertooths
+
+- [ ] VISIBILITY
+  - [x] Vision Cone
+  - [ ] Target is lost if it enters a grass element
+- [ ] Enemy copy of Sabertooth however has a ranged attack
+- [ ] Health recovery by using hunger
+  - [ ] That way a special health resource is not required
+  - [ ] any excess hunger is replaced as health
+- [ ] HUD for player health and the hunger
+- [ ] Short Level
+- [ ] Death for player
+  - [ ] Just reset the scene???
 - [ ] Flee action when Threatened 
-- [ ] Sabertooth can attack sabertooths
-- [ ] 
+  - STRETCH

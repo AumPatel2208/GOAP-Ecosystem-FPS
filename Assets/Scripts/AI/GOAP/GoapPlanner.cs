@@ -98,7 +98,7 @@ public class GoapPlanner {
                     leaves.Add(node);
                     foundOne = true;
                 }
-                // if it is a partial match, then It will scale the value by 3
+                // if it is a partial match, then It will scale the cost by 10
                 else if (partial) {
                     // we found a partial solution
                     
@@ -136,7 +136,8 @@ public class GoapPlanner {
 
     /**
 	 * Check that all items in 'test' are in 'state'. If just one does not match or is not there
-	 * then this returns false.
+	 * then this returns false. If it is a partial match however, the parameter passed through
+     * by reference 'partial' will be set to true.
 	 */
     private bool inState(HashSet<KeyValuePair<string, object>> test, HashSet<KeyValuePair<string, object>> state, ref bool partialMatch) {
         bool allMatch = true;
@@ -153,7 +154,6 @@ public class GoapPlanner {
             if (!match)
                 allMatch = false;
         }
-
         return allMatch;
     }
 

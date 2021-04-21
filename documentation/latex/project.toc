@@ -29,7 +29,10 @@
 \contentsline {section}{\numberline {6.2}Main Product}{22}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Creatures and AI}{22}{subsection.6.2.1}%
 \contentsline {subsubsection}{Meshes}{22}{section*.2}%
-\contentsline {subsubsection}{Class Diagram Updated}{23}{section*.3}%
-\contentsline {subsubsection}{Pathfinding}{25}{section*.4}%
-\contentsline {subsubsection}{Weapons}{27}{section*.5}%
-\contentsline {chapter}{\numberline {7}Asset Listing}{28}{chapter.7}%
+\contentsline {subsubsection}{Ragdolls}{23}{section*.3}%
+\contentsline {subsubsection}{Class Diagram Updated}{23}{section*.4}%
+\contentsline {subsubsection}{Pathfinding}{25}{section*.5}%
+\contentsline {subsubsection}{Goap AI}{27}{section*.6}%
+\contentsline {subsubsection}{Weapons}{30}{section*.7}%
+\contentsline {subsubsection}{Particle Effects}{32}{section*.8}%
+\contentsline {chapter}{\numberline {7}Asset Listing}{33}{chapter.7}%

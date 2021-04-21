@@ -394,6 +394,8 @@ The model was imported into Blender, however the model seemed to have an unneces
     \end{minipage}
 \end{figure}
 
+\subsubsection{Ragdolls}
+
 \subsubsection{Class Diagram Updated}
 
 The class diagram was updated to add in the Attacks for the lizard enemy, the A star game object for the pathfinding and the food chain game object.
@@ -404,7 +406,7 @@ The class diagram was updated to add in the Attacks for the lizard enemy, the A 
     \caption{Updated Class Diagram}
 \end{figure}
 
-
+% Food Chain
 The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature. Below is the code that is attached to the food chain game object.
 
 On load, it will create a food chain based on the relation ships we provide there. There are constant string references to access the names of the creatures in the food chain at any point.
@@ -487,10 +489,162 @@ In figure left you can see the graph being scaled appropriatly for the level, an
 
 Now for the agents to use this graph, a few components provided by the library were attached. As seen in the figure above. The \textbf{AIPath} contains the movement controller for the agent to move along the discovered path and contains the shape(radius and height) of the agent, to ensure it does not go into the obstacles. The \textbf{AI Destination Setter} component contains a \textbf{Target} transform property, this is the transform the seeker will use to find a path. The \textbf{Seeker} component references the target and the A* Graph to find a possible path, which the AIPath component will use. \textbf{Simple Smooth} is an optional component that takes the path produced by seeker and smoothen it out.
 
-\subsubsection{Weapons}
 
-Two colliders were attached to the sword, a box collider to interact with other physics objects; and a mesh collider that conforms around the sword, which behaves as a trigger with no physics interaction. In Unity, when a "GameObject collides with another GameObject, it calls \textbf{OnTriggerEnter}" \cite{UnityTriggerCollider}. On a collider that. When the sword is in a state of attack, there is check in this collision whether it has collided with a game object with a life layer, and apply the damage value.
- 
+\subsubsection{Goap AI}
+% New Actions
+The AI system was expanded upon in this build. The action for \textbf{Find Food} was refactored to make use of the newly created food chain; changes were also made so that there was a vision cone to what a creature can detect, this is 90$^{\circ}$ straight in front of the head as seen in the figure below.
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 7cm]{Vision_Cone_Representation.jpg}}
+    \caption{Vision Cone Represented}
+\end{figure}
+
+The \textbf{Eat Food} action can only be executed now if the food is ready, and to make the food ready, it needs to be killed, and therefore the planner will find and execute the \textbf{Melee Attack}.
+
+Both these actions were also changed to play the animations at the correct moment.
+The Creature class from build one was broken down into an abstract BaseAIGoap class that inherited the IGoap interface and provided implementation for the methods that log on action complete/fail/etc.; a boolean check was created so that the programmer can diable the logging to the console, as this has a major hit on performance in Unity and also cluttered up the console when multiple agents were active, essentially making it unusable. The \textbf{Sabertooth} and \textbf{Sloth} now inherited from this and applied their goal states seperatly, reducing the coupling and making debugging simpler than when they inherited from a Creature class.
+
+% Problem with no partial plan of action
+After the adding the pathfinding and the new actions into the game, the agents behaved as expected until \textit{\textbf{they had not found a target and were hungry}}. In this case, the agent would just be in an idle state and not do anything, where it was expected to perform \textbf{Find Food} and then \textbf{Eat Food}. This was occurring because as the current planning system did not accept partially successful plans (a series of actions that do not fulfill \textbf{every} goal state), which was quite unusual as there are many cases where some actions/series of actions do not tick every box, and the correct behaviour in this scenario would be to perform an partial plan if a full plan is not found.
+
+In this particular case, the problem was that \textbf{Find Food} did not directly have an effect of \textbf{isHungry == null}. This could be mitigated by adding that as an effect of \textbf{Find Food}, however this would be lying and would incur in complications and tight coupling further down the line when creating a more complex AI system, where one of the main advantages of GOAP is that it provides a modular, loosely coupled approach to AI.
+
+There were many solutions that came to mind, however most of these lead to heavy refactoring of the AI code, and this was not feasible this late in the development of this project as it would have put a stop on an already tight schedule.
+
+% First use of the AUTHOR ?????
+So the solution that the author went with provided the most minimal amount of refactoring and still provided desirable results in most use cases.
+
+In the \textbf{Goap Planner} script, there is a method that is called recursively called \lstinline{buildGraph()}, which goes through all possible actions and creates a graph of possible plans, it checks if the plan is fully successful by using the \lstinline{inState()} function; it then compares the \textit{costs} of these plans and picks the lowest cost one.
+
+Based on the above observation, \lstinline{inState()}  had to be somehow changed to let \lstinline{buildGraph()} know there was a partial match and do something with it. So now \lstinline{inState()} takes in a boolean by reference called \lstinline{partial} which is set to true if a partial match is found; and in build graph this is only checked if a full solution was not found.
+
+\begin{lstlisting}[language=c]
+// GoapPlanner.cs
+// buildGraph()
+......
+Node node = new Node(parent, parent.runningCost + action.cost, currentState, action);
+partial = false;
+// partial gets assigned a value in this call to inState
+if (inState(goal, currentState, ref partial)) {
+    // a solution is found   
+    ...
+}
+// if it is a partial match, then It will scale the cost by 10
+else if (partial) {
+    // we found a partial solution
+    // scale the running cost if it is a partial match, therefore prioritising full matches
+    node.runningCost *= 10; 
+    leaves.Add(node);
+    foundOne = true;
+}
+else {
+    // not at a solution yet, so recursivley test all the remaining actions and branch out the tree
+    ...
+}
+......
+
+/**
+* Check that all items in 'test' are in 'state'. If just one does not
+* match or is not there then this returns false. If it is a partial
+* match however, the parameter passed through by reference 'partial'
+* will be set to true.
+*/
+private bool inState(HashSet<KeyValuePair<string, object>> test, HashSet<KeyValuePair<string, object>> state, ref bool partialMatch) {
+   bool allMatch = true;
+   foreach (KeyValuePair<string, object> t in test) {
+       bool match = false;
+       foreach (KeyValuePair<string, object> s in state) {
+           if (s.Equals(t)) {
+               match = true;
+               // if there is a single match, partial match will be set to true
+               partialMatch = true;
+               break;
+           }
+       }
+
+       if (!match)
+           allMatch = false;
+   }
+   return allMatch;
+}
+
+
+
+\end{lstlisting}
+
+% Added Random Movement
+\subsubsection{Weapons}
+% Sword
+Two colliders were attached to the sword, a box collider to interact with other physics objects; and a mesh collider that conforms around the sword, which behaves as a trigger with no physics interaction. In Unity, when a "GameObject collides with another GameObject, it calls \textbf{OnTriggerEnter}" \cite{UnityTriggerCollider}.  
+\begin{figure}[H]
+    \begin{minipage}{.3\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 3cm ]{Sword_Colliders_Scene.png}}
+        \caption{Box and Mesh collider in scene.}
+    \end{minipage}
+    \begin{minipage}{.8\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Sword_Colliders_Inspector.png}}
+        \caption{Box and Mesh Colliders in the inspector.}
+    \end{minipage}
+\end{figure}
+
+When the sword is in a state of attack, there is check in this collision whether it has collided with a game object with a life layer, and apply the damage value to the Stats component that exists on every creature.
+
+\begin{lstlisting}[language=c]
+// on Trigger Enter method, other is a parameter of type Collider
+other.gameObject.GetComponent<Stats.Stats>().ApplyDamage(attackDamage, other.bounds.center, other.transform.rotation);
+
+// Apply damage method in Stats.cs
+public void ApplyDamage(float damage, Vector3 centerPosition, Quaternion rotation) {
+    health -= damage;
+    SpawnBloodParticles(centerPosition, rotation);
+}
+
+// spawning the particles on hit
+public void SpawnBloodParticles(Vector3 centerPosition, Quaternion rotation) {
+    Instantiate(bloodParticle, centerPosition, rotation);
+}
+\end{lstlisting}
+
+% Crossbow
+The ranged weapon was decided on being a crossbow that the player can hold right click to charge up the velocity at which it is release. A model was found on Turbosquid (see asset listing). This was imported into blender, and the crossbow and arrow were separated into two different objects, allowing it to be manipulated separately in Unity. A decision was made to not animate the crossbow as it is not crucial for the main aspect of this game.
+
+This crossbow and arrow model were placed inside an empty called \textbf{RightHand} together and placed in the apropriate position in front of the player. An \textbf{arrow} prefab was created that contained the model of the arrow, a box collider, and a script attached to it to \textbf{ApplyDamage} on collision with an enemy creature similar to the sword. A script component was attached to the \textbf{RightHand} that instantiates an \textbf{arrow} prefab and give it a velocity. This was then adjusted to increase the velocity the longer the player holds down right-click up until a maximum velocity, and on release of the mouse button, the arrow gets released from the center of the camera view forwards. A GUI element was added to camera space so it is fixed which represents the velocity at which the arrow will be released.
+\begin{figure}[H]
+    \begin{minipage}{.4\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{CrossBow_Scene.png}}
+        \caption{Crossbow and arrow in the scene view}
+    \end{minipage}
+    \begin{minipage}{.6\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{CrossBow_Game_With_GUI.png}}
+        \caption{Crossbow in game view with GUI}
+    \end{minipage}
+\end{figure}
+
+\subsubsection{Particle Effects}
+On applying damage via the Stats component, blood particles are spawned, and these blood particles are specified per creature, allowing for different particle effects per enemy type. 
+
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Particles_Burst_Emmision.png}}
+        \caption{Burst Emmision of Particles}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Particles_Destroy_OnStop.png}}
+        \caption{Destroy Instance on stop}
+    \end{minipage}
+\end{figure}
+
+For now there one set of blood particles for all enemies. They are set to do a single burst of 30 particles at the beginning, and reduce their size over their lifetime to 0, and when the particle has finished, it will destroy itself. 
+
+% TODO EAT PARTICLE EFFECTS
+
+
 \chapter{Asset Listing}
 
 \begin{thebibliography}{}
