@@ -394,7 +394,6 @@ The model was imported into Blender, however the model seemed to have an unneces
     \end{minipage}
 \end{figure}
 
-\subsubsection{Ragdolls}
 
 \subsubsection{Class Diagram Updated}
 
@@ -572,6 +571,29 @@ private bool inState(HashSet<KeyValuePair<string, object>> test, HashSet<KeyValu
 
 \end{lstlisting}
 
+\subsubsection{Ragdolls}
+\subsubsection{Particle Effects}
+On applying damage via the Stats component, blood particles are spawned, and these blood particles are specified per creature, allowing for different particle effects per enemy type. 
+
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Particles_Burst_Emmision.png}}
+        \caption{Burst Emmision of Particles}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Particles_Destroy_OnStop.png}}
+        \caption{Destroy Instance on stop}
+    \end{minipage}
+\end{figure}
+
+For now there one set of blood particles for all enemies. They are set to do a single burst of 30 particles at the beginning, and reduce their size over their lifetime to 0, and when the particle has finished, it will destroy itself. 
+
+% TODO EAT PARTICLE EFFECTS
+
+
+\subsection{Player}
 % Added Random Movement
 \subsubsection{Weapons}
 % Sword
@@ -623,26 +645,6 @@ This crossbow and arrow model were placed inside an empty called \textbf{RightHa
         \caption{Crossbow in game view with GUI}
     \end{minipage}
 \end{figure}
-
-\subsubsection{Particle Effects}
-On applying damage via the Stats component, blood particles are spawned, and these blood particles are specified per creature, allowing for different particle effects per enemy type. 
-
-\begin{figure}[H]
-    \begin{minipage}{.5\textwidth}
-        \centering
-        \fbox{\includegraphics[width = 7cm ]{Particles_Burst_Emmision.png}}
-        \caption{Burst Emmision of Particles}
-    \end{minipage}
-    \begin{minipage}{.5\textwidth}
-        \centering
-        \fbox{\includegraphics[width = 7cm ]{Particles_Destroy_OnStop.png}}
-        \caption{Destroy Instance on stop}
-    \end{minipage}
-\end{figure}
-
-For now there one set of blood particles for all enemies. They are set to do a single burst of 30 particles at the beginning, and reduce their size over their lifetime to 0, and when the particle has finished, it will destroy itself. 
-
-% TODO EAT PARTICLE EFFECTS
 
 
 \chapter{Asset Listing}

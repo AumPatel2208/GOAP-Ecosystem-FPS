@@ -34,9 +34,9 @@
   - [x] Vision Cone
   - [ ] Target is lost if it enters a grass element
 - [ ] Enemy copy of Sabertooth however has a ranged attack
-- [ ] Health recovery by using hunger
+- [x] Health recovery by using hunger
   - [ ] That way a special health resource is not required
-  - [ ] any excess hunger is replaced as health
+  - [x] any excess hunger is replaced as health
 - [ ] HUD for player health and the hunger
 - [ ] Short Level
 - [ ] Death for player

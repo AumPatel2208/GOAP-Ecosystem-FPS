@@ -39,6 +39,14 @@ namespace Stats {
             if (IsDead()) {
                 Death();
             }
+
+            // if over max hunger amount
+            if (hunger > 100) {
+                // add to health remove from hunger
+                var val = Time.deltaTime * 2;
+                health += val;
+                hunger -= val;
+            }
         }
     
         public void SetHealth(float amount) {
