@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Stats {
     public class FoodStats : MonoBehaviour {
@@ -30,7 +31,15 @@ namespace Stats {
         
             // Destroy this as this food is finished
             if (isEaten()) {
-                Destroy(gameObject);
+                // if it is the player then restart the scene
+                if (gameObject.CompareTag("player")) {
+                    // restart the scene
+                    SceneManager.LoadScene("Testing");
+                }
+                else {
+                    // destroy the game object
+                    Destroy(gameObject);
+                }
             }
         }
 

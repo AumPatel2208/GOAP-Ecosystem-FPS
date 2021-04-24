@@ -43,10 +43,21 @@ namespace Stats {
             // if over max hunger amount
             if (hunger > 100) {
                 // add to health remove from hunger
-                var val = Time.deltaTime * 2;
+                var val = Time.deltaTime * healthRegenRate;
                 health += val;
                 hunger -= val;
             }
+
+            // limit health
+            if (health > 100) {
+                health = 100;
+            }
+
+            stamina += staminaRegenRate * Time.deltaTime;
+            if (stamina > 100) {
+                stamina = 100;
+            }
+
         }
     
         public void SetHealth(float amount) {
@@ -80,6 +91,11 @@ namespace Stats {
         public float GetStamina() {
             return stamina;
         }
+        public void ApplyStaminaReduction(float staminaCost) {
+            stamina -= staminaCost;
+        }
+
+        
         public float GetHunger() {
             return hunger;
         } 

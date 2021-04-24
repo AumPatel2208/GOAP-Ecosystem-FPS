@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 4926187477672939504}
   - component: {fileID: 4926187477672939505}
   - component: {fileID: 1687734223}
+  - component: {fileID: 294218522}
   m_Layer: 11
   m_Name: Player
   m_TagString: player
@@ -197,7 +198,7 @@ MonoBehaviour:
   hungerDepletionRate: 2
   hungerThreshold: 0.5
   stamina: 100
-  staminaRegenRate: 2
+  staminaRegenRate: 4
   moveSpeed: 5
   threatLevel: 0
   threatThresholds: []
@@ -220,6 +221,22 @@ MonoBehaviour:
     m_Bits: 0
   foodParticles: {fileID: 0}
   interactUI: {fileID: 0}
+--- !u!114 &294218522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926187477672939508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d119d1521b74a405791926a52f185d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  staminaBar: {fileID: 0}
+  hungerBar: {fileID: 0}
+  playerStats: {fileID: 0}
 --- !u!1 &4926187478494543073
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +410,7 @@ GameObject:
   - component: {fileID: 4926187478881888591}
   - component: {fileID: 4926187478881888589}
   - component: {fileID: 4926187478881888588}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,6 +554,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4926187478273120984}
   attackDamage: 50
+  staminaCost: 15
+  playerStats: {fileID: 4926187477672939505}
 --- !u!1001 &4926187477420263299
 PrefabInstance:
   m_ObjectHideFlags: 0

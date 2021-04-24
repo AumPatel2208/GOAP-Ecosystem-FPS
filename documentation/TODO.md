@@ -35,11 +35,12 @@
   - [ ] Target is lost if it enters a grass element
 - [ ] Enemy copy of Sabertooth however has a ranged attack
 - [x] Health recovery by using hunger
-  - [ ] That way a special health resource is not required
+  - That way a special health resource is not required
   - [x] any excess hunger is replaced as health
-- [ ] HUD for player health and the hunger
+- [x] HUD for player health and the hunger
+- [x] Stamina
 - [ ] Short Level
-- [ ] Death for player
-  - [ ] Just reset the scene???
+- [x] Death for player
+  - [x] Just reset the scene???
 - [ ] Flee action when Threatened 
   - STRETCH

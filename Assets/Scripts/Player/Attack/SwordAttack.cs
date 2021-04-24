@@ -4,8 +4,10 @@ namespace Player.Attack {
     public class SwordAttack : MonoBehaviour {
         public Animator animator;
         public float attackDamage = 50f;
+        public float staminaCost = 15f;
 
         private static readonly int hIsAttacking = Animator.StringToHash("isAttacking");
+        public Stats.Stats playerStats;
 
         // private float animationTimer = 0f;
 
@@ -17,7 +19,7 @@ namespace Player.Attack {
         // Start is called before the first frame update
         void Start() {
             animator.GetComponent<Animator>();
-        
+
             noOfClicks = 0;
             canClick = true;
         }
@@ -25,7 +27,8 @@ namespace Player.Attack {
         // Update is called once per frame
         void Update() {
             // https://youtu.be/NWt84YCMHHE Reference
-            if (Input.GetButtonDown("Fire1")) {
+            if (Input.GetButtonDown("Fire1") && playerStats.GetStamina() > staminaCost) {
+                playerStats.ApplyStaminaReduction(staminaCost);
                 // Debug.Log("Fire: canClick: " + canClick + " noOfClicks: " + noOfClicks + ". Current Animation:" + animator.GetInteger(hAttackNo));
                 ComboStarter();
             }
@@ -47,7 +50,7 @@ namespace Player.Attack {
             if (animator.GetInteger(hAttackNo) > 0) {
                 // 11 is life layer
                 if (other.gameObject.layer == 11) {
-                    if (other.gameObject.GetComponent<Stats.Stats>() != null){
+                    if (other.gameObject.GetComponent<Stats.Stats>() != null) {
                         other.gameObject.GetComponent<Stats.Stats>().ApplyDamage(attackDamage, other.bounds.center, other.transform.rotation);
                     }
                 }
@@ -66,7 +69,7 @@ namespace Player.Attack {
 
         public void ComboCheck() {
             // Debug.Log("ComboCheck: " + noOfClicks);
-        
+
             // commented out recently, works
             // canClick = false;
 
