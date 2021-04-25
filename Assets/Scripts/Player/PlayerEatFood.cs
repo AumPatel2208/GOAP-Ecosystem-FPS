@@ -45,13 +45,15 @@ namespace Player {
                 // var root = hit.transform.root;
                 // interactUI.gameObject.transform.position = root.position + root.up.normalized * 0.5f;
                 // interactUI.gameObject.transform.forward = Camera.main.transform.forward;
-                if (hit.transform.root.GetComponent<FoodStats>().isReadyToEat) {
-                    toggleUI(true);
+                if (hit.transform.root.GetComponent<FoodStats>() != null) {
+                    if (hit.transform.root.GetComponent<FoodStats>().isReadyToEat) {
+                        toggleUI(true);
 
-                    if (Input.GetKeyDown(KeyCode.E)) {
-                        stats.AddFoodAmount(hit.transform.root.GetComponent<FoodStats>().foodAmount);
-                        // hit.transform.root.GetComponent<FoodStats>().SpawnFoodParticles(hit.transform.position, hit.transform.rotation);
-                        hit.transform.root.GetComponent<FoodStats>().DepleteTotalFoodAmount(hit.transform.position, hit.transform.rotation);
+                        if (Input.GetKeyDown(KeyCode.E)) {
+                            stats.AddFoodAmount(hit.transform.root.GetComponent<FoodStats>().foodAmount);
+                            // hit.transform.root.GetComponent<FoodStats>().SpawnFoodParticles(hit.transform.position, hit.transform.rotation);
+                            hit.transform.root.GetComponent<FoodStats>().DepleteTotalFoodAmount(hit.transform.position, hit.transform.rotation);
+                        }
                     }
                 }
             }

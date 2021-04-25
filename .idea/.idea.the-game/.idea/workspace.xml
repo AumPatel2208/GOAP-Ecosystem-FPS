@@ -5,17 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/PlayerStatsUi.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PlayerStatsUi.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Level1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Level1/Obstacles.blend" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Level1/Obstacles.blend.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Level1/Obstacles.blend1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Level1/Obstacles.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Level1/Obstacles.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/NatureFreePack1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/NatureFreePack1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FoodChain.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FoodChain.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Plant.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Plant.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/ScreenCanvas.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/ScreenCanvas.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyCallFindFood.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sabertooth Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sabertooth Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sloth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sloth.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/SwordAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/SwordAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerSpawn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/FoodStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/FoodStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/Stats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/TODO.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEatFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEatFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +60,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/FoodStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PlayerStatsUi.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/3b/cd73e976/NotImplementedException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/20/6f3a823d/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F7599570-39B4-4A01-90B1-110FDFE3030F/bb/8d9a74a4/Action.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C329B191-02C4-4F90-9872-5BD81AAF841F/64/c8506b00/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C329B191-02C4-4F90-9872-5BD81AAF841F/2d/a19fc951/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///Applications/Unity/Hub/Editor/2019.4.19f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AF2FD80C-88E0-4691-A6E2-21175E1DAE57/87/a87f388b/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/55/123dd69c/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyCallFindFood.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Attack/Arrow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_FindFood.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sloth.cs" root0="FORCE_HIGHLIGHTING" />
@@ -58,7 +78,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Action_FindFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Action_EatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/OldFly.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Food.cs" />
@@ -89,12 +108,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/RagdollToggle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Stats/Food.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sabertooth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_Roam.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sloth.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_MeleeAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Actions/Action_EatFood.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/FinishEating.cs" />
@@ -109,6 +126,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Stats/Stats.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerSpawn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Stats/FoodStats.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyCallFindFood.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEatFood.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nqDH9RbKCaths3dqmALE3xCfzt" />
@@ -121,7 +141,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.17975095" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.17974684" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -146,10 +166,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="943">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="943" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -233,7 +253,8 @@
       <workItem from="1619001849490" duration="4017000" />
       <workItem from="1619221031086" duration="150000" />
       <workItem from="1619233602798" duration="260000" />
-      <workItem from="1619280187521" duration="1319000" />
+      <workItem from="1619280187521" duration="1902000" />
+      <workItem from="1619356855540" duration="2118000" />
     </task>
     <servers />
   </component>
