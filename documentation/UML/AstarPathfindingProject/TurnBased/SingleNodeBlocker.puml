@@ -1,0 +1,11 @@
+@startuml
+class SingleNodeBlocker {
+    + lastBlocked : GraphNode <<get>>
+    + manager : BlockManager
+    + BlockAtCurrentPosition() : void
+    + BlockAt(position:Vector3) : void
+    + Block(node:GraphNode) : void
+    + Unblock() : void
+}
+VersionedMonoBehaviour <|-- SingleNodeBlocker
+@enduml

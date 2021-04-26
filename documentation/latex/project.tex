@@ -114,11 +114,20 @@ Goal Oriented Action Planning (GOAP) was originally implemented in a game in F.E
 
 The AI system is based around GOAP which works really well as a modular system that can bring about novel ideas by agents.
 
+The software design methodology used in this project was a version of scrum, which comes under the agile family of development methods. As you can see in the figure below\cite{AgileMethodology}, the agile methodology consists of multiple sprints, where you plan, design, build, test and review; this leads to rapid development and in the short period of time to do this project this was the best methodology to fit the project. 
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 15cm]{agile_method.jpg}}
+    \caption{Agile Scrum Methodology}
+\end{figure}
+Another advantage to using agile is that for the programming practice that was used, see later section, the project can be broken down into entities and components quite easily which do their own specific jobs, making it easier to create a feature early on, test it and then not have to refactor it later on as everything is highly decoupled. In the results section, it is seperated into two main sections (sprints), a Minimum Viable Product, and then the Main Product, which are then broken down into multiple sub-sections (which act like their own sub-sprints going feature by feature) that describe the different objectives described in the PDD[appendix 1], and how they were fulfilled using the agile methodology. 
+
+This methodology avoids having to do a big test of the program at the end of development as all the features are being tested rapidly while being created, so when the final prototype build was created, it works as expected.
+
+
 \section{Tools}
 %tools
 % need to add
-% - Audio Tool
-% - UML tool
 % - evaluation tool
 
 \subsection{Unity (Game Engine)}
@@ -149,6 +158,9 @@ Adobe Illustrator was the choice of vector editor used to design any graphical e
 
 \subsection{diagrams.net}
 Diagrams.net (formally known as draw.io) was used as the tool to create UML diagrams as it is a lightweight web-application providing all the necessary features and flexibility. The feature that came in most useful was the integration with github; I was able to save my diagrams and version them directly in the same repository.
+
+% \subsection{Plant UML}
+% Plant UML is an open source UML creation tool allowing you to write UML in plain text. This was used to create a UML diagram out of the final code output.
 
 \section{Programming Patterns}
 The programming paradigm used was based around an Entity Component System (ECS) design where there are Entities in the world (the game objects) that are built up of components.
@@ -572,6 +584,9 @@ private bool inState(HashSet<KeyValuePair<string, object>> test, HashSet<KeyValu
 \end{lstlisting}
 
 \subsubsection{Ragdolls}
+When destroyed, there was no state for the creatures to be in, so it was decided that ragdolls would be fun to allow the player to move the body around using the physics based collisions on the sword and the crossbow weapons, and it would also provide a clear indicator that the creature is dead.
+
+Unity has a built-in Ragdoll creator, however that only works on humanoids with the appropriate bone structure (for the armatures), so it had to be done manually for each creature. A YouTube tutorial was used to understand what components were required on what to achieve this effect. \cite{RagdollTutorial}
 \subsubsection{Particle Effects}
 On applying damage via the Stats component, blood particles are spawned, and these blood particles are specified per creature, allowing for different particle effects per enemy type. 
 
@@ -646,6 +661,11 @@ This crossbow and arrow model were placed inside an empty called \textbf{RightHa
     \end{minipage}
 \end{figure}
 
+\subsection{User Interface changes}
+
+\subsection{Level Creation}
+As seen in the figure below, this was what the level where the different game systems were being tested looked like. After all the systems were created a larger level was created to accommodate multiple enemies.
+
 
 \chapter{Asset Listing}
 
@@ -694,5 +714,9 @@ This crossbow and arrow model were placed inside an empty called \textbf{RightHa
     Granberg, A., 2017. Documentation. [online] Arongranberg.com. Available at: \url{https://arongranberg.com/astar/docs/graphtypes.html} [Accessed 20 April 2021].
     \bibitem{UnityTriggerCollider}
     Technologies, U., 2021. Unity - Scripting API: Collider.OnTriggerEnter(Collider). [online] Docs.unity3d.com. Available at: \url{https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html} [Accessed 20 April 2021].
+    \bibitem{AgileMethodology}
+    UKEssays.com. 2021. Rapid Application Development vs. Agile Methodologies. [online] Available at: \url{https://www.ukessays.com/essays/management/rapid-application-development-vs-agile-methodologies.php} [Accessed 21 February 2021].
+    \bibitem{RagdollTutorial}
+    DitzelGames, 2021. Create an Animal Ragdoll in Unity. [image] Available at: \url{https://youtu.be/oVPI2ESkgIw} [Accessed 1 April 2021].
 \end{thebibliography}
 \end{document}

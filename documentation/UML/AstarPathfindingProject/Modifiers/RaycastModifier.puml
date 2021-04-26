@@ -1,0 +1,29 @@
+@startuml
+class RaycastModifier {
+    + <<override>> Order : int <<get>>
+    + useRaycasting : bool = true
+    + mask : LayerMask
+    + thickRaycast : bool
+    + thickRaycastRadius : float
+    + use2DPhysics : bool
+    + raycastOffset : Vector3
+    + useGraphRaycasting : bool
+    + quality : Quality
+    {static} <<readonly>> iterationsByQuality : int[]
+    {static} buffer : List<Vector3>
+    {static} DPCosts : float[]
+    {static} DPParents : int[]
+    + <<override>> Apply(p:Path) : void
+    ApplyGreedy(p:Path, points:List<Vector3>) : List<Vector3>
+    ApplyDP(p:Path, points:List<Vector3>) : List<Vector3>
+    # ValidateLine(n1:GraphNode, n2:GraphNode, v1:Vector3, v2:Vector3) : bool
+}
+enum Quality {
+    Low,
+    Medium,
+    High,
+    Highest,
+}
+MonoModifier <|-- RaycastModifier
+RaycastModifier +-- Quality
+@enduml

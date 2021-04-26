@@ -1,0 +1,44 @@
+@startuml
+' organises it vertically
+left to right direction
+package Managers{
+    !include ./Scripts/FoodChain.puml
+    !include ./Scripts/AStarMovement.puml
+}
+package Stats{
+    !include ./Scripts/Stats/FoodStats.puml
+    !include ./Scripts/Stats/Food.puml
+    !include ./Scripts/Stats/Stats.puml
+    !include ./Scripts/Stats/StatsUIController.puml
+    !include ./PlayerStatsUi.puml
+}
+package Player{
+    !include ./Scripts/Player/MouseLook.puml
+    !include ./Scripts/Player/PlayerMovement.puml
+    !include ./Scripts/Player/PlayerSpawn.puml
+    !include ./Scripts/Player/PlayerEatFood.puml
+    !include ./Scripts/Player/Attack/ArrowAttack.puml
+    !include ./Scripts/Player/Attack/SwordAttack.puml
+    !include ./Scripts/Player/Attack/Arrow.puml
+}
+package AI {
+    !include ./Scripts/AI/FSM/FSM.puml
+    !include ./Scripts/AI/FSM/FSMState.puml
+    !include ./Scripts/AI/GOAP/GoapPlanner.puml
+    !include ./Scripts/AI/GOAP/GoapAction.puml
+    !include ./Scripts/AI/GOAP/IGoap.puml
+    !include ./Scripts/AI/GOAP/GoapAgent.puml
+}
+package Creatures{
+    !include ./Scripts/Creatures/Agents/Sabertooth.puml
+    !include ./Scripts/Creatures/Agents/Sloth.puml
+    !include ./Scripts/Creatures/Actions/Action_FindFood.puml
+    !include ./Scripts/Creatures/Actions/Action_MeleeAttack.puml
+    !include ./Scripts/Creatures/Actions/Action_EatFood.puml
+    !include ./Scripts/Creatures/BaseAIGoap.puml
+    !include ./Scripts/Creatures/RandomlyRoam.puml
+    !include ./Scripts/Creatures/RagdollToggle.puml
+    !include ./Scripts/Creatures/FinishEating.puml
+    !include ./Scripts/Creatures/RandomlyCallFindFood.puml
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class AIPath <<partial>> {
+    + TargetReached : bool <<get>>
+    + turningSpeed : float <<get>> <<set>>
+    + speed : float <<get>> <<set>>
+    + targetDirection : Vector3 <<get>>
+    + CalculateVelocity(position:Vector3) : Vector3
+}
+@enduml

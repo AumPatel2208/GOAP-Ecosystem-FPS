@@ -1,0 +1,28 @@
+@startuml
+interface INavmesh {
+    GetNodes(del:System.Action<GraphNode>) : void
+}
+class NavMeshGraph {
+    + sourceMesh : Mesh
+    + offset : Vector3
+    + rotation : Vector3
+    + scale : float = 1
+    + recalculateNormals : bool = true
+    cachedSourceMeshBoundsMin : Vector3
+    # <<override>> RecalculateNormals : bool <<get>>
+    + <<override>> TileWorldSizeX : float <<get>>
+    + <<override>> TileWorldSizeZ : float <<get>>
+    # <<override>> MaxTileConnectionEdgeDistance : float <<get>>
+    + <<override>> CalculateTransform() : GraphTransform
+    CanUpdateAsync(o:GraphUpdateObject) : GraphUpdateThreading
+    UpdateAreaInit(o:GraphUpdateObject) : void
+    UpdateAreaPost(o:GraphUpdateObject) : void
+    UpdateArea(o:GraphUpdateObject) : void
+    + {static} UpdateArea(o:GraphUpdateObject, graph:INavmeshHolder) : void
+    + ScanInternal(objMeshPath:string) : void
+    # <<override>> ScanInternal() : IEnumerable<Progress>
+    # <<override>> DeserializeSettingsCompatibility(ctx:GraphSerializationContext) : void
+}
+NavmeshBase <|-- NavMeshGraph
+IUpdatableGraph <|-- NavMeshGraph
+@enduml

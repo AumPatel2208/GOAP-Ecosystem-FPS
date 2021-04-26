@@ -1,0 +1,42 @@
+@startuml
+class AstarWorkItem <<struct>> {
+    + init : System.Action
+    + initWithContext : System.Action<IWorkItemContext>
+    + update : System.Func<bool, bool>
+    + updateWithContext : System.Func<IWorkItemContext, bool, bool>
+    + AstarWorkItem(update:System.Func<bool, bool>)
+    + AstarWorkItem(update:System.Func<IWorkItemContext, bool, bool>)
+    + AstarWorkItem(init:System.Action, update:System.Func<bool, bool>)
+    + AstarWorkItem(init:System.Action<IWorkItemContext>, update:System.Func<IWorkItemContext, bool, bool>)
+}
+interface IWorkItemContext {
+    QueueFloodFill() : void
+    EnsureValidFloodFill() : void
+    SetGraphDirty(graph:NavGraph) : void
+}
+class WorkItemProcessor {
+    + workItemsInProgressRightNow : bool <<get>>
+    <<readonly>> astar : AstarPath
+    <<readonly>> workItems : IndexedQueue<AstarWorkItem>
+    + anyQueued : bool <<get>>
+    queuedWorkItemFloodFill : bool = false
+    anyGraphsDirty : bool = true
+    + workItemsInProgress : bool <<get>>
+    QueueFloodFill() : void
+    SetGraphDirty(graph:NavGraph) : void
+    + EnsureValidFloodFill() : void
+    + WorkItemProcessor(astar:AstarPath)
+    + OnFloodFill() : void
+    + AddWorkItem(item:AstarWorkItem) : void
+    + ProcessWorkItems(force:bool) : bool
+}
+class "IndexedQueue`1"<T> {
+    buffer : T[]
+    start : int
+    + Count : int <<get>>
+    + Enqueue(item:T) : void
+    + Dequeue() : T
+}
+IWorkItemContext <|-- WorkItemProcessor
+WorkItemProcessor +-- "IndexedQueue`1"
+@enduml

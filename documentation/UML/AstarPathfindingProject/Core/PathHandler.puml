@@ -1,0 +1,39 @@
+@startuml
+class PathNode {
+    + node : GraphNode
+    + parent : PathNode
+    + pathID : ushort
+    + heapIndex : ushort
+    - flags : uint
+    - <<const>> CostMask : uint
+    - <<const>> Flag1Offset : int = 28
+    - <<const>> Flag1Mask : uint
+    - <<const>> Flag2Offset : int = 29
+    - <<const>> Flag2Mask : uint
+    + cost : uint <<get>> <<set>>
+    + flag1 : bool <<get>> <<set>>
+    + flag2 : bool <<get>> <<set>>
+    - g : uint
+    - h : uint
+    + G : uint <<get>> <<set>>
+    + H : uint <<get>> <<set>>
+    + F : uint <<get>>
+    + UpdateG(path:Path) : void
+}
+class PathHandler {
+    - pathID : ushort
+    + <<readonly>> threadID : int
+    + <<readonly>> totalThreadCount : int
+    + <<readonly>> heap : BinaryHeap
+    + PathID : ushort <<get>>
+    + nodes : PathNode[]
+    + <<readonly>> DebugStringBuilder : System.Text.StringBuilder
+    + PathHandler(threadID:int, totalThreadCount:int)
+    + InitializeForPath(p:Path) : void
+    + DestroyNode(node:GraphNode) : void
+    + InitializeNode(node:GraphNode) : void
+    + GetPathNode(nodeIndex:int) : PathNode
+    + GetPathNode(node:GraphNode) : PathNode
+    + ClearPathIDs() : void
+}
+@enduml

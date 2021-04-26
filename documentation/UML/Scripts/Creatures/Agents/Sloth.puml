@@ -1,0 +1,20 @@
+@startuml
+class Sloth {
+    + stats : Stats.Stats
+    - animator : Animator
+    - destinationSetter : AIDestinationSetter
+    - movementController : AIPath
+    - goapAgent : GoapAgent
+    - {static} <<readonly>> hMoving : int
+    - randomPositionObj : GameObject
+    + lifeLayerMask : LayerMask
+    - Awake() : void
+    - Start() : void
+    - FixedUpdate() : void
+    + <<override>> getWorldState() : HashSet<KeyValuePair<string, object>>
+    + <<override>> createGoalState() : HashSet<KeyValuePair<string, object>>
+    + <<override>> moveAgent(nextAction:GoapAction) : bool
+    + <<override>> StartMoving(toMove:bool, target:Transform) : void
+}
+BaseAIGoap <|-- Sloth
+@enduml

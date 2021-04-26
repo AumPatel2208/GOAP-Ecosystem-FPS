@@ -1,0 +1,85 @@
+@startuml
+abstract class AIBase {
+    + radius : float = 0.5f
+    + height : float = 2
+    + repathRate : float = 0.5f
+    + canSearch : bool = true
+    + canMove : bool = true
+    + maxSpeed : float = 1
+    + gravity : Vector3
+    + groundMask : LayerMask
+    + centerOffset : float <<get>> <<set>>
+    centerOffsetCompatibility : float
+    + orientation : OrientationMode
+    + rotationIn2D : bool <<get>> <<set>>
+    + enableRotation : bool = true
+    # simulatedPosition : Vector3
+    # simulatedRotation : Quaternion
+    + position : Vector3 <<get>>
+    + rotation : Quaternion <<get>>
+    accumulatedMovementDelta : Vector3
+    # velocity2D : Vector2
+    # verticalVelocity : float
+    # seeker : Seeker
+    # tr : Transform
+    # rigid : Rigidbody
+    # rigid2D : Rigidbody2D
+    # controller : CharacterController
+    + movementPlane : IMovementPlane
+    + updatePosition : bool = true
+    + updateRotation : bool = true
+    # usingGravity : bool <<get>> <<set>>
+    # lastDeltaTime : float
+    # prevFrame : int
+    # prevPosition1 : Vector3
+    # prevPosition2 : Vector3
+    # lastDeltaPosition : Vector2
+    # waitingForPathCalculation : bool = false
+    # lastRepath : float
+    targetCompatibility : Transform
+    startHasRun : bool = false
+    + target : Transform <<get>> <<set>>
+    + destination : Vector3 <<get>> <<set>>
+    + velocity : Vector3 <<get>>
+    + desiredVelocity : Vector3 <<get>>
+    + isStopped : bool <<get>> <<set>>
+    + onSearchPath : System.Action <<get>> <<set>>
+    # <<virtual>> shouldRecalculatePath : bool <<get>>
+    # AIBase()
+    + <<virtual>> FindComponents() : void
+    # <<virtual>> OnEnable() : void
+    # <<virtual>> Start() : void
+    Init() : void
+    + <<virtual>> Teleport(newPosition:Vector3, clearPath:bool) : void
+    # CancelCurrentPathRequest() : void
+    # <<virtual>> OnDisable() : void
+    # <<virtual>> Update() : void
+    # <<virtual>> FixedUpdate() : void
+    + MovementUpdate(deltaTime:float, nextPosition:Vector3, nextRotation:Quaternion) : void
+    # {abstract} MovementUpdateInternal(deltaTime:float, nextPosition:Vector3, nextRotation:Quaternion) : void
+    # <<virtual>> CalculatePathRequestEndpoints(start:Vector3, end:Vector3) : void
+    + <<virtual>> SearchPath() : void
+    + <<virtual>> GetFeetPosition() : Vector3
+    # {abstract} OnPathComplete(newPath:Path) : void
+    # {abstract} ClearPath() : void
+    + SetPath(path:Path) : void
+    # ApplyGravity(deltaTime:float) : void
+    # CalculateDeltaToMoveThisFrame(position:Vector2, distanceToEndOfPath:float, deltaTime:float) : Vector2
+    + SimulateRotationTowards(direction:Vector3, maxDegrees:float) : Quaternion
+    # SimulateRotationTowards(direction:Vector2, maxDegrees:float) : Quaternion
+    + <<virtual>> Move(deltaPosition:Vector3) : void
+    + <<virtual>> FinalizeMovement(nextPosition:Vector3, nextRotation:Quaternion) : void
+    FinalizeRotation(nextRotation:Quaternion) : void
+    FinalizePosition(nextPosition:Vector3) : void
+    # UpdateVelocity() : void
+    # <<virtual>> ClampToNavmesh(position:Vector3, positionChanged:bool) : Vector3
+    # RaycastPosition(position:Vector3, lastElevation:float) : Vector3
+    # <<virtual>> OnDrawGizmosSelected() : void
+    + {static} <<readonly>> ShapeGizmoColor : Color
+    # <<virtual>> OnDrawGizmos() : void
+    # <<override>> Reset() : void
+    ResetShape() : void
+    # <<override>> OnUpgradeSerializedData(version:int, unityThread:bool) : int
+}
+VersionedMonoBehaviour <|-- AIBase
+@enduml

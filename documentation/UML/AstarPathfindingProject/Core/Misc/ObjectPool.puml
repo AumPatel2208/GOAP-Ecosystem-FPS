@@ -1,0 +1,17 @@
+@startuml
+interface IAstarPooledObject {
+    OnEnterPool() : void
+}
+class "ObjectPool`1"<T> <<static>> {
+    + {static} Claim() : T
+    + {static} Release(obj:T) : void
+}
+class "ObjectPoolSimple`1"<T> <<static>> {
+    {static} pool : List<T>
+    {static} <<readonly>> inPool : HashSet<T>
+    + {static} Claim() : T
+    + {static} Release(obj:T) : void
+    + {static} Clear() : void
+    + {static} GetSize() : int
+}
+@enduml

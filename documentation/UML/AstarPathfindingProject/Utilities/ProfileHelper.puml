@@ -1,0 +1,23 @@
+@startuml
+class Profile {
+    <<const>> PROFILE_MEM : bool = false
+    + <<readonly>> name : string
+    <<readonly>> watch : System.Diagnostics.Stopwatch
+    counter : int
+    mem : long
+    smem : long
+    control : int
+    <<const>> dontCountFirst : bool = false
+    + ControlValue() : int
+    + Profile(name:string)
+    + {static} WriteCSV(path:string, profiles:Profile[]) : void
+    + Run(action:System.Action) : void
+    + Start() : void
+    + Stop() : void
+    + Log() : void
+    + ConsoleLog() : void
+    + Stop(control:int) : void
+    + Control(other:Profile) : void
+    + <<override>> ToString() : string
+}
+@enduml

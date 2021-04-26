@@ -1,0 +1,31 @@
+@startuml
+class GridNode {
+    + GridNode(astar:AstarPath)
+    - {static} _gridGraphs : GridGraph[]
+    + {static} GetGridGraph(graphIndex:uint) : GridGraph
+    + {static} SetGridGraph(graphIndex:int, graph:GridGraph) : void
+    <<internal>> InternalGridFlags : ushort <<get>> <<set>>
+    <<const>> GridFlagsConnectionOffset : int = 0
+    <<const>> GridFlagsConnectionBit0 : int
+    <<const>> GridFlagsConnectionMask : int
+    <<const>> GridFlagsEdgeNodeOffset : int = 10
+    <<const>> GridFlagsEdgeNodeMask : int
+    + <<override>> HasConnectionsToAllEightNeighbours : bool <<get>>
+    + HasConnectionInDirection(dir:int) : bool
+    + GetConnectionInternal(dir:int) : bool
+    + SetConnectionInternal(dir:int, value:bool) : void
+    + SetAllConnectionInternal(connections:int) : void
+    + ResetConnectionsInternal() : void
+    + EdgeNode : bool <<get>> <<set>>
+    + <<override>> GetNeighbourAlongDirection(direction:int) : GridNodeBase
+    + <<override>> ClearConnections(alsoReverse:bool) : void
+    + <<override>> GetConnections(action:System.Action<GraphNode>) : void
+    + ClosestPointOnNode(p:Vector3) : Vector3
+    + <<override>> GetPortal(other:GraphNode, left:List<Vector3>, right:List<Vector3>, backwards:bool) : bool
+    + <<override>> UpdateRecursiveG(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + <<override>> Open(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + <<override>> SerializeNode(ctx:GraphSerializationContext) : void
+    + <<override>> DeserializeNode(ctx:GraphSerializationContext) : void
+}
+GridNodeBase <|-- GridNode
+@enduml

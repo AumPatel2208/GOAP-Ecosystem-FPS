@@ -1,0 +1,223 @@
+@startuml
+class AstarColor {
+    + _SolidColor : Color
+    + _UnwalkableNode : Color
+    + _BoundsHandles : Color
+    + _ConnectionLowLerp : Color
+    + _ConnectionHighLerp : Color
+    + _MeshEdgeColor : Color
+    + _AreaColors : Color[]
+    + {static} SolidColor : Color
+    + {static} UnwalkableNode : Color
+    + {static} BoundsHandles : Color
+    + {static} ConnectionLowLerp : Color
+    + {static} ConnectionHighLerp : Color
+    + {static} MeshEdgeColor : Color
+    - {static} AreaColors : Color[]
+    + {static} ColorHash() : int
+    + {static} GetAreaColor(area:uint) : Color
+    + {static} GetTagColor(tag:uint) : Color
+    + PushToStatic(astar:AstarPath) : void
+    + AstarColor()
+}
+class GraphHitInfo <<struct>> {
+    + origin : Vector3
+    + point : Vector3
+    + node : GraphNode
+    + tangentOrigin : Vector3
+    + tangent : Vector3
+    + distance : float <<get>>
+    + GraphHitInfo(point:Vector3)
+}
+class NNConstraint {
+    + graphMask : GraphMask
+    + constrainArea : bool
+    + area : int
+    + constrainWalkability : bool = true
+    + walkable : bool = true
+    + distanceXZ : bool
+    + constrainTags : bool = true
+    + tags : int
+    + constrainDistance : bool = true
+    + <<virtual>> SuitableGraph(graphIndex:int, graph:NavGraph) : bool
+    + <<virtual>> Suitable(node:GraphNode) : bool
+    + {static} Default : NNConstraint <<get>>
+    + {static} None : NNConstraint <<get>>
+    + NNConstraint()
+}
+class PathNNConstraint {
+    + {static} <<new>> Default : PathNNConstraint <<get>>
+    + <<virtual>> SetStart(node:GraphNode) : void
+}
+class NNInfoInternal <<struct>> {
+    + node : GraphNode
+    + constrainedNode : GraphNode
+    + clampedPosition : Vector3
+    + constClampedPosition : Vector3
+    + NNInfoInternal(node:GraphNode)
+    + UpdateInfo() : void
+}
+class NNInfo <<struct>> {
+    + <<readonly>> node : GraphNode
+    + <<readonly>> position : Vector3
+    + clampedPosition : Vector3 <<get>>
+    + NNInfo(internalInfo:NNInfoInternal)
+}
+class Progress <<struct>> {
+    + <<readonly>> progress : float
+    + <<readonly>> description : string
+    + Progress(progress:float, description:string)
+    + MapTo(min:float, max:float, prefix:string) : Progress
+    + <<override>> ToString() : string
+}
+interface IUpdatableGraph {
+    UpdateArea(o:GraphUpdateObject) : void
+    UpdateAreaInit(o:GraphUpdateObject) : void
+    UpdateAreaPost(o:GraphUpdateObject) : void
+    CanUpdateAsync(o:GraphUpdateObject) : GraphUpdateThreading
+}
+class GraphUpdateObject {
+    + bounds : Bounds
+    + requiresFloodFill : bool <<set>>
+    + updatePhysics : bool = true
+    + resetPenaltyOnPhysics : bool = true
+    + updateErosion : bool = true
+    + nnConstraint : NNConstraint
+    + addPenalty : int
+    + modifyWalkability : bool
+    + setWalkability : bool
+    + modifyTag : bool
+    + setTag : int
+    + trackChangedNodes : bool
+    + changedNodes : List<GraphNode>
+    - backupData : List<uint>
+    - backupPositionData : List<Int3>
+    + shape : GraphUpdateShape
+    + <<virtual>> WillUpdateNode(node:GraphNode) : void
+    + <<virtual>> RevertFromBackup() : void
+    + <<virtual>> Apply(node:GraphNode) : void
+    + GraphUpdateObject()
+    + GraphUpdateObject(b:Bounds)
+}
+interface ITransformedGraph {
+    transform : GraphTransform <<get>>
+}
+interface IRaycastableGraph {
+    Linecast(start:Vector3, end:Vector3) : bool
+    Linecast(start:Vector3, end:Vector3, hint:GraphNode) : bool
+    Linecast(start:Vector3, end:Vector3, hint:GraphNode, hit:GraphHitInfo) : bool
+    Linecast(start:Vector3, end:Vector3, hint:GraphNode, hit:GraphHitInfo, trace:List<GraphNode>) : bool
+}
+class IntRect <<struct>> {
+    + xmin : int
+    + ymin : int
+    + xmax : int
+    + ymax : int
+    + IntRect(xmin:int, ymin:int, xmax:int, ymax:int)
+    + Contains(x:int, y:int) : bool
+    + Width : int <<get>>
+    + Height : int <<get>>
+    + IsValid() : bool
+    + <<override>> Equals(obj:System.Object) : bool
+    + <<override>> GetHashCode() : int
+    + {static} Intersection(a:IntRect, b:IntRect) : IntRect
+    + {static} Intersects(a:IntRect, b:IntRect) : bool
+    + {static} Union(a:IntRect, b:IntRect) : IntRect
+    + ExpandToContain(x:int, y:int) : IntRect
+    + Expand(range:int) : IntRect
+    + <<override>> ToString() : string
+    + DebugDraw(transform:GraphTransform, color:Color) : void
+}
+class GraphMask <<struct>> {
+    + value : int
+    + {static} everything : GraphMask <<get>>
+    + GraphMask(value:int)
+    + Contains(graphIndex:int) : bool
+    + {static} FromGraph(graph:NavGraph) : GraphMask
+    + <<override>> ToString() : string
+    + {static} FromGraphName(graphName:string) : GraphMask
+}
+enum GraphUpdateThreading {
+    UnityThread= 0,
+    SeparateThread= 1 << 0,
+    UnityInit= 1 << 1,
+    UnityPost= 1 << 2,
+    SeparateAndUnityInit= SeparateThread | UnityInit,
+}
+enum PathLog {
+    None,
+    Normal,
+    Heavy,
+    InGame,
+    OnlyErrors,
+}
+enum Heuristic {
+    Manhattan,
+    DiagonalManhattan,
+    Euclidean,
+    None,
+}
+enum GraphDebugMode {
+    SolidColor,
+    G,
+    H,
+    F,
+    Penalty,
+    Areas,
+    Tags,
+    HierarchicalNode,
+}
+enum ThreadCount {
+    AutomaticLowLoad= -1,
+    AutomaticHighLoad= -2,
+    None= 0,
+    One= 1,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+}
+enum PathState {
+    Created= 0,
+    PathQueue= 1,
+    Processing= 2,
+    ReturnQueue= 3,
+    Returned= 4,
+}
+enum PathCompleteState {
+    NotCalculated= 0,
+    Error= 1,
+    Complete= 2,
+    Partial= 3,
+}
+enum CloseToDestinationMode {
+    Stop,
+    ContinueToExactDestination,
+}
+enum Side {
+    Colinear= 0,
+    Left= 1,
+    Right= 2,
+}
+enum InspectorGridHexagonNodeSize {
+    Width,
+    Diameter,
+    NodeSize,
+}
+enum InspectorGridMode {
+    Grid,
+    IsometricGrid,
+    Hexagonal,
+    Advanced,
+}
+enum OrientationMode {
+    ZAxisForward,
+    YAxisForward,
+}
+class PreserveAttribute {
+}
+NNConstraint <|-- PathNNConstraint
+@enduml

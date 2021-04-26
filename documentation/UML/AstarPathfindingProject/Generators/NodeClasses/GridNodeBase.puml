@@ -1,0 +1,35 @@
+@startuml
+abstract class GridNodeBase {
+    # GridNodeBase(astar:AstarPath)
+    <<const>> GridFlagsWalkableErosionOffset : int = 8
+    <<const>> GridFlagsWalkableErosionMask : int
+    <<const>> GridFlagsWalkableTmpOffset : int = 9
+    <<const>> GridFlagsWalkableTmpMask : int
+    # <<const>> NodeInGridIndexLayerOffset : int = 24
+    # <<const>> NodeInGridIndexMask : int = 0xFFFFFF
+    # nodeInGridIndex : int
+    # gridFlags : ushort
+    + connections : Connection[]
+    + NodeInGridIndex : int <<get>> <<set>>
+    + XCoordinateInGrid : int <<get>>
+    + ZCoordinateInGrid : int <<get>>
+    + WalkableErosion : bool <<get>> <<set>>
+    + TmpWalkable : bool <<get>> <<set>>
+    + {abstract} HasConnectionsToAllEightNeighbours : bool <<get>>
+    + <<override>> SurfaceArea() : float
+    + <<override>> RandomPointOnSurface() : Vector3
+    + <<override>> GetGizmoHashCode() : int
+    + {abstract} GetNeighbourAlongDirection(direction:int) : GridNodeBase
+    + <<override>> ContainsConnection(node:GraphNode) : bool
+    + ClearCustomConnections(alsoReverse:bool) : void
+    + <<override>> ClearConnections(alsoReverse:bool) : void
+    + <<override>> GetConnections(action:System.Action<GraphNode>) : void
+    + <<override>> UpdateRecursiveG(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + <<override>> Open(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + <<override>> AddConnection(node:GraphNode, cost:uint) : void
+    + <<override>> RemoveConnection(node:GraphNode) : void
+    + <<override>> SerializeReferences(ctx:GraphSerializationContext) : void
+    + <<override>> DeserializeReferences(ctx:GraphSerializationContext) : void
+}
+GraphNode <|-- GridNodeBase
+@enduml

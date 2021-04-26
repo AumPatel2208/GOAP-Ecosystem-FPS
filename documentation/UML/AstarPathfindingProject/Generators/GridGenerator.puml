@@ -1,0 +1,118 @@
+@startuml
+class GridGraph {
+    # <<override>> OnDestroy() : void
+    # <<override>> DestroyAllNodes() : void
+    RemoveGridGraphFromStatic() : void
+    + <<virtual>> uniformWidthDepthGrid : bool <<get>>
+    + <<virtual>> LayerCount : int <<get>>
+    + <<override>> CountNodes() : int
+    + <<override>> GetNodes(action:System.Action<GraphNode>) : void
+    + inspectorGridMode : InspectorGridMode
+    + inspectorHexagonSizeMode : InspectorGridHexagonNodeSize
+    + width : int
+    + depth : int
+    + aspectRatio : float = 1F
+    + isometricAngle : float
+    + uniformEdgeCosts : bool
+    + rotation : Vector3
+    + center : Vector3
+    + unclampedSize : Vector2
+    + nodeSize : float = 1
+    + collision : GraphCollision
+    + maxClimb : float = 0.4F
+    + maxSlope : float = 90
+    # useRaycastNormal : bool <<get>>
+    + erodeIterations : int
+    + erosionUseTags : bool
+    + erosionFirstTag : int = 1
+    + neighbours : NumNeighbours
+    + cutCorners : bool = true
+    + penaltyPositionOffset : float
+    + penaltyPosition : bool
+    + penaltyPositionFactor : float = 1F
+    + penaltyAngle : bool
+    + penaltyAngleFactor : float = 100F
+    + penaltyAnglePower : float = 1
+    + showMeshOutline : bool = true
+    + showNodeConnections : bool
+    + showMeshSurface : bool = true
+    + size : Vector2 <<get>> <<protected set>>
+    + <<readonly>> neighbourOffsets : int[]
+    + <<readonly>> neighbourCosts : uint[]
+    + <<readonly>> neighbourXOffsets : int[]
+    + <<readonly>> neighbourZOffsets : int[]
+    <<internal>> {static} <<readonly>> hexagonNeighbourIndices : int[]
+    + <<const>> getNearestForceOverlap : int = 2
+    + nodes : GridNode[]
+    + transform : GraphTransform <<get>>
+    + GridGraph()
+    + <<override>> RelocateNodes(deltaMatrix:Matrix4x4) : void
+    + RelocateNodes(center:Vector3, rotation:Quaternion, nodeSize:float, aspectRatio:float, isometricAngle:float) : void
+    + GraphPointToWorld(x:int, z:int, height:float) : Int3
+    + {static} ConvertHexagonSizeToNodeSize(mode:InspectorGridHexagonNodeSize, value:float) : float
+    + {static} ConvertNodeSizeToHexagonSize(mode:InspectorGridHexagonNodeSize, value:float) : float
+    + Width : int <<get>> <<set>>
+    + Depth : int <<get>> <<set>>
+    + GetConnectionCost(dir:int) : uint
+    + GetNodeConnection(node:GridNode, dir:int) : GridNode
+    + HasNodeConnection(node:GridNode, dir:int) : bool
+    + SetNodeConnection(node:GridNode, dir:int, value:bool) : void
+    - GetNodeConnection(index:int, x:int, z:int, dir:int) : GridNode
+    + SetNodeConnection(index:int, x:int, z:int, dir:int, value:bool) : void
+    + HasNodeConnection(index:int, x:int, z:int, dir:int) : bool
+    + SetDimensions(width:int, depth:int, nodeSize:float) : void
+    + UpdateSizeFromWidthDepth() : void
+    + GenerateMatrix() : void
+    + UpdateTransform() : void
+    + CalculateTransform() : GraphTransform
+    CalculateDimensions(width:int, depth:int, nodeSize:float) : void
+    + <<override>> GetNearest(position:Vector3, constraint:NNConstraint, hint:GraphNode) : NNInfoInternal
+    + <<override>> GetNearestForce(position:Vector3, constraint:NNConstraint) : NNInfoInternal
+    + <<virtual>> SetUpOffsetsAndCosts() : void
+    # <<override>> ScanInternal() : IEnumerable<Progress>
+    + <<virtual>> UpdateNodePositionCollision(node:GridNode, x:int, z:int, resetPenalty:bool) : void
+    + <<virtual>> RecalculateCell(x:int, z:int, resetPenalties:bool, resetTags:bool) : void
+    # <<virtual>> ErosionAnyFalseConnections(baseNode:GraphNode) : bool
+    ErodeNode(node:GraphNode) : void
+    ErodeNodeWithTagsInit(node:GraphNode) : void
+    ErodeNodeWithTags(node:GraphNode, iteration:int) : void
+    + <<virtual>> ErodeWalkableArea() : void
+    + ErodeWalkableArea(xmin:int, zmin:int, xmax:int, zmax:int) : void
+    + <<virtual>> IsValidConnection(node1:GridNodeBase, node2:GridNodeBase) : bool
+    + CalculateConnectionsForCellAndNeighbours(x:int, z:int) : void
+    + {static} CalculateConnections(node:GridNode) : void
+    + <<virtual>> CalculateConnections(node:GridNodeBase) : void
+    + <<virtual>> CalculateConnections(x:int, z:int, node:GridNode) : void
+    + <<virtual>> CalculateConnections(x:int, z:int) : void
+    + <<override>> OnDrawGizmos(gizmos:RetainedGizmos, drawNodes:bool) : void
+    CreateNavmeshSurfaceVisualization(nodes:GridNodeBase[], nodeCount:int, helper:GraphGizmoHelper) : void
+    # GetRectFromBounds(bounds:Bounds) : IntRect
+    + GetNodesInArea(bounds:Bounds) : List<GraphNode>
+    + GetNodesInArea(shape:GraphUpdateShape) : List<GraphNode>
+    + GetNodesInArea(bounds:Bounds, shape:GraphUpdateShape) : List<GraphNode>
+    + GetNodesInRegion(bounds:Bounds) : List<GraphNode>
+    + GetNodesInRegion(shape:GraphUpdateShape) : List<GraphNode>
+    # <<virtual>> GetNodesInRegion(bounds:Bounds, shape:GraphUpdateShape) : List<GraphNode>
+    + <<virtual>> GetNodesInRegion(rect:IntRect) : List<GraphNode>
+    + <<virtual>> GetNodesInRegion(rect:IntRect, buffer:GridNodeBase[]) : int
+    + <<virtual>> GetNode(x:int, z:int) : GridNodeBase
+    CanUpdateAsync(o:GraphUpdateObject) : GraphUpdateThreading
+    UpdateAreaInit(o:GraphUpdateObject) : void
+    UpdateAreaPost(o:GraphUpdateObject) : void
+    # CalculateAffectedRegions(o:GraphUpdateObject, originalRect:IntRect, affectRect:IntRect, physicsRect:IntRect, willChangeWalkability:bool, erosion:int) : void
+    UpdateArea(o:GraphUpdateObject) : void
+    + CheckConnection(node:GridNode, dir:int) : bool
+    # <<override>> SerializeExtraInfo(ctx:GraphSerializationContext) : void
+    # <<override>> DeserializeExtraInfo(ctx:GraphSerializationContext) : void
+    # <<override>> DeserializeSettingsCompatibility(ctx:GraphSerializationContext) : void
+    # <<override>> PostDeserialization(ctx:GraphSerializationContext) : void
+}
+enum NumNeighbours {
+    Four,
+    Eight,
+    Six,
+}
+NavGraph <|-- GridGraph
+IUpdatableGraph <|-- GridGraph
+ITransformedGraph <|-- GridGraph
+@enduml

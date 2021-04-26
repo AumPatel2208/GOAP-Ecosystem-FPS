@@ -1,0 +1,40 @@
+@startuml
+class Int3 <<struct>> {
+    + x : int
+    + y : int
+    + z : int
+    + <<const>> Precision : int = 1000
+    + <<const>> FloatPrecision : float = 1000F
+    + <<const>> PrecisionFactor : float = 0.001F
+    + {static} zero : Int3 <<get>>
+    + Int3(position:Vector3)
+    + Int3(_x:int, _y:int, _z:int)
+    + {static} Angle(lhs:Int3, rhs:Int3) : float
+    + {static} Dot(lhs:Int3, rhs:Int3) : int
+    + {static} DotLong(lhs:Int3, rhs:Int3) : long
+    + Normal2D() : Int3
+    + magnitude : float <<get>>
+    + costMagnitude : int <<get>>
+    + sqrMagnitude : float <<get>>
+    + sqrMagnitudeLong : long <<get>>
+    + <<override>> ToString() : string
+    + <<override>> Equals(obj:System.Object) : bool
+    + Equals(other:Int3) : bool
+    + <<override>> GetHashCode() : int
+}
+class Int2 <<struct>> {
+    + x : int
+    + y : int
+    + Int2(x:int, y:int)
+    + sqrMagnitudeLong : long <<get>>
+    + {static} DotLong(a:Int2, b:Int2) : long
+    + <<override>> Equals(o:System.Object) : bool
+    + Equals(other:Int2) : bool
+    + <<override>> GetHashCode() : int
+    + {static} Min(a:Int2, b:Int2) : Int2
+    + {static} Max(a:Int2, b:Int2) : Int2
+    + {static} FromInt3XZ(o:Int3) : Int2
+    + {static} ToInt3XZ(o:Int2) : Int3
+    + <<override>> ToString() : string
+}
+@enduml

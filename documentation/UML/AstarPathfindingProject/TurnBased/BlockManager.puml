@@ -1,0 +1,26 @@
+@startuml
+class BlockManager {
+    blocked : Dictionary<GraphNode, List<SingleNodeBlocker> >
+    Start() : void
+    + NodeContainsAnyOf(node:GraphNode, selector:List<SingleNodeBlocker>) : bool
+    + NodeContainsAnyExcept(node:GraphNode, selector:List<SingleNodeBlocker>) : bool
+    + InternalBlock(node:GraphNode, blocker:SingleNodeBlocker) : void
+    + InternalUnblock(node:GraphNode, blocker:SingleNodeBlocker) : void
+}
+enum BlockMode {
+    AllExceptSelector,
+    OnlySelector,
+}
+class TraversalProvider {
+    <<readonly>> blockManager : BlockManager
+    + mode : BlockMode <<get>>
+    <<readonly>> selector : List<SingleNodeBlocker>
+    + TraversalProvider(blockManager:BlockManager, mode:BlockMode, selector:List<SingleNodeBlocker>)
+    + CanTraverse(path:Path, node:GraphNode) : bool
+    + GetTraversalCost(path:Path, node:GraphNode) : uint
+}
+VersionedMonoBehaviour <|-- BlockManager
+BlockManager +-- BlockMode
+BlockManager +-- TraversalProvider
+ITraversalProvider <|-- TraversalProvider
+@enduml

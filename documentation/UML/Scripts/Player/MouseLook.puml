@@ -1,0 +1,10 @@
+@startuml
+class MouseLook {
+    + mouseSensitivity : float = 100f
+    + playerBody : Transform
+    - xRotation : float = 0f
+    Start() : void
+    Update() : void
+}
+MonoBehaviour <|-- MouseLook
+@enduml

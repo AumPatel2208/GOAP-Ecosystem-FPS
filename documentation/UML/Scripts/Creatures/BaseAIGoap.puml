@@ -1,0 +1,15 @@
+@startuml
+abstract class BaseAIGoap {
+    + enableDebugging : bool = true
+    + {abstract} getWorldState() : HashSet<KeyValuePair<string, object>>
+    + {abstract} createGoalState() : HashSet<KeyValuePair<string, object>>
+    + planFailed(failedGoal:HashSet<KeyValuePair<string, object>>) : void
+    + planFound(goal:HashSet<KeyValuePair<string, object>>, actions:Queue<GoapAction>) : void
+    + actionsFinished() : void
+    + planAborted(aborter:GoapAction) : void
+    + {abstract} moveAgent(nextAction:GoapAction) : bool
+    + {abstract} StartMoving(toMove:bool, target:Transform) : void
+}
+MonoBehaviour <|-- BaseAIGoap
+IGoap <|-- BaseAIGoap
+@enduml

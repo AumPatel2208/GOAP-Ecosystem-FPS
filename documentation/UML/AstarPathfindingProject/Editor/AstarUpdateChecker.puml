@@ -1,0 +1,28 @@
+@startuml
+class AstarUpdateChecker <<static>> {
+    {static} updateCheckDownload : WWW
+    {static} _lastUpdateCheck : System.DateTime
+    {static} _lastUpdateCheckRead : bool
+    {static} _latestVersion : System.Version
+    {static} _latestBetaVersion : System.Version
+    {static} _latestVersionDescription : string
+    {static} hasParsedServerMessage : bool
+    <<const>> updateCheckRate : double = 1F
+    <<const>> updateURL : string = "http://www.arongranberg.com/astar/version.php"
+    + {static} lastUpdateCheck : System.DateTime <<get>>
+    + {static} latestVersion : System.Version <<get>>
+    + {static} latestBetaVersion : System.Version <<get>>
+    + {static} latestVersionDescription : string <<get>>
+    {static} astarServerData : Dictionary<string, string>
+    {static} AstarUpdateChecker()
+    {static} RefreshServerMessage() : void
+    + {static} GetURL(tag:string) : string
+    + {static} CheckForUpdatesNow() : void
+    {static} UpdateCheckLoop() : void
+    {static} CheckForUpdates() : bool
+    {static} DownloadVersionInfo() : void
+    {static} UpdateCheckCompleted(result:string) : void
+    {static} ParseServerMessage(result:string) : void
+    {static} ShowUpdateWindowIfRelevant() : void
+}
+@enduml

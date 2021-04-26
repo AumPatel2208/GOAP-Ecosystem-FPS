@@ -1,0 +1,13 @@
+@startuml
+class FinishEating {
+    - isInProgress : bool
+    - destinationSetter : AIDestinationSetter
+    - eatAction : Action_EatFood
+    - food : Food
+    - Start() : void
+    - Update() : void
+    + IsInProgress() : bool
+    + StopInProgress() : void
+}
+MonoBehaviour <|-- FinishEating
+@enduml

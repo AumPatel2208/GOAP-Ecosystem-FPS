@@ -1,0 +1,18 @@
+@startuml
+class Action_FindFood {
+    - foodFound : bool = false
+    - validFoods : HashSet<string>
+    + head : Transform
+    + lifeLayerMask : LayerMask
+    + sphereRadius : float = 40
+    + viewAngle : float = 90
+    + Action_FindFood()
+    + Start() : void
+    + <<override>> reset() : void
+    + <<override>> isDone() : bool
+    + <<override>> checkProceduralPrecondition(agent:GameObject) : bool
+    + <<override>> perform(agent:GameObject) : bool
+    + <<override>> requiresInRange() : bool
+}
+GoapAction <|-- Action_FindFood
+@enduml

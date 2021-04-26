@@ -1,0 +1,10 @@
+@startuml
+class RandomlyCallFindFood {
+    + callFrequency : float = 2f
+    - callTimer : float = 0f
+    - findFoodAction : Action_FindFood
+    Start() : void
+    Update() : void
+}
+MonoBehaviour <|-- RandomlyCallFindFood
+@enduml

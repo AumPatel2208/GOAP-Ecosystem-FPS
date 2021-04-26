@@ -1,0 +1,14 @@
+@startuml
+class "ArrayPool`1"<T> <<static>> {
+    <<const>> MaximumExactArrayLength : int = 256
+    {static} <<readonly>> pool : Stack<T[]>[]
+    {static} <<readonly>> exactPool : Stack<T[]>[]
+    + {static} Claim(minimumLength:int) : T[]
+    + {static} ClaimWithExactLength(length:int) : T[]
+    + {static} Release(array:T[], allowNonPowerOfTwo:bool) : void
+}
+class ListExtensions <<static>> {
+    + {static} ToArrayFromPool(list:List<T>) : T[]
+    + {static} ClearFast(list:List<T>) : void
+}
+@enduml

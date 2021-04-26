@@ -1,0 +1,9 @@
+@startuml
+class FunnelModifier {
+    + unwrap : bool = true
+    + splitAtEveryPortal : bool
+    + <<override>> Order : int <<get>>
+    + <<override>> Apply(p:Path) : void
+}
+MonoModifier <|-- FunnelModifier
+@enduml

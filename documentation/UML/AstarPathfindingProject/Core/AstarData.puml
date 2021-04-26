@@ -1,0 +1,51 @@
+@startuml
+class AstarData {
+    + {static} active : AstarPath <<get>>
+    + navmesh : NavMeshGraph <<get>>
+    + gridGraph : GridGraph <<get>>
+    + pointGraph : PointGraph <<get>>
+    + graphTypes : System.Type[] <<get>>
+    + graphs : NavGraph[]
+    dataString : string
+    - upgradeData : byte[]
+    - data : byte[] <<get>> <<set>>
+    + file_cachedStartup : TextAsset
+    + data_cachedStartup : byte[]
+    + cacheStartup : bool
+    graphStructureLocked : List<bool>
+    + GetData() : byte[]
+    + SetData(data:byte[]) : void
+    + Awake() : void
+    <<internal>> LockGraphStructure(allowAddingGraphs:bool) : void
+    <<internal>> UnlockGraphStructure() : void
+    AssertSafe(onlyAddingGraph:bool) : PathProcessor.GraphUpdateLock
+    + GetNodes(callback:System.Action<GraphNode>) : void
+    + UpdateShortcuts() : void
+    + LoadFromCache() : void
+    + SerializeGraphs() : byte[]
+    + SerializeGraphs(settings:Pathfinding.Serialization.SerializeSettings) : byte[]
+    + SerializeGraphs(settings:Pathfinding.Serialization.SerializeSettings, checksum:uint) : byte[]
+    + DeserializeGraphs() : void
+    ClearGraphs() : void
+    + OnDestroy() : void
+    + DeserializeGraphs(bytes:byte[]) : void
+    + DeserializeGraphsAdditive(bytes:byte[]) : void
+    DeserializeGraphsPartAdditive(sr:Pathfinding.Serialization.AstarSerializer) : void
+    + FindGraphTypes() : void
+    + GetGraphType(type:string) : System.Type
+    + CreateGraph(type:string) : NavGraph
+    <<internal>> CreateGraph(type:System.Type) : NavGraph
+    + AddGraph(type:string) : NavGraph
+    + AddGraph(type:System.Type) : NavGraph
+    AddGraph(graph:NavGraph) : void
+    + RemoveGraph(graph:NavGraph) : bool
+    + {static} GetGraph(node:GraphNode) : NavGraph
+    + FindGraph(predicate:System.Func<NavGraph, bool>) : NavGraph
+    + FindGraphOfType(type:System.Type) : NavGraph
+    + FindGraphWhichInheritsFrom(type:System.Type) : NavGraph
+    + FindGraphsOfType(type:System.Type) : IEnumerable
+    + GetUpdateableGraphs() : IEnumerable
+    + GetRaycastableGraphs() : IEnumerable
+    + GetGraphIndex(graph:NavGraph) : int
+}
+@enduml

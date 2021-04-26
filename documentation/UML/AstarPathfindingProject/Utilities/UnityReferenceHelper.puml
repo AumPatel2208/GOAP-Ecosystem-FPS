@@ -1,0 +1,9 @@
+@startuml
+class UnityReferenceHelper {
+    - guid : string
+    + GetGUID() : string
+    + Awake() : void
+    + Reset() : void
+}
+MonoBehaviour <|-- UnityReferenceHelper
+@enduml

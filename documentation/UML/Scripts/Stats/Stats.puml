@@ -1,0 +1,41 @@
+@startuml
+class Stats {
+    + health : float = 100
+    + healthRegenRate : float = 2
+    + healthThreshold : float = 50
+    + hunger : float = 100
+    + hungerDepletionRate : float = 2
+    + hungerThreshold : float = 80f
+    + stamina : float = 100
+    + staminaRegenRate : float = 2
+    + moveSpeed : float = 5
+    + threatLevel : float = 0f
+    + threatThresholds : float[]
+    + bloodParticle : GameObject
+    # ragdoll : RagdollToggle
+    # isThereRagdoll : bool = false
+    - isGoapAgentNotNull : bool
+    - isAIPathNotNull : bool
+    + Awake() : void
+    + Update() : void
+    + SetHealth(amount:float) : void
+    + ApplyDamage(damage:float) : void
+    + ApplyDamage(damage:float, centerPosition:Vector3, rotation:Quaternion) : void
+    + DepleteHunger(decrement:float) : void
+    + AddFoodAmount(amount:float) : void
+    + IsHungry() : bool
+    + GetHealth() : float
+    + GetStamina() : float
+    + ApplyStaminaReduction(staminaCost:float) : void
+    + GetHunger() : float
+    + GetHungerThreshold() : float
+    + IncreaseThreatLevel(amount:float) : void
+    + GetThreatLevel() : float
+    + IsThreatPastThreshold() : int
+    + IsDead() : bool
+    + GetProperSpeed() : float
+    - Death() : void
+    + SpawnBloodParticles(centerPosition:Vector3, rotation:Quaternion) : void
+}
+MonoBehaviour <|-- Stats
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+class NodeLink3Node {
+    + link : NodeLink3
+    + portalA : Vector3
+    + portalB : Vector3
+    + NodeLink3Node(active:AstarPath)
+    + <<override>> GetPortal(other:GraphNode, left:List<Vector3>, right:List<Vector3>, backwards:bool) : bool
+    + GetOther(a:GraphNode) : GraphNode
+    GetOtherInternal(a:GraphNode) : GraphNode
+}
+class NodeLink3 {
+    # {static} reference : Dictionary<GraphNode, NodeLink3>
+    + {static} GetNodeLink(node:GraphNode) : NodeLink3
+    + end : Transform
+    + costFactor : float = 1.0f
+    + oneWay : bool = false
+    + StartTransform : Transform <<get>>
+    + EndTransform : Transform <<get>>
+    startNode : NodeLink3Node
+    endNode : NodeLink3Node
+    connectedNode1 : MeshNode
+    connectedNode2 : MeshNode
+    clamped1 : Vector3
+    clamped2 : Vector3
+    postScanCalled : bool = false
+    + StartNode : GraphNode <<get>>
+    + EndNode : GraphNode <<get>>
+    + <<override>> OnPostScan() : void
+    + InternalOnPostScan() : void
+    + <<override>> OnGraphsPostUpdate() : void
+    # <<override>> OnEnable() : void
+    # <<override>> OnDisable() : void
+    RemoveConnections(node:GraphNode) : void
+    ContextApplyForce() : void
+    + Apply(forceNewCheck:bool) : void
+    - <<readonly>> {static} GizmosColor : Color
+    - <<readonly>> {static} GizmosColorSelected : Color
+    + <<virtual>> OnDrawGizmosSelected() : void
+    + OnDrawGizmos() : void
+    + OnDrawGizmos(selected:bool) : void
+}
+PointNode <|-- NodeLink3Node
+GraphModifier <|-- NodeLink3
+@enduml

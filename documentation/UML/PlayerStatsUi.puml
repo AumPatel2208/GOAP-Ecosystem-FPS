@@ -1,0 +1,11 @@
+@startuml
+class PlayerStatsUi {
+    + healthBar : Image
+    + staminaBar : Image
+    + hungerBar : Image
+    + playerStats : Stats.Stats
+    Start() : void
+    Update() : void
+}
+MonoBehaviour <|-- PlayerStatsUi
+@enduml

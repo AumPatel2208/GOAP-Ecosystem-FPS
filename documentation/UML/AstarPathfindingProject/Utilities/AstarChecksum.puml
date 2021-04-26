@@ -1,0 +1,5 @@
+@startuml
+class Checksum {
+    + {static} GetChecksum(arr:byte[], hash:uint) : uint
+}
+@enduml

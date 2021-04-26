@@ -1,0 +1,11 @@
+@startuml
+interface IGoap {
+    getWorldState() : HashSet<KeyValuePair<string, object>>
+    createGoalState() : HashSet<KeyValuePair<string, object>>
+    planFailed(failedGoal:HashSet<KeyValuePair<string, object>>) : void
+    planFound(goal:HashSet<KeyValuePair<string, object>>, actions:Queue<GoapAction>) : void
+    actionsFinished() : void
+    planAborted(aborter:GoapAction) : void
+    moveAgent(nextAction:GoapAction) : bool
+}
+@enduml

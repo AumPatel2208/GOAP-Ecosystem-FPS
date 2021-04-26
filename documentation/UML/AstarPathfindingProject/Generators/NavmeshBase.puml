@@ -1,0 +1,78 @@
+@startuml
+abstract class NavmeshBase {
+    + <<const>> VertexIndexMask : int = 0xFFF
+    + <<const>> TileIndexMask : int = 0x7FFFF
+    + <<const>> TileIndexOffset : int = 12
+    + forcedBoundsSize : Vector3
+    + {abstract} TileWorldSizeX : float <<get>>
+    + {abstract} TileWorldSizeZ : float <<get>>
+    # {abstract} MaxTileConnectionEdgeDistance : float <<get>>
+    + showMeshOutline : bool = true
+    + showNodeConnections : bool
+    + showMeshSurface : bool = true
+    + tileXCount : int
+    + tileZCount : int
+    # tiles : NavmeshTile[]
+    + nearestSearchOnlyXZ : bool
+    + enableNavmeshCutting : bool = true
+    <<internal>> <<readonly>> navmeshUpdateData : NavmeshUpdates.NavmeshUpdateSettings
+    batchTileUpdate : bool
+    batchUpdatedTiles : List<int>
+    batchNodesToDestroy : List<MeshNode>
+    + transform : GraphTransform
+    transform : GraphTransform <<get>>
+    # {abstract} RecalculateNormals : bool <<get>>
+    + {abstract} CalculateTransform() : GraphTransform
+    + OnRecalculatedTiles : System.Action<NavmeshTile[]>
+    + GetTile(x:int, z:int) : NavmeshTile
+    + GetVertex(index:int) : Int3
+    + GetVertexInGraphSpace(index:int) : Int3
+    + {static} GetTileIndex(index:int) : int
+    + GetVertexArrayIndex(index:int) : int
+    + GetTileCoordinates(tileIndex:int, x:int, z:int) : void
+    + GetTiles() : NavmeshTile[]
+    + GetTileBounds(rect:IntRect) : Bounds
+    + GetTileBounds(x:int, z:int, width:int, depth:int) : Bounds
+    + GetTileBoundsInGraphSpace(rect:IntRect) : Bounds
+    + GetTileBoundsInGraphSpace(x:int, z:int, width:int, depth:int) : Bounds
+    + GetTileCoordinates(position:Vector3) : Int2
+    # <<override>> OnDestroy() : void
+    + <<override>> RelocateNodes(deltaMatrix:Matrix4x4) : void
+    + RelocateNodes(newTransform:GraphTransform) : void
+    # NewEmptyTile(x:int, z:int) : NavmeshTile
+    + <<override>> GetNodes(action:System.Action<GraphNode>) : void
+    + GetTouchingTiles(bounds:Bounds, margin:float) : IntRect
+    + GetTouchingTilesInGraphSpace(rect:Rect) : IntRect
+    + GetTouchingTilesRound(bounds:Bounds) : IntRect
+    # ConnectTileWithNeighbours(tile:NavmeshTile, onlyUnflagged:bool) : void
+    # RemoveConnectionsFromTile(tile:NavmeshTile) : void
+    # RemoveConnectionsFromTo(a:NavmeshTile, b:NavmeshTile) : void
+    {static} <<readonly>> NNConstraintDistanceXZ : NNConstraint
+    + <<override>> GetNearest(position:Vector3, constraint:NNConstraint, hint:GraphNode) : NNInfoInternal
+    + <<override>> GetNearestForce(position:Vector3, constraint:NNConstraint) : NNInfoInternal
+    + PointOnNavmesh(position:Vector3, constraint:NNConstraint) : GraphNode
+    # FillWithEmptyTiles() : void
+    # {static} CreateNodeConnections(nodes:TriangleMeshNode[]) : void
+    # ConnectTiles(tile1:NavmeshTile, tile2:NavmeshTile) : void
+    + StartBatchTileUpdate() : void
+    DestroyNodes(nodes:List<MeshNode>) : void
+    TryConnect(tileIdx1:int, tileIdx2:int) : void
+    + EndBatchTileUpdate() : void
+    # ClearTile(x:int, z:int) : void
+    nodeRecyclingHashBuffer : Dictionary<int, int>
+    PrepareNodeRecycling(x:int, z:int, verts:Int3[], tris:int[], recycledNodeBuffer:TriangleMeshNode[]) : void
+    + ReplaceTile(x:int, z:int, verts:Int3[], tris:int[]) : void
+    # CreateNodes(buffer:TriangleMeshNode[], tris:int[], tileIndex:int, graphIndex:uint) : void
+    + NavmeshBase()
+    + <<override>> OnDrawGizmos(gizmos:Pathfinding.Util.RetainedGizmos, drawNodes:bool) : void
+    CreateNavmeshSurfaceVisualization(tiles:NavmeshTile[], startTile:int, endTile:int, helper:GraphGizmoHelper) : void
+    {static} CreateNavmeshOutlineVisualization(tiles:NavmeshTile[], startTile:int, endTile:int, helper:GraphGizmoHelper) : void
+    # <<override>> SerializeExtraInfo(ctx:GraphSerializationContext) : void
+    # <<override>> DeserializeExtraInfo(ctx:GraphSerializationContext) : void
+    # <<override>> PostDeserialization(ctx:GraphSerializationContext) : void
+}
+NavGraph <|-- NavmeshBase
+INavmesh <|-- NavmeshBase
+INavmeshHolder <|-- NavmeshBase
+ITransformedGraph <|-- NavmeshBase
+@enduml

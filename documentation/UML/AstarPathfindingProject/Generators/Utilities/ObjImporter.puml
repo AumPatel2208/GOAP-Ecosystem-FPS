@@ -1,0 +1,16 @@
+@startuml
+class ObjImporter {
+    + {static} ImportFile(filePath:string) : Mesh
+    - {static} createMeshStruct(filename:string) : meshStruct
+    - {static} populateMeshStruct(mesh:meshStruct) : void
+}
+class meshStruct <<struct>> {
+    + vertices : Vector3[]
+    + normals : Vector3[]
+    + uv : Vector2[]
+    + triangles : int[]
+    + faceData : Vector3[]
+    + fileName : string
+}
+ObjImporter +-- meshStruct
+@enduml

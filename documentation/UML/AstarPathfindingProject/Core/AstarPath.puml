@@ -1,0 +1,143 @@
+@startuml
+class AstarPath {
+    + {static} <<readonly>> Version : System.Version
+    + {static} <<readonly>> Distribution : AstarDistribution
+    + {static} <<readonly>> Branch : string = "master"
+    + graphTypes : System.Type[] <<get>>
+    + data : AstarData
+    + astarData : AstarData <<get>>
+    + {static} active : AstarPath
+    + graphs : NavGraph[] <<get>>
+    + showNavGraphs : bool = true
+    + showUnwalkableNodes : bool = true
+    + debugMode : GraphDebugMode
+    + debugFloor : float = 0
+    + debugRoof : float = 20000
+    + manualDebugFloorRoof : bool = false
+    + showSearchTree : bool = false
+    + unwalkableNodeDebugSize : float = 0.3F
+    + logPathResults : PathLog
+    + maxNearestNodeDistance : float = 100
+    + maxNearestNodeDistanceSqr : float <<get>>
+    + scanOnStartup : bool = true
+    + fullGetNearestSearch : bool = false
+    + prioritizeGraphs : bool = false
+    + prioritizeGraphsLimit : float = 1F
+    + colorSettings : AstarColor
+    # tagNames : string[] = null
+    + heuristic : Heuristic
+    + heuristicScale : float = 1F
+    + threadCount : ThreadCount
+    + maxFrameTime : float = 1F
+    + batchGraphUpdates : bool = false
+    + graphUpdateBatchingInterval : float = 0.2F
+    + limitGraphUpdates : bool <<get>> <<set>>
+    + maxGraphUpdateFreq : float <<get>> <<set>>
+    + lastScanTime : float <<get>>
+    + debugPathData : PathHandler
+    + debugPathID : ushort
+    inGameDebugPath : string
+    isScanningBacking : bool
+    + isScanning : bool <<get>>
+    + NumParallelThreads : int <<get>>
+    + IsUsingMultithreading : bool <<get>>
+    + IsAnyGraphUpdatesQueued : bool <<get>>
+    + IsAnyGraphUpdateQueued : bool <<get>>
+    + IsAnyGraphUpdateInProgress : bool <<get>>
+    + IsAnyWorkItemInProgress : bool <<get>>
+    <<internal>> IsInsideWorkItem : bool <<get>>
+    + {static} OnAwakeSettings : System.Action
+    + {static} OnGraphPreScan : OnGraphDelegate
+    + {static} OnGraphPostScan : OnGraphDelegate
+    + {static} OnPathPreSearch : OnPathDelegate
+    + {static} OnPathPostSearch : OnPathDelegate
+    + {static} OnPreScan : OnScanDelegate
+    + {static} OnPostScan : OnScanDelegate
+    + {static} OnLatePostScan : OnScanDelegate
+    + {static} OnGraphsUpdated : OnScanDelegate
+    + {static} On65KOverflow : System.Action
+    + OnGraphsWillBeUpdated : System.Action
+    + OnGraphsWillBeUpdated2 : System.Action
+    <<readonly>> graphUpdates : GraphUpdateProcessor
+    <<internal>> <<readonly>> hierarchicalGraph : HierarchicalGraph
+    + <<readonly>> navmeshUpdates : NavmeshUpdates
+    <<readonly>> workItems : WorkItemProcessor
+    pathProcessor : PathProcessor
+    graphUpdateRoutineRunning : bool = false
+    graphUpdatesWorkItemAdded : bool = false
+    lastGraphUpdate : float
+    workItemLock : PathProcessor.GraphUpdateLock
+    <<internal>> <<readonly>> pathReturnQueue : PathReturnQueue
+    + euclideanEmbedding : EuclideanEmbedding
+    + showGraphs : bool = false
+    - nextFreePathID : ushort = 1
+    - AstarPath()
+    + GetTagNames() : string[]
+    + {static} FindAstarPath() : void
+    + {static} FindTagNames() : string[]
+    <<internal>> GetNextPathID() : ushort
+    RecalculateDebugLimits() : void
+    gizmos : Pathfinding.Util.RetainedGizmos
+    - OnDrawGizmos() : void
+    - OnGUI() : void
+    - LogPathResults(path:Path) : void
+    - Update() : void
+    - PerformBlockingActions(force:bool) : void
+    + QueueWorkItemFloodFill() : void
+    + EnsureValidFloodFill() : void
+    + AddWorkItem(callback:System.Action) : void
+    + AddWorkItem(callback:System.Action<IWorkItemContext>) : void
+    + AddWorkItem(item:AstarWorkItem) : void
+    + QueueGraphUpdates() : void
+    DelayedGraphUpdate() : IEnumerator
+    + UpdateGraphs(bounds:Bounds, delay:float) : void
+    + UpdateGraphs(ob:GraphUpdateObject, delay:float) : void
+    UpdateGraphsInternal(ob:GraphUpdateObject, delay:float) : IEnumerator
+    + UpdateGraphs(bounds:Bounds) : void
+    + UpdateGraphs(ob:GraphUpdateObject) : void
+    + FlushGraphUpdates() : void
+    + FlushWorkItems() : void
+    + FlushWorkItems(unblockOnComplete:bool, block:bool) : void
+    + FlushThreadSafeCallbacks() : void
+    + {static} CalculateThreadCount(count:ThreadCount) : int
+    # <<override>> Awake() : void
+    InitializePathProcessor() : void
+    <<internal>> VerifyIntegrity() : void
+    + ConfigureReferencesInternal() : void
+    InitializeProfiler() : void
+    InitializeAstarData() : void
+    OnDisable() : void
+    OnDestroy() : void
+    + FloodFill(seed:GraphNode) : void
+    + FloodFill(seed:GraphNode, area:uint) : void
+    + FloodFill() : void
+    <<internal>> GetNewNodeIndex() : int
+    <<internal>> InitializeNode(node:GraphNode) : void
+    <<internal>> DestroyNode(node:GraphNode) : void
+    + BlockUntilPathQueueBlocked() : void
+    + PausePathfinding() : PathProcessor.GraphUpdateLock
+    PausePathfindingSoon() : PathProcessor.GraphUpdateLock
+    + Scan(graphToScan:NavGraph) : void
+    + Scan(graphsToScan:NavGraph[]) : void
+    + ScanAsync(graphToScan:NavGraph) : IEnumerable<Progress>
+    + ScanAsync(graphsToScan:NavGraph[]) : IEnumerable<Progress>
+    ScanGraph(graph:NavGraph) : IEnumerable<Progress>
+    - {static} waitForPathDepth : int = 0
+    + {static} WaitForPath(path:Path) : void
+    + {static} BlockUntilCalculated(path:Path) : void
+    + {static} RegisterSafeUpdate(callback:System.Action) : void
+    + {static} StartPath(path:Path, pushToFront:bool) : void
+    {static} <<readonly>> NNConstraintNone : NNConstraint
+    + GetNearest(position:Vector3) : NNInfo
+    + GetNearest(position:Vector3, constraint:NNConstraint) : NNInfo
+    + GetNearest(position:Vector3, constraint:NNConstraint, hint:GraphNode) : NNInfo
+    + GetNearest(ray:Ray) : GraphNode
+}
+enum AstarDistribution {
+    WebsiteDownload,
+    AssetStore,
+    PackageManager,
+}
+VersionedMonoBehaviour <|-- AstarPath
+AstarPath +-- AstarDistribution
+@enduml

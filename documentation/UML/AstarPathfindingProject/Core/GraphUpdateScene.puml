@@ -1,0 +1,37 @@
+@startuml
+class GraphUpdateScene {
+    + points : Vector3[]
+    - convexPoints : Vector3[]
+    + convex : bool = true
+    + minBoundsHeight : float = 1
+    + penaltyDelta : int
+    + modifyWalkability : bool
+    + setWalkability : bool
+    + applyOnStart : bool = true
+    + applyOnScan : bool = true
+    + updatePhysics : bool
+    + resetPenaltyOnPhysics : bool = true
+    + updateErosion : bool = true
+    + modifyTag : bool
+    + setTag : int
+    + legacyMode : bool = false
+    - setTagInvert : int
+    - firstApplied : bool
+    - serializedVersion : int = 0
+    - legacyUseWorldSpace : bool
+    + Start() : void
+    + <<override>> OnPostScan() : void
+    + <<virtual>> InvertSettings() : void
+    + RecalcConvex() : void
+    ToggleUseWorldSpace() : void
+    + LockToY() : void
+    + GetBounds() : Bounds
+    + Apply() : void
+    OnDrawGizmos() : void
+    OnDrawGizmosSelected() : void
+    OnDrawGizmos(selected:bool) : void
+    + DisableLegacyMode() : void
+    # <<override>> Awake() : void
+}
+GraphModifier <|-- GraphUpdateScene
+@enduml

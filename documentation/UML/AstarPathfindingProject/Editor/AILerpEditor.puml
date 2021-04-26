@@ -1,0 +1,6 @@
+@startuml
+class AILerpEditor {
+    # <<override>> Inspector() : void
+}
+EditorBase <|-- AILerpEditor
+@enduml

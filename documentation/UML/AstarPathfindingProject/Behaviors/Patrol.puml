@@ -1,0 +1,12 @@
+@startuml
+class Patrol {
+    + targets : Transform[]
+    + delay : float = 0
+    index : int
+    agent : IAstarAI
+    switchTime : float
+    # <<override>> Awake() : void
+    Update() : void
+}
+VersionedMonoBehaviour <|-- Patrol
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+class BinaryHeap {
+    + numberOfItems : int
+    + growthFactor : float = 2
+    <<const>> D : int = 4
+    <<const>> SortGScores : bool = true
+    + <<const>> NotInHeap : ushort = 0xFFFF
+    - heap : Tuple[]
+    + isEmpty : bool <<get>>
+    {static} RoundUpToNextMultipleMod1(v:int) : int
+    + BinaryHeap(capacity:int)
+    + Clear() : void
+    <<internal>> GetNode(i:int) : PathNode
+    <<internal>> SetF(i:int, f:uint) : void
+    Expand() : void
+    + Add(node:PathNode) : void
+    DecreaseKey(node:Tuple, index:ushort) : void
+    + Remove() : PathNode
+    Validate() : void
+    + Rebuild() : void
+}
+class Tuple <<struct>> {
+    + node : PathNode
+    + F : uint
+    + Tuple(f:uint, node:PathNode)
+}
+BinaryHeap +-- Tuple
+@enduml

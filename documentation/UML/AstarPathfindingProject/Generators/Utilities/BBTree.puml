@@ -1,0 +1,47 @@
+@startuml
+class BBTree {
+    tree : BBTreeBox[] = null
+    nodeLookup : TriangleMeshNode[] = null
+    count : int
+    leafNodes : int
+    <<const>> MaximumLeafSize : int = 4
+    + Size : Rect <<get>>
+    + Clear() : void
+    OnEnterPool() : void
+    EnsureCapacity(c:int) : void
+    EnsureNodeCapacity(c:int) : void
+    GetBox(rect:IntRect) : int
+    + RebuildFrom(nodes:TriangleMeshNode[]) : void
+    {static} SplitByX(nodes:TriangleMeshNode[], permutation:int[], from:int, to:int, divider:int) : int
+    {static} SplitByZ(nodes:TriangleMeshNode[], permutation:int[], from:int, to:int, divider:int) : int
+    RebuildFromInternal(nodes:TriangleMeshNode[], permutation:int[], nodeBounds:IntRect[], from:int, to:int, odd:bool) : int
+    {static} NodeBounds(permutation:int[], nodeBounds:IntRect[], from:int, to:int) : IntRect
+    {static} DrawDebugRect(rect:IntRect) : void
+    {static} DrawDebugNode(node:TriangleMeshNode, yoffset:float, color:Color) : void
+    + QueryClosest(p:Vector3, constraint:NNConstraint, distance:float) : NNInfoInternal
+    + QueryClosestXZ(p:Vector3, constraint:NNConstraint, distance:float, previous:NNInfoInternal) : NNInfoInternal
+    SearchBoxClosestXZ(boxi:int, p:Vector3, closestSqrDist:float, constraint:NNConstraint, nnInfo:NNInfoInternal) : void
+    + QueryClosest(p:Vector3, constraint:NNConstraint, distance:float, previous:NNInfoInternal) : NNInfoInternal
+    SearchBoxClosest(boxi:int, p:Vector3, closestSqrDist:float, constraint:NNConstraint, nnInfo:NNInfoInternal) : void
+    GetOrderedChildren(first:int, second:int, firstDist:float, secondDist:float, p:Vector3) : void
+    + QueryInside(p:Vector3, constraint:NNConstraint) : TriangleMeshNode
+    SearchBoxInside(boxi:int, p:Vector3, constraint:NNConstraint) : TriangleMeshNode
+    + OnDrawGizmos() : void
+    OnDrawGizmos(boxi:int, depth:int) : void
+    {static} NodeIntersectsCircle(node:TriangleMeshNode, p:Vector3, radius:float) : bool
+    {static} RectIntersectsCircle(r:IntRect, p:Vector3, radius:float) : bool
+    {static} SquaredRectPointDistance(r:IntRect, p:Vector3) : float
+}
+class BBTreeBox <<struct>> {
+    + rect : IntRect
+    + nodeOffset : int
+    + left : int
+    + right : int
+    + IsLeaf : bool <<get>>
+    + BBTreeBox(rect:IntRect)
+    + BBTreeBox(nodeOffset:int, rect:IntRect)
+    + Contains(point:Vector3) : bool
+}
+IAstarPooledObject <|-- BBTree
+BBTree +-- BBTreeBox
+@enduml

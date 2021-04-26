@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.15)  21 APR 2021 18:33
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.15)  26 APR 2021 23:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -391,10 +391,12 @@ Chapter 4.
 
 ] [7] [8]
 Chapter 5.
+File: ../images//agile_method.jpg Graphic file (type bmp)
+<../images//agile_method.jpg>
 [9
 
-] [10]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 157.
+] [10] [11]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 169.
  (/usr/local/texlive/2021basic/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -403,19 +405,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 158.
+(Font)              <7> on input line 170.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 158.
- [11] [12] [13]
+(Font)              <5> on input line 170.
+ [12] [13] [14]
 Chapter 6.
 File: ../images//Actions and food chain build 1.png Graphic file (type bmp)
 <../images//Actions and food chain build 1.png>
-[14
+[15
 
 ]
 File: ../images//ClassDiagramBuild 1.png Graphic file (type bmp)
 <../images//ClassDiagramBuild 1.png>
- [15] [16] [17] (/usr/local/texlive/2021basic/texmf-dist/tex/latex/listings/lstlang1.sty
+ [16] [17] [18] (/usr/local/texlive/2021basic/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/texlive/2021basic/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
@@ -425,149 +427,159 @@ File: ../images//SwordBone.png Graphic file (type bmp)
 File: ../images//SwordKeyframes.png Graphic file (type bmp)
 <../images//SwordKeyframes.png>
 
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 284--294
+Overfull \hbox (2.61105pt too wide) in paragraph at lines 296--306
 []$[]$ $[]$ 
  []
 
-[18]
+[19]
 File: ../images//Sword_Unity_Animation_Import_Split.png Graphic file (type bmp)
 <../images//Sword_Unity_Animation_Import_Split.png>
 File: ../images//Sword_Unity_Heirarchy.png Graphic file (type bmp)
 <../images//Sword_Unity_Heirarchy.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 299--309
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 311--321
 []$[]$ $[]$ 
  []
 
-[19]
+[20]
 File: ../images//Sword_Animator.png Graphic file (type bmp)
 <../images//Sword_Animator.png>
 File: ../images//Stats_UI.jpg Graphic file (type bmp)
 <../images//Stats_UI.jpg>
- [20]
+ [21]
 File: ../images//Stats_UI_Build1.png Graphic file (type bmp)
 <../images//Stats_UI_Build1.png>
 File: ../images//Unity_Image_Panel.png Graphic file (type bmp)
 <../images//Unity_Image_Panel.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 336--346
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 348--358
 []$[]$ $[]$ 
  []
 
 File: ../images//Unity_Scene_Build_1_annotated.jpg Graphic file (type bmp)
 <../images//Unity_Scene_Build_1_annotated.jpg>
-[21] [22]
+[22] [23]
 File: ../images//Sloth_Model_Messy_Rig.png Graphic file (type bmp)
 <../images//Sloth_Model_Messy_Rig.png>
 File: ../images//Sloth_Model_Clean_Rig.png Graphic file (type bmp)
 <../images//Sloth_Model_Clean_Rig.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 385--395
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 397--407
 []$[]$ $[]$ 
  []
 
 File: ../images//ClassDiagram.jpg Graphic file (type bmp)
 <../images//ClassDiagram.jpg>
-[23] [24]
+[24] [25]
 File: ../images//AStar_Graph.png Graphic file (type bmp)
 <../images//AStar_Graph.png>
 File: ../images//AStar_CollisionSettings.png Graphic file (type bmp)
 <../images//AStar_CollisionSettings.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 469--479
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 481--491
 []$[]$ $[]$ 
  []
 
-[25]
+[26]
 File: ../images//Astar_AgentComponents.png Graphic file (type bmp)
 <../images//Astar_AgentComponents.png>
- [26]
+ [27]
 File: ../images//Vision_Cone_Representation.jpg Graphic file (type bmp)
 <../images//Vision_Cone_Representation.jpg>
- [27] [28] [29]
+ [28] [29] [30]
 File: ../images//Particles_Burst_Emmision.png Graphic file (type bmp)
 <../images//Particles_Burst_Emmision.png>
 File: ../images//Particles_Destroy_OnStop.png Graphic file (type bmp)
 <../images//Particles_Destroy_OnStop.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 579--589
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 594--604
 []$[]$ $[]$ 
  []
 
+[31]
 File: ../images//Sword_Colliders_Scene.png Graphic file (type bmp)
 <../images//Sword_Colliders_Scene.png>
 File: ../images//Sword_Colliders_Inspector.png Graphic file (type bmp)
 <../images//Sword_Colliders_Inspector.png>
 
-Overfull \hbox (48.13824pt too wide) in paragraph at lines 602--612
+Overfull \hbox (48.13824pt too wide) in paragraph at lines 617--627
 []$[]$ $[]$ 
  []
 
-[30] [31]
+[32]
 File: ../images//CrossBow_Scene.png Graphic file (type bmp)
 <../images//CrossBow_Scene.png>
 
-Overfull \hbox (23.8744pt too wide) in paragraph at lines 639--640
+Overfull \hbox (23.8744pt too wide) in paragraph at lines 654--655
  [][] 
  []
 
 File: ../images//CrossBow_Game_With_GUI.png Graphic file (type bmp)
 <../images//CrossBow_Game_With_GUI.png>
 
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 637--647
+Overfull \hbox (2.61105pt too wide) in paragraph at lines 652--662
 []$[]$ $[]$ 
  []
 
-[32]
+[33] [34]
 Chapter 7.
-[33
+[35
 
 ]
-Underfull \hbox (badness 3138) in paragraph at lines 658--659
+Underfull \hbox (badness 3138) in paragraph at lines 678--679
 \T1/lmtt/m/n/12 20180906 / 325967 / Primal _ Instinct _ _Companion _ AI _ in _ Far _ Cry _ Primal . php$[][] \T1/lmr/m/n/12 [Ac-
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 660--661
+Underfull \hbox (badness 1297) in paragraph at lines 680--681
 []\T1/lmr/m/n/12 "Le Game-play emer-gent (in French)". jeuxvideo.com. 2006-01-19. Avail-able at:
  []
 
-[34
+[36
 
 ]
-Underfull \hbox (badness 1975) in paragraph at lines 672--673
+Underfull \hbox (badness 1975) in paragraph at lines 692--693
 \T1/lmr/m/n/12 Plan-ning. [on-line] Gama-su-tra.com. Avail-able at: [][]$\T1/lmtt/m/n/12 https : / / www . gamasutra . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 672--673
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \T1/lmtt/m/n/12 blogs / TommyThompson / 20200507 / 362417 / Building _ the _ AI _ of _ FEAR _ with _ Goal _
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 690--691
+Underfull \hbox (badness 5578) in paragraph at lines 710--711
 \T1/lmtt/m/n/12 / / medium . com / @gfruity / what-[]are-[]your-[]ui-[]choices-[]834ea7d937c$[][] \T1/lmr/m/n/12 [Ac-cessed 18
  []
 
 Missing character: There is no – ("2013) in font ec-lmr12!
 Missing character: There is no – ("2013) in font ec-lmr12!
-[35] [36] (./project.aux)
+[37]
+Underfull \hbox (badness 3108) in paragraph at lines 718--719
+[]\T1/lmr/m/n/12 UKEssays.com. 2021. Rapid Ap-pli-ca-tion De-vel-op-ment vs. Ag-ile Method-olo-
+ []
 
-Package rerunfilecheck Warning: File `project.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: Checksums for `project.out':
-(rerunfilecheck)             Before: AE89921C8458DD7091B5A666F9EF8119;3922
-(rerunfilecheck)             After:  7D5DF1BEEE85EFFC6FAD9B22C7FC77A6;4014.
+Underfull \hbox (badness 7832) in paragraph at lines 718--719
+\T1/lmr/m/n/12 gies. [on-line] Avail-able at: [][]$\T1/lmtt/m/n/12 https : / / www . ukessays . com / essays / management /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 718--719
+\T1/lmtt/m/n/12 rapid-[]application-[]development-[]vs-[]agile-[]methodologies . php$[][] \T1/lmr/m/n/12 [Ac-cessed 21
+ []
+
+[38] (./project.aux)
+Package rerunfilecheck Info: File `project.out' has not changed.
+(rerunfilecheck)             Checksum: 7AE1D784D2523098660E7A5DF2D173A1;4327.
  ) 
 Here is how much of TeX's memory you used:
- 12294 strings out of 478436
- 191609 string characters out of 5853929
- 985874 words of memory out of 5000000
- 32014 multiletter control sequences out of 15000+600000
+ 12302 strings out of 478436
+ 191807 string characters out of 5853929
+ 986000 words of memory out of 5000000
+ 32021 multiletter control sequences out of 15000+600000
  442714 words of font info for 51 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  71i,10n,77p,2376b,1761s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (37 pages).
+Output written on project.pdf (39 pages).

@@ -1,0 +1,47 @@
+@startuml
+class PointGraph {
+    + root : Transform
+    + searchTag : string
+    + maxDistance : float
+    + limits : Vector3
+    + raycast : bool = true
+    + use2DPhysics : bool
+    + thickRaycast : bool
+    + thickRaycastRadius : float = 1
+    + recursive : bool = true
+    + mask : LayerMask
+    + nodes : PointNode[]
+    + nearestNodeDistanceMode : NodeDistanceMode
+    + nodeCount : int <<get>> <<protected set>>
+    + <<override>> CountNodes() : int
+    + <<override>> GetNodes(action:System.Action<GraphNode>) : void
+    + <<override>> GetNearest(position:Vector3, constraint:NNConstraint, hint:GraphNode) : NNInfoInternal
+    + <<override>> GetNearestForce(position:Vector3, constraint:NNConstraint) : NNInfoInternal
+    GetNearestInternal(position:Vector3, constraint:NNConstraint, fastCheck:bool) : NNInfoInternal
+    FindClosestConnectionPoint(node:PointNode, position:Vector3) : NNInfoInternal
+    + AddNode(position:Int3) : PointNode
+    + AddNode(node:T, position:Int3) : T
+    # {static} CountChildren(tr:Transform) : int
+    # AddChildren(c:int, tr:Transform) : void
+    + RebuildNodeLookup() : void
+    + RebuildConnectionDistanceLookup() : void
+    AddToLookup(node:PointNode) : void
+    + RegisterConnectionLength(sqrLength:long) : void
+    # <<virtual>> CreateNodes(count:int) : PointNode[]
+    # <<override>> ScanInternal() : IEnumerable<Progress>
+    + ConnectNodes() : void
+    ConnectNodesAsync() : IEnumerable<Progress>
+    + <<virtual>> IsValidConnection(a:GraphNode, b:GraphNode, dist:float) : bool
+    # <<override>> PostDeserialization(ctx:GraphSerializationContext) : void
+    + <<override>> RelocateNodes(deltaMatrix:Matrix4x4) : void
+    # <<override>> DeserializeSettingsCompatibility(ctx:GraphSerializationContext) : void
+    # <<override>> SerializeExtraInfo(ctx:GraphSerializationContext) : void
+    # <<override>> DeserializeExtraInfo(ctx:GraphSerializationContext) : void
+}
+enum NodeDistanceMode {
+    Node,
+    Connection,
+}
+NavGraph <|-- PointGraph
+PointGraph +-- NodeDistanceMode
+@enduml

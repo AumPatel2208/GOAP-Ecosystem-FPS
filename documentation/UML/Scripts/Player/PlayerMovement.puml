@@ -1,0 +1,15 @@
+@startuml
+class PlayerMovement {
+    + characterController : CharacterController
+    + speed : float = 12f
+    + jumpHeight : float = 3f
+    + gravity : float
+    - gravitationalVelocity : Vector3
+    + groundCheck : Transform
+    + groundDistance : float = 0.4f
+    + groundMask : LayerMask
+    - isGrounded : bool
+    Update() : void
+}
+MonoBehaviour <|-- PlayerMovement
+@enduml

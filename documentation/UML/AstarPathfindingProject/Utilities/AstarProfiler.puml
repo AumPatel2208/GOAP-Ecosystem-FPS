@@ -1,0 +1,25 @@
+@startuml
+class AstarProfiler {
+    {static} <<readonly>> profiles : Dictionary<string, ProfilePoint>
+    {static} startTime : DateTime
+    + {static} fastProfiles : ProfilePoint[]
+    + {static} fastProfileNames : string[]
+    - AstarProfiler()
+    + {static} InitializeFastProfile(profileNames:string[]) : void
+    + {static} StartFastProfile(tag:int) : void
+    + {static} EndFastProfile(tag:int) : void
+    + {static} EndProfile() : void
+    + {static} StartProfile(tag:string) : void
+    + {static} EndProfile(tag:string) : void
+    + {static} Reset() : void
+    + {static} PrintFastResults() : void
+    + {static} PrintResults() : void
+}
+class ProfilePoint {
+    + watch : System.Diagnostics.Stopwatch
+    + totalCalls : int
+    + tmpBytes : long
+    + totalBytes : long
+}
+AstarProfiler +-- ProfilePoint
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class StatsUIController {
+    + healthBar : Image
+    + staminaBar : Image
+    + hungerBar : Image
+    + hungerThresholdBar : Image
+    - creatureStats : global::Stats.Stats
+    - _enabled : bool = true
+    Awake() : void
+    - Update() : void
+    FixedUpdate() : void
+}
+MonoBehaviour <|-- StatsUIController
+@enduml

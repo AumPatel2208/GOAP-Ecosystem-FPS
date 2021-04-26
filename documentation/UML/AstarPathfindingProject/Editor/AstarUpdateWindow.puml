@@ -1,0 +1,13 @@
+@startuml
+class AstarUpdateWindow {
+    {static} largeStyle : GUIStyle
+    {static} normalStyle : GUIStyle
+    version : Version
+    summary : string
+    setReminder : bool
+    + {static} Init(version:Version, summary:string) : AstarUpdateWindow
+    + OnDestroy() : void
+    OnGUI() : void
+}
+EditorWindow <|-- AstarUpdateWindow
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+class GUIUtilityx <<static>> {
+    {static} colors : Stack<Color>
+    + {static} PushTint(tint:Color) : void
+    + {static} PopTint() : void
+}
+class FadeArea {
+    lastRect : Rect
+    value : float
+    lastUpdate : float
+    labelStyle : GUIStyle
+    areaStyle : GUIStyle
+    visible : bool
+    editor : Editor
+    + open : bool
+    + {static} fancyEffects : bool
+    <<const>> animationSpeed : float = 100f
+    + FadeArea(open:bool, editor:Editor, areaStyle:GUIStyle, labelStyle:GUIStyle)
+    Tick() : void
+    + Begin() : void
+    + HeaderLabel(label:string) : void
+    + Header(label:string) : void
+    + Header(label:string, open:bool) : void
+    {static} Hermite(start:float, end:float, value:float) : float
+    + BeginFade() : bool
+    + End() : void
+}
+class EditorGUILayoutx <<static>> {
+    {static} layerNames : Dictionary<int, string[]>
+    {static} lastUpdateTick : long
+    {static} tagNamesAndEditTagsButton : string[]
+    {static} timeLastUpdatedTagNames : double
+    + {static} TagField(label:string, value:int, editCallback:System.Action) : int
+    + {static} UnityTagMaskList(label:GUIContent, foldout:bool, tagMask:List<string>) : bool
+    + {static} LayerMaskField(label:string, selected:LayerMask) : LayerMask
+}
+@enduml

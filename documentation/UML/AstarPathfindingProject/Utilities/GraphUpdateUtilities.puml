@@ -1,0 +1,6 @@
+@startuml
+class GraphUpdateUtilities <<static>> {
+    + {static} UpdateGraphsNoBlock(guo:GraphUpdateObject, node1:GraphNode, node2:GraphNode, alwaysRevert:bool) : bool
+    + {static} UpdateGraphsNoBlock(guo:GraphUpdateObject, nodes:List<GraphNode>, alwaysRevert:bool) : bool
+}
+@enduml

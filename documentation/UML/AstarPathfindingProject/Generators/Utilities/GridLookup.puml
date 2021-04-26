@@ -1,0 +1,32 @@
+@startuml
+class "GridLookup`1"<T> {
+    size : Int2
+    cells : Item[]
+    all : Root
+    rootLookup : Dictionary<T, Root>
+    itemPool : Stack<Item>
+    + GridLookup(size:Int2)
+    + AllItems : Root <<get>>
+    + Clear() : void
+    + GetRoot(item:T) : Root
+    + Add(item:T, bounds:IntRect) : Root
+    + Remove(item:T) : void
+    + Move(item:T, bounds:IntRect) : void
+    + QueryRect(r:IntRect) : List<U>
+}
+class Item {
+    + root : Root
+    + prev : Item
+    + next : Item
+}
+class Root {
+    + obj : T
+    + next : Root
+    <<internal>> prev : Root
+    <<internal>> previousBounds : IntRect
+    <<internal>> items : List<Item>
+    <<internal>> flag : bool
+}
+"GridLookup`1" +-- Item
+"GridLookup`1" +-- Root
+@enduml

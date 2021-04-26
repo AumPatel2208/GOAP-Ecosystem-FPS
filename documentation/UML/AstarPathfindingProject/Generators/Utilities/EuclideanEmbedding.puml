@@ -1,0 +1,20 @@
+@startuml
+enum HeuristicOptimizationMode {
+    None,
+    Random,
+    RandomSpreadOut,
+    Custom,
+}
+class EuclideanEmbedding {
+    + mode : HeuristicOptimizationMode
+    + seed : int
+    + pivotPointRoot : Transform
+    + spreadOutCount : int = 1
+    + dirty : bool
+    EnsureCapacity(index:int) : void
+    + GetHeuristic(nodeIndex1:int, nodeIndex2:int) : uint
+    + RecalculatePivots() : void
+    + RecalculateCosts() : void
+    + OnDrawGizmos() : void
+}
+@enduml

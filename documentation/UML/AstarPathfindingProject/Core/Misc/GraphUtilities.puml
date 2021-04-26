@@ -1,0 +1,7 @@
+@startuml
+class GraphUtilities <<static>> {
+    + {static} GetContours(graph:NavGraph) : List<Vector3>
+    + {static} GetContours(navmesh:INavmesh, results:System.Action<List<Int3>, bool>) : void
+    + {static} GetContours(grid:GridGraph, callback:System.Action<Vector3[]>, yMergeThreshold:float, nodes:GridNodeBase[]) : void
+}
+@enduml

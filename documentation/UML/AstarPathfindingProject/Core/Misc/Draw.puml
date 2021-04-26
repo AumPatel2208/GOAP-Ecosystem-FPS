@@ -1,0 +1,15 @@
+@startuml
+class Draw {
+    + {static} <<readonly>> Debug : Draw
+    + {static} <<readonly>> Gizmos : Draw
+    gizmos : bool
+    matrix : Matrix4x4
+    SetColor(color:Color) : void
+    + Polyline(points:System.Collections.Generic.List<Vector3>, color:Color, cycle:bool) : void
+    + Line(a:Vector3, b:Vector3, color:Color) : void
+    + CircleXZ(center:Vector3, radius:float, color:Color, startAngle:float, endAngle:float) : void
+    + Cylinder(position:Vector3, up:Vector3, height:float, radius:float, color:Color) : void
+    + CrossXZ(position:Vector3, color:Color, size:float) : void
+    + Bezier(a:Vector3, b:Vector3, color:Color) : void
+}
+@enduml

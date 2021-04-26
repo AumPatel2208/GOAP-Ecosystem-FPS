@@ -1,0 +1,39 @@
+@startuml
+class PathProcessor {
+    +  <<event>> OnPathPreSearch : System.Action<Path> 
+    +  <<event>> OnPathPostSearch : System.Action<Path> 
+    +  <<event>> OnQueueUnblocked : System.Action 
+    <<internal>> <<readonly>> queue : ThreadControlQueue
+    <<readonly>> astar : AstarPath
+    <<readonly>> returnQueue : PathReturnQueue
+    <<readonly>> pathHandlers : PathHandler[]
+    <<readonly>> threads : Thread[]
+    threadCoroutine : IEnumerator
+    nextNodeIndex : int = 1
+    <<readonly>> nodeIndexPool : Stack<int>
+    <<readonly>> locks : List<int>
+    nextLockID : int = 0
+    + NumThreads : int <<get>>
+    + IsUsingMultithreading : bool <<get>>
+    <<internal>> PathProcessor(astar:AstarPath, returnQueue:PathReturnQueue, processors:int, multithreaded:bool)
+    Lock(block:bool) : int
+    Unlock(id:int) : void
+    + PausePathfinding(block:bool) : GraphUpdateLock
+    + TickNonMultithreaded() : void
+    + JoinThreads() : void
+    + AbortThreads() : void
+    + GetNewNodeIndex() : int
+    + InitializeNode(node:GraphNode) : void
+    + DestroyNode(node:GraphNode) : void
+    CalculatePathsThreaded(pathHandler:PathHandler) : void
+    CalculatePaths(pathHandler:PathHandler) : IEnumerator
+}
+class GraphUpdateLock <<struct>> {
+    pathProcessor : PathProcessor
+    id : int
+    + GraphUpdateLock(pathProcessor:PathProcessor, block:bool)
+    + Held : bool <<get>>
+    + Release() : void
+}
+PathProcessor +-- GraphUpdateLock
+@enduml

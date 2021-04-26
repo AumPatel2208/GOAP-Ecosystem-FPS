@@ -1,0 +1,22 @@
+@startuml
+class NavmeshTile {
+    + tris : int[]
+    + verts : Int3[]
+    + vertsInGraphSpace : Int3[]
+    + x : int
+    + z : int
+    + w : int
+    + d : int
+    + nodes : TriangleMeshNode[]
+    + bbTree : BBTree
+    + flag : bool
+    + graph : NavmeshBase
+    + GetTileCoordinates(tileIndex:int, x:int, z:int) : void
+    + GetVertexArrayIndex(index:int) : int
+    + GetVertex(index:int) : Int3
+    + GetVertexInGraphSpace(index:int) : Int3
+    + transform : GraphTransform <<get>>
+    + GetNodes(action:System.Action<GraphNode>) : void
+}
+INavmeshHolder <|-- NavmeshTile
+@enduml

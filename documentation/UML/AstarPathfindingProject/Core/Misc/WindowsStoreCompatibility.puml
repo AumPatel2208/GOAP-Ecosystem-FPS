@@ -1,0 +1,6 @@
+@startuml
+class WindowsStoreCompatibility <<static>> {
+    + {static} GetTypeFromInfo(type:TP) : System.Type
+    + {static} GetTypeInfo(type:System.Type) : TP
+}
+@enduml

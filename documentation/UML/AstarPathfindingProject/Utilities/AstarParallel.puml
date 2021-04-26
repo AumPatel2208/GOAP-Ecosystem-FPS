@@ -1,0 +1,13 @@
+@startuml
+class "ParallelWorkQueue`1"<T> {
+    + action : System.Action<T, int>
+    + <<readonly>> threadCount : int
+    <<readonly>> queue : Queue<T>
+    <<readonly>> initialCount : int
+    waitEvents : ManualResetEvent[]
+    innerException : System.Exception
+    + ParallelWorkQueue(queue:Queue<T>)
+    + Run(progressTimeoutMillis:int) : IEnumerable<int>
+    RunTask(threadIndex:int) : void
+}
+@enduml

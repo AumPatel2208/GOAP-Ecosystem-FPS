@@ -1,0 +1,21 @@
+@startuml
+class RelevantGraphSurface {
+    - {static} root : RelevantGraphSurface
+    + maxRange : float = 1
+    - prev : RelevantGraphSurface
+    - next : RelevantGraphSurface
+    - position : Vector3
+    + Position : Vector3 <<get>>
+    + Next : RelevantGraphSurface <<get>>
+    + Prev : RelevantGraphSurface <<get>>
+    + {static} Root : RelevantGraphSurface <<get>>
+    + UpdatePosition() : void
+    OnEnable() : void
+    OnDisable() : void
+    + {static} UpdateAllPositions() : void
+    + {static} FindAllGraphSurfaces() : void
+    + OnDrawGizmos() : void
+    + OnDrawGizmosSelected() : void
+}
+VersionedMonoBehaviour <|-- RelevantGraphSurface
+@enduml

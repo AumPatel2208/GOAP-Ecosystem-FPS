@@ -1,0 +1,22 @@
+@startuml
+class GraphUpdateShape {
+    _points : Vector3[]
+    _convexPoints : Vector3[]
+    _convex : bool
+    right : Vector3
+    forward : Vector3
+    up : Vector3
+    origin : Vector3
+    + minimumHeight : float
+    + points : Vector3[] <<get>> <<set>>
+    + convex : bool <<get>> <<set>>
+    + GraphUpdateShape()
+    + GraphUpdateShape(points:Vector3[], convex:bool, matrix:Matrix4x4, minimumHeight:float)
+    CalculateConvexHull() : void
+    + GetBounds() : Bounds
+    + {static} GetBounds(points:Vector3[], matrix:Matrix4x4, minimumHeight:float) : Bounds
+    {static} GetBounds(points:Vector3[], right:Vector3, up:Vector3, forward:Vector3, origin:Vector3, minimumHeight:float) : Bounds
+    + Contains(node:GraphNode) : bool
+    + Contains(point:Vector3) : bool
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class LegacyEditorHelper <<static>> {
+    + {static} UpgradeDialog(targets:Object[], upgradeType:System.Type) : void
+}
+@enduml

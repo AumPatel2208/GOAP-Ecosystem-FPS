@@ -1,0 +1,36 @@
+@startuml
+abstract class GraphModifier {
+    - {static} root : GraphModifier
+    - prev : GraphModifier
+    - next : GraphModifier
+    # uniqueID : ulong
+    # {static} usedIDs : Dictionary<ulong, GraphModifier>
+    # {static} GetModifiersOfType() : List<T>
+    + {static} FindAllModifiers() : void
+    + {static} TriggerEvent(type:GraphModifier.EventType) : void
+    # <<virtual>> OnEnable() : void
+    # <<virtual>> OnDisable() : void
+    # <<override>> Awake() : void
+    ConfigureUniqueID() : void
+    AddToLinkedList() : void
+    RemoveFromLinkedList() : void
+    # <<virtual>> OnDestroy() : void
+    + <<virtual>> OnPostScan() : void
+    + <<virtual>> OnPreScan() : void
+    + <<virtual>> OnLatePostScan() : void
+    + <<virtual>> OnPostCacheLoad() : void
+    + <<virtual>> OnGraphsPreUpdate() : void
+    + <<virtual>> OnGraphsPostUpdate() : void
+    # <<override>> Reset() : void
+}
+enum EventType {
+    PostScan= 1 << 0,
+    PreScan= 1 << 1,
+    LatePostScan= 1 << 2,
+    PreUpdate= 1 << 3,
+    PostUpdate= 1 << 4,
+    PostCacheLoad= 1 << 5,
+}
+VersionedMonoBehaviour <|-- GraphModifier
+GraphModifier +-- EventType
+@enduml

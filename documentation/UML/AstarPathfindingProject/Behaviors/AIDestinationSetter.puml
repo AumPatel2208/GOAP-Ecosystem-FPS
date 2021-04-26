@@ -1,0 +1,10 @@
+@startuml
+class AIDestinationSetter {
+    + target : Transform
+    ai : IAstarAI
+    OnEnable() : void
+    OnDisable() : void
+    Update() : void
+}
+VersionedMonoBehaviour <|-- AIDestinationSetter
+@enduml

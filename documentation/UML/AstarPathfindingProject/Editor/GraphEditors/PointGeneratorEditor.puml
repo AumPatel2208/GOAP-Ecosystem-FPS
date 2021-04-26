@@ -1,0 +1,7 @@
+@startuml
+class PointGraphEditor {
+    {static} <<readonly>> nearestNodeDistanceModeLabels : GUIContent[]
+    + <<override>> OnInspectorGUI(target:NavGraph) : void
+}
+GraphEditor <|-- PointGraphEditor
+@enduml

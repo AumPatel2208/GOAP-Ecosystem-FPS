@@ -1,0 +1,26 @@
+@startuml
+class StartEndModifier {
+    + <<override>> Order : int <<get>>
+    + addPoints : bool
+    + exactStartPoint : Exactness
+    + exactEndPoint : Exactness
+    + adjustStartPoint : System.Func<Vector3>
+    + useRaycasting : bool
+    + mask : LayerMask
+    + useGraphRaycasting : bool
+    connectionBuffer : List<GraphNode>
+    connectionBufferAddDelegate : System.Action<GraphNode>
+    + <<override>> Apply(_p:Path) : void
+    Snap(path:ABPath, mode:Exactness, start:bool, forceAddPoint:bool, closestConnectionIndex:int) : Vector3
+    # GetClampedPoint(from:Vector3, to:Vector3, hint:GraphNode) : Vector3
+}
+enum Exactness {
+    SnapToNode,
+    Original,
+    Interpolate,
+    ClosestOnNode,
+    NodeConnection,
+}
+PathModifier <|-- StartEndModifier
+StartEndModifier +-- Exactness
+@enduml

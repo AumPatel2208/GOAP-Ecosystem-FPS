@@ -1,0 +1,88 @@
+@startuml
+class AstarSplines <<static>> {
+    + {static} CatmullRom(previous:Vector3, start:Vector3, end:Vector3, next:Vector3, elapsedTime:float) : Vector3
+    + {static} CubicBezier(p0:Vector3, p1:Vector3, p2:Vector3, p3:Vector3, t:float) : Vector3
+    + {static} CubicBezierDerivative(p0:Vector3, p1:Vector3, p2:Vector3, p3:Vector3, t:float) : Vector3
+    + {static} CubicBezierSecondDerivative(p0:Vector3, p1:Vector3, p2:Vector3, p3:Vector3, t:float) : Vector3
+}
+class VectorMath <<static>> {
+    + {static} ComplexMultiply(a:Vector2, b:Vector2) : Vector2
+    + {static} ComplexMultiplyConjugate(a:Vector2, b:Vector2) : Vector2
+    + {static} ClosestPointOnLine(lineStart:Vector3, lineEnd:Vector3, point:Vector3) : Vector3
+    + {static} ClosestPointOnLineFactor(lineStart:Vector3, lineEnd:Vector3, point:Vector3) : float
+    + {static} ClosestPointOnLineFactor(lineStart:Int3, lineEnd:Int3, point:Int3) : float
+    + {static} ClosestPointOnLineFactor(lineStart:Int2, lineEnd:Int2, point:Int2) : float
+    + {static} ClosestPointOnSegment(lineStart:Vector3, lineEnd:Vector3, point:Vector3) : Vector3
+    + {static} ClosestPointOnSegmentXZ(lineStart:Vector3, lineEnd:Vector3, point:Vector3) : Vector3
+    + {static} SqrDistancePointSegmentApproximate(x:int, z:int, px:int, pz:int, qx:int, qz:int) : float
+    + {static} SqrDistancePointSegmentApproximate(a:Int3, b:Int3, p:Int3) : float
+    + {static} SqrDistancePointSegment(a:Vector3, b:Vector3, p:Vector3) : float
+    + {static} SqrDistanceSegmentSegment(s1:Vector3, e1:Vector3, s2:Vector3, e2:Vector3) : float
+    + {static} SqrDistanceXZ(a:Vector3, b:Vector3) : float
+    + {static} SignedTriangleAreaTimes2XZ(a:Int3, b:Int3, c:Int3) : long
+    + {static} SignedTriangleAreaTimes2XZ(a:Vector3, b:Vector3, c:Vector3) : float
+    + {static} RightXZ(a:Vector3, b:Vector3, p:Vector3) : bool
+    + {static} RightXZ(a:Int3, b:Int3, p:Int3) : bool
+    + {static} SideXZ(a:Int3, b:Int3, p:Int3) : Side
+    + {static} RightOrColinear(a:Vector2, b:Vector2, p:Vector2) : bool
+    + {static} RightOrColinear(a:Int2, b:Int2, p:Int2) : bool
+    + {static} RightOrColinearXZ(a:Vector3, b:Vector3, p:Vector3) : bool
+    + {static} RightOrColinearXZ(a:Int3, b:Int3, p:Int3) : bool
+    + {static} IsClockwiseMarginXZ(a:Vector3, b:Vector3, c:Vector3) : bool
+    + {static} IsClockwiseXZ(a:Vector3, b:Vector3, c:Vector3) : bool
+    + {static} IsClockwiseXZ(a:Int3, b:Int3, c:Int3) : bool
+    + {static} IsClockwiseOrColinearXZ(a:Int3, b:Int3, c:Int3) : bool
+    + {static} IsClockwiseOrColinear(a:Int2, b:Int2, c:Int2) : bool
+    + {static} IsColinear(a:Vector3, b:Vector3, c:Vector3) : bool
+    + {static} IsColinear(a:Vector2, b:Vector2, c:Vector2) : bool
+    + {static} IsColinearXZ(a:Int3, b:Int3, c:Int3) : bool
+    + {static} IsColinearXZ(a:Vector3, b:Vector3, c:Vector3) : bool
+    + {static} IsColinearAlmostXZ(a:Int3, b:Int3, c:Int3) : bool
+    + {static} SegmentsIntersect(start1:Int2, end1:Int2, start2:Int2, end2:Int2) : bool
+    + {static} SegmentsIntersectXZ(start1:Int3, end1:Int3, start2:Int3, end2:Int3) : bool
+    + {static} SegmentsIntersectXZ(start1:Vector3, end1:Vector3, start2:Vector3, end2:Vector3) : bool
+    + {static} LineDirIntersectionPointXZ(start1:Vector3, dir1:Vector3, start2:Vector3, dir2:Vector3) : Vector3
+    + {static} LineDirIntersectionPointXZ(start1:Vector3, dir1:Vector3, start2:Vector3, dir2:Vector3, intersects:bool) : Vector3
+    + {static} RaySegmentIntersectXZ(start1:Int3, end1:Int3, start2:Int3, end2:Int3) : bool
+    + {static} LineIntersectionFactorXZ(start1:Int3, end1:Int3, start2:Int3, end2:Int3, factor1:float, factor2:float) : bool
+    + {static} LineIntersectionFactorXZ(start1:Vector3, end1:Vector3, start2:Vector3, end2:Vector3, factor1:float, factor2:float) : bool
+    + {static} LineRayIntersectionFactorXZ(start1:Int3, end1:Int3, start2:Int3, end2:Int3) : float
+    + {static} LineIntersectionFactorXZ(start1:Vector3, end1:Vector3, start2:Vector3, end2:Vector3) : float
+    + {static} LineIntersectionPointXZ(start1:Vector3, end1:Vector3, start2:Vector3, end2:Vector3) : Vector3
+    + {static} LineIntersectionPointXZ(start1:Vector3, end1:Vector3, start2:Vector3, end2:Vector3, intersects:bool) : Vector3
+    + {static} LineIntersectionPoint(start1:Vector2, end1:Vector2, start2:Vector2, end2:Vector2) : Vector2
+    + {static} LineIntersectionPoint(start1:Vector2, end1:Vector2, start2:Vector2, end2:Vector2, intersects:bool) : Vector2
+    + {static} SegmentIntersectionPointXZ(start1:Vector3, end1:Vector3, start2:Vector3, end2:Vector3, intersects:bool) : Vector3
+    + {static} SegmentIntersectsBounds(bounds:Bounds, a:Vector3, b:Vector3) : bool
+    + {static} LineCircleIntersectionFactor(circleCenter:Vector3, linePoint1:Vector3, linePoint2:Vector3, radius:float) : float
+    + {static} ReversesFaceOrientations(matrix:Matrix4x4) : bool
+    + {static} ReversesFaceOrientationsXZ(matrix:Matrix4x4) : bool
+    + {static} Normalize(v:Vector3, magnitude:float) : Vector3
+    + {static} Normalize(v:Vector2, magnitude:float) : Vector2
+    + {static} ClampMagnitudeXZ(v:Vector3, maxMagnitude:float) : Vector3
+    + {static} MagnitudeXZ(v:Vector3) : float
+}
+class AstarMath <<static>> {
+    + {static} MapTo(startMin:float, startMax:float, targetMin:float, targetMax:float, value:float) : float
+    + {static} FormatBytesBinary(bytes:int) : string
+    {static} Bit(a:int, b:int) : int
+    + {static} IntToColor(i:int, a:float) : Color
+    + {static} HSVToRGB(h:float, s:float, v:float) : Color
+}
+class Polygon <<static>> {
+    + {static} ContainsPointXZ(a:Vector3, b:Vector3, c:Vector3, p:Vector3) : bool
+    + {static} ContainsPointXZ(a:Int3, b:Int3, c:Int3, p:Int3) : bool
+    + {static} ContainsPoint(a:Int2, b:Int2, c:Int2, p:Int2) : bool
+    + {static} ContainsPoint(polyPoints:Vector2[], p:Vector2) : bool
+    + {static} ContainsPointXZ(polyPoints:Vector3[], p:Vector3) : bool
+    + {static} SampleYCoordinateInTriangle(p1:Int3, p2:Int3, p3:Int3, p:Int3) : int
+    + {static} ConvexHullXZ(points:Vector3[]) : Vector3[]
+    + {static} ClosestPointOnTriangle(a:Vector2, b:Vector2, c:Vector2, p:Vector2) : Vector2
+    + {static} ClosestPointOnTriangleXZ(a:Vector3, b:Vector3, c:Vector3, p:Vector3) : Vector3
+    + {static} ClosestPointOnTriangle(a:Vector3, b:Vector3, c:Vector3, p:Vector3) : Vector3
+    {static} <<readonly>> cached_Int3_int_dict : Dictionary<Int3, int>
+    + {static} CompressMesh(vertices:List<Int3>, triangles:List<int>, outVertices:Int3[], outTriangles:int[]) : void
+    + {static} TraceContours(outline:Dictionary<int, int>, hasInEdge:HashSet<int>, results:System.Action<List<int>, bool>) : void
+    + {static} Subdivide(points:List<Vector3>, result:List<Vector3>, subSegments:int) : void
+}
+@enduml

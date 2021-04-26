@@ -1,0 +1,36 @@
+@startuml
+class HierarchicalGraph {
+    <<const>> Tiling : int = 16
+    <<const>> MaxChildrenPerNode : int
+    <<const>> MinChildrenPerNode : int
+    children : List<GraphNode>[]
+    connections : List<int>[]
+    areas : int[]
+    dirty : byte[]
+    + version : int <<get>>
+    + onConnectedComponentsChanged : System.Action
+    connectionCallback : System.Action<GraphNode>
+    temporaryQueue : Queue<GraphNode>
+    currentChildren : List<GraphNode> = null
+    currentConnections : List<int> = null
+    currentHierarchicalNodeIndex : int
+    temporaryStack : Stack<int>
+    numDirtyNodes : int = 0
+    dirtyNodes : GraphNode[]
+    freeNodeIndices : Stack<int>
+    gizmoVersion : int = 0
+    + HierarchicalGraph()
+    Grow() : void
+    GetHierarchicalNodeIndex() : int
+    <<internal>> OnCreatedNode(node:GraphNode) : void
+    <<internal>> AddDirtyNode(node:GraphNode) : void
+    + NumConnectedComponents : int <<get>>
+    + GetConnectedComponent(hierarchicalNodeIndex:int) : uint
+    RemoveHierarchicalNode(hierarchicalNode:int, removeAdjacentSmallNodes:bool) : void
+    + RecalculateIfNecessary() : void
+    + RecalculateAll() : void
+    FloodFill() : void
+    FindHierarchicalNodeChildren(hierarchicalNode:int, startNode:GraphNode) : void
+    + OnDrawGizmos(gizmos:Pathfinding.Util.RetainedGizmos) : void
+}
+@enduml

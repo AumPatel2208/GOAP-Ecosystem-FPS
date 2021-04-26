@@ -1,0 +1,11 @@
+@startuml
+class Arrow {
+    - body : Rigidbody
+    + attackDamage : float = 10f
+    - usedUp : bool = false
+    Start() : void
+    Update() : void
+    - OnCollisionEnter(other:Collision) : void
+}
+MonoBehaviour <|-- Arrow
+@enduml

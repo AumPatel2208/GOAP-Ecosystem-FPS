@@ -1,0 +1,10 @@
+@startuml
+class PathPool <<static>> {
+    {static} <<readonly>> pool : Dictionary<Type, Stack<Path> >
+    {static} <<readonly>> totalCreated : Dictionary<Type, int>
+    + {static} Pool(path:Path) : void
+    + {static} GetTotalCreated(type:Type) : int
+    + {static} GetSize(type:Type) : int
+    + {static} GetPath() : T
+}
+@enduml

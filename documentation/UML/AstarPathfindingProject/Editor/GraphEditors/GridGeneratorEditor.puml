@@ -1,0 +1,55 @@
+@startuml
+class GridGraphEditor {
+    + locked : bool = true
+    + showExtra : bool
+    savedTransform : GraphTransform
+    savedDimensions : Vector2
+    savedNodeSize : float
+    + isMouseDown : bool
+    + pivot : GridPivot
+    {static} lockStyle : GUIStyle
+    {static} gridPivotSelectBackground : GUIStyle
+    {static} gridPivotSelectButton : GUIStyle
+    {static} <<readonly>> standardIsometric : float
+    {static} <<readonly>> standardDimetric : float
+    + {static} RoundVector3(v:Vector3) : Vector3
+    + <<override>> OnInspectorGUI(target:NavGraph) : void
+    IsHexagonal(graph:GridGraph) : bool
+    IsIsometric(graph:GridGraph) : bool
+    IsAdvanced(graph:GridGraph) : bool
+    DetermineGridType(graph:GridGraph) : InspectorGridMode
+    DrawInspectorMode(graph:GridGraph) : void
+    {static} Is2D(graph:GridGraph) : bool
+    # <<virtual>> Draw2DMode(graph:GridGraph) : void
+    hexagonSizeContents : GUIContent[]
+    DrawFirstSection(graph:GridGraph) : void
+    DrawRotationField(graph:GridGraph) : void
+    DrawWidthDepthFields(graph:GridGraph, newWidth:int, newDepth:int) : void
+    DrawIsometricField(graph:GridGraph) : void
+    {static} NormalizedPivotPoint(graph:GridGraph, pivot:GridPivot) : Vector3
+    DrawPositionField(graph:GridGraph) : void
+    # <<virtual>> DrawMiddleSection(graph:GridGraph) : void
+    # <<virtual>> DrawCutCorners(graph:GridGraph) : void
+    # <<virtual>> DrawNeighbours(graph:GridGraph) : void
+    # <<virtual>> DrawMaxClimb(graph:GridGraph) : void
+    # DrawMaxSlope(graph:GridGraph) : void
+    # DrawErosion(graph:GridGraph) : void
+    DrawLastSection(graph:GridGraph) : void
+    DrawPenaltyModifications(graph:GridGraph) : void
+    # <<virtual>> DrawJPS(graph:GridGraph) : void
+    # <<virtual>> DrawCollisionEditor(collision:GraphCollision) : void
+    # <<virtual>> DrawUse2DPhysics(collision:GraphCollision) : void
+    + {static} PivotPointSelector(pivot:GridPivot) : GridPivot
+    {static} <<readonly>> handlePoints : Vector3[]
+    + <<override>> OnSceneGUI(target:NavGraph) : void
+}
+enum GridPivot {
+    Center,
+    TopLeft,
+    TopRight,
+    BottomLeft,
+    BottomRight,
+}
+GraphEditor <|-- GridGraphEditor
+GridGraphEditor +-- GridPivot
+@enduml

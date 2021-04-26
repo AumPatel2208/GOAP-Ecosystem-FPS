@@ -1,0 +1,8 @@
+@startuml
+class FSM {
+    - stateStack : Stack<FSMState>
+    + Update(gameObject:GameObject) : void
+    + pushState(state:FSMState) : void
+    + popState() : void
+}
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class AStarMovement {
+    + targetPosition : Transform
+    - seeker : Seeker
+    - controller : CharacterController
+    + path : Path
+    + speed : float = 2
+    + nextWaypointDistance : float = 3
+    - currentWaypoint : int = 0
+    + reachedEndOfPath : bool
+    + Start() : void
+    + OnPathComplete(p:Path) : void
+    + Update() : void
+}
+MonoBehaviour <|-- AStarMovement
+@enduml

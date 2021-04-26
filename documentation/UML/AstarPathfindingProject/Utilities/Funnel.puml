@@ -1,0 +1,29 @@
+@startuml
+class Funnel {
+    + {static} SplitIntoParts(path:Path) : List<PathPart>
+    + {static} ConstructFunnelPortals(nodes:List<GraphNode>, part:PathPart) : FunnelPortals
+    + {static} ShrinkPortals(portals:FunnelPortals, shrink:float) : void
+    {static} UnwrapHelper(portalStart:Vector3, portalEnd:Vector3, prevPoint:Vector3, nextPoint:Vector3, mRot:Quaternion, mOffset:Vector3) : bool
+    + {static} Unwrap(funnel:FunnelPortals, left:Vector2[], right:Vector2[]) : void
+    {static} FixFunnel(left:Vector2[], right:Vector2[], numPortals:int) : int
+    # {static} ToXZ(p:Vector3) : Vector2
+    # {static} FromXZ(p:Vector2) : Vector3
+    # {static} RightOrColinear(a:Vector2, b:Vector2) : bool
+    # {static} LeftOrColinear(a:Vector2, b:Vector2) : bool
+    + {static} Calculate(funnel:FunnelPortals, unwrap:bool, splitAtEveryPortal:bool) : List<Vector3>
+    {static} Calculate(left:Vector2[], right:Vector2[], numPortals:int, startIndex:int, funnelPath:List<int>, maxCorners:int, lastCorner:bool) : void
+}
+class FunnelPortals <<struct>> {
+    + left : List<Vector3>
+    + right : List<Vector3>
+}
+class PathPart <<struct>> {
+    + startIndex : int
+    + endIndex : int
+    + startPoint : Vector3
+    + endPoint : Vector3
+    + isLink : bool
+}
+Funnel +-- FunnelPortals
+Funnel +-- PathPart
+@enduml

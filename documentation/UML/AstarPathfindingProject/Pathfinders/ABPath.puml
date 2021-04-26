@@ -1,0 +1,35 @@
+@startuml
+class ABPath {
+    + startNode : GraphNode
+    + endNode : GraphNode
+    + originalStartPoint : Vector3
+    + originalEndPoint : Vector3
+    + startPoint : Vector3
+    + endPoint : Vector3
+    # <<virtual>> hasEndPoint : bool <<get>>
+    + startIntPoint : Int3
+    + calculatePartial : bool
+    # partialBestTarget : PathNode
+    # endNodeCosts : int[]
+    gridSpecialCaseNode : GridNode
+    + ABPath()
+    + {static} Construct(start:Vector3, end:Vector3, callback:OnPathDelegate) : ABPath
+    # Setup(start:Vector3, end:Vector3, callbackDelegate:OnPathDelegate) : void
+    + {static} FakePath(vectorPath:List<Vector3>, nodePath:List<GraphNode>) : ABPath
+    # UpdateStartEnd(start:Vector3, end:Vector3) : void
+    <<internal>> <<override>> GetConnectionSpecialCost(a:GraphNode, b:GraphNode, currentCost:uint) : uint
+    # <<override>> Reset() : void
+    {static} <<readonly>> NNConstraintNone : NNConstraint
+    # <<virtual>> EndPointGridGraphSpecialCase(closestWalkableEndNode:GraphNode) : bool
+    SetFlagOnSurroundingGridNodes(gridNode:GridNode, flag:int, flagState:bool) : void
+    # <<override>> Prepare() : void
+    # <<virtual>> CompletePathIfStartIsValidTarget() : void
+    # <<override>> Initialize() : void
+    # <<override>> Cleanup() : void
+    CompleteWith(node:GraphNode) : void
+    # <<override>> CalculateStep(targetTick:long) : void
+    <<internal>> <<override>> DebugString(logMode:PathLog) : string
+    + GetMovementVector(point:Vector3) : Vector3
+}
+Path <|-- ABPath
+@enduml

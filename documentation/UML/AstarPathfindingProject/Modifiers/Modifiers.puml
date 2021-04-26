@@ -1,0 +1,26 @@
+@startuml
+interface IPathModifier {
+    Order : int <<get>>
+    Apply(path:Path) : void
+    PreProcess(path:Path) : void
+}
+abstract class PathModifier {
+    + seeker : Seeker
+    + {abstract} Order : int <<get>>
+    + Awake(seeker:Seeker) : void
+    + OnDestroy(seeker:Seeker) : void
+    + <<virtual>> PreProcess(path:Path) : void
+    + {abstract} Apply(path:Path) : void
+}
+abstract class MonoModifier {
+    + seeker : Seeker
+    # <<virtual>> OnEnable() : void
+    # <<virtual>> OnDisable() : void
+    + {abstract} Order : int <<get>>
+    + <<virtual>> PreProcess(path:Path) : void
+    + {abstract} Apply(path:Path) : void
+}
+IPathModifier <|-- PathModifier
+VersionedMonoBehaviour <|-- MonoModifier
+IPathModifier <|-- MonoModifier
+@enduml

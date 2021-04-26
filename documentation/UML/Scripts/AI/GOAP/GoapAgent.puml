@@ -1,0 +1,28 @@
+@startuml
+class GoapAgent <<sealed>> {
+    - stateMachine : FSM
+    - idleState : FSM.FSMState
+    - moveToState : FSM.FSMState
+    - performActionState : FSM.FSMState
+    - availableActions : HashSet<GoapAction>
+    - currentActions : Queue<GoapAction>
+    - dataProvider : IGoap
+    - planner : GoapPlanner
+    Start() : void
+    Update() : void
+    + addAction(a:GoapAction) : void
+    + getAction(action:Type) : GoapAction
+    + removeAction(action:GoapAction) : void
+    - hasActionPlan() : bool
+    - createIdleState() : void
+    - createMoveToState() : void
+    - createPerformActionState() : void
+    - findDataProvider() : void
+    - loadActions() : void
+    + {static} prettyPrint(state:HashSet<KeyValuePair<string, object>>) : string
+    + {static} prettyPrint(actions:Queue<GoapAction>) : string
+    + {static} prettyPrint(actions:GoapAction[]) : string
+    + {static} prettyPrint(action:GoapAction) : string
+}
+MonoBehaviour <|-- GoapAgent
+@enduml

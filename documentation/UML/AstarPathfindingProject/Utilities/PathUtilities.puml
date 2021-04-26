@@ -1,0 +1,16 @@
+@startuml
+class PathUtilities <<static>> {
+    + {static} IsPathPossible(node1:GraphNode, node2:GraphNode) : bool
+    + {static} IsPathPossible(nodes:List<GraphNode>) : bool
+    + {static} IsPathPossible(nodes:List<GraphNode>, tagMask:int) : bool
+    + {static} GetReachableNodes(seed:GraphNode, tagMask:int, filter:System.Func<GraphNode, bool>) : List<GraphNode>
+    {static} BFSQueue : Queue<GraphNode>
+    {static} BFSMap : Dictionary<GraphNode, int>
+    + {static} BFS(seed:GraphNode, depth:int, tagMask:int, filter:System.Func<GraphNode, bool>) : List<GraphNode>
+    + {static} GetSpiralPoints(count:int, clearance:float) : List<Vector3>
+    - {static} InvoluteOfCircle(a:float, t:float) : Vector3
+    + {static} GetPointsAroundPointWorld(p:Vector3, g:IRaycastableGraph, previousPoints:List<Vector3>, radius:float, clearanceRadius:float) : void
+    + {static} GetPointsAroundPoint(center:Vector3, g:IRaycastableGraph, previousPoints:List<Vector3>, radius:float, clearanceRadius:float) : void
+    + {static} GetPointsOnNodes(nodes:List<GraphNode>, count:int, clearanceRadius:float) : List<Vector3>
+}
+@enduml

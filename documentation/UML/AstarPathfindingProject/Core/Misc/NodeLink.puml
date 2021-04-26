@@ -1,0 +1,16 @@
+@startuml
+class NodeLink {
+    + end : Transform
+    + costFactor : float = 1.0f
+    + oneWay : bool = false
+    + deleteConnection : bool = false
+    + Start : Transform <<get>>
+    + End : Transform <<get>>
+    + <<override>> OnPostScan() : void
+    + InternalOnPostScan() : void
+    + <<override>> OnGraphsPostUpdate() : void
+    + <<virtual>> Apply() : void
+    + OnDrawGizmos() : void
+}
+GraphModifier <|-- NodeLink
+@enduml

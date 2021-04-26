@@ -1,0 +1,18 @@
+@startuml
+class "ListPool`1"<T> <<static>> {
+    {static} <<readonly>> pool : List<List<T> >
+    {static} <<readonly>> largePool : List<List<T> >
+    {static} <<readonly>> inPool : HashSet<List<T> >
+    <<const>> MaxCapacitySearchLength : int = 8
+    <<const>> LargeThreshold : int = 5000
+    <<const>> MaxLargePoolSize : int = 8
+    + {static} Claim() : List<T>
+    {static} FindCandidate(pool:List<List<T> >, capacity:int) : int
+    + {static} Claim(capacity:int) : List<T>
+    + {static} Warmup(count:int, size:int) : void
+    + {static} Release(list:List<T>) : void
+    + {static} Release(list:List<T>) : void
+    + {static} Clear() : void
+    + {static} GetSize() : int
+}
+@enduml

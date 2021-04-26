@@ -1,0 +1,91 @@
+@startuml
+class GraphSerializationContext {
+    - <<readonly>> id2NodeMapping : GraphNode[]
+    + <<readonly>> reader : BinaryReader
+    + <<readonly>> writer : BinaryWriter
+    + <<readonly>> graphIndex : uint
+    + <<readonly>> meta : GraphMeta
+    + GraphSerializationContext(reader:BinaryReader, id2NodeMapping:GraphNode[], graphIndex:uint, meta:GraphMeta)
+    + GraphSerializationContext(writer:BinaryWriter)
+    + SerializeNodeReference(node:GraphNode) : void
+    + DeserializeNodeReference() : GraphNode
+    + SerializeVector3(v:Vector3) : void
+    + DeserializeVector3() : Vector3
+    + SerializeInt3(v:Int3) : void
+    + DeserializeInt3() : Int3
+    + DeserializeInt(defaultValue:int) : int
+    + DeserializeFloat(defaultValue:float) : float
+    + DeserializeUnityObject() : UnityEngine.Object
+}
+class AstarSerializer {
+    - data : AstarData
+    - zip : ZipFile
+    - zipStream : MemoryStream
+    - meta : GraphMeta
+    - settings : SerializeSettings
+    - graphs : NavGraph[]
+    - graphIndexInZip : Dictionary<NavGraph, int>
+    - graphIndexOffset : int
+    <<const>> binaryExt : string = ".binary"
+    <<const>> jsonExt : string = ".json"
+    - checksum : uint = 0xffffffff
+    encoding : System.Text.UTF8Encoding
+    {static} _stringBuilder : System.Text.StringBuilder
+    {static} GetStringBuilder() : System.Text.StringBuilder
+    + {static} <<readonly>> V3_8_3 : System.Version
+    + {static} <<readonly>> V3_9_0 : System.Version
+    + {static} <<readonly>> V4_1_0 : System.Version
+    + AstarSerializer(data:AstarData)
+    + AstarSerializer(data:AstarData, settings:SerializeSettings)
+    + SetGraphIndexOffset(offset:int) : void
+    AddChecksum(bytes:byte[]) : void
+    AddEntry(name:string, bytes:byte[]) : void
+    + GetChecksum() : uint
+    + OpenSerialize() : void
+    + CloseSerialize() : byte[]
+    + SerializeGraphs(_graphs:NavGraph[]) : void
+    SerializeMeta() : byte[]
+    + Serialize(graph:NavGraph) : byte[]
+    + SerializeNodes() : void
+    {static} GetMaxNodeIndexInAllGraphs(graphs:NavGraph[]) : int
+    {static} SerializeNodeIndices(graphs:NavGraph[]) : byte[]
+    {static} SerializeGraphExtraInfo(graph:NavGraph) : byte[]
+    {static} SerializeGraphNodeReferences(graph:NavGraph) : byte[]
+    + SerializeExtraInfo() : void
+    SerializeNodeLinks() : byte[]
+    GetEntry(name:string) : ZipEntry
+    ContainsEntry(name:string) : bool
+    + OpenDeserialize(bytes:byte[]) : bool
+    {static} FullyDefinedVersion(v:System.Version) : System.Version
+    + CloseDeserialize() : void
+    DeserializeGraph(zipIndex:int, graphIndex:int, availableGraphTypes:System.Type[]) : NavGraph
+    + DeserializeGraphs(availableGraphTypes:System.Type[]) : NavGraph[]
+    DeserializeExtraInfo(graph:NavGraph) : bool
+    AnyDestroyedNodesInGraphs() : bool
+    DeserializeNodeReferenceMap() : GraphNode[]
+    DeserializeNodeReferences(graph:NavGraph, int2Node:GraphNode[]) : void
+    + DeserializeExtraInfo() : void
+    DeserializeNodeLinks(int2Node:GraphNode[]) : void
+    + PostDeserialization() : void
+    + DeserializeEditorSettingsCompatibility() : void
+    - {static} GetBinaryReader(entry:ZipEntry) : BinaryReader
+    - {static} GetString(entry:ZipEntry) : string
+    - DeserializeMeta(entry:ZipEntry) : GraphMeta
+    - DeserializeBinaryMeta(entry:ZipEntry) : GraphMeta
+    + {static} SaveToFile(path:string, data:byte[]) : void
+    + {static} LoadFromFile(path:string) : byte[]
+}
+class GraphMeta {
+    + version : Version
+    + graphs : int
+    + guids : List<string>
+    + typeNames : List<string>
+    + GetGraphType(index:int, availableGraphTypes:System.Type[]) : Type
+}
+class SerializeSettings {
+    + nodes : bool = true
+    + prettyPrint : bool
+    + editorSettings : bool
+    + {static} Settings : SerializeSettings <<get>>
+}
+@enduml

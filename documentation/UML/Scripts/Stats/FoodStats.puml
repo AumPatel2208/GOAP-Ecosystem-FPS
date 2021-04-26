@@ -1,0 +1,16 @@
+@startuml
+class FoodStats {
+    + foodAmount : float = 10f
+    + totalFoodAmount : float = 100f
+    + isReadyToEat : bool = true
+    + foodParticles : GameObject
+    - Start() : void
+    + isEaten() : bool
+    - Update() : void
+    + DepleteTotalFoodAmount(amount:float) : void
+    + DepleteTotalFoodAmount() : void
+    + DepleteTotalFoodAmount(centerPosition:Vector3, rotation:Quaternion) : void
+    + SpawnFoodParticles(centerPosition:Vector3, rotation:Quaternion) : void
+}
+MonoBehaviour <|-- FoodStats
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Memory <<static>> {
+    + {static} MemSet(array:T[], value:T, byteSize:int) : void
+    + {static} MemSet(array:T[], value:T, totalSize:int, byteSize:int) : void
+    + {static} ShrinkArray(arr:T[], newLength:int) : T[]
+    + {static} Swap(a:T, b:T) : void
+}
+@enduml

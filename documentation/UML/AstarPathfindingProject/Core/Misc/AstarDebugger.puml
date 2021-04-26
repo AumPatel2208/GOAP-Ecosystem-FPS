@@ -1,0 +1,59 @@
+@startuml
+class AstarDebugger {
+    + yOffset : int = 5
+    + show : bool = true
+    + showInEditor : bool = false
+    + showFPS : bool = false
+    + showPathProfile : bool = false
+    + showMemProfile : bool = false
+    + showGraph : bool = false
+    + graphBufferSize : int = 200
+    + font : Font = null
+    + fontSize : int = 12
+    text : StringBuilder
+    cachedText : string
+    lastUpdate : float
+    - graph : GraphPoint[]
+    - delayedDeltaTime : float = 1
+    - lastCollect : float = 0
+    - lastCollectNum : float = 0
+    - delta : float = 0
+    - lastDeltaTime : float = 0
+    - allocRate : int = 0
+    - lastAllocMemory : int = 0
+    - lastAllocSet : float
+    - allocMem : int = 0
+    - collectAlloc : int = 0
+    - peakAlloc : int = 0
+    - fpsDropCounterSize : int = 200
+    - fpsDrops : float[]
+    - boxRect : Rect
+    - style : GUIStyle
+    - cam : Camera
+    graphWidth : float = 100
+    graphHeight : float = 100
+    graphOffset : float = 50
+    + Start() : void
+    maxVecPool : int = 0
+    maxNodePool : int = 0
+    debugTypes : PathTypeDebug[]
+    + LateUpdate() : void
+    DrawGraphLine(index:int, m:Matrix4x4, x1:float, x2:float, y1:float, y2:float, color:Color) : void
+    + OnGUI() : void
+}
+class GraphPoint <<struct>> {
+    + fps : float
+    + memory : float
+    + collectEvent : bool
+}
+class PathTypeDebug <<struct>> {
+    name : string
+    getSize : System.Func<int>
+    getTotalCreated : System.Func<int>
+    + PathTypeDebug(name:string, getSize:System.Func<int>, getTotalCreated:System.Func<int>)
+    + Print(text:StringBuilder) : void
+}
+VersionedMonoBehaviour <|-- AstarDebugger
+AstarDebugger +-- GraphPoint
+AstarDebugger +-- PathTypeDebug
+@enduml

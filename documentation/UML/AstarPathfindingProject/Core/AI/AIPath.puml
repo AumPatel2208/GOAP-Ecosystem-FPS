@@ -1,0 +1,39 @@
+@startuml
+class AIPath <<partial>> {
+    + maxAcceleration : float
+    + rotationSpeed : float = 360
+    + slowdownDistance : float = 0.6F
+    + pickNextWaypointDist : float = 2
+    + endReachedDistance : float = 0.2F
+    + alwaysDrawGizmos : bool
+    + slowWhenNotFacingTarget : bool = true
+    + whenCloseToDestination : CloseToDestinationMode
+    + constrainInsideGraph : bool = false
+    # path : Path
+    # interpolator : PathInterpolator
+    + <<override>> Teleport(newPosition:Vector3, clearPath:bool) : void
+    + remainingDistance : float <<get>>
+    + reachedDestination : bool <<get>>
+    + reachedEndOfPath : bool <<get>> <<protected set>>
+    + hasPath : bool <<get>>
+    + pathPending : bool <<get>>
+    + steeringTarget : Vector3 <<get>>
+    radius : float <<get>> <<set>>
+    height : float <<get>> <<set>>
+    maxSpeed : float <<get>> <<set>>
+    canSearch : bool <<get>> <<set>>
+    canMove : bool <<get>> <<set>>
+    + GetRemainingPath(buffer:List<Vector3>, stale:bool) : void
+    # <<override>> OnDisable() : void
+    + <<virtual>> OnTargetReached() : void
+    # <<override>> OnPathComplete(newPath:Path) : void
+    # <<override>> ClearPath() : void
+    # <<override>> MovementUpdateInternal(deltaTime:float, nextPosition:Vector3, nextRotation:Quaternion) : void
+    # <<virtual>> CalculateNextRotation(slowdown:float, nextRotation:Quaternion) : void
+    {static} cachedNNConstraint : NNConstraint
+    # <<override>> ClampToNavmesh(position:Vector3, positionChanged:bool) : Vector3
+    # <<override>> OnUpgradeSerializedData(version:int, unityThread:bool) : int
+}
+AIBase <|-- AIPath
+IAstarAI <|-- AIPath
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class GraphGizmoHelper {
+    + hasher : RetainedGizmos.Hasher <<get>>
+    gizmos : Pathfinding.Util.RetainedGizmos
+    debugData : PathHandler
+    debugPathID : ushort
+    debugMode : GraphDebugMode
+    showSearchTree : bool
+    debugFloor : float
+    debugRoof : float
+    + builder : RetainedGizmos.Builder <<get>>
+    drawConnectionStart : Vector3
+    drawConnectionColor : Color
+    <<readonly>> drawConnection : System.Action<GraphNode>
+    + GraphGizmoHelper()
+    + Init(active:AstarPath, hasher:RetainedGizmos.Hasher, gizmos:RetainedGizmos) : void
+    + OnEnterPool() : void
+    + DrawConnections(node:GraphNode) : void
+    DrawConnection(other:GraphNode) : void
+    + NodeColor(node:GraphNode) : Color
+    + {static} InSearchTree(node:GraphNode, handler:PathHandler, pathID:ushort) : bool
+    + DrawWireTriangle(a:Vector3, b:Vector3, c:Vector3, color:Color) : void
+    + DrawTriangles(vertices:Vector3[], colors:Color[], numTriangles:int) : void
+    + DrawWireTriangles(vertices:Vector3[], colors:Color[], numTriangles:int) : void
+    + Submit() : void
+    Dispose() : void
+}
+IAstarPooledObject <|-- GraphGizmoHelper
+@enduml

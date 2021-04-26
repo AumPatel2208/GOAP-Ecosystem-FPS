@@ -1,0 +1,100 @@
+@startuml
+interface ITraversalProvider {
+    CanTraverse(path:Path, node:GraphNode) : bool
+    GetTraversalCost(path:Path, node:GraphNode) : uint
+}
+class DefaultITraversalProvider <<static>> {
+    + {static} CanTraverse(path:Path, node:GraphNode) : bool
+    + {static} GetTraversalCost(path:Path, node:GraphNode) : uint
+}
+abstract class Path {
+    # pathHandler : PathHandler
+    + callback : OnPathDelegate
+    + immediateCallback : OnPathDelegate
+    + PipelineState : PathState <<get>>
+    stateLock : System.Object
+    + traversalProvider : ITraversalProvider
+    # completeState : PathCompleteState
+    + CompleteState : PathCompleteState <<get>> <<protected set>>
+    + error : bool <<get>>
+    + errorLog : string <<get>>
+    + path : List<GraphNode>
+    + vectorPath : List<Vector3>
+    # currentR : PathNode
+    + duration : float
+    <<internal>> searchedNodes : int
+    Pooled : bool <<get>> <<set>>
+    <<internal>> recycled : bool <<get>>
+    # hasBeenReset : bool
+    + nnConstraint : NNConstraint
+    <<internal>> next : Path
+    + heuristic : Heuristic
+    + heuristicScale : float = 1F
+    + pathID : ushort <<get>>
+    # hTargetNode : GraphNode
+    # hTarget : Int3
+    + enabledTags : int
+    {static} <<readonly>> ZeroTagPenalties : int[]
+    # internalTagPenalties : int[]
+    # manualTagPenalties : int[]
+    + tagPenalties : int[] <<get>> <<set>>
+    <<internal>> <<virtual>> FloodingPath : bool <<get>>
+    + GetTotalLength() : float
+    + WaitForPath() : IEnumerator
+    + BlockUntilCalculated() : void
+    <<internal>> CalculateHScore(node:GraphNode) : uint
+    + GetTagPenalty(tag:int) : uint
+    <<internal>> GetHTarget() : Int3
+    <<internal>> CanTraverse(node:GraphNode) : bool
+    <<internal>> GetTraversalCost(node:GraphNode) : uint
+    <<internal>> <<virtual>> GetConnectionSpecialCost(a:GraphNode, b:GraphNode, currentCost:uint) : uint
+    + IsDone() : bool
+    AdvanceState(s:PathState) : void
+    + GetState() : PathState
+    <<internal>> FailWithError(msg:string) : void
+    <<internal>> LogError(msg:string) : void
+    <<internal>> Log(msg:string) : void
+    + Error() : void
+    - ErrorCheck() : void
+    # <<virtual>> OnEnterPool() : void
+    # <<virtual>> Reset() : void
+    - claimed : List<System.Object>
+    - releasedNotSilent : bool
+    + Claim(o:System.Object) : void
+    <<internal>> ReleaseSilent(o:System.Object) : void
+    + Release(o:System.Object, silent:bool) : void
+    # <<virtual>> Trace(from:PathNode) : void
+    # DebugStringPrefix(logMode:PathLog, text:System.Text.StringBuilder) : void
+    # DebugStringSuffix(logMode:PathLog, text:System.Text.StringBuilder) : void
+    <<internal>> <<virtual>> DebugString(logMode:PathLog) : string
+    # <<virtual>> ReturnPath() : void
+    # PrepareBase(pathHandler:PathHandler) : void
+    # {abstract} Prepare() : void
+    # <<virtual>> Cleanup() : void
+    # {abstract} Initialize() : void
+    # {abstract} CalculateStep(targetTick:long) : void
+    PathHandler : PathHandler <<get>>
+    OnEnterPool() : void
+    Reset() : void
+    ReturnPath() : void
+    PrepareBase(handler:PathHandler) : void
+    Prepare() : void
+    Cleanup() : void
+    Initialize() : void
+    CalculateStep(targetTick:long) : void
+}
+interface IPathInternals {
+    PathHandler : PathHandler <<get>>
+    Pooled : bool <<get>> <<set>>
+    AdvanceState(s:PathState) : void
+    OnEnterPool() : void
+    Reset() : void
+    ReturnPath() : void
+    PrepareBase(handler:PathHandler) : void
+    Prepare() : void
+    Initialize() : void
+    Cleanup() : void
+    CalculateStep(targetTick:long) : void
+}
+IPathInternals <|-- Path
+@enduml

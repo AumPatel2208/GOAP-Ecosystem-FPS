@@ -1,0 +1,10 @@
+@startuml
+class SeekerEditor {
+    {static} tagPenaltiesOpen : bool
+    {static} scripts : List<Seeker>
+    exactnessLabels : GUIContent[]
+    graphLabels : string[]
+    # <<override>> Inspector() : void
+}
+EditorBase <|-- SeekerEditor
+@enduml

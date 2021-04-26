@@ -1,0 +1,20 @@
+@startuml
+class Guid <<struct>> {
+    <<const>> hex : string = "0123456789ABCDEF"
+    + {static} <<readonly>> zero : Guid
+    + {static} <<readonly>> zeroString : string
+    <<readonly>> _a : ulong
+    <<readonly>> _b : ulong
+    + Guid(bytes:byte[])
+    + Guid(str:string)
+    + {static} Parse(input:string) : Guid
+    {static} SwapEndianness(value:ulong) : ulong
+    + ToByteArray() : byte[]
+    - {static} random : System.Random
+    + {static} NewGuid() : Guid
+    + <<override>> Equals(_rhs:System.Object) : bool
+    + <<override>> GetHashCode() : int
+    - {static} text : System.Text.StringBuilder
+    + <<override>> ToString() : string
+}
+@enduml

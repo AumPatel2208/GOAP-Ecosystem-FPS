@@ -1,0 +1,7 @@
+@startuml
+class BaseAIEditor {
+    lastSeenCustomGravity : float
+    # <<override>> Inspector() : void
+}
+EditorBase <|-- BaseAIEditor
+@enduml

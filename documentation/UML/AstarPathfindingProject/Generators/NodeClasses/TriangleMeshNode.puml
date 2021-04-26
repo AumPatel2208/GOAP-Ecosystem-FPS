@@ -1,0 +1,43 @@
+@startuml
+interface INavmeshHolder {
+    GetVertex(i:int) : Int3
+    GetVertexInGraphSpace(i:int) : Int3
+    GetVertexArrayIndex(index:int) : int
+    GetTileCoordinates(tileIndex:int, x:int, z:int) : void
+}
+class TriangleMeshNode {
+    + TriangleMeshNode(astar:AstarPath)
+    + v0 : int
+    + v1 : int
+    + v2 : int
+    # {static} _navmeshHolders : INavmeshHolder[]
+    # {static} <<readonly>> lockObject : System.Object
+    + {static} GetNavmeshHolder(graphIndex:uint) : INavmeshHolder
+    + {static} SetNavmeshHolder(graphIndex:int, graph:INavmeshHolder) : void
+    + UpdatePositionFromVertices() : void
+    + GetVertexIndex(i:int) : int
+    + GetVertexArrayIndex(i:int) : int
+    + GetVertices(v0:Int3, v1:Int3, v2:Int3) : void
+    + GetVerticesInGraphSpace(v0:Int3, v1:Int3, v2:Int3) : void
+    + <<override>> GetVertex(i:int) : Int3
+    + GetVertexInGraphSpace(i:int) : Int3
+    + <<override>> GetVertexCount() : int
+    + <<override>> ClosestPointOnNode(p:Vector3) : Vector3
+    <<internal>> ClosestPointOnNodeXZInGraphSpace(p:Vector3) : Int3
+    + <<override>> ClosestPointOnNodeXZ(p:Vector3) : Vector3
+    + <<override>> ContainsPoint(p:Vector3) : bool
+    + <<override>> ContainsPointInGraphSpace(p:Int3) : bool
+    + <<override>> UpdateRecursiveG(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + <<override>> Open(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + SharedEdge(other:GraphNode) : int
+    + <<override>> GetPortal(toNode:GraphNode, left:System.Collections.Generic.List<Vector3>, right:System.Collections.Generic.List<Vector3>, backwards:bool) : bool
+    + GetPortal(toNode:GraphNode, left:System.Collections.Generic.List<Vector3>, right:System.Collections.Generic.List<Vector3>, backwards:bool, aIndex:int, bIndex:int) : bool
+    + <<override>> SurfaceArea() : float
+    + <<override>> RandomPointOnSurface() : Vector3
+    + <<override>> SerializeNode(ctx:GraphSerializationContext) : void
+    + <<override>> DeserializeNode(ctx:GraphSerializationContext) : void
+}
+ITransformedGraph <|-- INavmeshHolder
+INavmesh <|-- INavmeshHolder
+MeshNode <|-- TriangleMeshNode
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+class GraphUpdateProcessor {
+    +  <<event>> OnGraphsUpdated : System.Action 
+    <<readonly>> astar : AstarPath
+    graphUpdateThread : Thread
+    anyGraphUpdateInProgress : bool
+    <<readonly>> graphUpdateQueue : Queue<GraphUpdateObject>
+    <<readonly>> graphUpdateQueueAsync : Queue<GUOSingle>
+    <<readonly>> graphUpdateQueuePost : Queue<GUOSingle>
+    <<readonly>> graphUpdateQueueRegular : Queue<GUOSingle>
+    <<readonly>> asyncGraphUpdatesComplete : System.Threading.ManualResetEvent
+    <<readonly>> graphUpdateAsyncEvent : System.Threading.AutoResetEvent
+    <<readonly>> exitAsyncThread : System.Threading.AutoResetEvent
+    + IsAnyGraphUpdateQueued : bool <<get>>
+    + IsAnyGraphUpdateInProgress : bool <<get>>
+    + GraphUpdateProcessor(astar:AstarPath)
+    + GetWorkItem() : AstarWorkItem
+    + EnableMultithreading() : void
+    + DisableMultithreading() : void
+    + AddToQueue(ob:GraphUpdateObject) : void
+    QueueGraphUpdatesInternal() : void
+    ProcessGraphUpdates(force:bool) : bool
+    ProcessRegularUpdates(force:bool) : bool
+    StartAsyncUpdatesIfQueued() : bool
+    ProcessPostUpdates() : void
+    ProcessGraphUpdatesAsync() : void
+}
+enum GraphUpdateOrder {
+    GraphUpdate,
+}
+class GUOSingle <<struct>> {
+    + order : GraphUpdateOrder
+    + graph : IUpdatableGraph
+    + obj : GraphUpdateObject
+}
+GraphUpdateProcessor +-- GraphUpdateOrder
+GraphUpdateProcessor +-- GUOSingle
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+interface IAstarAI {
+    radius : float <<get>> <<set>>
+    height : float <<get>> <<set>>
+    position : Vector3 <<get>>
+    rotation : Quaternion <<get>>
+    maxSpeed : float <<get>> <<set>>
+    velocity : Vector3 <<get>>
+    desiredVelocity : Vector3 <<get>>
+    remainingDistance : float <<get>>
+    reachedDestination : bool <<get>>
+    reachedEndOfPath : bool <<get>>
+    destination : Vector3 <<get>> <<set>>
+    canSearch : bool <<get>> <<set>>
+    canMove : bool <<get>> <<set>>
+    hasPath : bool <<get>>
+    pathPending : bool <<get>>
+    isStopped : bool <<get>> <<set>>
+    steeringTarget : Vector3 <<get>>
+    onSearchPath : System.Action <<get>> <<set>>
+    GetRemainingPath(buffer:List<Vector3>, stale:bool) : void
+    SearchPath() : void
+    SetPath(path:Path) : void
+    Teleport(newPosition:Vector3, clearPath:bool) : void
+    Move(deltaPosition:Vector3) : void
+    MovementUpdate(deltaTime:float, nextPosition:Vector3, nextRotation:Quaternion) : void
+    FinalizeMovement(nextPosition:Vector3, nextRotation:Quaternion) : void
+}
+@enduml

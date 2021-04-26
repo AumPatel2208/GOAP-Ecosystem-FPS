@@ -1,0 +1,31 @@
+@startuml
+class ThreadControlQueue {
+    head : Path
+    tail : Path
+    <<readonly>> lockObj : System.Object
+    <<readonly>> numReceivers : int
+    blocked : bool
+    blockedReceivers : int
+    starving : bool
+    terminate : bool
+    block : ManualResetEvent
+    + ThreadControlQueue(numReceivers:int)
+    + IsEmpty : bool <<get>>
+    + IsTerminating : bool <<get>>
+    + Block() : void
+    + Unblock() : void
+    + Lock() : void
+    + Unlock() : void
+    + AllReceiversBlocked : bool <<get>>
+    + PushFront(path:Path) : void
+    + Push(path:Path) : void
+    Starving() : void
+    + TerminateReceivers() : void
+    + Pop() : Path
+    + ReceiverTerminated() : void
+    + PopNoBlock(blockedBefore:bool) : Path
+}
+class QueueTerminationException {
+}
+ThreadControlQueue +-- QueueTerminationException
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class MovementUtilities <<static>> {
+    + {static} ClampVelocity(velocity:Vector2, maxSpeed:float, slowdownFactor:float, slowWhenNotFacingTarget:bool, forward:Vector2) : Vector2
+    + {static} CalculateAccelerationToReachPoint(deltaPosition:Vector2, targetVelocity:Vector2, currentVelocity:Vector2, forwardsAcceleration:float, rotationSpeed:float, maxSpeed:float, forwardsVector:Vector2) : Vector2
+}
+@enduml

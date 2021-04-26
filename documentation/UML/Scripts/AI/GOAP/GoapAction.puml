@@ -1,0 +1,26 @@
+@startuml
+abstract class GoapAction {
+    - preconditions : HashSet<KeyValuePair<string, object>>
+    - effects : HashSet<KeyValuePair<string, object>>
+    - inRange : bool = false
+    + radius : float = 0f
+    + cost : float = 1f
+    + target : GameObject
+    + GoapAction()
+    + doReset() : void
+    + {abstract} reset() : void
+    + {abstract} isDone() : bool
+    + {abstract} checkProceduralPrecondition(agent:GameObject) : bool
+    + {abstract} perform(agent:GameObject) : bool
+    + {abstract} requiresInRange() : bool
+    + isInRange() : bool
+    + setInRange(inRange:bool) : void
+    + addPrecondition(key:string, value:object) : void
+    + removePrecondition(key:string) : void
+    + addEffect(key:string, value:object) : void
+    + removeEffect(key:string) : void
+    + Preconditions : HashSet<KeyValuePair<string, object>> <<get>>
+    + Effects : HashSet<KeyValuePair<string, object>> <<get>>
+}
+MonoBehaviour <|-- GoapAction
+@enduml

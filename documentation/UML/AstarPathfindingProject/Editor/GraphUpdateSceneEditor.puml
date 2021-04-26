@@ -1,0 +1,19 @@
+@startuml
+class GraphUpdateSceneEditor {
+    selectedPoint : int
+    <<const>> pointGizmosRadius : float = 0.09F
+    {static} PointColor : Color
+    {static} PointSelectedColor : Color
+    scripts : GraphUpdateScene[]
+    # <<override>> Inspector() : void
+    DrawPointsField() : void
+    DrawPhysicsField() : void
+    DrawConvexField() : void
+    DrawWalkableField() : void
+    DrawPenaltyField() : void
+    DrawTagField() : void
+    {static} SphereCap(controlID:int, position:Vector3, rotation:Quaternion, size:float) : void
+    + OnSceneGUI() : void
+}
+EditorBase <|-- GraphUpdateSceneEditor
+@enduml

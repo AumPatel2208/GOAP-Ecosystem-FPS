@@ -1,0 +1,9 @@
+@startuml
+class PathReturnQueue {
+    pathReturnQueue : Queue<Path>
+    pathsClaimedSilentlyBy : System.Object
+    + PathReturnQueue(pathsClaimedSilentlyBy:System.Object)
+    + Enqueue(path:Path) : void
+    + ReturnPaths(timeSlice:bool) : void
+}
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+interface IMovementPlane {
+    ToPlane(p:Vector3) : Vector2
+    ToPlane(p:Vector3, elevation:float) : Vector2
+    ToWorld(p:Vector2, elevation:float) : Vector3
+}
+interface ITransform {
+    Transform(position:Vector3) : Vector3
+    InverseTransform(position:Vector3) : Vector3
+}
+class GraphTransform {
+    + <<readonly>> identity : bool
+    + <<readonly>> onlyTranslational : bool
+    <<readonly>> isXY : bool
+    <<readonly>> isXZ : bool
+    <<readonly>> matrix : Matrix4x4
+    <<readonly>> inverseMatrix : Matrix4x4
+    <<readonly>> up : Vector3
+    <<readonly>> translation : Vector3
+    <<readonly>> i3translation : Int3
+    <<readonly>> rotation : Quaternion
+    <<readonly>> inverseRotation : Quaternion
+    + {static} <<readonly>> identityTransform : GraphTransform
+    + GraphTransform(matrix:Matrix4x4)
+    + WorldUpAtGraphPosition(point:Vector3) : Vector3
+    {static} MatrixIsTranslational(matrix:Matrix4x4) : bool
+    + Transform(point:Vector3) : Vector3
+    + TransformVector(point:Vector3) : Vector3
+    + Transform(arr:Int3[]) : void
+    + Transform(arr:Vector3[]) : void
+    + InverseTransform(point:Vector3) : Vector3
+    + InverseTransform(point:Int3) : Int3
+    + InverseTransform(arr:Int3[]) : void
+    + Transform(bounds:Bounds) : Bounds
+    + InverseTransform(bounds:Bounds) : Bounds
+    ToPlane(point:Vector3) : Vector2
+    ToPlane(point:Vector3, elevation:float) : Vector2
+    ToWorld(point:Vector2, elevation:float) : Vector3
+}
+IMovementPlane <|-- GraphTransform
+ITransform <|-- GraphTransform
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+class JsonMemberAttribute {
+}
+class JsonOptInAttribute {
+}
+class TinyJsonSerializer {
+    output : System.Text.StringBuilder
+    serializers : Dictionary<Type, Action<System.Object> >
+    {static} <<readonly>> invariantCulture : System.Globalization.CultureInfo
+    + {static} Serialize(obj:System.Object, output:System.Text.StringBuilder) : void
+    TinyJsonSerializer()
+    Serialize(obj:System.Object) : void
+    QuotedField(name:string, contents:string) : void
+    SerializeUnityObject(obj:UnityEngine.Object) : void
+}
+class TinyJsonDeserializer {
+    reader : System.IO.TextReader
+    {static} <<readonly>> numberFormat : System.Globalization.NumberFormatInfo
+    + {static} Deserialize(text:string, type:Type, populate:System.Object) : System.Object
+    Deserialize(tp:Type, populate:System.Object) : System.Object
+    DeserializeUnityObject() : UnityEngine.Object
+    DeserializeUnityObjectInner() : UnityEngine.Object
+    EatWhitespace() : void
+    Eat(s:string) : void
+    builder : System.Text.StringBuilder
+    EatUntil(c:string, inString:bool) : string
+    TryEat(c:char) : bool
+    EatField() : string
+    SkipFieldData() : void
+}
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class AnimationLink {
+    + clip : string
+    + animSpeed : float = 1
+    + reverseAnim : bool = true
+    + referenceMesh : GameObject
+    + sequence : LinkClip[]
+    + boneRoot : string = "bn_COG_Root"
+    {static} SearchRec(tr:Transform, name:string) : Transform
+    + CalculateOffsets(trace:List<Vector3>, endPosition:Vector3) : void
+    + <<override>> OnDrawGizmosSelected() : void
+}
+class LinkClip {
+    + clip : AnimationClip
+    + velocity : Vector3
+    + loopCount : int = 1
+    + name : string <<get>>
+}
+NodeLink2 <|-- AnimationLink
+AnimationLink +-- LinkClip
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class LegacyAIPath {
+    + forwardLook : float = 1
+    + closestOnPathCheck : bool = true
+    # minMoveScale : float = 0.05F
+    # currentWaypointIndex : int = 0
+    # lastFoundWaypointPosition : Vector3
+    # lastFoundWaypointTime : float
+    # <<override>> Awake() : void
+    # <<override>> OnPathComplete(_p:Path) : void
+    # <<override>> Update() : void
+    # <<new>> targetDirection : Vector3
+    # XZSqrMagnitude(a:Vector3, b:Vector3) : float
+    # <<new>> CalculateVelocity(currentPosition:Vector3) : Vector3
+    # RotateTowards(dir:Vector3) : void
+    # CalculateTargetPoint(p:Vector3, a:Vector3, b:Vector3) : Vector3
+}
+AIPath <|-- LegacyAIPath
+@enduml

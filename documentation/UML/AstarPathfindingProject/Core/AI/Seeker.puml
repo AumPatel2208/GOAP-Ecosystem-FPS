@@ -1,0 +1,50 @@
+@startuml
+class Seeker {
+    + drawGizmos : bool = true
+    + detailedGizmos : bool
+    + startEndModifier : StartEndModifier
+    + traversableTags : int
+    + tagPenalties : int[]
+    + graphMask : GraphMask
+    graphMaskCompatibility : int
+    + pathCallback : OnPathDelegate
+    + preProcessPath : OnPathDelegate
+    + postProcessPath : OnPathDelegate
+    lastCompletedVectorPath : List<Vector3>
+    lastCompletedNodePath : List<GraphNode>
+    # path : Path
+    - prevPath : Path
+    - <<readonly>> onPathDelegate : OnPathDelegate
+    - tmpPathCallback : OnPathDelegate
+    # lastPathID : uint
+    <<readonly>> modifiers : List<IPathModifier>
+    + Seeker()
+    # <<override>> Awake() : void
+    + GetCurrentPath() : Path
+    + CancelCurrentPathRequest(pool:bool) : void
+    + OnDestroy() : void
+    ReleaseClaimedPath() : void
+    + RegisterModifier(modifier:IPathModifier) : void
+    + DeregisterModifier(modifier:IPathModifier) : void
+    + PostProcess(path:Path) : void
+    + RunModifiers(pass:ModifierPass, path:Path) : void
+    + IsDone() : bool
+    OnPathComplete(path:Path) : void
+    OnPathComplete(p:Path, runModifiers:bool, sendCallbacks:bool) : void
+    + GetNewPath(start:Vector3, end:Vector3) : ABPath
+    + StartPath(start:Vector3, end:Vector3) : Path
+    + StartPath(start:Vector3, end:Vector3, callback:OnPathDelegate) : Path
+    + StartPath(start:Vector3, end:Vector3, callback:OnPathDelegate, graphMask:GraphMask) : Path
+    + StartPath(p:Path, callback:OnPathDelegate) : Path
+    + StartPath(p:Path, callback:OnPathDelegate, graphMask:GraphMask) : Path
+    StartPathInternal(p:Path, callback:OnPathDelegate) : void
+    + OnDrawGizmos() : void
+    # <<override>> OnUpgradeSerializedData(version:int, unityThread:bool) : int
+}
+enum ModifierPass {
+    PreProcess,
+    PostProcess= 2,
+}
+VersionedMonoBehaviour <|-- Seeker
+Seeker +-- ModifierPass
+@enduml

@@ -1,0 +1,86 @@
+@startuml
+class Connection <<struct>> {
+    + node : GraphNode
+    + cost : uint
+    + shapeEdge : byte
+    + Connection(node:GraphNode, cost:uint, shapeEdge:byte)
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+}
+abstract class GraphNode {
+    - nodeIndex : int
+    # flags : uint
+    - penalty : uint
+    + Graph : NavGraph <<get>>
+    # GraphNode(astar:AstarPath)
+    + Destroy() : void
+    + Destroyed : bool <<get>>
+    <<const>> NodeIndexMask : int = 0xFFFFFFF
+    <<const>> DestroyedNodeIndex : int
+    <<const>> TemporaryFlag1Mask : int = 0x10000000
+    <<const>> TemporaryFlag2Mask : int = 0x20000000
+    + NodeIndex : int <<get>>
+    <<internal>> TemporaryFlag1 : bool <<get>> <<set>>
+    <<internal>> TemporaryFlag2 : bool <<get>> <<set>>
+    + position : Int3
+    <<const>> FlagsWalkableOffset : int = 0
+    <<const>> FlagsWalkableMask : uint
+    <<const>> FlagsHierarchicalIndexOffset : int = 1
+    <<const>> HierarchicalIndexMask : uint
+    <<const>> HierarchicalDirtyOffset : int = 18
+    <<const>> HierarchicalDirtyMask : uint
+    <<const>> FlagsGraphOffset : int = 24
+    <<const>> FlagsGraphMask : uint
+    + <<const>> MaxHierarchicalNodeIndex : uint
+    + <<const>> MaxGraphIndex : uint
+    <<const>> FlagsTagOffset : int = 19
+    <<const>> FlagsTagMask : uint
+    + Flags : uint <<get>> <<set>>
+    + Penalty : uint <<get>> <<set>>
+    + Walkable : bool <<get>> <<set>>
+    <<internal>> HierarchicalNodeIndex : int <<get>> <<set>>
+    <<internal>> IsHierarchicalNodeDirty : bool <<get>> <<set>>
+    + Area : uint <<get>>
+    + GraphIndex : uint <<get>> <<set>>
+    + Tag : uint <<get>> <<set>>
+    + SetConnectivityDirty() : void
+    + RecalculateConnectionCosts() : void
+    + <<virtual>> UpdateRecursiveG(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + {abstract} GetConnections(action:System.Action<GraphNode>) : void
+    + {abstract} AddConnection(node:GraphNode, cost:uint) : void
+    + {abstract} RemoveConnection(node:GraphNode) : void
+    + {abstract} ClearConnections(alsoReverse:bool) : void
+    + <<virtual>> ContainsConnection(node:GraphNode) : bool
+    + <<virtual>> GetPortal(other:GraphNode, left:List<Vector3>, right:List<Vector3>, backwards:bool) : bool
+    + {abstract} Open(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + <<virtual>> SurfaceArea() : float
+    + <<virtual>> RandomPointOnSurface() : Vector3
+    + <<virtual>> GetGizmoHashCode() : int
+    + <<virtual>> SerializeNode(ctx:GraphSerializationContext) : void
+    + <<virtual>> DeserializeNode(ctx:GraphSerializationContext) : void
+    + <<virtual>> SerializeReferences(ctx:GraphSerializationContext) : void
+    + <<virtual>> DeserializeReferences(ctx:GraphSerializationContext) : void
+}
+abstract class MeshNode {
+    # MeshNode(astar:AstarPath)
+    + connections : Connection[]
+    + {abstract} GetVertex(i:int) : Int3
+    + {abstract} GetVertexCount() : int
+    + {abstract} ClosestPointOnNode(p:Vector3) : Vector3
+    + {abstract} ClosestPointOnNodeXZ(p:Vector3) : Vector3
+    + <<override>> ClearConnections(alsoReverse:bool) : void
+    + <<override>> GetConnections(action:System.Action<GraphNode>) : void
+    + <<override>> ContainsConnection(node:GraphNode) : bool
+    + <<override>> UpdateRecursiveG(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + <<override>> AddConnection(node:GraphNode, cost:uint) : void
+    + AddConnection(node:GraphNode, cost:uint, shapeEdge:int) : void
+    + <<override>> RemoveConnection(node:GraphNode) : void
+    + <<virtual>> ContainsPoint(point:Int3) : bool
+    + {abstract} ContainsPoint(point:Vector3) : bool
+    + {abstract} ContainsPointInGraphSpace(point:Int3) : bool
+    + <<override>> GetGizmoHashCode() : int
+    + <<override>> SerializeReferences(ctx:GraphSerializationContext) : void
+    + <<override>> DeserializeReferences(ctx:GraphSerializationContext) : void
+}
+GraphNode <|-- MeshNode
+@enduml

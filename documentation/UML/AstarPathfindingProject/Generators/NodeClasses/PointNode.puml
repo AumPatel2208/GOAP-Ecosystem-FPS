@@ -1,0 +1,21 @@
+@startuml
+class PointNode {
+    + connections : Connection[]
+    + gameObject : GameObject
+    + SetPosition(value:Int3) : void
+    + PointNode(astar:AstarPath)
+    + <<override>> GetConnections(action:System.Action<GraphNode>) : void
+    + <<override>> ClearConnections(alsoReverse:bool) : void
+    + <<override>> UpdateRecursiveG(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + <<override>> ContainsConnection(node:GraphNode) : bool
+    + <<override>> AddConnection(node:GraphNode, cost:uint) : void
+    + <<override>> RemoveConnection(node:GraphNode) : void
+    + <<override>> Open(path:Path, pathNode:PathNode, handler:PathHandler) : void
+    + <<override>> GetGizmoHashCode() : int
+    + <<override>> SerializeNode(ctx:GraphSerializationContext) : void
+    + <<override>> DeserializeNode(ctx:GraphSerializationContext) : void
+    + <<override>> SerializeReferences(ctx:GraphSerializationContext) : void
+    + <<override>> DeserializeReferences(ctx:GraphSerializationContext) : void
+}
+GraphNode <|-- PointNode
+@enduml

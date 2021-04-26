@@ -1,0 +1,12 @@
+@startuml
+class TurnBasedAI {
+    + movementPoints : int = 2
+    + blockManager : BlockManager
+    + blocker : SingleNodeBlocker
+    + targetNode : GraphNode
+    + traversalProvider : BlockManager.TraversalProvider
+    Start() : void
+    # <<override>> Awake() : void
+}
+VersionedMonoBehaviour <|-- TurnBasedAI
+@enduml

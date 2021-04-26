@@ -1,0 +1,34 @@
+@startuml
+class EditorBase {
+    {static} cachedTooltips : System.Collections.Generic.Dictionary<string, string>
+    {static} cachedURLs : System.Collections.Generic.Dictionary<string, string>
+    props : Dictionary<string, SerializedProperty>
+    localTooltips : Dictionary<string, string>
+    {static} content : GUIContent
+    {static} showInDocContent : GUIContent
+    {static} noOptions : GUILayoutOption[]
+    + {static} getDocumentationURL : System.Func<string>
+    {static} LoadMeta() : void
+    {static} FindURL(type:System.Type, path:string) : string
+    {static} FindURL(path:string) : string
+    {static} FindTooltip(path:string) : string
+    FindLocalTooltip(path:string) : string
+    # <<virtual>> OnEnable() : void
+    + <<sealed>> <<override>> OnInspectorGUI() : void
+    # <<virtual>> Inspector() : void
+    # FindProperty(name:string) : SerializedProperty
+    # Section(label:string) : void
+    # FloatField(propertyPath:string, label:string, tooltip:string, min:float, max:float) : void
+    # PropertyField(propertyPath:string, label:string, tooltip:string) : bool
+    # PropertyField(prop:SerializedProperty, label:string, tooltip:string) : bool
+    PropertyField(prop:SerializedProperty, label:string, tooltip:string, propertyPath:string) : bool
+    IsContextClick() : bool
+    CaptureContextClick(propertyPath:string) : void
+    # Popup(propertyPath:string, options:GUIContent[], label:string) : void
+    # Mask(propertyPath:string, options:string[], label:string) : void
+    # IntSlider(propertyPath:string, left:int, right:int) : void
+    # Clamp(name:string, min:float, max:float) : void
+    # ClampInt(name:string, min:int, max:int) : void
+}
+Editor <|-- EditorBase
+@enduml

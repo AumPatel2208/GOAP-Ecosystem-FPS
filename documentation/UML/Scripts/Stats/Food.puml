@@ -1,0 +1,6 @@
+@startuml
+class Food {
+    + targetFood : GameObject
+}
+MonoBehaviour <|-- Food
+@enduml

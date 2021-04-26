@@ -1,0 +1,6 @@
+@startuml
+class LegacyAIPathEditor {
+    # <<override>> Inspector() : void
+}
+BaseAIEditor <|-- LegacyAIPathEditor
+@enduml

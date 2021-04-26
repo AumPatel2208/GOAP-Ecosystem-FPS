@@ -1,0 +1,28 @@
+@startuml
+class SimpleSmoothModifier {
+    + <<override>> Order : int <<get>>
+    + smoothType : SmoothType
+    + subdivisions : int = 2
+    + iterations : int = 2
+    + strength : float = 0.5F
+    + uniformLength : bool = true
+    + maxSegmentLength : float = 2F
+    + bezierTangentLength : float = 0.4F
+    + offset : float = 0.2F
+    + factor : float = 0.1F
+    + <<override>> Apply(p:Path) : void
+    + CurvedNonuniform(path:List<Vector3>) : List<Vector3>
+    + {static} GetPointOnCubic(a:Vector3, b:Vector3, tan1:Vector3, tan2:Vector3, t:float) : Vector3
+    + SmoothOffsetSimple(path:List<Vector3>) : List<Vector3>
+    + SmoothSimple(path:List<Vector3>) : List<Vector3>
+    + SmoothBezier(path:List<Vector3>) : List<Vector3>
+}
+enum SmoothType {
+    Simple,
+    Bezier,
+    OffsetSimple,
+    CurvedNonuniform,
+}
+MonoModifier <|-- SimpleSmoothModifier
+SimpleSmoothModifier +-- SmoothType
+@enduml

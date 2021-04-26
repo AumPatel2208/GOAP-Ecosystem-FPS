@@ -1,0 +1,14 @@
+@startuml
+class RagdollToggle {
+    # animator : Animator
+    # boxCollider : BoxCollider
+    + aiComponent : Behaviour
+    # childrenColliders : Collider[]
+    # childrenRigidbodies : Rigidbody[]
+    - currentState : bool
+    Awake() : void
+    - Start() : void
+    + EnableRagdoll(isActive:bool) : void
+}
+MonoBehaviour <|-- RagdollToggle
+@enduml

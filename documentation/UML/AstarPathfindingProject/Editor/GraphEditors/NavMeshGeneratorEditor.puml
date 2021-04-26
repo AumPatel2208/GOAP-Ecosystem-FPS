@@ -1,0 +1,6 @@
+@startuml
+class NavMeshGraphEditor {
+    + <<override>> OnInspectorGUI(target:NavGraph) : void
+}
+GraphEditor <|-- NavMeshGraphEditor
+@enduml

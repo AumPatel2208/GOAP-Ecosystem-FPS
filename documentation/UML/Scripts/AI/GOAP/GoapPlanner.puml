@@ -1,0 +1,17 @@
+@startuml
+class GoapPlanner {
+    + plan(agent:GameObject, availableActions:HashSet<GoapAction>, worldState:HashSet<KeyValuePair<string, object>>, goal:HashSet<KeyValuePair<string, object>>) : Queue<GoapAction>
+    - buildGraph(parent:Node, leaves:List<Node>, usableActions:HashSet<GoapAction>, goal:HashSet<KeyValuePair<string, object>>) : bool
+    - actionSubset(actions:HashSet<GoapAction>, removeMe:GoapAction) : HashSet<GoapAction>
+    - inState(test:HashSet<KeyValuePair<string, object>>, state:HashSet<KeyValuePair<string, object>>, partialMatch:bool) : bool
+    - populateState(currentState:HashSet<KeyValuePair<string, object>>, stateChange:HashSet<KeyValuePair<string, object>>) : HashSet<KeyValuePair<string, object>>
+}
+class Node {
+    + parent : Node
+    + runningCost : float
+    + state : HashSet<KeyValuePair<string, object>>
+    + action : GoapAction
+    + Node(parent:Node, runningCost:float, state:HashSet<KeyValuePair<string, object>>, action:GoapAction)
+}
+GoapPlanner +-- Node
+@enduml

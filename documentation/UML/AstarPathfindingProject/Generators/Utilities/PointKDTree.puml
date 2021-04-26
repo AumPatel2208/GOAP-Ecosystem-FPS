@@ -1,0 +1,50 @@
+@startuml
+class PointKDTree {
+    + <<const>> LeafSize : int = 10
+    + <<const>> LeafArraySize : int
+    tree : Node[]
+    numNodes : int = 0
+    <<readonly>> largeList : List<GraphNode>
+    <<readonly>> arrayCache : Stack<GraphNode[]>
+    {static} <<readonly>> comparers : IComparer<GraphNode>[]
+    + PointKDTree()
+    + Add(node:GraphNode) : void
+    + Rebuild(nodes:GraphNode[], start:int, end:int) : void
+    GetOrCreateList() : GraphNode[]
+    Size(index:int) : int
+    CollectAndClear(index:int, buffer:List<GraphNode>) : void
+    {static} MaxAllowedSize(numNodes:int, depth:int) : int
+    Rebalance(index:int) : void
+    EnsureSize(index:int) : void
+    Build(index:int, nodes:List<GraphNode>, start:int, end:int) : void
+    Add(point:GraphNode, index:int, depth:int) : void
+    + GetNearest(point:Int3, constraint:NNConstraint) : GraphNode
+    GetNearestInternal(index:int, point:Int3, constraint:NNConstraint, best:GraphNode, bestSqrDist:long) : void
+    + GetNearestConnection(point:Int3, constraint:NNConstraint, maximumSqrConnectionLength:long) : GraphNode
+    GetNearestConnectionInternal(index:int, point:Int3, constraint:NNConstraint, best:GraphNode, bestSqrDist:long, distanceThresholdOffset:long) : void
+    + GetInRange(point:Int3, sqrRadius:long, buffer:List<GraphNode>) : void
+    GetInRangeInternal(index:int, point:Int3, sqrRadius:long, buffer:List<GraphNode>) : void
+}
+class Node <<struct>> {
+    + data : GraphNode[]
+    + split : int
+    + count : ushort
+    + splitAxis : byte
+}
+class CompareX {
+    + Compare(lhs:GraphNode, rhs:GraphNode) : int
+}
+class CompareY {
+    + Compare(lhs:GraphNode, rhs:GraphNode) : int
+}
+class CompareZ {
+    + Compare(lhs:GraphNode, rhs:GraphNode) : int
+}
+PointKDTree +-- Node
+PointKDTree +-- CompareX
+"IComparer`1" "<GraphNode>" <|-- CompareX
+PointKDTree +-- CompareY
+"IComparer`1" "<GraphNode>" <|-- CompareY
+PointKDTree +-- CompareZ
+"IComparer`1" "<GraphNode>" <|-- CompareZ
+@enduml

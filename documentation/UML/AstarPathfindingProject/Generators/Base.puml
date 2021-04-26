@@ -1,0 +1,94 @@
+@startuml
+interface IGraphInternals {
+    SerializedEditorSettings : string <<get>> <<set>>
+    OnDestroy() : void
+    DestroyAllNodes() : void
+    ScanInternal() : IEnumerable<Progress>
+    SerializeExtraInfo(ctx:GraphSerializationContext) : void
+    DeserializeExtraInfo(ctx:GraphSerializationContext) : void
+    PostDeserialization(ctx:GraphSerializationContext) : void
+    DeserializeSettingsCompatibility(ctx:GraphSerializationContext) : void
+}
+abstract class NavGraph {
+    + active : AstarPath
+    + guid : Guid
+    + initialPenalty : uint
+    + open : bool
+    + graphIndex : uint
+    + name : string
+    + drawGizmos : bool = true
+    + infoScreenOpen : bool
+    serializedEditorSettings : string
+    <<internal>> exists : bool <<get>>
+    + <<virtual>> CountNodes() : int
+    + GetNodes(action:System.Func<GraphNode, bool>) : void
+    + {abstract} GetNodes(action:System.Action<GraphNode>) : void
+    + matrix : Matrix4x4
+    + inverseMatrix : Matrix4x4
+    + SetMatrix(m:Matrix4x4) : void
+    + RelocateNodes(oldMatrix:Matrix4x4, newMatrix:Matrix4x4) : void
+    + <<virtual>> RelocateNodes(deltaMatrix:Matrix4x4) : void
+    + GetNearest(position:Vector3) : NNInfoInternal
+    + GetNearest(position:Vector3, constraint:NNConstraint) : NNInfoInternal
+    + <<virtual>> GetNearest(position:Vector3, constraint:NNConstraint, hint:GraphNode) : NNInfoInternal
+    + <<virtual>> GetNearestForce(position:Vector3, constraint:NNConstraint) : NNInfoInternal
+    # <<virtual>> OnDestroy() : void
+    # <<virtual>> DestroyAllNodes() : void
+    + ScanGraph() : void
+    + Scan() : void
+    # {abstract} ScanInternal() : IEnumerable<Progress>
+    # <<virtual>> SerializeExtraInfo(ctx:GraphSerializationContext) : void
+    # <<virtual>> DeserializeExtraInfo(ctx:GraphSerializationContext) : void
+    # <<virtual>> PostDeserialization(ctx:GraphSerializationContext) : void
+    # <<virtual>> DeserializeSettingsCompatibility(ctx:GraphSerializationContext) : void
+    + <<virtual>> OnDrawGizmos(gizmos:RetainedGizmos, drawNodes:bool) : void
+    # DrawUnwalkableNodes(size:float) : void
+    SerializedEditorSettings : string <<get>> <<set>>
+    OnDestroy() : void
+    DestroyAllNodes() : void
+    ScanInternal() : IEnumerable<Progress>
+    SerializeExtraInfo(ctx:GraphSerializationContext) : void
+    DeserializeExtraInfo(ctx:GraphSerializationContext) : void
+    PostDeserialization(ctx:GraphSerializationContext) : void
+    DeserializeSettingsCompatibility(ctx:GraphSerializationContext) : void
+}
+class GraphCollision {
+    + type : ColliderType
+    + diameter : float = 1F
+    + height : float = 2F
+    + collisionOffset : float
+    + rayDirection : RayDirection
+    + mask : LayerMask
+    + heightMask : LayerMask
+    + fromHeight : float = 100
+    + thickRaycast : bool
+    + thickRaycastDiameter : float = 1
+    + unwalkableWhenNoGround : bool = true
+    + use2D : bool
+    + collisionCheck : bool = true
+    + heightCheck : bool = true
+    + up : Vector3
+    - upheight : Vector3
+    - finalRadius : float
+    - finalRaycastRadius : float
+    + <<const>> RaycastErrorMargin : float = 0.005F
+    + Initialize(transform:GraphTransform, scale:float) : void
+    + Check(position:Vector3) : bool
+    + CheckHeight(position:Vector3) : Vector3
+    + CheckHeight(position:Vector3, hit:RaycastHit, walkable:bool) : Vector3
+    hitBuffer : RaycastHit[]
+    + CheckHeightAll(position:Vector3, numHits:int) : RaycastHit[]
+    + DeserializeSettingsCompatibility(ctx:GraphSerializationContext) : void
+}
+enum ColliderType {
+    Sphere,
+    Capsule,
+    Ray,
+}
+enum RayDirection {
+    Up,
+    Down,
+    Both,
+}
+IGraphInternals <|-- NavGraph
+@enduml

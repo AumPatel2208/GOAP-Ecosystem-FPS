@@ -1,0 +1,11 @@
+@startuml
+class "StackPool`1"<T> <<static>> {
+    {static} <<readonly>> pool : List<Stack<T> >
+    {static} StackPool()
+    + {static} Claim() : Stack<T>
+    + {static} Warmup(count:int) : void
+    + {static} Release(stack:Stack<T>) : void
+    + {static} Clear() : void
+    + {static} GetSize() : int
+}
+@enduml

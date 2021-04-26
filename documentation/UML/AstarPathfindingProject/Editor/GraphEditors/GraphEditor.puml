@@ -1,0 +1,19 @@
+@startuml
+class GraphEditor {
+    + editor : AstarPathEditor
+    + fadeArea : FadeArea
+    + infoFadeArea : FadeArea
+    + AutoScan() : bool
+    + <<virtual>> OnEnable() : void
+    + {static} ObjectField(label:string, obj:Object, objType:System.Type, allowSceneObjects:bool) : Object
+    + {static} ObjectField(label:GUIContent, obj:Object, objType:System.Type, allowSceneObjects:bool) : Object
+    + OnBaseInspectorGUI(target:NavGraph) : void
+    + <<virtual>> OnInspectorGUI(target:NavGraph) : void
+    + <<virtual>> OnSceneGUI(target:NavGraph) : void
+    + {static} Separator() : void
+    + {static} FixLabel(label:string, buttonLabel:string, buttonWidth:int) : bool
+    + ToggleGroup(label:string, value:bool) : bool
+    + {static} ToggleGroup(label:GUIContent, value:bool) : bool
+}
+GraphEditorBase <|-- GraphEditor
+@enduml

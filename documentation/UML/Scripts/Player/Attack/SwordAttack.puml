@@ -1,0 +1,18 @@
+@startuml
+class SwordAttack {
+    + animator : Animator
+    + attackDamage : float = 50f
+    + staminaCost : float = 15f
+    - {static} <<readonly>> hIsAttacking : int
+    + playerStats : Stats.Stats
+    noOfClicks : int
+    - canClick : bool
+    - {static} <<readonly>> hAttackNo : int
+    Start() : void
+    Update() : void
+    - OnTriggerEnter(other:Collider) : void
+    - ComboStarter() : void
+    + ComboCheck() : void
+}
+MonoBehaviour <|-- SwordAttack
+@enduml

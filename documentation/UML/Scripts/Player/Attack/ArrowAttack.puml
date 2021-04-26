@@ -1,0 +1,17 @@
+@startuml
+class ArrowAttack {
+    + arrowPrefab : GameObject
+    + mainCamera : Camera
+    + baseArrowForce : float = 3f
+    + maxArrowForce : float
+    + deleteTime : float = 2f
+    + incrementValue : float = 0.5f
+    - isKeyDown : bool = false
+    - arrowForce : float = 0f
+    + arrowChargeMeter : Image
+    - Start() : void
+    Update() : void
+    - FixedUpdate() : void
+}
+MonoBehaviour <|-- ArrowAttack
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class EnumFlagDrawer {
+    + <<override>> OnGUI(position:Rect, property:SerializedProperty, label:GUIContent) : void
+    {static} GetBaseProperty(prop:SerializedProperty) : T
+}
+PropertyDrawer <|-- EnumFlagDrawer
+@enduml

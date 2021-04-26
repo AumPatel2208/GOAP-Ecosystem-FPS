@@ -1,0 +1,16 @@
+@startuml
+class RandomlyRoam {
+    - randomPositionObj : GameObject
+    - destinationSetter : AIDestinationSetter
+    + creature : BaseAIGoap
+    - finishEating : FinishEating
+    - isFinishEatingNull : bool
+    + resetRandomPositionFrequency : float = 2f
+    - resetRandomPositionTimer : float = 0f
+    Awake() : void
+    - Start() : void
+    - Update() : void
+    - Roam() : void
+}
+MonoBehaviour <|-- RandomlyRoam
+@enduml

@@ -1,0 +1,51 @@
+@startuml
+class RetainedGizmos {
+    meshes : List<MeshWithHash>
+    usedHashes : HashSet<ulong>
+    existingHashes : HashSet<ulong>
+    cachedMeshes : Stack<Mesh>
+    + GetSingleFrameGizmoHelper(active:AstarPath) : GraphGizmoHelper
+    + GetGizmoHelper(active:AstarPath, hasher:Hasher) : GraphGizmoHelper
+    PoolMesh(mesh:Mesh) : void
+    GetMesh() : Mesh
+    + surfaceMaterial : Material
+    + lineMaterial : Material
+    + HasCachedMesh(hasher:Hasher) : bool
+    + Draw(hasher:Hasher) : bool
+    + DrawExisting() : void
+    + FinalizeDraw() : void
+    + ClearCache() : void
+    RemoveUnusedMeshes(meshList:List<MeshWithHash>) : void
+}
+class Hasher <<struct>> {
+    hash : ulong
+    includePathSearchInfo : bool
+    includeAreaInfo : bool
+    debugData : PathHandler
+    + Hasher(active:AstarPath)
+    + AddHash(hash:int) : void
+    + HashNode(node:GraphNode) : void
+    + Hash : ulong <<get>>
+}
+class Builder {
+    lines : List<Vector3>
+    lineColors : List<Color32>
+    meshes : List<Mesh>
+    + DrawMesh(gizmos:RetainedGizmos, vertices:Vector3[], triangles:List<int>, colors:Color[]) : void
+    + DrawWireCube(tr:GraphTransform, bounds:Bounds, color:Color) : void
+    + DrawLine(start:Vector3, end:Vector3, color:Color) : void
+    + Submit(gizmos:RetainedGizmos, hasher:Hasher) : void
+    SubmitMeshes(gizmos:RetainedGizmos, hash:ulong) : void
+    SubmitLines(gizmos:RetainedGizmos, hash:ulong) : void
+    OnEnterPool() : void
+}
+class MeshWithHash <<struct>> {
+    + hash : ulong
+    + mesh : Mesh
+    + lines : bool
+}
+RetainedGizmos +-- Hasher
+RetainedGizmos +-- Builder
+IAstarPooledObject <|-- Builder
+RetainedGizmos +-- MeshWithHash
+@enduml

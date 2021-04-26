@@ -1,0 +1,13 @@
+@startuml
+class Action_MeleeAttack {
+    - hasAttacked : bool = false
+    + attackDamage : float = 10f
+    + Action_MeleeAttack()
+    + <<override>> reset() : void
+    + <<override>> isDone() : bool
+    + <<override>> checkProceduralPrecondition(agent:GameObject) : bool
+    + <<override>> perform(agent:GameObject) : bool
+    + <<override>> requiresInRange() : bool
+}
+GoapAction <|-- Action_MeleeAttack
+@enduml

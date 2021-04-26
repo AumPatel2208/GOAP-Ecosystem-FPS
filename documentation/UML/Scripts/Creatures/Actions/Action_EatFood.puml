@@ -1,0 +1,12 @@
+@startuml
+class Action_EatFood {
+    - foodIsEaten : bool = false
+    + Action_EatFood()
+    + <<override>> reset() : void
+    + <<override>> isDone() : bool
+    + <<override>> checkProceduralPrecondition(agent:GameObject) : bool
+    + <<override>> perform(agent:GameObject) : bool
+    + <<override>> requiresInRange() : bool
+}
+GoapAction <|-- Action_EatFood
+@enduml

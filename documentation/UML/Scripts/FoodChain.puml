@@ -1,0 +1,15 @@
+@startuml
+class FoodChain {
+    + <<const>> NAME_PLAYER : string = "player"
+    + <<const>> NAME_SABERTOOTH : string = "sabertooth"
+    + <<const>> NAME_SLOTH : string = "sloth"
+    + <<const>> NAME_PLANT : string = "plant"
+    - threats : Dictionary<String, HashSet<String>>
+    - foods : Dictionary<String, HashSet<String>>
+    + Awake() : void
+    - addToChain(threat:String, food:String) : void
+    + GetFood(name:String) : HashSet<String>
+    + GetThreat(name:String) : HashSet<String>
+}
+MonoBehaviour <|-- FoodChain
+@enduml

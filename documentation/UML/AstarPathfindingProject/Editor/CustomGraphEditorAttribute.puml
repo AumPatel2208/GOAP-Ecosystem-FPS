@@ -1,0 +1,8 @@
+@startuml
+class CustomGraphEditorAttribute {
+    + graphType : System.Type
+    + displayName : string
+    + editorType : System.Type
+    + CustomGraphEditorAttribute(t:System.Type, displayName:string)
+}
+@enduml

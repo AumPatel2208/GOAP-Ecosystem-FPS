@@ -1,0 +1,87 @@
+@startuml
+class AstarPathEditor {
+    {static} graphEditorTypes : Dictionary<string, CustomGraphEditorAttribute>
+    {static} graphNodeCounts : Dictionary<NavGraph, KeyValuePair<float, KeyValuePair<int, int> > >
+    graphEditors : GraphEditor[]
+    graphTypes : System.Type[] <<get>>
+    {static} lastUndoGroup : int
+    {static} ignoredChecksum : uint
+    <<const>> scriptsFolder : string = "Assets/AstarPathfindingProject"
+    {static} showSettings : bool
+    {static} customAreaColorsOpen : bool
+    {static} editTags : bool
+    {static} settingsArea : FadeArea
+    {static} colorSettingsArea : FadeArea
+    {static} editorSettingsArea : FadeArea
+    {static} aboutArea : FadeArea
+    {static} optimizationSettingsArea : FadeArea
+    {static} serializationSettingsArea : FadeArea
+    {static} tagsArea : FadeArea
+    {static} graphsArea : FadeArea
+    {static} addGraphsArea : FadeArea
+    {static} alwaysVisibleArea : FadeArea
+    + script : AstarPath <<get>>
+    {static} stylesLoaded : bool
+    + {static} astarSkin : GUISkin <<get>>
+    {static} level0AreaStyle : GUIStyle
+    {static} level0LabelStyle : GUIStyle
+    {static} level1AreaStyle : GUIStyle
+    {static} level1LabelStyle : GUIStyle
+    {static} graphDeleteButtonStyle : GUIStyle
+    {static} graphInfoButtonStyle : GUIStyle
+    {static} graphGizmoButtonStyle : GUIStyle
+    {static} graphEditNameButtonStyle : GUIStyle
+    + {static} helpBox : GUIStyle <<get>>
+    + {static} thinHelpBox : GUIStyle <<get>>
+    + OnEnable() : void
+    CreateFadeAreas() : void
+    + OnDisable() : void
+    GetAstarEditorSettings() : void
+    SetAstarEditorSettings() : void
+    {static} IsJsEnabled() : bool
+    {static} EnableJs() : void
+    {static} DisableJs() : void
+    RepaintSceneView() : void
+    + <<override>> UseDefaultMargins() : bool
+    + <<override>> OnInspectorGUI() : void
+    {static} LoadStyles() : bool
+    DrawMainArea() : void
+    DrawOptimizationSettings() : void
+    + {static} FullyDefinedVersion(v:System.Version) : System.Version
+    DrawAboutArea() : void
+    graphNameFocused : GraphEditor
+    DrawGraphHeader(graphEditor:GraphEditor) : void
+    DrawGraphInfoArea(graphEditor:GraphEditor) : void
+    DrawGraph(graphEditor:GraphEditor) : void
+    + OnSceneGUI() : void
+    DrawSceneGUISettings() : void
+    SaveGraphData(bytes:byte[], target:TextAsset) : TextAsset
+    DrawSerializationSettings() : void
+    DrawSettings() : void
+    DrawPathfindingSettings() : void
+    DrawHeuristicOptimizationSettings() : void
+    + {static} EditTags() : void
+    DrawTagSettings() : void
+    DrawEditorSettings() : void
+    {static} DrawColorSlider(left:float, right:float, editable:bool) : void
+    DrawDebugSettings() : void
+    DrawColorSettings() : void
+    CheckGraphEditors(forceRebuild:bool) : void
+    RemoveGraph(graph:NavGraph) : void
+    AddGraph(type:System.Type) : void
+    CreateGraphEditor(graph:NavGraph) : GraphEditor
+    HandleUndo() : bool
+    {static} ByteArrayHash(arr:byte[]) : int
+    SerializeIfDataChanged() : void
+    OnUndoRedoPerformed() : void
+    + SaveGraphsAndUndo(et:EventType, eventCommand:string) : void
+    + LoadGraphs() : void
+    + SerializeGraphs(checksum:uint) : byte[]
+    + SerializeGraphs(settings:Pathfinding.Serialization.SerializeSettings, checksum:uint) : byte[]
+    DeserializeGraphs() : void
+    DeserializeGraphs(bytes:byte[]) : void
+    + {static} MenuScan() : void
+    FindGraphTypes() : void
+}
+Editor <|-- AstarPathEditor
+@enduml

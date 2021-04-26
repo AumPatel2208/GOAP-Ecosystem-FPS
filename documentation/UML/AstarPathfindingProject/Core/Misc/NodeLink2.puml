@@ -1,0 +1,36 @@
+@startuml
+class NodeLink2 {
+    # {static} reference : Dictionary<GraphNode, NodeLink2>
+    + {static} GetNodeLink(node:GraphNode) : NodeLink2
+    + end : Transform
+    + costFactor : float = 1.0f
+    + oneWay : bool = false
+    + StartTransform : Transform <<get>>
+    + EndTransform : Transform <<get>>
+    + startNode : PointNode <<get>>
+    + endNode : PointNode <<get>>
+    connectedNode1 : GraphNode
+    connectedNode2 : GraphNode
+    clamped1 : Vector3
+    clamped2 : Vector3
+    postScanCalled : bool = false
+    + StartNode : GraphNode <<get>>
+    + EndNode : GraphNode <<get>>
+    + <<override>> OnPostScan() : void
+    + InternalOnPostScan() : void
+    + <<override>> OnGraphsPostUpdate() : void
+    # <<override>> OnEnable() : void
+    # <<override>> OnDisable() : void
+    RemoveConnections(node:GraphNode) : void
+    ContextApplyForce() : void
+    + Apply(forceNewCheck:bool) : void
+    - <<readonly>> {static} GizmosColor : Color
+    - <<readonly>> {static} GizmosColorSelected : Color
+    + <<virtual>> OnDrawGizmosSelected() : void
+    + OnDrawGizmos() : void
+    + OnDrawGizmos(selected:bool) : void
+    <<internal>> {static} SerializeReferences(ctx:Pathfinding.Serialization.GraphSerializationContext) : void
+    <<internal>> {static} DeserializeReferences(ctx:Pathfinding.Serialization.GraphSerializationContext) : void
+}
+GraphModifier <|-- NodeLink2
+@enduml

@@ -1,0 +1,1 @@
+java -DPLANTUML_LIMIT_SIZE=10000 -jar plantuml.jar "include.puml"

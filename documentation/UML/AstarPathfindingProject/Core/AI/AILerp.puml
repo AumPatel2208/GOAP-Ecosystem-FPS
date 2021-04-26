@@ -1,0 +1,77 @@
+@startuml
+class AILerp {
+    + repathRate : float = 0.5F
+    + canSearch : bool = true
+    + canMove : bool = true
+    + speed : float = 3
+    + orientation : OrientationMode
+    + rotationIn2D : bool <<get>> <<set>>
+    + enableRotation : bool = true
+    + rotationSpeed : float = 10
+    + interpolatePathSwitches : bool = true
+    + switchPathInterpolationSpeed : float = 5
+    + reachedEndOfPath : bool <<get>>
+    + reachedDestination : bool <<get>>
+    + destination : Vector3 <<get>> <<set>>
+    + updatePosition : bool = true
+    + updateRotation : bool = true
+    + target : Transform <<get>> <<set>>
+    + position : Vector3 <<get>>
+    + rotation : Quaternion <<get>>
+    Move(deltaPosition:Vector3) : void
+    radius : float <<get>> <<set>>
+    height : float <<get>> <<set>>
+    maxSpeed : float <<get>> <<set>>
+    canSearch : bool <<get>> <<set>>
+    canMove : bool <<get>> <<set>>
+    velocity : Vector3 <<get>>
+    desiredVelocity : Vector3 <<get>>
+    steeringTarget : Vector3 <<get>>
+    + remainingDistance : float <<get>> <<set>>
+    + hasPath : bool <<get>>
+    + pathPending : bool <<get>>
+    + isStopped : bool <<get>> <<set>>
+    + onSearchPath : System.Action <<get>> <<set>>
+    # seeker : Seeker
+    # tr : Transform
+    # lastRepath : float
+    # path : ABPath
+    # canSearchAgain : bool = true
+    # previousMovementOrigin : Vector3
+    # previousMovementDirection : Vector3
+    # pathSwitchInterpolationTime : float = 0
+    # interpolator : PathInterpolator
+    startHasRun : bool = false
+    previousPosition1 : Vector3
+    previousPosition2 : Vector3
+    simulatedPosition : Vector3
+    simulatedRotation : Quaternion
+    targetCompatibility : Transform
+    # AILerp()
+    # <<override>> Awake() : void
+    # <<virtual>> Start() : void
+    # <<virtual>> OnEnable() : void
+    Init() : void
+    + OnDisable() : void
+    + GetRemainingPath(buffer:List<Vector3>, stale:bool) : void
+    + Teleport(position:Vector3, clearPath:bool) : void
+    # <<virtual>> shouldRecalculatePath : bool <<get>>
+    + <<virtual>> ForceSearchPath() : void
+    + <<virtual>> SearchPath() : void
+    + <<virtual>> OnTargetReached() : void
+    # <<virtual>> OnPathComplete(_p:Path) : void
+    # <<virtual>> ClearPath() : void
+    + SetPath(path:Path) : void
+    # <<virtual>> ConfigurePathSwitchInterpolation() : void
+    + <<virtual>> GetFeetPosition() : Vector3
+    # <<virtual>> ConfigureNewPath() : void
+    # <<virtual>> Update() : void
+    + MovementUpdate(deltaTime:float, nextPosition:Vector3, nextRotation:Quaternion) : void
+    + FinalizeMovement(nextPosition:Vector3, nextRotation:Quaternion) : void
+    SimulateRotationTowards(direction:Vector3, deltaTime:float) : Quaternion
+    # <<virtual>> CalculateNextPosition(direction:Vector3, deltaTime:float) : Vector3
+    # <<override>> OnUpgradeSerializedData(version:int, unityThread:bool) : int
+}
+VersionedMonoBehaviour <|-- AILerp
+IAstarAI <|-- AILerp
+@enduml

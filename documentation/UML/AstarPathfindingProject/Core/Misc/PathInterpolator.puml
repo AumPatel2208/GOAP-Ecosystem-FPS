@@ -1,0 +1,24 @@
+@startuml
+class PathInterpolator {
+    path : List<Vector3>
+    distanceToSegmentStart : float
+    currentDistance : float
+    currentSegmentLength : float
+    totalDistance : float
+    + <<virtual>> position : Vector3 <<get>>
+    + endPoint : Vector3 <<get>>
+    + tangent : Vector3 <<get>>
+    + remainingDistance : float <<get>> <<set>>
+    + distance : float <<get>> <<set>>
+    + segmentIndex : int <<get>>
+    + valid : bool <<get>>
+    + GetRemainingPath(buffer:List<Vector3>) : void
+    + SetPath(path:List<Vector3>) : void
+    + MoveToSegment(index:int, fractionAlongSegment:float) : void
+    + MoveToClosestPoint(point:Vector3) : void
+    + MoveToLocallyClosestPoint(point:Vector3, allowForwards:bool, allowBackwards:bool) : void
+    + MoveToCircleIntersection2D(circleCenter3D:Vector3, radius:float, transform:IMovementPlane) : void
+    # <<virtual>> PrevSegment() : void
+    # <<virtual>> NextSegment() : void
+}
+@enduml

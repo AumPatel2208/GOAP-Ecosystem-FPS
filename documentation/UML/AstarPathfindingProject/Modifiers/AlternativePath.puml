@@ -1,0 +1,17 @@
+@startuml
+class AlternativePath {
+    + <<override>> Order : int <<get>>
+    + penalty : int = 1000
+    + randomStep : int = 10
+    prevNodes : List<GraphNode>
+    prevPenalty : int
+    <<readonly>> rnd : System.Random
+    destroyed : bool
+    + <<override>> Apply(p:Path) : void
+    # OnDestroy() : void
+    ClearOnDestroy() : void
+    InversePrevious() : void
+    ApplyNow(nodes:List<GraphNode>) : void
+}
+MonoModifier <|-- AlternativePath
+@enduml

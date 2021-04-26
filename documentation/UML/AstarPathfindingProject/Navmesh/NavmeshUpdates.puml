@@ -1,0 +1,13 @@
+@startuml
+class NavmeshUpdates {
+    + updateInterval : float
+    <<internal>> Update() : void
+    <<internal>> OnEnable() : void
+    <<internal>> OnDisable() : void
+}
+class NavmeshUpdateSettings {
+    + NavmeshUpdateSettings(graph:NavmeshBase)
+    + OnRecalculatedTiles(tiles:NavmeshTile[]) : void
+}
+NavmeshUpdates +-- NavmeshUpdateSettings
+@enduml
