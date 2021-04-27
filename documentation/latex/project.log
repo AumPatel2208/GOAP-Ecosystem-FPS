@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.15)  26 APR 2021 23:07
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.15)  27 APR 2021 21:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -487,99 +487,139 @@ File: ../images//Astar_AgentComponents.png Graphic file (type bmp)
 File: ../images//Vision_Cone_Representation.jpg Graphic file (type bmp)
 <../images//Vision_Cone_Representation.jpg>
  [28] [29] [30]
+File: ../images//Ragdoll_Colliders.png Graphic file (type bmp)
+<../images//Ragdoll_Colliders.png>
+File: ../images//Ragdoll_Inspector.png Graphic file (type bmp)
+<../images//Ragdoll_Inspector.png>
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 591--601
+[]$[]$ $[]$ 
+ []
+
+[31] [32]
 File: ../images//Particles_Burst_Emmision.png Graphic file (type bmp)
 <../images//Particles_Burst_Emmision.png>
 File: ../images//Particles_Destroy_OnStop.png Graphic file (type bmp)
 <../images//Particles_Destroy_OnStop.png>
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 594--604
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 643--653
 []$[]$ $[]$ 
  []
 
-[31]
+File: ../images//Particles_Blood.png Graphic file (type bmp)
+<../images//Particles_Blood.png>
+File: ../images//Particles_Plant_Food.png Graphic file (type bmp)
+<../images//Particles_Plant_Food.png>
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 661--671
+[]$[]$ $[]$ 
+ []
+
 File: ../images//Sword_Colliders_Scene.png Graphic file (type bmp)
 <../images//Sword_Colliders_Scene.png>
 File: ../images//Sword_Colliders_Inspector.png Graphic file (type bmp)
 <../images//Sword_Colliders_Inspector.png>
 
-Overfull \hbox (48.13824pt too wide) in paragraph at lines 617--627
+Overfull \hbox (48.13824pt too wide) in paragraph at lines 679--689
 []$[]$ $[]$ 
  []
 
-[32]
+[33] [34]
 File: ../images//CrossBow_Scene.png Graphic file (type bmp)
 <../images//CrossBow_Scene.png>
 
-Overfull \hbox (23.8744pt too wide) in paragraph at lines 654--655
+Overfull \hbox (23.8744pt too wide) in paragraph at lines 716--717
  [][] 
  []
 
 File: ../images//CrossBow_Game_With_GUI.png Graphic file (type bmp)
 <../images//CrossBow_Game_With_GUI.png>
 
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 652--662
+Overfull \hbox (2.61105pt too wide) in paragraph at lines 714--724
 []$[]$ $[]$ 
  []
 
-[33] [34]
+File: ../images//darksouls3_hud_ui.jpg Graphic file (type bmp)
+<../images//darksouls3_hud_ui.jpg>
+[35]
+File: ../images//Player_Hud_UI_Plan.jpg Graphic file (type bmp)
+<../images//Player_Hud_UI_Plan.jpg>
+File: ../images//Player_Hud_UI_Implementation.png Graphic file (type bmp)
+<../images//Player_Hud_UI_Implementation.png>
+ [36]
+Missing character: There is no “ ("201C) in font ec-lmr12!
+Missing character: There is no ” ("201D) in font ec-lmr12!
+ [37]
+File: ../images//Level1_Blender.jpg Graphic file (type bmp)
+<../images//Level1_Blender.jpg>
+File: ../images//Level1_Stairs.png Graphic file (type bmp)
+<../images//Level1_Stairs.png>
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 758--768
+[]$[]$ $[]$ 
+ []
+
+File: ../images//Level1_Unity.png Graphic file (type bmp)
+<../images//Level1_Unity.png>
+[38] [39]
 Chapter 7.
-[35
+[40
 
 ]
-Underfull \hbox (badness 3138) in paragraph at lines 678--679
+Underfull \hbox (badness 3138) in paragraph at lines 784--785
 \T1/lmtt/m/n/12 20180906 / 325967 / Primal _ Instinct _ _Companion _ AI _ in _ Far _ Cry _ Primal . php$[][] \T1/lmr/m/n/12 [Ac-
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 680--681
+Underfull \hbox (badness 1297) in paragraph at lines 786--787
 []\T1/lmr/m/n/12 "Le Game-play emer-gent (in French)". jeuxvideo.com. 2006-01-19. Avail-able at:
  []
 
-[36
+[41
 
 ]
-Underfull \hbox (badness 1975) in paragraph at lines 692--693
+Underfull \hbox (badness 1975) in paragraph at lines 798--799
 \T1/lmr/m/n/12 Plan-ning. [on-line] Gama-su-tra.com. Avail-able at: [][]$\T1/lmtt/m/n/12 https : / / www . gamasutra . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--693
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
 \T1/lmtt/m/n/12 blogs / TommyThompson / 20200507 / 362417 / Building _ the _ AI _ of _ FEAR _ with _ Goal _
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 710--711
+Underfull \hbox (badness 5578) in paragraph at lines 816--817
 \T1/lmtt/m/n/12 / / medium . com / @gfruity / what-[]are-[]your-[]ui-[]choices-[]834ea7d937c$[][] \T1/lmr/m/n/12 [Ac-cessed 18
  []
 
 Missing character: There is no – ("2013) in font ec-lmr12!
 Missing character: There is no – ("2013) in font ec-lmr12!
-[37]
-Underfull \hbox (badness 3108) in paragraph at lines 718--719
+[42]
+Underfull \hbox (badness 3108) in paragraph at lines 824--825
 []\T1/lmr/m/n/12 UKEssays.com. 2021. Rapid Ap-pli-ca-tion De-vel-op-ment vs. Ag-ile Method-olo-
  []
 
 
-Underfull \hbox (badness 7832) in paragraph at lines 718--719
+Underfull \hbox (badness 7832) in paragraph at lines 824--825
 \T1/lmr/m/n/12 gies. [on-line] Avail-able at: [][]$\T1/lmtt/m/n/12 https : / / www . ukessays . com / essays / management /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 718--719
+Underfull \hbox (badness 10000) in paragraph at lines 824--825
 \T1/lmtt/m/n/12 rapid-[]application-[]development-[]vs-[]agile-[]methodologies . php$[][] \T1/lmr/m/n/12 [Ac-cessed 21
  []
 
-[38] (./project.aux)
+[43] (./project.aux)
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: 7AE1D784D2523098660E7A5DF2D173A1;4327.
  ) 
 Here is how much of TeX's memory you used:
- 12302 strings out of 478436
- 191807 string characters out of 5853929
- 986000 words of memory out of 5000000
- 32021 multiletter control sequences out of 15000+600000
+ 12405 strings out of 478436
+ 194415 string characters out of 5853929
+ 986037 words of memory out of 5000000
+ 32114 multiletter control sequences out of 15000+600000
  442714 words of font info for 51 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  71i,10n,77p,2376b,1761s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (39 pages).
+Output written on project.pdf (44 pages).

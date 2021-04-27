@@ -33,9 +33,9 @@
 \contentsline {subsubsection}{Pathfinding}{26}{section*.4}%
 \contentsline {subsubsection}{Goap AI}{28}{section*.5}%
 \contentsline {subsubsection}{Ragdolls}{31}{section*.6}%
-\contentsline {subsubsection}{Particle Effects}{31}{section*.7}%
-\contentsline {subsection}{\numberline {6.2.2}Player}{32}{subsection.6.2.2}%
-\contentsline {subsubsection}{Weapons}{32}{section*.8}%
-\contentsline {subsection}{\numberline {6.2.3}User Interface changes}{34}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Level Creation}{34}{subsection.6.2.4}%
-\contentsline {chapter}{\numberline {7}Asset Listing}{35}{chapter.7}%
+\contentsline {subsubsection}{Particle Effects}{33}{section*.7}%
+\contentsline {subsection}{\numberline {6.2.2}Player}{34}{subsection.6.2.2}%
+\contentsline {subsubsection}{Weapons}{34}{section*.8}%
+\contentsline {subsection}{\numberline {6.2.3}User Interface changes}{36}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Level Creation}{37}{subsection.6.2.4}%
+\contentsline {chapter}{\numberline {7}Asset Listing}{40}{chapter.7}%

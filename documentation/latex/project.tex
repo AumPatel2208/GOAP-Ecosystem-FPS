@@ -193,7 +193,7 @@ Now the above works great and would serve you through most of the project, but t
 
 To solve this problem you will have to take time out from creating new features and refactor the codebase to work within good coding standards\cite{codingPractices}.
 
-If designed using composition, it would look like the following \cite{CompOverInherit}:
+If designed using composition, it would look like the following (example from \cite{CompOverInherit}):
 \begin{Verbatim}[frame=single]
 ENTITIES          COMPONENTS (in the form of classes)
 Dog             : pooper + barker
@@ -234,7 +234,7 @@ Adobe Illustrator was used to draft out the user interface. Some UI elements wil
 \section{Minimum Viable Product}
 
 \subsection{Modelling the Actions}
-The AI system was abstracted into the different actions the AI will be performing and the goals it will use to plan out the course of action. Seen in the figure below is the simple set of actions and goals sufficient for the first build and will have the ground work to expand upon the next build. The food ready goal and precondition for eat food will be used to add the attacks for the creature's higher in the food chain, like the Lizard, as they should only be able to eat other creatures if they are dead, ie. ready to eat.
+The AI system was abstracted into the different actions the AI will be performing and the goals it will use to plan out the course of action. Seen in the figure below is the simple set of actions and goals sufficient for the first build and will have the groundwork to expand upon the next build. The food ready goal and precondition for eat food will be used to add the attacks for the creature's higher in the food chain, like the Lizard, as they should only be able to eat other creatures if they are dead, i.e. ready to eat.
 
 \begin{figure}[H]
     \centering
@@ -250,7 +250,7 @@ The AI system was abstracted into the different actions the AI will be performin
     \caption{Class Diagram build 1}
 \end{figure}
 
-As explained before, Unity uses the Entity Component Paradigm of software design, the Circles represent Game Objects which are the entities in our game scene, and there are classes attached to them using compositional relationships, as you can se, one class is being used multiple times, and due to the lack of inheritance, there is very little interdependency. 
+As explained before, Unity uses the Entity Component Paradigm of software design, the Circles represent Game Objects which are the entities in our game scene, and there are classes attached to them using compositional relationships, as you can see, one class is being used multiple times, and due to the lack of inheritance, there is very little interdependency. 
 The Actions are represented by hexagons as at that moment in time, the decision had not been made on how the AI will be implemented.
 
 % The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature. The circle's are important game objects in the main Unity Scene, and they will be able to access each other.
@@ -516,7 +516,7 @@ Both these actions were also changed to play the animations at the correct momen
 The Creature class from build one was broken down into an abstract BaseAIGoap class that inherited the IGoap interface and provided implementation for the methods that log on action complete/fail/etc.; a boolean check was created so that the programmer can diable the logging to the console, as this has a major hit on performance in Unity and also cluttered up the console when multiple agents were active, essentially making it unusable. The \textbf{Sabertooth} and \textbf{Sloth} now inherited from this and applied their goal states seperatly, reducing the coupling and making debugging simpler than when they inherited from a Creature class.
 
 % Problem with no partial plan of action
-After the adding the pathfinding and the new actions into the game, the agents behaved as expected until \textit{\textbf{they had not found a target and were hungry}}. In this case, the agent would just be in an idle state and not do anything, where it was expected to perform \textbf{Find Food} and then \textbf{Eat Food}. This was occurring because as the current planning system did not accept partially successful plans (a series of actions that do not fulfill \textbf{every} goal state), which was quite unusual as there are many cases where some actions/series of actions do not tick every box, and the correct behaviour in this scenario would be to perform an partial plan if a full plan is not found.
+After the adding the pathfinding and the new actions into the game, the agents behaved as expected until \textit{\textbf{they had not found a target and were hungry}}. In this case, the agent would just be in an idle state and not do anything, where it was expected to perform \textbf{Find Food} and then \textbf{Eat Food}. This was occurring because as the current planning system did not accept partially successful plans (a series of actions that do not fulfill \textbf{every} goal state), which was quite unusual as there are many cases where some actions/series of actions do not tick every box, and the correct behaviour in this scenario would be to perform a partial plan if a full plan is not found.
 
 In this particular case, the problem was that \textbf{Find Food} did not directly have an effect of \textbf{isHungry == null}. This could be mitigated by adding that as an effect of \textbf{Find Food}, however this would be lying and would incur in complications and tight coupling further down the line when creating a more complex AI system, where one of the main advantages of GOAP is that it provides a modular, loosely coupled approach to AI.
 
@@ -587,6 +587,55 @@ private bool inState(HashSet<KeyValuePair<string, object>> test, HashSet<KeyValu
 When destroyed, there was no state for the creatures to be in, so it was decided that ragdolls would be fun to allow the player to move the body around using the physics based collisions on the sword and the crossbow weapons, and it would also provide a clear indicator that the creature is dead.
 
 Unity has a built-in Ragdoll creator, however that only works on humanoids with the appropriate bone structure (for the armatures), so it had to be done manually for each creature. A YouTube tutorial was used to understand what components were required on what to achieve this effect. \cite{RagdollTutorial}
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Ragdoll_Colliders.png}}
+        \caption{Colliders on the Creature in Green}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Ragdoll_Inspector.png}}
+        \caption{Rigidbody, Collider and Character Joint applied to bones in the armature.}
+    \end{minipage}
+\end{figure}
+There are two groups of colliders applied to the creatures, one is a box collider which is active when the creature is alive, allows simple physics interaction and the player's weapons; the second group are the capsule colliders applied to the necessary joints in the character, a character joint needs to be applied to every child node to tell Unity what bone it is attached to. Both these groups cannot be activated at the same time as overlapping colliders causes rigidbody physics to misbehave.
+
+A Ragdoll Toggle script was created which enables and disables the appropriate colliders.
+
+\begin{lstlisting}[language=c]
+// storing the colliders when the game object is loaded
+private void Start(){
+    boxCollider = GetComponent<BoxCollider>();
+    childrenColliders = GetComponentsInChildren<Collider>();
+    childrenRigidbodies = GetComponentsInChildren<Rigidbody>();
+}
+
+// method that and enables/disables appropriate colliders
+public void EnableRagdoll(bool isActive) {
+    // children colliders
+    foreach (var collider in childrenColliders) {
+        collider.enabled = isActive;
+    }
+    // children rigidbody
+    foreach (var rigidbody in childrenRigidbodies) {
+        rigidbody.detectCollisions = isActive;
+        rigidbody.isKinematic = !isActive;
+    }
+    // parent
+    animator.enabled = !isActive;
+    boxCollider.enabled = !isActive;
+    aiComponent.enabled = !isActive;
+}
+
+// this is later called in Stats.cs when a creature dies
+private void Death() {
+    if (isThereRagdoll) {
+        ragdoll.EnableRagdoll(true);
+    }
+}
+\end{lstlisting}
+
 \subsubsection{Particle Effects}
 On applying damage via the Stats component, blood particles are spawned, and these blood particles are specified per creature, allowing for different particle effects per enemy type. 
 
@@ -605,8 +654,21 @@ On applying damage via the Stats component, blood particles are spawned, and the
 
 For now there one set of blood particles for all enemies. They are set to do a single burst of 30 particles at the beginning, and reduce their size over their lifetime to 0, and when the particle has finished, it will destroy itself. 
 
-% TODO EAT PARTICLE EFFECTS
+% EAT PARTICLE EFFECTS
+A similar system was created when a creature or the player eat another creature. Two different materials were created for this, brown particles for eating a flesh based enemy, and green particles for plant based foods, these can be applied per creature, so it is very flexible to replace particles for different enemies.
 
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Particles_Blood.png}}
+        \caption{Blood Particles}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Particles_Plant_Food.png}}
+        \caption{Food Particles for Plant}
+    \end{minipage}
+\end{figure}
 
 \subsection{Player}
 % Added Random Movement
@@ -647,7 +709,7 @@ public void SpawnBloodParticles(Vector3 centerPosition, Quaternion rotation) {
 % Crossbow
 The ranged weapon was decided on being a crossbow that the player can hold right click to charge up the velocity at which it is release. A model was found on Turbosquid (see asset listing). This was imported into blender, and the crossbow and arrow were separated into two different objects, allowing it to be manipulated separately in Unity. A decision was made to not animate the crossbow as it is not crucial for the main aspect of this game.
 
-This crossbow and arrow model were placed inside an empty called \textbf{RightHand} together and placed in the apropriate position in front of the player. An \textbf{arrow} prefab was created that contained the model of the arrow, a box collider, and a script attached to it to \textbf{ApplyDamage} on collision with an enemy creature similar to the sword. A script component was attached to the \textbf{RightHand} that instantiates an \textbf{arrow} prefab and give it a velocity. This was then adjusted to increase the velocity the longer the player holds down right-click up until a maximum velocity, and on release of the mouse button, the arrow gets released from the center of the camera view forwards. A GUI element was added to camera space so it is fixed which represents the velocity at which the arrow will be released.
+This crossbow and arrow model were placed inside an empty called \textbf{RightHand} together and placed in the apropriate position in front of the player. An \textbf{arrow} prefab was created that contained the model of the arrow, a box collider, and a script attached to it to \textbf{ApplyDamage} on collision with an enemy creature similar to the sword. A script component was attached to the \textbf{RightHand} that instantiates an \textbf{arrow} prefab and give it a velocity. This was then adjusted to increase the velocity the longer the player holds down right-click up until a maximum velocity, and on release of the mouse button, the arrow gets released from the center of the camera view forwards. A GUI element was added to screen space canvas which represents the velocity at which the arrow will be released.
 \begin{figure}[H]
     \begin{minipage}{.4\textwidth}
         \centering
@@ -662,10 +724,54 @@ This crossbow and arrow model were placed inside an empty called \textbf{RightHa
 \end{figure}
 
 \subsection{User Interface changes}
+The screen space UI/Heads up display was barren at this point, only including the charge bar for the crossbow.
+As seen in the PDD and the introduction, the souls-like genre is an influnce on this project, based on this, the Head was inspired from the games in that genre.\cite{darkSouls3Wiki}
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 15cm]{darksouls3_hud_ui.jpg}}
+    \caption{Heads up display in Dark Souls}
+\end{figure}
+
+The placement for the health(1) and stamina(2) were used for the health, hunger and stamina bar in this project. As there was no currency in this project, the Souls Possessed(3) positioning is replaced with the charge meter of the crossbow, leaving the bottom left and top right blank. 
+
+In the figures below, you can see the sketch for the UI created in Adobe Illustrator and then the implementation of it inside of Unity. The indication to pick up items pops up in the center of the bottom of the screen, which in this project was moved out of the way adjacent the bars on the top left.
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 10cm]{Player_Hud_UI_Plan.jpg}}
+    \caption{Sketch of Player HUD UI}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 10cm]{Player_Hud_UI_Implementation.png}}
+    \caption{Implementation of the Player's HUD in Unity.}
+\end{figure}
+
 
 \subsection{Level Creation}
-As seen in the figure below, this was what the level where the different game systems were being tested looked like. After all the systems were created a larger level was created to accommodate multiple enemies.
+As seen in the figure below, this was what the level where the different game systems were being tested looked like. After all the systems were created, a larger level was created to accommodate multiple enemies.
+The main elements of the level was modeled in Blender, then unpacked with a texture applied in Unity; for the Pathfinding algorithm to detect these as obstacles, the “Obstacle” layer was applied to these objects. The stairs were built inside of Unity's ProBuilder, it has a tool to auto generate stairs with custom properties, like the curve added.
+The creatures and plant were placed in random places, they all use the same prefab so changing the components in one, will change it in other instances of that game object.
 
+For the objectives of this project, a win state is not necessary, there is however a death state for the player, when the player has been fully eaten, they will respawn, which is the scene is reloaded.
+
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Level1_Blender.jpg}}
+        \caption{Level Modelled inside of Blender}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 7cm ]{Level1_Stairs.png}}
+        \caption{Stairs modelled in ProBuilder inside of Unity}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 15cm]{Level1_Unity.png}}
+    \caption{Level in Unity}
+\end{figure}
 
 \chapter{Asset Listing}
 
@@ -718,5 +824,7 @@ As seen in the figure below, this was what the level where the different game sy
     UKEssays.com. 2021. Rapid Application Development vs. Agile Methodologies. [online] Available at: \url{https://www.ukessays.com/essays/management/rapid-application-development-vs-agile-methodologies.php} [Accessed 21 February 2021].
     \bibitem{RagdollTutorial}
     DitzelGames, 2021. Create an Animal Ragdoll in Unity. [image] Available at: \url{https://youtu.be/oVPI2ESkgIw} [Accessed 1 April 2021].
+    \bibitem{darkSouls3Wiki}
+    Fextralife, 2021. Dark Souls 3. [online] Dark Souls 3 Wiki. Available at: \url{https://darksouls3.wiki.fextralife.com/Dark+Souls+3} [Accessed 15 April 2021]. 
 \end{thebibliography}
 \end{document}

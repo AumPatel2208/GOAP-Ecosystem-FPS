@@ -22,8 +22,6 @@ namespace Creatures {
         void Awake() {
             animator = GetComponentInChildren<Animator>();
             boxCollider = GetComponent<BoxCollider>();
-
-        
             // Using System.Linq to avoid getting the parent in the children list:
             // http://answers.unity.com/answers/1248479/view.html
             childrenColliders = this.GetComponentsInChildren<Collider>(true).Where(x => x.gameObject.transform.parent != transform.parent).ToArray();
@@ -43,26 +41,21 @@ namespace Creatures {
 
             if (currentState != isActive) {
             
-                // children
+                // children colliders
                 foreach (var collider in childrenColliders) {
                     collider.enabled = isActive;
                 }
 
-                // rigidbody
+                // children rigidbody
                 foreach (var rigidbody in childrenRigidbodies) {
                     rigidbody.detectCollisions = isActive;
                     rigidbody.isKinematic = !isActive;
                 }
 
-
+                // parent
                 animator.enabled = !isActive;
-                // rigidbody.detectCollisions = !isActive;
-                // rigidbody.isKinematic = isActive;
                 boxCollider.enabled = !isActive;
-                // boxCollider.isTrigger = isActive;
-            
                 aiComponent.enabled = !isActive;
-
                 // for efficiency 
                 currentState = isActive;
             }

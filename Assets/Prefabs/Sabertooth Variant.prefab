@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5937341400556127234
 Transform:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ PrefabInstance:
     - target: {fileID: 1870937498464563900, guid: 465197a1bef4f8f4082b46fda460ee37,
         type: 3}
       propertyPath: m_Name
-      value: Sabertooth
+      value: Sabertooth Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3036376875817639835, guid: 465197a1bef4f8f4082b46fda460ee37,
         type: 3}
