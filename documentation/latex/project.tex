@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{graphicx} % images
+% \usepackage[demo]{graphicx} % black preview images
 \usepackage{fancyhdr} % headers and footers
 \usepackage{parskip} % paragraph
 \usepackage{geometry} % shapes
@@ -27,8 +28,6 @@
 
 % font family change
 \setmainfont{Times New Roman}
-
-
 
 \bibliographystyle{unsrtnat}
 \graphicspath{{../images/}}
@@ -96,7 +95,7 @@ My project focuses on creating a game in the souls-like genre where the enemies 
 An intricate in-fighting system between multiple different AI agents is what I will be focusing on. One of the early examples of in-fighting was seen in the original Doom (1993)\cite{doom93}, where if an enemy-A got attacked by enemy-B, enemy-A will change its target from player to enemy-B, this is a very simple system but offers many gameplay opportunities, many levels were crafted with this in mind where the players would have to manipulate the AI by luring one enemy into another's line of fire.
 This idea was later expanded by Ubisoft in their later Far Cry games where different clans can combat each other in random events, and animals can also combat each other, combining these together, there a re many random events where animals attack enemies that are already mid-combat between you and another clan. In Far Cry Primal they expanded the animal system so that you could tame any animal in the world and make them your companion in gameplay.
 
-This sort of systemic game design is created by making the different game systems aware of each other, and this inturn invites the player to use their creativity to make plans on how to execute their goals and creating unique experiences. This type of gameplay has been coined as emergent gameplay where complex systems \textit{emerge} from the interaction on relatively simple game mechanics.\cite{emergentGameplay}
+This sort of systemic game design is created by making the different game systems aware of each other, and this in-turn invites the player to use their creativity to make plans on how to execute their goals and creating unique experiences. This type of gameplay has been coined as emergent gameplay where complex systems \textit{emerge} from the interaction on relatively simple game mechanics.\cite{emergentGameplay}
 
 There are different types of AI techniques that I could use, the following are the ones that I have looked into: Finite State Machines, Behaviour Trees, Goal Oriented Action Planning and Utility Based AI.
 
@@ -213,7 +212,7 @@ A game object with components can be saved as a prefab, which can then be reused
 The actions for the AI agents were modelled before modelling the class diagrams. 
 
 \subsection{Class Diagrams}
-Class diagrams are a great to draw out a visual plan of what the system will look like. As I am using an ECS form of design, the class diagram will mainly consists of many classes with compositional relationships.
+Class diagrams are a great to draw out a visual plan of what the system will look like. As I am using an ECS form of design, the class diagram will mainly consist of many classes with compositional relationships.
 
 \subsection{User Interface (UI)}
 Adobe Illustrator was used to draft out the user interface. Some UI elements will exist within the 3D world space, these are called spacial UI elements; these types of UI elements allow the player to receive the information they require without taking up much space on the orthographic canvas where more player related statistics can go.\cite{UIChoices}
@@ -223,14 +222,13 @@ Adobe Illustrator was used to draft out the user interface. Some UI elements wil
 \section{Project Objectives}
 The Project objectives can be found in the Project Definition Document (PDD) in Appendix 1.
 The project was created by going through these objectives and tackling them one at a time, breaking each task down when arriving to it, this way there was focused attention on each feature being added in and being tested and refined before moving on.
-% \subsection{Minimum Viable Product}
-% \subsection{Creatures}
 
 
 \chapter{Result}
-% \section{Milestone 1}
 
+\textit{\textbf{Note:}} There are many code listings in this chapter, explaining some key aspects of the program, the comments on these are different to the ones in the actual code as to explain it thoroughly here, so keep in mind the explanation for methods is done in both \textit{comments and text}.
 
+% Milestone 1
 \section{Minimum Viable Product}
 
 \subsection{Modelling the Actions}
@@ -265,8 +263,6 @@ Based on all this I started creating my own GOAP system, however, it became very
 
 After I landed on this implementation of GOAP, I decided to start modelling out the different actions (with their preconditions and effects (post-conditions)), different creatures with their world state and the list of goals they would like to achieve. As Unity works with game objects made up of components, I decided to plan out the agents in an unconventional manner before creating the class diagrams. 
 
-As can be seen in the UI figure, the meshes for the creatures were kept simple to ensure that the AI system worked, the movement system was also a trivial direct transformation towards the target for the same reason.
-
 To add GOAP AI behaviour to an Agent, a script had to be attached that implemented the \lstinline{IGoap} interface provided by Brent Owens, and then have the \lstinline{GoapAgent} script attached which uses the \lstinline{GoapPlanner}. Now actions (inherited from \lstinline{GoapAction}) can be attached as scripts to the game object and the planner will automatically consider them. The script that inherits \lstinline{IGoap} will contain the world state and the desired goal state. The \lstinline{GoapAction} s will contain their own \textbf{preconditions} and \textbf{effects} and a \textbf{procedural precondition} method that the planner will consider when choosing the plan of action. 
 
 \begin{lstlisting}[language=c]
@@ -288,7 +284,30 @@ cost = 1f;
 
 This build of the Ai was functional however had a few issues. The Lizard enemy would only choose the player and not the fly, and it would eat anything. A food chain was added in the main build to fix this.
 
-\subsection{Weapon}
+% TODO ADD FIGURE NUMBER
+As can be seen in the figure showing the UI for creature, the meshes for the creatures were kept simple to ensure that the AI system worked, the movement system was also a trivial direct transformation towards the target for the same reason.
+
+\subsection{Player}
+% Player movement
+\subsubsection{Movement Controller}
+The movement controller was implemented with the help from a tutorial by Brakey's on "First Person Movement in Unity - FPS Controller"\cite{fpsController}. To create this, a Player Empty was created, and a Mesh was added to it, in this case, a simple capsule was used; another empty was created that contained a Sphere Collider which checks collision with the ground to notify the Player Movement script that the player is grounded. The Player Movement script takes the Input from Unity's built-in input system and calculates the horizontal and vertical movement and then the script passes the movement data to the Character Controller to move the player. To jump, a check is made to see whether the player is grounded or not, and if so, then check for the Jump button to be pressed down, in this case, it is "Space"; a velocity is applied to the negative of the gravitational velocity and the player is jumping and no longer grounded. When the player is no longer grounded, a gravitational velocity is applied to the player constantly down.
+
+% camera look
+Now that the player was moving, the main camera had to be placed inside it, along with accepting mouse input to rotate the player and camera. Firstly the cursor is locked into the screen so when moving it, it does not leave the screen; then on every frame, the Mouse X and Y input is taken in, multiplied by the sensitivity and delta time. A rotation value is calculated, and is \textit{clamped} (minimum -90$^{\circ}$ and maximum 90$^{\circ}$); this rotation is then applied to both the local rotation of the camera, and the player's body rotation around it's up vector.
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 5cm ]{{Player_Inspector_Character_Controller.png}}}
+        \caption{Character Controller and Player Movement Scrpit components on the player}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 5cm ]{Player_Capsule.png}}
+        \caption{The Player with the character controller bounding box and camera}
+    \end{minipage}
+\end{figure}
+
+\subsubsection{Weapon}
 For the melee weapon for the player to attack with, a pre-made sword asset was used (please refer to the asset listing) which was then imported into blender and 4 animation states were created. 
 
 First the model was rigged using one bone, starting from the hilt of the sword. Then 4 different animations were created using key-framing and Blender's Dope Sheet editor, the idle animation and Attack 1 lasted 30 frames each and the Attack 2 and 3 lasted 20 frames each. This was then exported as an FBX file, which supports animations and textures to be baked into it and imported into Unity.
@@ -372,7 +391,7 @@ void FixedUpdate() {
 
 \subsection{Unity Project}
 
-Below is what the first version of the Unity scene looked like after adding the sword and basic AI components in.
+Below is what the first version of the Unity scene looked like after adding the sword and basic AI components in. A very basic level was created to test out the movement controller for the player, along with physics interaction of the sword. The materials applied are a mix of simple self-made materials from the Unity asset store called "Gridbox prototype materials by Ciathyza", (see asset listing).
 
 \begin{figure}[H]
     \centering
@@ -420,59 +439,49 @@ The class diagram was updated to add in the Attacks for the lizard enemy, the A 
 % Food Chain
 The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature. Below is the code that is attached to the food chain game object.
 
-On load, it will create a food chain based on the relation ships we provide there. There are constant string references to access the names of the creatures in the food chain at any point.
+On load, it will create a food chain based on the relationships we provide there. There are constant string references to access the names of the creatures in the food chain at any point.
 
-Any game object in the scene can access this food chain and call GetFood(their name) and get the foods that they can eat, and vice versa with what they consider threats.
+Any game object in the scene can access this food chain and call GetFood(their name) and get the foods that they can eat, and vice versa with what they consider threats. \footnote{This was created without the knowledge of Bi-Directional Dictionaries (however is structured similar to one and one might work better), during the final days of this project, an article was found which explains how to create a bi-directional dictionaries using an interface \cite{biDirectionalDictionaries}.}
 
 \begin{lstlisting}[language=c]
-// FoodChain.cs
-    public const string NAME_PLAYER = "player";
-    public const string NAME_SABERTOOTH = "sabertooth";
-    public const string NAME_SLOTH = "sloth";
-    public const string NAME_PLANT = "plant";
-
+// FoodChain.cs : has been abridged to show in report
     // predators
     private Dictionary<String, HashSet<String>> threats = new Dictionary<string, HashSet<string>>();
-
     // preys
     private Dictionary<String, HashSet<String>> foods = new Dictionary<string, HashSet<string>>();
-
     // in the awake method create the food Chain
     private void Awake() {
         // Create the food chain
-        addToChain(NAME_PLAYER,NAME_SABERTOOTH);
-        addToChain(NAME_PLAYER, NAME_SLOTH);
-        addToChain(NAME_PLAYER, NAME_PLANT);
-        addToChain(NAME_SABERTOOTH, NAME_PLAYER);
-        addToChain(NAME_SABERTOOTH, NAME_SABERTOOTH);
-        addToChain(NAME_SABERTOOTH, NAME_SLOTH);
-        addToChain(NAME_SLOTH, NAME_PLANT);
+        addToChain("player", "sabertooth");
+        addToChain("player", "sloth");
+        addToChain("player", "plant");
+        addToChain("sabertooth", "player");
+        addToChain("sabertooth", "sabertooth");
+        addToChain("sabertooth", "sloth");
+        addToChain("sloth", "plant");
     }
-
     private void addToChain(String threat, String food) {
         //add to foods list
         if (foods.ContainsKey(threat)) 
             foods[threat].Add(food);
         else 
             foods.Add(threat, new HashSet<string>() {food});
-
         // add to threats list
         if (threats.ContainsKey(food)) 
             threats[food].Add(threat);
         else
             threats.Add(food, new HashSet<string>() {threat});
     }
-
     // Get the the Set of foods for the given creature
     public HashSet<String> GetFood(String name) {
         return foods[name];
     }
-    
     // Get the the Set of threats for the given creature
     public HashSet<String> GetThreat(String name) {
         return threats[name];
     }
 \end{lstlisting}
+
 
 \subsubsection{Pathfinding}
 A path finding system was added (as seen in the updated class diagram) in to facilitate better movement for the AI Agents. A* Pathfinding Project by Aron Granberg (see asset listings). This is a very nice and free library that provides the generation of many different type of nav meshes, the one used in the game is a Grid Graph, which is the "most straight forward path" and can be updated during runtime if obstacles move, it is not the most performance efficient type of graph as all the nodes in the grid are equidistant from each other, and in a large open space, that amount of detail/resolution in the grid is not required; however for our purposes, this type of graph is more than capable. 
@@ -697,7 +706,25 @@ A similar system was created when a creature or the player eat another creature.
 \end{figure}
 
 \subsection{Player}
-% Added Random Movement
+% TODO EAT
+\subsubsection{Eating}
+The ability to eat other creatures was added. This was done by sending a thick ray cast (Sphere Cast in Unity) from the center of the camera's view point to check for any collisions, if this ray cast collides with an entity within the 'Life' layer, and it is ready to eat, the player will be able to press 'E' to eat the food. A HUD element was created to represent the player's ability to interact with the creatures.
+\begin{lstlisting}[language=c]
+...
+RaycastHit hit; // the point of contact
+if (Physics.SphereCast(origin, thickness, direction, out hit, maxDistance, lifeLayerMask)) {
+    ...
+    if (hit.transform.root.GetComponent<FoodStats>().isReadyToEat) {
+        if (Input.GetKeyDown(KeyCode.E)) { // press E
+            stats.AddFoodAmount(hit.transform.root.GetComponent<FoodStats>().foodAmount); // add food
+            hit.transform.root.GetComponent<FoodStats>().DepleteTotalFoodAmount(hit.transform.position, hit.transform.rotation); // deplete from prey and spawn particles
+        }
+    }
+    ...
+}
+...
+\end{lstlisting}
+
 \subsubsection{Weapons}
 % Sword
 Two colliders were attached to the sword, a box collider to interact with other physics objects; and a mesh collider that conforms around the sword, which behaves as a trigger with no physics interaction. In Unity, when a "GameObject collides with another GameObject, it calls \textbf{OnTriggerEnter}" \cite{UnityTriggerCollider}.  
@@ -852,5 +879,9 @@ For the objectives of this project, a win state is not necessary, there is howev
     DitzelGames, 2021. Create an Animal Ragdoll in Unity. [image] Available at: \url{https://youtu.be/oVPI2ESkgIw} [Accessed 1 April 2021].
     \bibitem{darkSouls3Wiki}
     Fextralife, 2021. Dark Souls 3. [online] Dark Souls 3 Wiki. Available at: \url{https://darksouls3.wiki.fextralife.com/Dark+Souls+3} [Accessed 15 April 2021]. 
+    \bibitem{fpsController}
+    Brackeys. 2021. FIRST PERSON MOVEMENT in Unity - FPS Controller. [online] Available at: \url{https://www.youtube.com/watch?v=_QajrabyTJc} [Accessed 5 February 2021].
+    \bibitem{biDirectionalDictionaries}
+    erdiizgi.com. n.d. Data Structures for Games: Bidirectional Dictionary for Unity in C\#. [online] Available at: \url{https://erdiizgi.com/data-structures-for-games-bidirectional-dictionary-for-unity-in-c/} [Accessed 26 April 2021].
 \end{thebibliography}
 \end{document}

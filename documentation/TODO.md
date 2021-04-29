@@ -1,30 +1,43 @@
 # TODO
 
 ## PROJECT
-- [x] When talking about design patterns, mention how unity uses an Entity Component System.
-  - [x] Talk about how I refactored the creature class and created the BaseAIGoap to refactor the Debugging Log
-- [x] Talk about refactoring the AI system a little
-  - As it currently stood, the AI will only execute a plan of actions if those actions fulfilled **all** the goal conditions
-  - However this is not desirable as if there are no actions available, it is better to do something that will fulfil one goal over doing nothing. 
-  - This will allow the actions to be more loosely coupled as in the first build, I had to have a series of actions 'connected' together through post-effects.
-    - eg. Find food would not be executed if the creature was hungry and had not found food, so it would just go hungry; in the first build I also added an effect to findFood that was 'isHungry: false', which would fulfil the all 2 conditions 'foodTargetNull: false, isHungry: false', however the action find food does not directly fill the hunger of the creature so providing it with this effect is not truthful, therefore refactoring the system seems to be the best option over providing false effects to actions. 
-    - This will make it so when the system gets more complicated than 2 goals and 2 actions, it will still be 'simple' to manage.
-  - SOLUTION:
-    - Detect when a plan fails whether the plan that was generated was a partial plan. If so, then multiply the cost for that by an arbitrary amount, in this case 10, and perform the action
+
+- [x] ~~When talking about design patterns, mention how unity uses an Entity Component System.~~
+  - [x] ~~Talk about how I refactored the creature class and created the BaseAIGoap to refactor the Debugging Log~~
+- [x] ~~Talk about refactoring the AI system a little~~
+  - <del>
+    - As it currently stood, the AI will only execute a plan of actions if those actions fulfilled **all** the goal conditions
+    - However this is not desirable as if there are no actions available, it is better to do something that will fulfil one goal over doing nothing. 
+    - This will allow the actions to be more loosely coupled as in the first build, I had to have a series of actions 'connected' together through post-effects.
+      - eg. Find food would not be executed if the creature was hungry and had not found food, so it would just go hungry; in the first build I also added an effect to findFood that was 'isHungry: false', which would fulfil the all 2 conditions 'foodTargetNull: false, isHungry: false', however the action find food does not directly fill the hunger of the creature so providing it with this effect is not truthful, therefore refactoring the system seems to be the best option over providing false effects to actions. 
+      - This will make it so when the system gets more complicated than 2 goals and 2 actions, it will still be 'simple' to manage.
+    - SOLUTION:
+      - Detect when a plan fails whether the plan that was generated was a partial plan. If so, then multiply the cost for that by an arbitrary amount, in this case 10, and perform the action. </del>
 - [ ] Change all references to self to make them sound more formal, try to avoid the author however remove I
-- [ ] Mention Turbosquid as the location for 3d assets
 - [ ] Food Chain explanation, write about bi-directional dictionaries.
   - Explain how I required the use of a dictionary where I could use the values as keys as well, and the simplest solution I found was to create two dictionaries. 
   - Later when writing the report, I found this article that explains that that data structure is called a bi-direction dictionary
     - https://erdiizgi.com/data-structures-for-games-bidirectional-dictionary-for-unity-in-c/
-- [ ] Snapshot of git version history in appendix
-- [ ] Explain the GOAP library properly
+- [x] Explain the GOAP library properly
 - [ ] Expand upon Animator
   - How it is built into unity 
 - [ ] intro explains what I was hoping to achieve.
 - [ ] Write about the changes from the PDD
 - [ ] add intros to sections like Main Product.
-- [ ] Larger images in apendix as well
+- [ ] Larger images in appendix as well
+- [x] Player
+  - [x] Player Movement, and mouse look
+    - [x] Add images
+  - [x] Player Eat food
+- [ ] Remove Negative things about the project
+
+## Appendix
+- [ ] Snapshot of git version history
+- [ ] Tests
+- [ ] Mention Turbosquid as the location for 3d assets
+- [ ] Explain the Unity Asset store
+- [ ] Layers and tags in Unity **GLOSSARY** with images in appendix
+- [ ] 
 
 ## Testing
 1 day
@@ -41,18 +54,13 @@
   - this lead to implementing partial goal completion.
 - Partial Goal completion
   - Multiplier scale was too low at 3, so was upped to 10.
-### People
-- [ ] Testing it on people
-- [ ] write an open questionaire
-- [ ] 5 people
-- [ ] see what works and what the feedback is
-
-- Points
-  - UI changes
-  - Crossbow charging
-  - Ragdolls when the creature dies to add a little bit more fun with physics in and add a little weight to the characters
   
-
+## Asset Listing
+- https://assetstore.unity.com/packages/2d/textures-materials/gridbox-prototype-materials-129127
+- Stealth game enemy detection Unity
+  - https://www.youtube.com/watch?v=mBGUY7EUxXQ
+- https://arongranberg.com/astar/
+- https://rkuhlf-assets.itch.io/ice-age
 
 ## CODE NO MORE
 - [x] Roam action
@@ -97,7 +105,7 @@ then compiled using plant uml
 
 
 ## Video
-- Extenuate the positives
+- Emphasise the positives
 - Code walkthrough
   - just all the processes for everything
 

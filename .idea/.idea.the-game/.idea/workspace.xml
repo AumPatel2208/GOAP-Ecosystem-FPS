@@ -5,39 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a62ff797-e1fe-4a9e-939e-b3c8bd7b8002" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/documentation/project_28th April Final Meeting.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/images/Player_Capsule.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/images/Player_Inspector_Character_Controller.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.the-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AStarMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AStarMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sabertooth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sabertooth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sloth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/Agents/Sloth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/BaseAIGoap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/BaseAIGoap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/FinishEating.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/FinishEating.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/RagdollToggle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/RagdollToggle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyCallFindFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyCallFindFood.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/RandomlyRoam.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FoodChain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FoodChain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/Arrow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/ArrowAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/ArrowAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/SwordAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attack/SwordAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEatFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEatFood.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerSpawn.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerSpawn.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/Food.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/Food.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/FoodStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/FoodStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/Stats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/StatsUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/StatsUIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/documentation/.vscode/ltex.dictionary.en-US.txt" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/.vscode/ltex.dictionary.en-US.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/documentation/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/TODO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/latex/project.aux" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/latex/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/latex/project.out" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.aux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.out" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/documentation/latex/project.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/documentation/latex/project.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.synctex.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/documentation/latex/project.tex" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/latex/project.toc" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/project.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/project.toc" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +238,7 @@
       <workItem from="1619280187521" duration="1902000" />
       <workItem from="1619356855540" duration="2813000" />
       <workItem from="1619526596545" duration="1870000" />
-      <workItem from="1619704828310" duration="4906000" />
+      <workItem from="1619704828310" duration="8143000" />
     </task>
     <servers />
   </component>
