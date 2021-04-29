@@ -4,34 +4,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FoodChain : MonoBehaviour {
-    public const string NAME_PLAYER = "player";
+    // references to the tags of the creatures
+    public const string NAME_PLAYER     = "player";
     public const string NAME_SABERTOOTH = "sabertooth";
-    public const string NAME_SLOTH = "sloth";
-    public const string NAME_PLANT = "plant";
+    public const string NAME_SLOTH      = "sloth";
+    public const string NAME_PLANT      = "plant";
 
+    /* acting as a two-way dictionary */
     // predators
-    private Dictionary<String, HashSet<String>> threats = new Dictionary<string, HashSet<string>>();
+    private Dictionary<string, HashSet<string>> threats = new Dictionary<string, HashSet<string>>();
 
     // preys
-    private Dictionary<String, HashSet<String>> foods = new Dictionary<string, HashSet<string>>();
+    private Dictionary<string, HashSet<string>> foods = new Dictionary<string, HashSet<string>>();
 
     public void Awake() {
         // Create the food chain
-        addToChain(NAME_PLAYER,NAME_SABERTOOTH);
+        addToChain(NAME_PLAYER, NAME_SABERTOOTH);
         addToChain(NAME_PLAYER, NAME_SLOTH);
         addToChain(NAME_PLAYER, NAME_PLANT);
         addToChain(NAME_SABERTOOTH, NAME_PLAYER);
         addToChain(NAME_SABERTOOTH, NAME_SABERTOOTH);
         addToChain(NAME_SABERTOOTH, NAME_SLOTH);
-        // addToChain(NAME_LIZARD, NAME_PLANT);
         addToChain(NAME_SLOTH, NAME_PLANT);
-        // Debug.Log(foods);
-        // Debug.Log(threats);
-        // Debug.Log("Player Threats Count: " + threats[NAME_PLAYER].Count);
     }
 
+    // adding to the dictionaries
     private void addToChain(String threat, String food) {
-        //add to predators list and add to prey list
+        
+        /* add to predators list and add to prey list */
+
         if (foods.ContainsKey(threat)) {
             foods[threat].Add(food);
         }
@@ -47,13 +48,13 @@ public class FoodChain : MonoBehaviour {
         }
     }
 
-    public HashSet<String> GetFood(String name) {
-        // Debug.Log("food name: " + name);
+    // get all the foods for a given creature
+    public HashSet<string> GetFood(string name) {
         return foods[name];
     }
-    
-    public HashSet<String> GetThreat(String name) {
+
+    // get all the threats for a given creature
+    public HashSet<string> GetThreat(string name) {
         return threats[name];
     }
-
 }

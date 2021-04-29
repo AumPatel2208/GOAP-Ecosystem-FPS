@@ -5,20 +5,22 @@ using Random = UnityEngine.Random;
 
 namespace Creatures {
     public class RandomlyRoam : MonoBehaviour {
-        private GameObject randomPositionObj;
+        // to set it to a random position and to use it's transform
+        private GameObject          randomPositionObj;
         private AIDestinationSetter destinationSetter;
-        public BaseAIGoap creature;
+        // the creature to randomly roam
+        public  BaseAIGoap   creature;
         private FinishEating finishEating;
-        private bool isFinishEatingNull;
+        private bool         isFinishEatingNull;
         
-        public float resetRandomPositionFrequency = 2f;
+        // frequency and timer to change randomly roam
+        public float resetRandomPositionFrequency = 3f;
         private float resetRandomPositionTimer = 0f;
 
-        void Awake() {
 
-        }
-
+        
         private void Start() {
+            // cache references to components
             destinationSetter = GetComponent<AIDestinationSetter>();
             creature = GetComponent<BaseAIGoap>();
             randomPositionObj = new GameObject("Random_Position");
@@ -26,6 +28,7 @@ namespace Creatures {
             if (finishEating == null)
                 isFinishEatingNull = true;
 
+            // set the timer
             resetRandomPositionTimer = resetRandomPositionFrequency + Random.Range(-3f, 3f);
         }
 
@@ -35,6 +38,7 @@ namespace Creatures {
                 Roam();
             }
             else {
+                // if not eating, then roam
                 if (!finishEating.IsInProgress()) {
                     Roam();
                 }
@@ -60,7 +64,7 @@ namespace Creatures {
 
             // if there is no action, pick a random destination to move to.
             if (destinationSetter.target == null) {
-                // https://arongranberg.com/astar/documentation/dev_4_3_8_84e2f938/old/wander.php
+                // from documentation for the library : https://arongranberg.com/astar/documentation/dev_4_3_8_84e2f938/old/wander.php
                 GraphNode randomNode;
                 // For grid graphs
                 var grid = AstarPath.active.data.gridGraph;

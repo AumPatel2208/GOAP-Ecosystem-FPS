@@ -10,14 +10,15 @@
 \contentsline {subsection}{\numberline {5.2.3}GitHub}{11}{subsection.5.2.3}%
 \contentsline {subsection}{\numberline {5.2.4}Blender}{11}{subsection.5.2.4}%
 \contentsline {subsection}{\numberline {5.2.5}Adobe Photoshop}{11}{subsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.2.6}Adobe Illustrator}{12}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.6}Adobe Illustrator}{11}{subsection.5.2.6}%
 \contentsline {subsection}{\numberline {5.2.7}diagrams.net}{12}{subsection.5.2.7}%
 \contentsline {section}{\numberline {5.3}Programming Patterns}{12}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Software Design}{14}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Modelling Actions}{14}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.4}Software Design}{13}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Modelling Actions}{13}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Class Diagrams}{14}{subsection.5.4.2}%
 \contentsline {subsection}{\numberline {5.4.3}User Interface (UI)}{14}{subsection.5.4.3}%
 \contentsline {subsection}{\numberline {5.4.4}Misc}{14}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}Project Objectives}{14}{section.5.5}%
 \contentsline {chapter}{\numberline {6}Result}{15}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Minimum Viable Product}{15}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Modelling the Actions}{15}{subsection.6.1.1}%
@@ -32,10 +33,10 @@
 \contentsline {subsubsection}{Class Diagram Updated}{24}{section*.3}%
 \contentsline {subsubsection}{Pathfinding}{26}{section*.4}%
 \contentsline {subsubsection}{Goap AI}{28}{section*.5}%
-\contentsline {subsubsection}{Ragdolls}{31}{section*.6}%
+\contentsline {subsubsection}{Ragdolls}{32}{section*.6}%
 \contentsline {subsubsection}{Particle Effects}{33}{section*.7}%
 \contentsline {subsection}{\numberline {6.2.2}Player}{34}{subsection.6.2.2}%
 \contentsline {subsubsection}{Weapons}{34}{section*.8}%
 \contentsline {subsection}{\numberline {6.2.3}User Interface changes}{36}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Level Creation}{37}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.4}Level Creation}{38}{subsection.6.2.4}%
 \contentsline {chapter}{\numberline {7}Asset Listing}{40}{chapter.7}%

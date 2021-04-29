@@ -3,23 +3,29 @@ using UnityEngine;
 
 
 // Ragdoll Tutorial : https://youtu.be/oVPI2ESkgIw
+// Changes have been made to make it more compatible
 namespace Creatures {
+    
+    // component gets attached to a character with the box collider with a ragdoll setup (Colliders, and Character Joints on apporpriate bones)
     public class RagdollToggle : MonoBehaviour {
     
         // Get the elements to disable and enable for enabling the Ragdoll
-        protected Animator animator;
+        private Animator animator;
         // protected Rigidbody rigidbody;
-        protected BoxCollider boxCollider;
+        private BoxCollider boxCollider;
         // protected Sabertooth sabertooth;
         public Behaviour aiComponent;
     
-        protected Collider[] childrenColliders;
-        protected Rigidbody[] childrenRigidbodies;
+        // children physics elements
+        private Collider[]  childrenColliders;
+        private Rigidbody[] childrenRigidbodies;
 
+        // store the current state for efficiency purposes
         private bool currentState;
     
     
         void Awake() {
+            // cache references to the components
             animator = GetComponentInChildren<Animator>();
             boxCollider = GetComponent<BoxCollider>();
             // Using System.Linq to avoid getting the parent in the children list:
@@ -31,7 +37,7 @@ namespace Creatures {
 
         private void Start() {
         
-            // disable the ragdoll first
+            // disable the ragdoll at the beginning
             currentState = true;
             EnableRagdoll(false);
         }

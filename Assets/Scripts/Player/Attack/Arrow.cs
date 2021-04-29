@@ -12,23 +12,19 @@ namespace Player.Attack {
             // transform.rotation = Quaternion.LookRotation(body.velocity);
         }
 
-        // Update is called once per frame
-        void Update() {
-            // transform.rotation = Quaternion.LookRotation(body.velocity);
-        }
 
+        // on collision
         private void OnCollisionEnter(Collision other) {
-            
-
+            // if it is the player then ignore
             if (other.collider.CompareTag("player"))
                 return;
             
             // 11 is life layer
             if (!usedUp && other.gameObject.layer == 11) {
-
+                // apply damage and spawn particles on contact point
                 if (other.gameObject.GetComponent<Stats.Stats>() != null) {
                     other.gameObject.GetComponent<Stats.Stats>().ApplyDamage(attackDamage, other.GetContact(0).point,other.transform.rotation);
-                    usedUp = true;
+                    usedUp = true;// arrow has been used up so it will not do damage again
                 }
 
             }

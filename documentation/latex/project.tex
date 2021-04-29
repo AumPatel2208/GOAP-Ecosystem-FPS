@@ -13,7 +13,7 @@
 \usepackage{listings} % writing code snippets
 \usepackage{color}
 \usepackage{fancyvrb} % extra functionality for verbatim
-% \usepackage{fontspec} % changing fonts
+\usepackage{fontspec} % changing fonts
 \usepackage[]{microtype} %
 
 % \usepackage{microtype} % used for formatting nicely and getting rid of hbox badness
@@ -26,7 +26,7 @@
 \renewcommand{\baselinestretch}{1.5}
 
 % font family change
-% \setmainfont{Times New Roman}
+\setmainfont{Times New Roman}
 
 
 
@@ -93,25 +93,24 @@ This project aim is to create a Souls-Like game with an AI system that allows fo
 \chapter{Literature Review}
 My project focuses on creating a game in the souls-like genre where the enemies act in an eco-system where there is a food-chain hierarchy in which they can fight each other.
 
-An intricate in-fighting system between multiple different AI agents is what I will be focusing on. One of the early examples of in-fighting was seen in the original Doom (1993)\cite{doom93}, where if an enemy-A got attacked by enemy-B, enemy-A will change it's target from player to enemy-B, this is a very simple system but offers many different gameplay opportunities, many levels were crafted with this in mind where the players would have to manipulate the AI by luring one enemy into another's line of fire.
-This idea was later expanded by Ubisoft in their later Far Cry games where different clans can combat each other in random events, and animals can also combat each other, combining these together, there a re many random events where animals attack enemies that are already mid combat between you and another clan. In Far Cry Primal they expanded the animal system so that you could tame any animal in the world and make them your companion in gameplay.
+An intricate in-fighting system between multiple different AI agents is what I will be focusing on. One of the early examples of in-fighting was seen in the original Doom (1993)\cite{doom93}, where if an enemy-A got attacked by enemy-B, enemy-A will change its target from player to enemy-B, this is a very simple system but offers many gameplay opportunities, many levels were crafted with this in mind where the players would have to manipulate the AI by luring one enemy into another's line of fire.
+This idea was later expanded by Ubisoft in their later Far Cry games where different clans can combat each other in random events, and animals can also combat each other, combining these together, there a re many random events where animals attack enemies that are already mid-combat between you and another clan. In Far Cry Primal they expanded the animal system so that you could tame any animal in the world and make them your companion in gameplay.
 
 This sort of systemic game design is created by making the different game systems aware of each other, and this inturn invites the player to use their creativity to make plans on how to execute their goals and creating unique experiences. This type of gameplay has been coined as emergent gameplay where complex systems \textit{emerge} from the interaction on relatively simple game mechanics.\cite{emergentGameplay}
 
 There are different types of AI techniques that I could use, the following are the ones that I have looked into: Finite State Machines, Behaviour Trees, Goal Oriented Action Planning and Utility Based AI.
 
-Finite state machines are the most rudimentary AI system, it is a system that I had implemented in my Advanced Games Tech Project, these are very easy and quick to implement for a simple AI system however it does not suit the complex AI behaviours I would like to build as when adding more complexity to a state machine, the "program flow becomes much more difficult to understand and creates a debugging nightmare"\cite{gameAiByExample}.
+Finite state machines are the most rudimentary AI system, it is a system that I had implemented in my Advanced Games Tech Project, these are very easy and quick to implement for a simple AI system however it does not suit the complex AI behaviours I would like to build as when adding more complexity to a state machine, the "program flow becomes much more difficult to understand and creates a debugging nightmare" \cite{gameAiByExample}.
 
 Behaviour Trees were popularised by Halo 2\cite{halo2} and are now the most common AI technique used in modern games, this is due to there being a streamlined flow/logic to the readability of the AI, this makes it easier to expand while keeping debugging simple. The design is built using nodes as modules, allowing nodes to be reused with minimal effort. There is also a 'blackboard' where shared knowledge is kept which the AI uses to make 'smarter' decisions while keeping memory usage to a minimum. This all happens while keeping a low computational overhead if implemented correctly. \cite{behaviourTrees}
 
-Goal Oriented Action Planning (GOAP) was originally implemented in a game in F.E.A.R (First Encounter Assault Recon) by Jeff Orkin \cite{goap}. It is a system that is made up of many actions, these actions comprise of objects, preconditions and effects; an agent will decide on an action to execute based on their current situation and then work backwards through the preconditions to create an efficient plan of executing the actions. This is done using an A* path finding algorithm, the actions have different weightings based on how easy they are to execute from the current state of the agent. This system can be very easy to scale if the ground work is set up properly as all would have to be done is add more actions in. Similar to behaviour trees (BT), a blackboard is used to store shared data which the AI can use to make decisions. This system can have performance issues, as goals and plans will have to be calculated for every active agent very frequently, so increasing the number of agents in the scene will have a performance hit. This was an issue when F.E.A.R came out as the rats in the game used the same AI system as the enemies, and once a rat had spawn, it would not be destroyed, and this would accumulate over a long play session and cause performance issues. This system can create novel AI behaviour which isn't seen easily in BT and FSM AI design. This is the system I would like to implement as it would be easier to create AI that seems to behave 'organically' like they do in F.E.A.R.. \cite{goapTommyTompson} An example of this is given in Jeff Orkin's 2003 paper on the subject of applying GOAP\cite{applyingGoap}, he talks about a character X running out of ammunition in their weapon, given that their goal is still to eliminate the enemy, the planner will find another way of doing that - in the example, there is a laser that can be activated by both player and enemies - the planner will now find a combination of actions to execute in a particular order for the enemy to activate the laser to eliminate the player. This is a novel idea that the planner came up with by using what was in the environment, behaviour like this would be missed in games using behaviour trees as that particular course of action was not added into the tree.
+Goal Oriented Action Planning (GOAP) was originally implemented in a game in F.E.A.R (First Encounter Assault Recon) by Jeff Orkin \cite{goap}. It is a system that is made up of many actions, these actions consist of objects, preconditions and effects; an agent will decide on an action to execute based on their current situation and then work backwards through the preconditions to create an efficient plan of executing the actions. This is done using an A* path finding algorithm, the actions have different weightings based on how easy they are to execute from the current state of the agent. This system can be very easy to scale if the groundwork is set up properly as all would have to be done is to add more actions in. Similar to behaviour trees (BT), a blackboard is used to store shared data which the AI can use to make decisions. This system can have performance issues, as goals and plans will have to be calculated for every active agent very frequently, so increasing the number of agents in the scene will have a performance hit. This was an issue when F.E.A.R came out as the rats in the game used the same AI system as the enemies, and once a rat had spawned, it would not be destroyed, and this would accumulate over a long play session and cause performance issues.
+This system can create novel AI behaviour which isn't seen easily in BT and FSM AI design. This is the system I would like to implement as it would be easier to create AI that seems to behave 'organically' like they do in F.E.A.R.. \cite{goapTommyTompson} An example of this is given in Jeff Orkin's 2003 paper on the subject of applying GOAP\cite{applyingGoap}, he talks about a character X running out of ammunition in their weapon, given that their goal is still to eliminate the enemy, the planner will find another way of doing that - in the example, there is a laser that can be activated by both player and enemies - the planner will now find a combination of actions to execute in a particular order for the enemy to activate the laser to eliminate the player. This is a novel idea that the planner came up with by using what was in the environment, behaviour like this would be missed in games using behaviour trees as that particular course of action was not added into the tree.
 %might not need to cite tommy thompson
 
 \chapter{Method}
 % methodology then tools used
 \section{Software Design Methodology}
-% IE. Agile or something
-
 The AI system is based around GOAP which works really well as a modular system that can bring about novel ideas by agents.
 
 The software design methodology used in this project was a version of scrum, which comes under the agile family of development methods. As you can see in the figure below\cite{AgileMethodology}, the agile methodology consists of multiple sprints, where you plan, design, build, test and review; this leads to rapid development and in the short period of time to do this project this was the best methodology to fit the project. 
@@ -221,8 +220,9 @@ Adobe Illustrator was used to draft out the user interface. Some UI elements wil
 
 \subsection{Misc}
 
-% \section{Project Objectives}
-% The Project objectives can be found in the Project Definition Document (PDD) in Appendix 1
+\section{Project Objectives}
+The Project objectives can be found in the Project Definition Document (PDD) in Appendix 1.
+The project was created by going through these objectives and tackling them one at a time, breaking each task down when arriving to it, this way there was focused attention on each feature being added in and being tested and refined before moving on.
 % \subsection{Minimum Viable Product}
 % \subsection{Creatures}
 
@@ -513,7 +513,33 @@ The AI system was expanded upon in this build. The action for \textbf{Find Food}
 The \textbf{Eat Food} action can only be executed now if the food is ready, and to make the food ready, it needs to be killed, and therefore the planner will find and execute the \textbf{Melee Attack}.
 
 Both these actions were also changed to play the animations at the correct moment.
-The Creature class from build one was broken down into an abstract BaseAIGoap class that inherited the IGoap interface and provided implementation for the methods that log on action complete/fail/etc.; a boolean check was created so that the programmer can diable the logging to the console, as this has a major hit on performance in Unity and also cluttered up the console when multiple agents were active, essentially making it unusable. The \textbf{Sabertooth} and \textbf{Sloth} now inherited from this and applied their goal states seperatly, reducing the coupling and making debugging simpler than when they inherited from a Creature class.
+The Creature class from build one was broken down into an abstract BaseAIGoap class that inherited the IGoap interface and provided implementation for the methods that log on action complete/fail/etc.; a boolean check was created so that the programmer can disable the logging to the console, as this has a major hit on performance in Unity and also cluttered up the console when multiple agents were active, essentially making it unusable. The \textbf{Sabertooth} and \textbf{Sloth} now inherited from this and applied their goal states seperatly, reducing the coupling and making debugging simpler than when they inherited from a Creature class.
+\begin{lstlisting}[language=c]
+// This class inherits IGOAP to provide implementation for methods on finishing the plans.
+public abstract class BaseAIGoap : MonoBehaviour, IGoap {
+    // if this is true then print output to console
+    public bool enableDebugging = true;
+    // world state of the agent will be inherited
+    public abstract HashSet<KeyValuePair<string, object>> getWorldState(); 
+    // desired goal state of the agent will be inherited
+    public abstract HashSet<KeyValuePair<string, object>> createGoalState();
+    // implement this method by having a check to print the output or not
+    public void planFound(HashSet<KeyValuePair<string, object>> goal, Queue<GoapAction> actions) {
+        // found a plan for our goal
+        if(enableDebugging)
+            Debug.Log(gameObject.name + ": <color=green>Plan found</color> " + GoapAgent.prettyPrint(actions));
+    }
+    // similar thing applied to following methods
+    public void actionsFinished() {...}
+    public void planAborted(GoapAction aborter) {...}
+
+    // Move agent exists in IGOAP to move to the object to perform the action
+    public abstract bool moveAgent(GoapAction nextAction);
+    // this is a method I created which will be different for different agents, it performs all the things to start and stop moving the agent.
+    public abstract void StartMoving(bool toMove, Transform target);
+}
+\end{lstlisting}
+
 
 % Problem with no partial plan of action
 After the adding the pathfinding and the new actions into the game, the agents behaved as expected until \textit{\textbf{they had not found a target and were hungry}}. In this case, the agent would just be in an idle state and not do anything, where it was expected to perform \textbf{Find Food} and then \textbf{Eat Food}. This was occurring because as the current planning system did not accept partially successful plans (a series of actions that do not fulfill \textbf{every} goal state), which was quite unusual as there are many cases where some actions/series of actions do not tick every box, and the correct behaviour in this scenario would be to perform a partial plan if a full plan is not found.

@@ -3,15 +3,16 @@
 namespace Player.Attack {
     public class SwordAttack : MonoBehaviour {
         public Animator animator;
+        // damage value
         public float attackDamage = 50f;
+        // stamina cost
         public float staminaCost = 15f;
 
+        // refrence to name of animation state
         private static readonly int hIsAttacking = Animator.StringToHash("isAttacking");
         public Stats.Stats playerStats;
 
-        // private float animationTimer = 0f;
-
-
+        // number of clicks
         int noOfClicks;
         private bool canClick;
         private static readonly int hAttackNo = Animator.StringToHash("attackNo");
@@ -19,20 +20,18 @@ namespace Player.Attack {
         // Start is called before the first frame update
         void Start() {
             animator.GetComponent<Animator>();
-
             noOfClicks = 0;
             canClick = true;
         }
 
         // Update is called once per frame
         void Update() {
-            // https://youtu.be/NWt84YCMHHE Reference
             if (Input.GetButtonDown("Fire1") && playerStats.GetStamina() > staminaCost) {
                 playerStats.ApplyStaminaReduction(staminaCost);
-                // Debug.Log("Fire: canClick: " + canClick + " noOfClicks: " + noOfClicks + ". Current Animation:" + animator.GetInteger(hAttackNo));
                 ComboStarter();
             }
 
+            // Below is a fix to a known bug where the animation gets stuck
             // Added to reset the stuck animation if they click more than 3 times.
             if (noOfClicks > 3) {
                 animator.SetInteger(hAttackNo, 0);
@@ -68,11 +67,7 @@ namespace Player.Attack {
         }
 
         public void ComboCheck() {
-            // Debug.Log("ComboCheck: " + noOfClicks);
-
-            // commented out recently, works
-            // canClick = false;
-
+            // Combo System tutorial: https://youtu.be/NWt84YCMHHE Reference
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("swing_1") && noOfClicks == 1) {
                 // set to idle
                 animator.SetInteger(hAttackNo, 0);

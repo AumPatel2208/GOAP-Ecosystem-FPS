@@ -12,18 +12,20 @@ namespace Player {
         private Vector3 direction;
         private float maxDistance = 2.5f; // max distance that the ray can go
         public LayerMask lifeLayerMask; // life layer
-        public GameObject foodParticles;
         private bool currentUIStatus = true; // true is showing. should toggle off instantly in the update method
 
         public Text interactUI;
 
         private void Awake() {
+            // cache references
             stats = GetComponent<Stats.Stats>();
-
+            // Get the layer mask the creatures are in
             lifeLayerMask = LayerMask.GetMask("Life");
+            // get the ui element; not the most elegant way
             interactUI = GameObject.Find("Text_E").GetComponent<Text>();
         }
 
+        // toggle the UI element to interact with food
         private void toggleUI(bool isActive) {
             if (isActive != currentUIStatus) {
                 interactUI.enabled = isActive;
@@ -41,10 +43,6 @@ namespace Player {
                 // Debug.Log(hit.transform.root.gameObject.name);
                 // interact with it
                 // press E to eat
-
-                // var root = hit.transform.root;
-                // interactUI.gameObject.transform.position = root.position + root.up.normalized * 0.5f;
-                // interactUI.gameObject.transform.forward = Camera.main.transform.forward;
                 if (hit.transform.root.GetComponent<FoodStats>() != null) {
                     if (hit.transform.root.GetComponent<FoodStats>().isReadyToEat) {
                         toggleUI(true);

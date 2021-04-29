@@ -6,17 +6,17 @@ using UnityEngine;
 
 namespace Creatures.Agents {
     public class Sloth : BaseAIGoap {
+        // stats
         public Stats.Stats stats;
 
         private Animator animator;
         private AIDestinationSetter destinationSetter;
         private AIPath movementController;
         private GoapAgent goapAgent;
+        
+        // movement state name in the animator
         private static readonly int hMoving = Animator.StringToHash("Moving");
-        private GameObject randomPositionObj;
     
-        public LayerMask lifeLayerMask;
-
         private void Awake() {
             if (gameObject.GetComponent<Stats.Stats>() == null)
                 stats = gameObject.AddComponent<Stats.Stats>();
@@ -28,7 +28,6 @@ namespace Creatures.Agents {
 
             destinationSetter = GetComponent<AIDestinationSetter>();
             movementController = GetComponent<AIPath>();
-            randomPositionObj = new GameObject("Random_Position");
         }
 
         private void FixedUpdate() {

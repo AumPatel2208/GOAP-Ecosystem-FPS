@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Pathfinding;
+﻿using Pathfinding;
 using UnityEngine;
 
+// Unused in final build however used as a refrence to understand the library
+// https://arongranberg.com/astar/docs/custom_movement_script.html
 public class AStarMovement : MonoBehaviour {
     public Transform targetPosition;
     private Seeker seeker;
@@ -17,7 +16,7 @@ public class AStarMovement : MonoBehaviour {
     
 
     public void Start() {
-        // Get a refrence to the seeker component
+        // Get a reference to the seeker component
          seeker= GetComponent<Seeker>();
     
          // using Unity's built in character controller to move the Agent

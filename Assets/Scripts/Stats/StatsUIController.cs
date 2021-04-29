@@ -4,17 +4,18 @@ using UnityEngine.UI;
 
 namespace Stats {
     public class StatsUIController : MonoBehaviour {
+        // images that contain the sprite for the health
+        public  Image healthBar;
+        public  Image staminaBar;
+        public  Image hungerBar;
+        public  Image hungerThresholdBar;
+        private Stats creatureStats;
 
-        public Image healthBar;
-        public Image staminaBar;
-        public Image hungerBar;
-        public Image hungerThresholdBar;
-        private global::Stats.Stats creatureStats;
-
+        // to disable UI element when the creature dies
         private bool _enabled = true;
-        // Start is called before the first frame update
+
         void Awake() {
-            creatureStats = gameObject.GetComponent<global::Stats.Stats>();
+            creatureStats = gameObject.GetComponent<Stats>();
         }
 
         private void Update() {
@@ -24,8 +25,8 @@ namespace Stats {
             }
         }
 
-        // Update is called once per frame
         void FixedUpdate() {
+            // change the fill amount
             healthBar.fillAmount = creatureStats.GetHealth() / 100;
             staminaBar.fillAmount = creatureStats.GetStamina() / 100;
             hungerBar.fillAmount = creatureStats.GetHunger() / 100;
