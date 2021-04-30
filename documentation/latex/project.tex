@@ -1,21 +1,21 @@
 % changing latex compiler for use with external fonts
 % !TEX TS-program = xelatex
-\documentclass[12pt]{report}
+\documentclass[11pt]{report}
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{graphicx} % images
-% \usepackage[demo]{graphicx} % black preview images
+% \usepackage[draft]{graphicx} % black preview images
 \usepackage{fancyhdr} % headers and footers
 \usepackage{parskip} % paragraph
 \usepackage{geometry} % shapes
 \usepackage{hyperref} % Links
 \usepackage{pdflscape} % making a page landscape
 \usepackage{listings} % writing code snippets
-\usepackage{color}
+\usepackage{color} % colours
 \usepackage{fancyvrb} % extra functionality for verbatim
 \usepackage{fontspec} % changing fonts
-\usepackage[]{microtype} %
+\usepackage[]{microtype} % 
 
 % \usepackage{microtype} % used for formatting nicely and getting rid of hbox badness
 % \usepackage{natbib}
@@ -27,7 +27,8 @@
 \renewcommand{\baselinestretch}{1.5}
 
 % font family change
-\setmainfont{Times New Roman}
+\setmainfont{Arial}
+\setmonofont{JetBrains Mono Regular}
 
 \bibliographystyle{unsrtnat}
 \graphicspath{{../images/}}
@@ -43,7 +44,7 @@
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-
+% code formatting
 \lstset{ %
   backgroundcolor=\color{white},   % choose the background color
   basicstyle=\ttfamily\footnotesize,    % fixed spaced font familyy  &  size of fonts used for the code
@@ -78,17 +79,74 @@ bottom=25mm
 
 \begin{document}
 
+%=========================
+%   Title Page
+%=========================
 \begin{titlepage}
 \center
 {\huge\bfseries Report}  
 \end{titlepage}
 
+%=========================
+%   Contents Page
+%=========================
 \tableofcontents
 
+%=========================
+%   Abstract
+%=========================
 \chapter{Abstract}
-This project aim is to create a Souls-Like game with an AI system that allows for in-fighting between creatures based on a food chain. I researched different AI techniques to pull this off and landed on GOAP - Goal Oriented Action Planning - as the system I would use in this game.
+This project aim is to create a Souls-Like game with an AI system that allows for in-fighting between creatures based on a food chain. The AI system is at the core of this project and a version of Goal Oriented Action Planning was used, where a planner creates branching action-trees during gameplay and executes those actions leading to novel gameplay moments.
+
+%=========================
+%   Introduction
+%=========================
 \chapter{Introduction}
+\section{Problem}
+The core focus of this project is around the AI system that is implemented to provide realistic interaction between creatures and the player, this most notably includes in-fighting between the different enemies based around a food chain. As well as this, this project also focuses on the different game systems that need to be implemented to get something that can keep the player engaged. This project was created using the Unity Game Engine, which is a very well documented, free to use 3D game engine to use with any genre of games; as this engine is fairly new to the author of this project, Unity specific topics will also be discussed to provide a more thorough overview on the implementation.
+
+\section{Project Objectives}
+This project was broken down into two distinct parts, the minimum viable product, where the author is gaining his understanding of the AI system and Unity, and the Main Build, where more gameplay systems are added, the AI is more refined with more randomness to it, and the presentation is much more enhanced. These objectives were been updated since the PDD.
+\subsection{Minimum Viable Product}
+\begin{itemize}
+    \item 3 foods: a plant, a prey, and a predator
+    \item Simple AI behaviour using Goal Oriented Action Planning
+    \item HUD elements for the Creatures stats
+    \item Simple Unity Scene/Level to test the different features
+    \item Sword Weapon with a combo system
+\end{itemize}
+\subsection{The Main Product}
+\begin{itemize}
+    \item Higher utilisation of the AI system
+    \item Meshes and animations for the different creatures/food
+    \item A Ranged Weapon for the player to attack with
+    \item Hunger system with health regeneration
+    \item Stamina usage and regeneration for the player
+    \item Level restart on Player death
+    \item Simple Level
+    \item Heads Up Display to display the different player statistics
+\end{itemize}
+The following report is lightly structured to go thoroughly through the different objectives and features that were set out.
+
+% \section{Assumptions}
+
+\section{Beneficiaries}
+The main beneficiary for this project is me (also referred to as the author throughout the project). I will learn how to use a modern fully featured game engine Unity, learn how to C\# and apply it in the context of game scripting; I will learn how to use compositional relationships efficiently and their benefits over using inheritance in different contexts; the main benefit is learning the different styles of AI techniques available and thoroughly gain an understanding of Goal Oriented Action Planning system of AI and use it to create a simple eco-system of creatures, that are fully animated and rigged up to have rag-doll physics. Overall there are many techniques and challenges that are new to me that I will be facing through this project. 
+
+Other beneficiaries would include other students/developers interested in seeing a usage of GOAP in a game, this would only come about if I decide to open source this project after it has been graded. As this is a prototype, most players will not be as engaged as they would be on a fully developed project, however if they receive any form of enjoyment out of this game, they would also be considered a beneficiary.
+
+
+
+\section{Upcoming Chapters Overview}
+
+%=========================
+%   Output Summary
+%=========================
 \chapter{Output Summary}
+
+%=========================
+%   Literature Review
+%=========================
 \chapter{Literature Review}
 My project focuses on creating a game in the souls-like genre where the enemies act in an eco-system where there is a food-chain hierarchy in which they can fight each other.
 
@@ -107,62 +165,29 @@ Goal Oriented Action Planning (GOAP) was originally implemented in a game in F.E
 This system can create novel AI behaviour which isn't seen easily in BT and FSM AI design. This is the system I would like to implement as it would be easier to create AI that seems to behave 'organically' like they do in F.E.A.R.. \cite{goapTommyTompson} An example of this is given in Jeff Orkin's 2003 paper on the subject of applying GOAP\cite{applyingGoap}, he talks about a character X running out of ammunition in their weapon, given that their goal is still to eliminate the enemy, the planner will find another way of doing that - in the example, there is a laser that can be activated by both player and enemies - the planner will now find a combination of actions to execute in a particular order for the enemy to activate the laser to eliminate the player. This is a novel idea that the planner came up with by using what was in the environment, behaviour like this would be missed in games using behaviour trees as that particular course of action was not added into the tree.
 %might not need to cite tommy thompson
 
+%=========================
+%   Method
+%=========================
 \chapter{Method}
-% methodology then tools used
+This section will describe a high level overview of what methodologies and techniques were used and why in this project. For a more detailed breakdown into the implementation of these techniques please see the Results section.
+% [x] Checked
 \section{Software Design Methodology}
-The AI system is based around GOAP which works really well as a modular system that can bring about novel ideas by agents.
-
 The software design methodology used in this project was a version of scrum, which comes under the agile family of development methods. As you can see in the figure below\cite{AgileMethodology}, the agile methodology consists of multiple sprints, where you plan, design, build, test and review; this leads to rapid development and in the short period of time to do this project this was the best methodology to fit the project. 
 \begin{figure}[H]
     \centering
     \fbox{\includegraphics[width = 15cm]{agile_method.jpg}}
     \caption{Agile Scrum Methodology}
 \end{figure}
-Another advantage to using agile is that for the programming practice that was used, see later section, the project can be broken down into entities and components quite easily which do their own specific jobs, making it easier to create a feature early on, test it and then not have to refactor it later on as everything is highly decoupled. In the results section, it is seperated into two main sections (sprints), a Minimum Viable Product, and then the Main Product, which are then broken down into multiple sub-sections (which act like their own sub-sprints going feature by feature) that describe the different objectives described in the PDD[appendix 1], and how they were fulfilled using the agile methodology. 
+Another advantage to using agile is that for the programming pattern that was used(see next section), the project can be broken down into features which then breaks down into entities and components(that do their own specific jobs) in a neat way, making it easier to create a feature early on, test it and then not have to refactor/touch it further into development as everything is highly decoupled. 
+
+The project objectives as seen in the introduction are separated into two main sections (sprints), a \textit{Minimum Viable Product}, and then \textit{The Main Product}, which are broken down into multiple objectives, which act like their own sub-sprints going feature by feature).  
 
 This methodology avoids having to do a big test of the program at the end of development as all the features are being tested rapidly while being created, so when the final prototype build was created, it works as expected.
 
-
-\section{Tools}
-%tools
-% need to add
-% - evaluation tool
-
-\subsection{Unity (Game Engine)}
-Unity was chosen as the game engine over Unreal Engine as I had some prior (albeit minimal) experience in using it; Unity used C\# for scripting which is, for me, a simpler language to write in over C++, even though I have used C++ more extensively over the past year in various projects. Unity also had better performance on the hardware and operating system I would be using for this project, while being smaller in file size.
-
-As mentioned in my PDD, Unity has an extensive amount documentation available on their website which is easy to understand, they also have a forum site where there is a very active community in helping new-comers with any issues they face; as well as this, there are plenty of tutorials about Unity on their own website and on YouTube.
-
-There is also an asset store built into Unity with many paid and free assets, ranging from scripts, models, materials, shaders, physics systems and more.
-
-All of this combined, it was very difficult for me to not choose Unity as the Game Engine for my project.
-
-\subsection{JetBrains Rider (IDE)}
-JetBrains Rider was my choice of IDE as I have been using JetBrains products since the Programming in Java module in the first year, and I feel they provide a very good set of refactoring and debugging tools with a good amount of community made extensions for the program. Rider was created as a .NET IDE, and now has native Unity support, which is perfect for use with Unity.
-
-My other option was Microsoft's Visual Studio, which I had used in the second and third year Games Tech modules. After using it, I did not like it much and had installed the ReSharper plugin by JetBrains, which brought some of the functionality from JetBrains IDEs. Given that JetBrains have their own IDE for Unity, I decided to go with that over Visual Studio.
-
-\subsection{GitHub}
-I used GitHub as my version control and backup system as I am very familiar with it. I have used it extensively over my time at the university.
-
-\subsection{Blender}
-I used Blender as my 3D program of choice as it is very intuitive to learn and very simple to use. It is also free and open source leading to very many tutorials for it along with great documentation. It has support for opening most 3D filetypes which is good for me as I will be getting assets from different locations; if there is a filetype that is not supported, then there is bound to be an extension for it, due to the many community mad extensions available.
-
-\subsection{Adobe Photoshop}
-This is my image editor of choice as I am very well versed in it and have been using it over the past 6 years and professionally for the past 2 years.
-
-\subsection{Adobe Illustrator}
-Adobe Illustrator was the choice of vector editor used to design any graphical elements that cannot be created in Unity's GUI system and used to design the GUI in the planning phase. 
-
-\subsection{diagrams.net}
-Diagrams.net (formally known as draw.io) was used as the tool to create UML diagrams as it is a lightweight web-application providing all the necessary features and flexibility. The feature that came in most useful was the integration with github; I was able to save my diagrams and version them directly in the same repository.
-
-% \subsection{Plant UML}
-% Plant UML is an open source UML creation tool allowing you to write UML in plain text. This was used to create a UML diagram out of the final code output.
-
 \section{Programming Patterns}
-The programming paradigm used was based around an Entity Component System (ECS) design where there are Entities in the world (the game objects) that are built up of components.
-Games in Unity are built around this paradigm, preferring a system of composition over inheritance. It allows for greater flexibility as unlike inheritance where you 'inherit' all features at once, you build the game object using components(C\# classes) that you build that are fulfil a very specific purpose. This leads to code being very modular and less coupled, leading to faster development as changing one component will not have a ripple effect on others. 
+The programming paradigm used was based around the Entity Component System (ECS) design where there are Entities in the world (the GameObjects) that are built up of components.
+
+Games in Unity are built around this paradigm, preferring a system of composition over inheritance. It allows for greater flexibility as unlike inheritance where you 'inherit' all features at once, you build the game object using components(C\# classes) that you create that are designed to fulfill a very specific purpose. This leads to code being very modular and less coupled, leading to faster development and easier debugging as changing one component will not have a ripple effect on others, which is very much the case when designing a system around inheritance early on and then having to refactor it as you did not have enough foresight for a particular feature.
 The following shows the flaws with inheritance for development\cite{CompOverInherit}:
 \begin{lstlisting}
 ROBOT // parent class
@@ -192,45 +217,82 @@ Now the above works great and would serve you through most of the project, but t
 To solve this problem you will have to take time out from creating new features and refactor the codebase to work within good coding standards\cite{codingPractices}.
 
 If designed using composition, it would look like the following (example from \cite{CompOverInherit}):
-\begin{Verbatim}[frame=single]
+\begin{lstlisting}[frame=single]
 ENTITIES          COMPONENTS (in the form of classes)
 Dog             : pooper + barker
 Cat             : pooper + meower
 CleaningRobot   : driver + cleaner
 MurderRobot     : driver + killer
 MurderRobotDog  : driver + killer + barker
-\end{Verbatim}
+\end{lstlisting}
 This provides you with the most flexibility to create whatever type of game object you would like while being loosely coupled and avoiding duplication.
 
-Inheritance was not abandoned and was used in the places necessary, like creating the \\ \lstinline{BaseAIGoap} class. %\\ to fix overfull h-box
+Inheritance has its own benefits and was not abandoned, it was used in the places necessary, for example creating the \lstinline{BaseAIGoap} class.
 
-A game object with components can be saved as a prefab, which can then be reused, an example would be creating an enemy prefab, and then creating an enemy spawner that loads copies of that prefab into the scene.
+In Unity, a game object with components attached to it can be saved as a prefab, which can then be reused, an example would be creating an enemy prefab, and then creating an enemy spawner that loads copies of that prefab into the scene.
+
+\section{Tools}
+%tools
+% need to add
+% - evaluation tool
+
+\subsection{Unity (Game Engine)}
+Unity\cite{unity} was chosen as the game engine, over the other options which was Unreal Engine\cite{unrealEngine}, as the author had some prior (albeit minimal) experience in using it; Unity used C\# for scripting which is a simpler language to write in over C++, with the drawback of providing fine-grain memory control (which was not required in this project). The Unity game engine also performs dramatically better on the hardware and operating system used to create this project.
+
+Godot, an open-source game engine, was another option that could be used however it lacks in maturity for both documentation and feature set for 3D development\cite{godot}. As mentioned in the PDD, Unity has an extensive amount documentation available on their website which is easy to understand, they also have a forum site where there is a very active community in helping new-comers with any issues they face; as well as this, there are plenty of tutorials teaching Unity and its plentiful features on their own website and on YouTube.
+
+There is also an asset store built into Unity with many paid and free assets, ranging from scripts, models, materials, shaders, physics systems and more.
+
+All of this combined, it was very difficult for me to not choose Unity as the game engine of choice for my project.
+
+\subsection{JetBrains Rider (IDE)}
+JetBrains Rider was the choice of IDE as I had been using JetBrains products since the Programming in Java module in the first year. JetBrains provide a very good set of refactoring and debugging tools with a good amount of community made extensions for the program. Rider was created as a .NET IDE, and now has native Unity support, which is perfect for use with Unity.
+
+My other option was Microsoft's Visual Studio, which I had used in the second and third year Games Tech modules. After using it extensively, it did not provide many of the features that I would expect from an IDE and had installed the plugin ReSharper created by JetBrains to bring some extra functionality required. Given that JetBrains have their own IDE for Unity, I decided to go with that over Visual Studio.
+
+\subsection{GitHub}
+GitHub was the choice of version control and backup system as I am very familiar with it. I have used it extensively over my time at the university.
+
+One branch was used as this was not a large project and a commit was made at the end of a notable change. A full Git Log histr can be found in the appendices.
+
+\subsection{Blender}
+Blender was the 3D program of choice as it is very intuitive to learn and very simple to use. It is also free and open source leading to very many tutorials and big community around it along with great documentation. It has support for opening most 3D file-types which is very important as assets will be downloaded from different locations; if there is a filetype that is not supported, then there is bound to be an extension for it, due to the many community made extensions available.
+
+\subsection{Adobe Illustrator}
+Adobe Illustrator was the choice of vector editor used to design and plan any graphical elements in the game. 
+
+\subsection{diagrams.net}
+Diagrams.net (formally known as draw.io) was used as the tool to create UML diagrams as it is a lightweight web-application providing all the necessary features and flexibility required in creating a UML document. The feature that came in most useful was the integration with github; I was able to save my diagrams and version them directly in the same repository.
+
+% \subsection{Plant UML}
+% Plant UML is an open source UML creation tool allowing you to write UML in plain text. This was used to create a UML diagram out of the final code output.
+
 
 \section{Software Design}
 
 \subsection{Modelling Actions}
-The actions for the AI agents were modelled before modelling the class diagrams. 
+The actions for the AI agents were modelled before modelling the class diagrams. This was done so that the preconditions, effects and the goals they fulfil are mapped out and make it much easier to plan out the different classes.
 
 \subsection{Class Diagrams}
-Class diagrams are a great to draw out a visual plan of what the system will look like. As I am using an ECS form of design, the class diagram will mainly consist of many classes with compositional relationships.
+Class diagrams are a great to draw out a visual plan of what the system will look like. As I am using an ECS form of design, the class diagram will mainly consist of many classes with compositional relationships. The class diagram contained a special shape that represents an action that were modelled prior to this. 
+This class diagrams created are not a one-to-one representation of the code to be implemented, however a guideline to proceed with as there is a plan in mind before implementing it; while implementing, new and better ideas might arise that can and are used, this is only possible as there is structure to the development.
 
 \subsection{User Interface (UI)}
-Adobe Illustrator was used to draft out the user interface. Some UI elements will exist within the 3D world space, these are called spacial UI elements; these types of UI elements allow the player to receive the information they require without taking up much space on the orthographic canvas where more player related statistics can go.\cite{UIChoices}
-
-\subsection{Misc}
+Adobe Illustrator was used to draft out the user interface. Some UI elements will exist within the 3D world space, these are called \textit{spacial} UI elements; these types of UI elements allow the player to receive the information they require without taking up much space on the orthographic canvas where more player related statistics can go\cite{UIChoices}. These also help greatly during development to visualise the statistics without looking at the inspector in Unity.
 
 \section{Project Objectives}
-The Project objectives can be found in the Project Definition Document (PDD) in Appendix 1.
-The project was created by going through these objectives and tackling them one at a time, breaking each task down when arriving to it, this way there was focused attention on each feature being added in and being tested and refined before moving on.
+The project was created by going through the objectives stated in the introduction and tackling them one at a time, breaking each task down when arriving to it, this way there was focused attention on each feature being added in, being tested and refined before moving on to the next feature.
 
-
+%=========================
+%   Results
+%=========================
 \chapter{Result}
 
 \textit{\textbf{Note:}} There are many code listings in this chapter, explaining some key aspects of the program, the comments on these are different to the ones in the actual code as to explain it thoroughly here, so keep in mind the explanation for methods is done in both \textit{comments and text}.
 
 % Milestone 1
 \section{Minimum Viable Product}
-
+This section goes thoroughly through the steps taken and the output of those steps taken to achieve the objectives set out in the introduction.
 \subsection{Modelling the Actions}
 The AI system was abstracted into the different actions the AI will be performing and the goals it will use to plan out the course of action. Seen in the figure below is the simple set of actions and goals sufficient for the first build and will have the groundwork to expand upon the next build. The food ready goal and precondition for eat food will be used to add the attacks for the creature's higher in the food chain, like the Lizard, as they should only be able to eat other creatures if they are dead, i.e. ready to eat.
 
@@ -248,20 +310,19 @@ The AI system was abstracted into the different actions the AI will be performin
     \caption{Class Diagram build 1}
 \end{figure}
 
-As explained before, Unity uses the Entity Component Paradigm of software design, the Circles represent Game Objects which are the entities in our game scene, and there are classes attached to them using compositional relationships, as you can see, one class is being used multiple times, and due to the lack of inheritance, there is very little interdependency. 
-The Actions are represented by hexagons as at that moment in time, the decision had not been made on how the AI will be implemented.
+As explained before, Unity uses the Entity Component Paradigm of software design, the circles represent Game Objects which are the entities in our game scene, and there are classes attached to them using compositional relationships, as you can see, one class is being used multiple times, and due to the lack of inheritance, there is very little interdependency. 
+The Actions are represented by hexagons are the actions modelled out in figure 6.1, it had been kept simple at this moment as it was not certain on what methods would be used to create the goal oriented action planning system.
 
-% The Food Chain game object is unique in that there is only one required in a scene, and the Find Food action will access it to find out what the state of the food chain is to find food that is appropriate to that creature. The circle's are important game objects in the main Unity Scene, and they will be able to access each other.
 \subsection{Creatures and AI}
-I did extensive reading through the FEAR SDK\cite{fearSDK} that contains the full AI source code to fully understand the implementation of GOAP.
-I also read up on many other implementations of GOAP and all of them are done in a very similar way with only minor structural differences. 
+Extensive reading through the FEAR SDK\cite{fearSDK}, that contains the full AI source code, was done to fully understand the implementation of GOAP.
+Many other implementations of GOAP were also analysed and came to a conclusion that all of them are implemented in a very similar way with mostly only structural differences. 
 Peter Klooster created a multi-threaded GOAP System for Unity3D which he originally used in his game Basher Beatdown \cite{basherGoap}. This is a pretty simple implementation that includes a visualiser for the system as well.
 Anne from the YouTube channel TheHappieCat did a GOAP implementation in Unity \cite{happieGoapVideo} based on the papers by Jeff Orkin and an article by Brent Owens \cite{brentOwensGoap} (taking the core system from here). She made a very informative video on the topic as well as walking through the code with a live simple example.
-On Jeff Orkin's website, there was a reference to ReGOAP by Luciano Ferraro, which is a very generic C\# GOAP library, that was used in Unity3D, but can be used anywhere. Compared to the other implementations, this has been officially released on the Unity Asset store, however the code seems to be quite verbose and is not well commented, giving me a hard time understanding how to use it.
+On Jeff Orkin's website, there was a reference to ReGOAP by Luciano Ferraro, which is a very generic C\# GOAP library, that was used in Unity3D, but its description states it can be used anywhere. Compared to the other implementations, this has been officially released on the Unity Asset store, however the code seems to be quite verbose and is not well commented and documented.
 
-Based on all this I started creating my own GOAP system, however, it became very time consuming to create, and based on the gannt chart I had made, I was running behind on schedule; as the main focus of the project is to create the interaction between these different AI agents, and not the core AI system itself, I decided to use the implementation provided by Brent Owens \cite{brentOwensGoapCode} which is under the MIT licence. This is a very bare bones implementation only consisting of 6 scripts, and with the video explanation by TheHappieCat this was the simplest one I could implement and still have a great amount of flexibility in modifying the code due to its loosely coupled nature.
+Based on this research, the author started creating a GOAP system from scratch, however, it became very time-consuming to create, and based on the gannt chart created, the project was running behind on schedule; as the main focus of the project is to create the interaction between these different AI agents, and not the core AI system itself.
 
-After I landed on this implementation of GOAP, I decided to start modelling out the different actions (with their preconditions and effects (post-conditions)), different creatures with their world state and the list of goals they would like to achieve. As Unity works with game objects made up of components, I decided to plan out the agents in an unconventional manner before creating the class diagrams. 
+The author then looked through the different GOAP implementations stated and their example projects and tried to create a simple agent with all three systems, after that, a conclusion was drawn to utilise the implementation provided by Brent Owens \cite{brentOwensGoapCode} which is under the MIT licence. This is a very bare bones implementation only consisting of 6 scripts, and with the video explanation by TheHappieCat this proved to be the simplest one to implement and still have a great amount of flexibility in modifying the code due to its small size in number of scripts.
 
 To add GOAP AI behaviour to an Agent, a script had to be attached that implemented the \lstinline{IGoap} interface provided by Brent Owens, and then have the \lstinline{GoapAgent} script attached which uses the \lstinline{GoapPlanner}. Now actions (inherited from \lstinline{GoapAction}) can be attached as scripts to the game object and the planner will automatically consider them. The script that inherits \lstinline{IGoap} will contain the world state and the desired goal state. The \lstinline{GoapAction} s will contain their own \textbf{preconditions} and \textbf{effects} and a \textbf{procedural precondition} method that the planner will consider when choosing the plan of action. 
 
@@ -282,18 +343,17 @@ addEffect("isHungry", false);
 cost = 1f;
 \end{lstlisting}
 
-This build of the Ai was functional however had a few issues. The Lizard enemy would only choose the player and not the fly, and it would eat anything. A food chain was added in the main build to fix this.
+This build of the AI was functional however had a few issues. The Lizard enemy would only choose the player and not the fly, and it would eat anything. A food chain was added in the main build to fix this.
 
-% TODO ADD FIGURE NUMBER
-As can be seen in the figure showing the UI for creature, the meshes for the creatures were kept simple to ensure that the AI system worked, the movement system was also a trivial direct transformation towards the target for the same reason.
+As can be seen in figure 6.11 showing the UI for creature, the meshes for the creatures were kept simple to ensure that the AI system worked, the movement system was also a trivial direct vector transformation towards the direction of the target for the same reason.
 
 \subsection{Player}
 % Player movement
 \subsubsection{Movement Controller}
-The movement controller was implemented with the help from a tutorial by Brakey's on "First Person Movement in Unity - FPS Controller"\cite{fpsController}. To create this, a Player Empty was created, and a Mesh was added to it, in this case, a simple capsule was used; another empty was created that contained a Sphere Collider which checks collision with the ground to notify the Player Movement script that the player is grounded. The Player Movement script takes the Input from Unity's built-in input system and calculates the horizontal and vertical movement and then the script passes the movement data to the Character Controller to move the player. To jump, a check is made to see whether the player is grounded or not, and if so, then check for the Jump button to be pressed down, in this case, it is "Space"; a velocity is applied to the negative of the gravitational velocity and the player is jumping and no longer grounded. When the player is no longer grounded, a gravitational velocity is applied to the player constantly down.
+The movement controller was implemented with the help from a tutorial by Brakey's on 'First Person Movement in Unity - FPS Controller'\cite{fpsController}. To create this, a Player Empty was created, and a Mesh was added to it, in this case, a simple capsule was used - empties are used to add the components to as it allow the mesh to be swapped out at a later point without any complications; another empty was created that contained a Sphere Collider which checks collision with the ground to notify the Player Movement script that the player is grounded. The Player Movement script takes the Input from Unity's built-in input system and calculates the horizontal and vertical movement and then the script passes the movement data to the Character Controller to move the player. To jump, a check is made to see whether the player is grounded or not, and if so, then check for the Jump button to be pressed down, in this case, it is 'Space'; a velocity is applied to the negative of the gravitational velocity and the player is jumping and no longer grounded. When the player is no longer grounded, a gravitational velocity is applied to the player constantly down.
 
 % camera look
-Now that the player was moving, the main camera had to be placed inside it, along with accepting mouse input to rotate the player and camera. Firstly the cursor is locked into the screen so when moving it, it does not leave the screen; then on every frame, the Mouse X and Y input is taken in, multiplied by the sensitivity and delta time. A rotation value is calculated, and is \textit{clamped} (minimum -90$^{\circ}$ and maximum 90$^{\circ}$); this rotation is then applied to both the local rotation of the camera, and the player's body rotation around it's up vector.
+Now that the player was moving, the main camera had to be placed inside it, along with accepting mouse input to rotate the player and camera. Firstly the cursor is locked into the screen so when moving it, it does not leave the screen; then on every frame, the Mouse X and Y input is taken in, multiplied by the sensitivity and delta time. A rotation value is calculated, and is \textit{clamped} (minimum -90$^{\circ}$ and maximum 90$^{\circ}$) to avoid the player able to look behind using vertical mouse movement; this rotation is then applied to both the local rotation of the camera, and the player's body rotation around it's up vector.
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
         \centering
@@ -391,6 +451,10 @@ void FixedUpdate() {
 
 \subsection{Unity Project}
 
+% explain Unity's scene and game object and components
+A level in Unity is represented by a Scene
+
+% Build one scene
 Below is what the first version of the Unity scene looked like after adding the sword and basic AI components in. A very basic level was created to test out the movement controller for the player, along with physics interaction of the sword. The materials applied are a mix of simple self-made materials from the Unity asset store called "Gridbox prototype materials by Ciathyza", (see asset listing).
 
 \begin{figure}[H]
@@ -398,6 +462,7 @@ Below is what the first version of the Unity scene looked like after adding the 
     \fbox{\includegraphics[width = 15cm]{Unity_Scene_Build_1_annotated.jpg}}
     \caption{Annotated view of Unity Scene}
 \end{figure}
+
 
 
 
@@ -473,18 +538,14 @@ Any game object in the scene can access this food chain and call GetFood(their n
             threats.Add(food, new HashSet<string>() {threat});
     }
     // Get the the Set of foods for the given creature
-    public HashSet<String> GetFood(String name) {
-        return foods[name];
-    }
+    public HashSet<String> GetFood(String name) {return foods[name];}
     // Get the the Set of threats for the given creature
-    public HashSet<String> GetThreat(String name) {
-        return threats[name];
-    }
+    public HashSet<String> GetThreat(String name) {return threats[name];}
 \end{lstlisting}
 
 
 \subsubsection{Pathfinding}
-A path finding system was added (as seen in the updated class diagram) in to facilitate better movement for the AI Agents. A* Pathfinding Project by Aron Granberg (see asset listings). This is a very nice and free library that provides the generation of many different type of nav meshes, the one used in the game is a Grid Graph, which is the "most straight forward path" and can be updated during runtime if obstacles move, it is not the most performance efficient type of graph as all the nodes in the grid are equidistant from each other, and in a large open space, that amount of detail/resolution in the grid is not required; however for our purposes, this type of graph is more than capable. 
+A path finding system was added (as seen in the updated class diagram) in to facilitate better movement for the AI Agents. A* Pathfinding Project by Aron Granberg (see asset listings). This is a very nice and free library that provides the generation of many type of nav meshes, the one used in the game is a Grid Graph, which is the 'most straight forward path' and can be updated during runtime if obstacles move, it is not the most performance efficient type of graph as all the nodes in the grid are equidistant from each other, and in a large open space, that amount of detail/resolution in the grid is not required; however for our purposes, this type of graph is more than capable. 
 \cite{astarPathfinding}
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
@@ -607,7 +668,6 @@ private bool inState(HashSet<KeyValuePair<string, object>> test, HashSet<KeyValu
                break;
            }
        }
-
        if (!match)
            allMatch = false;
    }
@@ -776,9 +836,28 @@ This crossbow and arrow model were placed inside an empty called \textbf{RightHa
     \end{minipage}
 \end{figure}
 
+\subsection{Health}
+When the PDD was created, the health was planned to be refilled using a collectible health resource which both the player and the creatures can pickup; however during development a better idea was formed. The health regeneration would be tied with the hunger, any excess food the agents or the player eats (excess being over 100) will refill the health for the creature/player. This encourages the player to interact with the game's core system of the food-chain and get into interesting gameplay for more food; an example of an interesting gameplay situation is the player observing that two predators are attacking each other, so to stay out of their vision cone range until they have depleted each-others health to a low amount and finish both 
+off and eat the food.
+This system is similar to that found in Minecraft \cite{minecraft}, where when the player's hunger is above/at max, the health will be regenerated.
+
+\subsection{Stamina}
+The stamina system that was created in build one of the 'Stats' component was being put into use now. The player swinging the sword would cost 15 points of stamina, and the regeneration rate is very slow at 2 points per second, with a total limit of 100. The player firing the crossbow would not cost any stamina; to add further distinction between the crossbow and sword, the sword does 50 damage per hit, potentially taking out an enemy in two hits, and the arrow does 10 damage per hit.
+
+This allows for gameplay decisions that the player can make based on their situation, whether to get close, risk getting hurt, but taking the target/s out in 2 hits, \textit{or} stay at range, spend time aiming and charging the crossbow to fire a weaker shot, low risk, but lower damage hence taking longer to kill the target. The player can also run the risk of getting close, missing the sword swings and being out of stamina with only the crossbow to hit with. It is an interesting trade-off that the player will have to think about.
+
+This was a successful implementation of a small aspect of the type of combat Dark Souls offers (as mentioned in the PDD, this is one of the inspirations for this project).
+
+% creatures do not make use of the stamina
+
+\subsection{Hunger}
+The hunger for all creatures including the player depletes at a constant, albeit low rate; this simply simulates how in real life creatures get hungry over time, the different actions they have are directly tied into the level of hunger they are at, if they are below the threshold they will plan and perform actions to take that number above the threshold.
+
+As mentioned before, the health is now tied into hunger, making it a necessity for the creatures to be above max huger to refill their health.
+
 \subsection{User Interface changes}
 The screen space UI/Heads up display was barren at this point, only including the charge bar for the crossbow.
-As seen in the PDD and the introduction, the souls-like genre is an influnce on this project, based on this, the Head was inspired from the games in that genre.\cite{darkSouls3Wiki}
+As seen in the PDD and the introduction, the souls-like genre is an influence on this project, based on this, the Head was inspired from the games in that genre\cite{darkSouls3Wiki}.
 \begin{figure}[H]
     \centering
     \fbox{\includegraphics[width = 15cm]{darksouls3_hud_ui.jpg}}
@@ -805,7 +884,7 @@ As seen in the figure below, this was what the level where the different game sy
 The main elements of the level was modeled in Blender, then unpacked with a texture applied in Unity; for the Pathfinding algorithm to detect these as obstacles, the “Obstacle” layer was applied to these objects. The stairs were built inside of Unity's ProBuilder, it has a tool to auto generate stairs with custom properties, like the curve added.
 The creatures and plant were placed in random places, they all use the same prefab so changing the components in one, will change it in other instances of that game object.
 
-For the objectives of this project, a win state is not necessary, there is however a death state for the player, when the player has been fully eaten, they will respawn, which is the scene is reloaded.
+For the objectives of this project, a win state is not necessary, there is however a death state for the player, when the player's life has been depleted, they will respawn, which is the scene is reloaded and the world state is reset to the beginning.
 
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
@@ -826,8 +905,14 @@ For the objectives of this project, a win state is not necessary, there is howev
     \caption{Level in Unity}
 \end{figure}
 
+%=========================
+%   Asset Listings
+%=========================
 \chapter{Asset Listing}
 
+%=========================
+%   References / Bibliography
+%=========================
 \begin{thebibliography}{}
     \bibitem{doom93}
     id Software, id Software, (1993). DOOM. [computer game]. \\Available at: \url{https://store.bethesda.net/store/bethesda/en_IE/pd/productID.5361563100/currency.GBP}
@@ -883,5 +968,13 @@ For the objectives of this project, a win state is not necessary, there is howev
     Brackeys. 2021. FIRST PERSON MOVEMENT in Unity - FPS Controller. [online] Available at: \url{https://www.youtube.com/watch?v=_QajrabyTJc} [Accessed 5 February 2021].
     \bibitem{biDirectionalDictionaries}
     erdiizgi.com. n.d. Data Structures for Games: Bidirectional Dictionary for Unity in C\#. [online] Available at: \url{https://erdiizgi.com/data-structures-for-games-bidirectional-dictionary-for-unity-in-c/} [Accessed 26 April 2021].
+    \bibitem{minecraft}
+    Minecraft. 2021. [computer game] \url{https://www.minecraft.net/en-us/}: Mojang, Microsoft.
+    \bibitem{godot}
+    2021. Godot Game Engine v3.3. \url{https://godotengine.org/}: Godot.
+    \bibitem{unrealEngine}
+    2021. Unreal Engine 4. \url{https://www.unrealengine.com}: Epic Games.
+    \bibitem{unity}
+    2021. Unity Game Engine. \url{https://unity.com/}: Unity Technologies.
 \end{thebibliography}
 \end{document}

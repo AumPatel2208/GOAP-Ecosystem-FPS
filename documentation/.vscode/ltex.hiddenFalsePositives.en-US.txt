@@ -1,0 +1,1 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIn this particular case, the problem was that Find Food did not directly have an effect of isHungry == null.\\E$"}

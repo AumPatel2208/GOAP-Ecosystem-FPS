@@ -30,6 +30,15 @@
     - [x] Add images
   - [x] Player Eat food
 - [ ] Remove Negative things about the project
+- [x] Explain when adding the stamina, Sword does 50 damage but costs stamina, but ranged wepon does 10 damage without costing stamina, and you can fire from range, so there is that **trade-off**
+- [x] Excess Hunger refills health
+- [ ] More about learning Unity
+  - [ ] Scenes
+  - [ ] Prefabs
+  - [ ] Importing Assets
+  - [ ] Attaching Components
+  - [ ] Mono Behavoiurs
+  - [ ] 
 
 ## Appendix
 - [ ] Snapshot of git version history
@@ -37,12 +46,27 @@
 - [ ] Mention Turbosquid as the location for 3d assets
 - [ ] Explain the Unity Asset store
 - [ ] Layers and tags in Unity **GLOSSARY** with images in appendix
-- [ ] 
+- [ ] Test cases
+- [ ] Installation document
+- [ ] Known Bugs
+  - [ ] Sword
+  - [ ] Two Agents going for the same target may overlap each other as the pathfinding system will give them both the same path.
+
+## Glossary
+- In-Fighting
+- Goap
+- AI
+  - refering to Game AI
+- GameObject
+- Rigidbody
+- Entity Component System
+- PDD
+- the author
 
 ## Testing
 1 day
   - [ ] creating use cases
-  - [ ] veryfying the use cases with evidance
+  - [ ] verifying the use cases with evidence
 - Player Controller
   - Player's gravity builds up when on objects that are not tagged as ground, not big issue and does not need refinement to the player controller
 - Creature would lock onto one target and not change the target
@@ -111,3 +135,8 @@ then compiled using plant uml
 
 ## Pre-Submission
 - Rebuild and test the builds
+
+
+
+## GIT TOKEN
+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

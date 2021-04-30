@@ -1,0 +1,545 @@
+commit 248b637c2e114a73435621b00e26f9c83ff6d341
+Author: Aum <imaum2208@gmail.com>
+Date:   Thu Apr 29 18:58:38 2021 +0100
+
+    Report : Player controller
+
+commit ac5cc65b0482e74d1c02d9a22625a1d5476bfc64
+Author: Aum <imaum2208@gmail.com>
+Date:   Thu Apr 29 17:07:57 2021 +0100
+
+    Commented code, and added missing code refrences. Updated Documentation
+
+commit ac850e8399f01a3a2f8138c606baadef10e7c57e
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Apr 27 21:53:42 2021 +0100
+
+    little more work
+
+commit 6fae44c940ff095d89691453d851848dc90229c0
+Author: Aum <imaum2208@gmail.com>
+Date:   Mon Apr 26 23:08:12 2021 +0100
+
+    Software methodology added, talking about ragdolls, UML generated
+
+commit 56e1d5545247bf30712a9fd5ab99153e1b219d0c
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Apr 25 15:01:46 2021 +0100
+
+    Radomly Roam Refined, Randomly Find Food updated, Level Created
+
+commit 56ab2fea464d36975d17948d3860127b6edddbc4
+Author: Aum <imaum2208@gmail.com>
+Date:   Sat Apr 24 17:40:37 2021 +0100
+
+    Health Hunger done, Stamina added, Player Hud added, Death for player done
+
+commit cd4006da81391a18daa3ca061b424c0a37388098
+Author: Aum <imaum2208@gmail.com>
+Date:   Sat Apr 24 00:40:16 2021 +0100
+
+    excess hunger convered into health jank
+
+commit 36045966c8c01be01f619c72e3deb2136729c98b
+Author: Aum <imaum2208@gmail.com>
+Date:   Wed Apr 21 18:29:33 2021 +0100
+
+    more milestone 2 stuff
+
+commit 4a8c773120f7bed5935cf6a200698e0ce667747c
+Merge: 6cd07af 88bd892
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Apr 20 21:26:38 2021 +0100
+
+    Merge branch 'master' of https://github.com/AumPatel2208/the-game
+
+commit 6cd07afb0efd3455879bcf3376533e85c0dc50e0
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Apr 20 21:26:04 2021 +0100
+
+    Started milestone 2 weapons
+
+commit 88bd8923ff573b29a959afe95cfea5b71ad8d935
+Author: Aum Patel <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Tue Apr 20 14:59:13 2021 +0100
+
+    Update foodcahin to add threats
+
+commit 24abf052ec3b77edf34f66b6cd564ead8894bc70
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Apr 20 14:44:31 2021 +0100
+
+    created workspace latex snippets
+
+commit f0d09d8c844b4e57fe63ec689a4369d3e04ac767
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Apr 20 01:10:52 2021 +0100
+
+    REPORT: Most of Milestone 1 results done
+
+commit d4e1c8e7583e5439175ebf25447dd6ddffcd34ab
+Author: Aum <imaum2208@gmail.com>
+Date:   Mon Apr 19 12:45:58 2021 +0100
+
+    updated action plans drawio
+
+commit 632af10c83edf0d428bc6d6e74100afd088c3bfa
+Author: Aum Patel <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Mon Apr 19 12:41:31 2021 +0100
+
+    Added ClassDiagram.drawio
+
+commit a33e55009a6d1291eec02e7c51f6051192da0329
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Apr 18 14:29:23 2021 +0100
+
+    pre changing foodchain
+
+commit 9ae8b0f780a494ebf11161383164e47d9ec71ff2
+Author: Aum <imaum2208@gmail.com>
+Date:   Sat Apr 17 11:23:44 2021 +0100
+
+    build 0.01 minus the extra enemies
+    
+    player respawn makes it so that the sabertooth no longer acknoledges it
+
+commit 8f148d3c07f8d62ef7d63de644283efd368b1c7e
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Apr 16 15:12:43 2021 +0100
+
+    player respawn not being recognised by sabertooth
+
+commit e0b54748b5cd225ea8bf94dd88d0222a8f58467e
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Apr 16 14:32:53 2021 +0100
+
+    the animals will finish eating if they have no other target
+
+commit 89d406cdd4135c8dcaeaafbf5ac7a40a37a68a3e
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Apr 16 14:25:31 2021 +0100
+
+    the animals will finish eating if they have no other target
+
+commit 69ca5393268c1be1896d424f7dccd037fa1ede14
+Author: Aum <imaum2208@gmail.com>
+Date:   Thu Apr 15 20:37:03 2021 +0100
+
+    arrow charge up
+
+commit 1a137e888ce9820e780879cbeec73d947df0189d
+Author: Aum <imaum2208@gmail.com>
+Date:   Thu Apr 15 20:04:43 2021 +0100
+
+    namespace refactor and file deletion
+
+commit 906f93f788e75734c0919d1855ef47b57d6ee8a7
+Author: Aum <imaum2208@gmail.com>
+Date:   Thu Apr 15 19:59:50 2021 +0100
+
+    AI refactored
+    
+    Refactored the AI so it will also perform actions that partially fulfill all goal states, also filestructure has been cleaned up and sword does no longer damage the player self
+
+commit 02c0f2ab705fd91bf09f78e0a87c1ac62d3d0e09
+Author: Aum <imaum2208@gmail.com>
+Date:   Wed Apr 14 11:36:44 2021 +0100
+
+    backup before GOAP AI refactor
+    
+    refactoring the goap AI planner so that it accepts a plan that does not fulfill all the goals, it will still prioritise the plans that complete more goals.
+
+commit e2167e741e8328dcde8a506ef8ba7c6b761a78fa
+Author: Aum <imaum2208@gmail.com>
+Date:   Mon Apr 12 18:52:21 2021 +0100
+
+    randomly roam and Stas UI
+
+commit e26bea43f82b53dddf1064198f4d040d390ef292
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Apr 9 15:07:29 2021 +0100
+
+    refactored movement for creatures
+
+commit d0581aa1bc712923a52af49178e58e55bd49b262
+Author: Aum <imaum2208@gmail.com>
+Date:   Thu Apr 8 21:16:51 2021 +0100
+
+    Find Food Reworked
+    
+    find food is now a vision cone 90 degrees, raycasting was not working so it will detect food on other side of obstacles.
+
+commit c8987e61c8be0ecdbec6b7f716874ff32fe67e3a
+Author: Aum <imaum2208@gmail.com>
+Date:   Wed Apr 7 19:08:10 2021 +0100
+
+    added crossbow and arrows with damage
+
+commit 4552cb4333c3dab62389ceaa9a57caa50383d140
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Apr 6 20:40:03 2021 +0100
+
+    before hdrp
+
+commit 16382575dc0e449deb494095934a842f4dff3395
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Apr 6 19:42:29 2021 +0100
+
+    little fix
+
+commit b14e9cac8f03dab24cf17d14b40fdda280a2d305
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Apr 6 19:39:38 2021 +0100
+
+    sloth ragdoll added, little jank sometimes but using the toggler seems to make it work fine
+
+commit 6084bac6d181fa1fb373c3508c83f962072dd21e
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Apr 6 17:33:38 2021 +0100
+
+    sloth animation fixed, sword animation janky fix
+
+commit 471403e2aa08269a3d59c28f3e0f7cb7b19a442f
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Apr 6 03:59:19 2021 +0100
+
+    Sloth Animation Reworked, animation controller is a little jank, UI also missing
+
+commit cf2f345258d83c1f6d3a7f379b21ad15c7e7d8c6
+Author: Aum <imaum2208@gmail.com>
+Date:   Mon Apr 5 15:34:58 2021 +0100
+
+    player can eat
+
+commit e4e718543cc5198df830dbd3c1e549ba050da222
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Apr 4 21:08:54 2021 +0100
+
+    added debug hiding
+
+commit d5662ba6d6e42e0a462ccac003da4ecea17dfedd
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Apr 4 20:25:34 2021 +0100
+
+    refactored stats
+
+commit b05988b6e6a72b91785df36ca8ff8af4866fad31
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Apr 4 19:11:22 2021 +0100
+
+    ragdoll added to sabertooth
+
+commit 4b538a458d13732c197277fe7b15b48e88f08b41
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Apr 4 18:14:24 2021 +0100
+
+    added sabertooth joints
+
+commit a53b58090896c1d5e5657cd59f18a4ebaaf60211
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Apr 4 17:25:08 2021 +0100
+
+    added blood particles
+
+commit 5e1a8762bfabd121028088dd5b5db95666cbc725
+Merge: b86e739 9a0f77d
+Author: Aum <imaum2208@gmail.com>
+Date:   Thu Apr 1 11:14:13 2021 +0100
+
+    Merge branch 'master' of https://github.com/AumPatel2208/the-game
+
+commit b86e7397732418388384ff5df818e81fe0b5d385
+Author: Aum <imaum2208@gmail.com>
+Date:   Thu Apr 1 11:14:06 2021 +0100
+
+    before doc update
+
+commit 9a0f77d6b86152fb13525c732f9cb11db0817ed7
+Author: Aum Patel <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Mar 19 14:26:38 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit bfb52b24d92616afcf0cdd36747c2edd3e6aa2e4
+Author: Aum Patel <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Mar 19 13:27:01 2021 +0000
+
+    Update ClassDiagram.drawio
+
+commit 7837561a64ce7b04aa2d3bfb15f817017ffc26e5
+Author: Aum Patel <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Mar 19 13:20:46 2021 +0000
+
+    Update ClassDiagram.drawio
+
+commit 02f4b0e1b5821ce964a47725ebb9e3ee90f18db9
+Author: Aum Patel <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Mar 19 13:04:15 2021 +0000
+
+    Class Diagram.drawio
+
+commit cd58a8f0e882a877ae49a7481f109a28e5c14115
+Author: Aum <imaum2208@gmail.com>
+Date:   Thu Mar 18 21:30:05 2021 +0000
+
+    added pathfinding with animation
+
+commit 50d68623922de060696396f2e2f286a6bae9ff31
+Author: Aum <imaum2208@gmail.com>
+Date:   Wed Mar 17 20:20:16 2021 +0000
+
+    Sabertooth added with minor animations
+
+commit fabdb28732ff08e093eef84d240e79efbe1a252a
+Merge: ae86819 2c8082c
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Mar 12 20:30:57 2021 +0000
+
+    Merge branch 'master' of https://github.com/AumPatel2208/the-game
+
+commit ae868199b8ebdbf905fead0652334f8120c37784
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Mar 12 20:30:51 2021 +0000
+
+    added melee attack functionality to enemies
+
+commit 2c8082cad421ce75ad38f570a1067fd07cc4d052
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Sat Mar 6 18:29:08 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit 536a8b377987275436fcdc2f16c349bb35c5c39c
+Author: Aum <imaum2208@gmail.com>
+Date:   Sat Mar 6 17:37:20 2021 +0000
+
+    not working, going to simplify
+
+commit 4e6bdf710a8441a9d5f0ee40c75b5092e6d9963a
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Wed Mar 3 21:32:55 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit da1bd8499255c4541165a357ef6a6938e6848707
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Wed Mar 3 21:22:15 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit 9ce89347731e07be3787dbdd3a995c2128455a00
+Author: Aum <imaum2208@gmail.com>
+Date:   Wed Mar 3 20:38:37 2021 +0000
+
+    refactored system, still need to link requires killing
+
+commit 1c476a74ba2063dc1f75ccb0d8b0fe62e8496331
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Wed Mar 3 20:20:06 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit 8f6c6e152d09ff231c5f4d01d5ed639277dbebef
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Mar 2 16:24:52 2021 +0000
+
+    bar Ui elements added
+
+commit 2dea6be5b00c150335746bac86bd2783d1972789
+Author: Aum <imaum2208@gmail.com>
+Date:   Mon Feb 22 18:28:40 2021 +0000
+
+    added food chain game object, now to use it in the creatures
+
+commit 87b2523c352539c084f0d862da42c9cc9ba53c13
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Feb 21 19:11:58 2021 +0000
+
+    Action eat food added, needs to be refactored to meet the food chain
+
+commit b2fcd34b46336ad9720f0ebeff5639ea199fbbe9
+Merge: 2cda8bb 870cbec
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Feb 21 12:11:42 2021 +0000
+
+    Merge branch 'master' of https://github.com/AumPatel2208/the-game
+
+commit 2cda8bbe59e8b3287bfa2b9ce3782ee5560ee5e2
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Feb 21 12:10:45 2021 +0000
+
+    Ai refactored should be good to go
+
+commit 870cbecd43da2934fcabafcd1b320c4b9f542e25
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Feb 19 19:09:23 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit 8a46614c614c6361deff09a96d5bb5b896d71d25
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Feb 19 19:01:08 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit a9eb10cc63a79b9ede869fb18eaf0f452741090e
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Feb 19 18:54:31 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit a49afe752244145d9d6aab2f84ffbc3e9b360774
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Feb 19 17:55:46 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit a85055f780af0955b895d7e6125e6adcf210cff4
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Feb 19 17:52:15 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit 9efbcec247b5933ea9db2120a49b34631583a9fe
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Feb 19 17:47:29 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit 49ea8db9c84f8aea1047910eb4f8d0d22e1aee34
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Feb 19 17:43:03 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit 83170f32e69c5a072f784066b0aa8875d04dd26d
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Feb 19 17:32:39 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit ff72c43512bc9d33e34fced3691ec8296509da37
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Feb 19 17:28:27 2021 +0000
+
+    Update actionPlans_the-game.drawio
+
+commit 36547c8bc2143813cfd3e8b25942c6ea45f23a7d
+Author: AumPatel2208 <37266860+AumPatel2208@users.noreply.github.com>
+Date:   Fri Feb 19 16:37:25 2021 +0000
+
+    Added actionPlans_the-game.drawio
+
+commit 886f9900239c34e231e63f74c10bee0606a3b5b0
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Feb 19 13:24:53 2021 +0000
+
+    simple goap working, little messy
+
+commit fe305ff6fef939b9ba5b026161ae893ae7914d40
+Author: Aum <imaum2208@gmail.com>
+Date:   Thu Feb 18 13:39:57 2021 +0000
+
+    decided to use goap library
+
+commit f34b6495cb190cf68b06a047f1791e1576adb524
+Author: Aum <imaum2208@gmail.com>
+Date:   Mon Feb 15 19:44:28 2021 +0000
+
+    started work on AI
+
+commit 26fde1b481d550b5d4f980f3e7517f1000c3bfab
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Feb 14 19:29:22 2021 +0000
+
+    litreview-methodology start
+
+commit 37d36d3e241019148ad3c566f00b9fa598690070
+Author: Aum <imaum2208@gmail.com>
+Date:   Sat Feb 13 21:07:28 2021 +0000
+
+    litreview-goap
+
+commit 81f7de74865fba29491da65a51f55044e220d547
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Feb 12 16:35:01 2021 +0000
+
+    litreview
+
+commit 25e72703eef8ce006c4db6207cb40336bd0f78fd
+Author: Aum <imaum2208@gmail.com>
+Date:   Tue Feb 9 17:31:04 2021 +0000
+
+    litreview
+
+commit a42d0f372ef5ca2a10c82e080bea18f39ae6463f
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Feb 7 13:50:58 2021 +0000
+
+    ik transition added
+
+commit ff3b5fcd2d6cddb07163e48d9a1f35cf14f6cf08
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Feb 7 00:45:20 2021 +0000
+
+    sword animation sometimes bugs out
+
+commit 2acaebbbfa88a9497523862d1f8249c4901734c1
+Author: Aum <imaum2208@gmail.com>
+Date:   Sat Feb 6 23:47:42 2021 +0000
+
+    fixed sword animation gets stuck
+
+commit e8f22e9b77da1151ec2dbca450ec3aedde0b531e
+Author: Aum <imaum2208@gmail.com>
+Date:   Sat Feb 6 23:34:16 2021 +0000
+
+    IK implemented roughly
+
+commit 8d62b1486660ae7f64aa581fa933be8112ca58f6
+Author: Aum <imaum2208@gmail.com>
+Date:   Sat Feb 6 20:48:00 2021 +0000
+
+    combo with camera added, still dogdy transform for weapon but mainly fixed
+
+commit 6f89a0fce9c15d01c7eb1d2d6bdf23e990677088
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Feb 5 16:10:37 2021 +0000
+
+    git cleanup - sword combo added. need to fix root-motion and bugs
+
+commit 4ce323e559ccc61548bad21cd5593842ffdaa9ee
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Feb 5 16:07:48 2021 +0000
+
+    sword combo added. need to fix root-motion and bugs
+
+commit 77fbc76170feb70facdca9330c2b6d321b5b513e
+Author: Aum <imaum2208@gmail.com>
+Date:   Fri Feb 5 16:02:12 2021 +0000
+
+    sword combo added. need to fix root-motion and bugs
+
+commit b3ec81b04ce6b8250da694ba0df20b94503e34a8
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Jan 31 15:49:53 2021 +0000
+
+    first person setup
+
+commit fffde4a12e1dad01fcc690546df27e7a879313e3
+Author: Aum <imaum2208@gmail.com>
+Date:   Sun Jan 31 02:25:19 2021 +0000
+
+    PDD submitted
+
+commit ccd6a19e4796a156e9ca4390a3f4bf96c93ad13a
+Author: unknown <imaum2208@gmail.com>
+Date:   Fri Jan 15 03:56:51 2021 +0000
+
+    first commit
+
+commit 808dd295ade7689b267aba8e5dfce71b8c0c4107
+Author: unknown <imaum2208@gmail.com>
+Date:   Fri Jan 15 02:53:03 2021 +0000
+
+    first commit
