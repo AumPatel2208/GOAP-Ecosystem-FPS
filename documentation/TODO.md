@@ -38,7 +38,7 @@
   - [ ] Importing Assets
   - [ ] Attaching Components
   - [ ] Mono Behavoiurs
-  - [ ] 
+- [ ] Change Figure Number refrences
 
 ## Appendix
 - [ ] Snapshot of git version history
@@ -59,7 +59,7 @@
   - refering to Game AI
 - GameObject
 - Rigidbody
-- Entity Component System
+- Entity Component System ECS
 - PDD
 - the author
 

@@ -274,7 +274,7 @@ Diagrams.net (formally known as draw.io) was used as the tool to create UML diag
 The actions for the AI agents were modelled before modelling the class diagrams. This was done so that the preconditions, effects and the goals they fulfil are mapped out and make it much easier to plan out the different classes.
 
 \subsection{Class Diagrams}
-Class diagrams are a great to draw out a visual plan of what the system will look like. As I am using an ECS form of design, the class diagram will mainly consist of many classes with compositional relationships. The class diagram contained a special shape that represents an action that were modelled prior to this. 
+Class diagrams are a great to draw out a visual plan of what the system will look like. As the ECS programming pattern is used, the class diagram will mainly consist of many classes (componenets) with compositional relationships; in unity many of these classes extend 'MonoBehaviour' which contain the \lstinline{Start()}, \lstinline{Update()} and other many other methods that are related to the game loop, this can be seen in the appendix showing the final class diagram of the project. The class diagram contained a special shape that represents an action that were modelled prior to this. 
 This class diagrams created are not a one-to-one representation of the code to be implemented, however a guideline to proceed with as there is a plan in mind before implementing it; while implementing, new and better ideas might arise that can and are used, this is only possible as there is structure to the development.
 
 \subsection{User Interface (UI)}
@@ -289,6 +289,23 @@ The project was created by going through the objectives stated in the introducti
 \chapter{Result}
 
 \textit{\textbf{Note:}} There are many code listings in this chapter, explaining some key aspects of the program, the comments on these are different to the ones in the actual code as to explain it thoroughly here, so keep in mind the explanation for methods is done in both \textit{comments and text}.
+
+% Explanation of Unity 
+\section{Unity Project}
+
+% explain Unity's scene and game object and components
+This section will provide a brief overview of how Unity works as substantial time was spent understanding this; please note that the screen-grabs in this section are taken after the final build was created to give a better example.
+
+A level in Unity is represented by a 'Scene'. Scenes consists of 'GameObjects' and game objects consists components. 'GameObjects' can be turned into prefabs, which can be used to create multiple instances of a GameObject with the same behaviours.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 15cm]{Unity_Window.jpg}}
+    \caption{Unity's Editor Labeled}
+\end{figure}
+
+In the Scene Editor, the game objects can be placed and moved around. Any game object added to the scene will be visible inside of the scene hierarchy, blue game objects are 'Prefabs', for example, all instances of Sloth have the same components attached to them. In the inspector, components can be attached to a game object, the expanded component is 'Stats' which is the re-used for all creatures, the values can be manipulated here during run time as well. The game view is on the right hand side and provides a view of what the main camera in the scene is seeing.
+
 
 % Milestone 1
 \section{Minimum Viable Product}
@@ -345,7 +362,10 @@ cost = 1f;
 
 This build of the AI was functional however had a few issues. The Lizard enemy would only choose the player and not the fly, and it would eat anything. A food chain was added in the main build to fix this.
 
-As can be seen in figure 6.11 showing the UI for creature, the meshes for the creatures were kept simple to ensure that the AI system worked, the movement system was also a trivial direct vector transformation towards the direction of the target for the same reason.
+% TODO CHANGE FIGURE NUMBER
+As can be seen in figure 6.12 showing the UI for creature, the meshes for the creatures were kept simple to ensure that the AI system worked, the movement system was also a trivial direct vector transformation towards the direction of the target for the same reason.
+
+
 
 \subsection{Player}
 % Player movement
@@ -384,7 +404,7 @@ First the model was rigged using one bone, starting from the hilt of the sword. 
     \end{minipage}
 \end{figure}
 
-When importing it into Unity, the animations had to be split up into to 4 different actions as currently they were all done on one track (this was taken note of and the animations for the creatures were created on different tracks withing Blender, allowing an easier import process). In the heirarchy the sword was attached to an Empty called LeftHand to place it in the correct position, and this was parented under the Main Camera, making it so that the sword's transformation follows where the player is looking.
+When importing it into Unity, the animations had to be split up into to 4 different actions as currently they were all done on one track (this was taken note of and the animations for the creatures were created on different tracks withing Blender, allowing an easier import process). In the hierarchy the sword was attached to an Empty called LeftHand to place it in the correct position, and this was parented under the Main Camera, making it so that the sword's transformation follows where the player is looking.
 
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
@@ -411,27 +431,25 @@ A tutorial by GRIMOIRE \cite{comboSystem} was used to understand how to do this 
 
 
 \subsection{UI}
-For the UI of the game, a decision was made to go without a main menu screen as there is only one level showcasing the use of the AI. 
-
-The first UI designed was for the Creature displaying the stats above their meshes in game. This is one of the spacial UI elements in the game. Below is the initial sketch created in Adobe Illustrator.
+The first UI designed was for the Creature displaying the stats above their meshes in game. This is one of the spacial UI elements in the game. Below is the initial sketch created in Adobe Illustrator. It represents the three important statistics of the creature in a simple manner.
 
 \begin{figure}[H]
     \centering
-    \fbox{\includegraphics[width = 7cm ]{Stats_UI.jpg}}
+    \fbox{\includegraphics[width = 5cm ]{Stats_UI.jpg}}
     \caption{Creature UI Sketch}
 \end{figure}
 
-In Unity this was done by creating a canvas with multiple image sprites, these image sprites have a fill amount that goes from 0 to 1 which can be easily interpolated between by dividing the current values of the stat by their max value.
+In Unity this was done by creating a canvas with multiple image sprites, these image sprites have a fill amount that goes from 0 to 1 which can be easily interpolated between by dividing the current values of the stat by their max value which in this case is 100 for now.
 
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
         \centering
-        \fbox{\includegraphics[width = 5cm ]{Stats_UI_Build1.png}}
+        \fbox{\includegraphics[width = 5cm]{Stats_UI_Build1.png}}
         \caption{Creature UI in Unity}
     \end{minipage}
     \begin{minipage}{.5\textwidth}
         \centering
-        \fbox{\includegraphics[width = 5cm ]{Unity_Image_Panel.png}}
+        \fbox{\includegraphics[width = 5cm]{Unity_Image_Panel.png}}
         \caption{Image Component in Unity}
     \end{minipage}
 \end{figure}
@@ -449,11 +467,9 @@ void FixedUpdate() {
 }
 \end{lstlisting}
 
-\subsection{Unity Project}
 
-% explain Unity's scene and game object and components
-A level in Unity is represented by a Scene
 
+\subsection{Unity Scene / Level}
 % Build one scene
 Below is what the first version of the Unity scene looked like after adding the sword and basic AI components in. A very basic level was created to test out the movement controller for the player, along with physics interaction of the sword. The materials applied are a mix of simple self-made materials from the Unity asset store called "Gridbox prototype materials by Ciathyza", (see asset listing).
 
@@ -463,9 +479,6 @@ Below is what the first version of the Unity scene looked like after adding the 
     \caption{Annotated view of Unity Scene}
 \end{figure}
 
-
-
-
 \section{Main Product}
 \subsection{Creatures and AI}
 \subsubsection{Meshes}
@@ -473,9 +486,7 @@ The meshes of the creatures were changed; a set of animated ice age animal meshe
 
 The saber-tooth (replacing the lizard in the food chain) had 4 animation states, of which only 3 were required, however the sloth (replacing the fly in the food chain) only had 2 animation states, walk and idle, an additional one for biting was required for when it eats food. 
 
-The model was imported into Blender, however the model seemed to have an unnecessary number of bones, most of which did not have an effect to the model. Seeing this, the model had to be rigged again and freshly animated. The same process was used as the sword but with a higher complexity.
-
-
+The model was imported into Blender, however the model seemed to have an unnecessary number of bones, most of which did not have an effect to the model. Seeing this, the model had to be rigged again and freshly animated. 
 
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
@@ -490,10 +501,24 @@ The model was imported into Blender, however the model seemed to have an unneces
     \end{minipage}
 \end{figure}
 
+The same process was used for animation as the sword but with a higher complexity. As mentioned when creating the sword animation, this time, the different animations were separated into their own action events inside of blender, allowing for easy import into Unity without the need of splitting them on import.
+\begin{figure}[H]
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 5cm ]{Sloth_Blender_Animation.png}}
+        \caption{Animation Action States in Blender}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \fbox{\includegraphics[width = 5cm ]{Sloth_Unity_Import.png}}
+        \caption{Same Animations on Import in Blender}
+    \end{minipage}
+\end{figure}
+
 
 \subsubsection{Class Diagram Updated}
 
-The class diagram was updated to add in the Attacks for the lizard enemy, the A star game object for the pathfinding and the food chain game object.
+The class diagram was updated to add in the Attacks for the lizard enemy, which after finding the meshes was updated to a Sabertooth, the A star game object for the path finding and the food chain game object.
 
 \begin{figure}[H]
     \centering
@@ -545,7 +570,7 @@ Any game object in the scene can access this food chain and call GetFood(their n
 
 
 \subsubsection{Pathfinding}
-A path finding system was added (as seen in the updated class diagram) in to facilitate better movement for the AI Agents. A* Pathfinding Project by Aron Granberg (see asset listings). This is a very nice and free library that provides the generation of many type of nav meshes, the one used in the game is a Grid Graph, which is the 'most straight forward path' and can be updated during runtime if obstacles move, it is not the most performance efficient type of graph as all the nodes in the grid are equidistant from each other, and in a large open space, that amount of detail/resolution in the grid is not required; however for our purposes, this type of graph is more than capable. 
+A path finding system was added (as seen in the updated class diagram) in to facilitate better movement for the AI Agents. The 'A* Pathfinding Project by Aron Granberg' (see asset listings) was used. This is a very well featured and free library that provides the generation of many type of nav meshes, the one used in the game is a 'Grid Graph', which is the 'most straight forward path' and can be updated during runtime if obstacles move, it is not the most performance efficient type of graph as all the nodes in the grid are equidistant from each other, and in a large open space, that amount of detail/resolution in the grid is not required; however for the purposes of this project, this type of graph is more than capable. 
 \cite{astarPathfinding}
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
@@ -560,7 +585,7 @@ A path finding system was added (as seen in the updated class diagram) in to fac
     \end{minipage}
 \end{figure}
 
-In figure left you can see the graph being scaled appropriatly for the level, and in figure right are the settings for collision testing and removing obstacles as walkable in the nav-graph. Unity provides the ability to assign a layer to game objects. In this case, a layer called \textbf{Obstacle} has been applied to the blue boxes seen, so this gets masked out of the scan. As seen in height testing, The \textbf{Ground} layer (applied to all grey objects in scene) has been added as the mask to test the height, this avoids any chance of having a floating graph.
+In figure 6.20 (left) you can see the graph being scaled appropriately for the level, and in figure 6.21 (right) are the settings for collision testing and removing obstacles as walkable in the nav-graph. Unity provides the ability to assign a layer to game objects. In this case, a layer called \textbf{Obstacle} has been applied to the blue boxes seen, so this gets masked out of the scan. As seen in height testing, The \textbf{Ground} layer (applied to all grey objects in scene) has been added as the mask to test the height, this avoids any chance of having a floating graph.
 
 \begin{figure}[H]
     \centering

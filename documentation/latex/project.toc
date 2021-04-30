@@ -24,29 +24,30 @@
 \contentsline {subsection}{\numberline {5.4.3}User Interface (UI)}{16}{subsection.5.4.3}%
 \contentsline {section}{\numberline {5.5}Project Objectives}{16}{section.5.5}%
 \contentsline {chapter}{\numberline {6}Result}{17}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Minimum Viable Product}{17}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Modelling the Actions}{17}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Class Diagram}{19}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Creatures and AI}{19}{subsection.6.1.3}%
-\contentsline {subsection}{\numberline {6.1.4}Player}{21}{subsection.6.1.4}%
-\contentsline {subsubsection}{Movement Controller}{21}{section*.2}%
-\contentsline {subsubsection}{Weapon}{22}{section*.3}%
-\contentsline {subsection}{\numberline {6.1.5}UI}{24}{subsection.6.1.5}%
-\contentsline {subsection}{\numberline {6.1.6}Unity Project}{25}{subsection.6.1.6}%
-\contentsline {section}{\numberline {6.2}Main Product}{26}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Creatures and AI}{26}{subsection.6.2.1}%
-\contentsline {subsubsection}{Meshes}{26}{section*.4}%
-\contentsline {subsubsection}{Class Diagram Updated}{27}{section*.5}%
-\contentsline {subsubsection}{Pathfinding}{29}{section*.6}%
-\contentsline {subsubsection}{Goap AI}{30}{section*.7}%
-\contentsline {subsubsection}{Ragdolls}{34}{section*.8}%
-\contentsline {subsubsection}{Particle Effects}{36}{section*.9}%
-\contentsline {subsection}{\numberline {6.2.2}Player}{37}{subsection.6.2.2}%
-\contentsline {subsubsection}{Eating}{37}{section*.10}%
-\contentsline {subsubsection}{Weapons}{37}{section*.11}%
-\contentsline {subsection}{\numberline {6.2.3}Health}{39}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Stamina}{40}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}Hunger}{40}{subsection.6.2.5}%
-\contentsline {subsection}{\numberline {6.2.6}User Interface changes}{40}{subsection.6.2.6}%
-\contentsline {subsection}{\numberline {6.2.7}Level Creation}{42}{subsection.6.2.7}%
-\contentsline {chapter}{\numberline {7}Asset Listing}{44}{chapter.7}%
+\contentsline {section}{\numberline {6.1}Unity Project}{17}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Minimum Viable Product}{18}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Modelling the Actions}{18}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Class Diagram}{20}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Creatures and AI}{20}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Player}{22}{subsection.6.2.4}%
+\contentsline {subsubsection}{Movement Controller}{22}{section*.2}%
+\contentsline {subsubsection}{Weapon}{23}{section*.3}%
+\contentsline {subsection}{\numberline {6.2.5}UI}{25}{subsection.6.2.5}%
+\contentsline {subsection}{\numberline {6.2.6}Unity Scene / Level}{26}{subsection.6.2.6}%
+\contentsline {section}{\numberline {6.3}Main Product}{27}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Creatures and AI}{27}{subsection.6.3.1}%
+\contentsline {subsubsection}{Meshes}{27}{section*.4}%
+\contentsline {subsubsection}{Class Diagram Updated}{28}{section*.5}%
+\contentsline {subsubsection}{Pathfinding}{30}{section*.6}%
+\contentsline {subsubsection}{Goap AI}{32}{section*.7}%
+\contentsline {subsubsection}{Ragdolls}{35}{section*.8}%
+\contentsline {subsubsection}{Particle Effects}{37}{section*.9}%
+\contentsline {subsection}{\numberline {6.3.2}Player}{38}{subsection.6.3.2}%
+\contentsline {subsubsection}{Eating}{38}{section*.10}%
+\contentsline {subsubsection}{Weapons}{39}{section*.11}%
+\contentsline {subsection}{\numberline {6.3.3}Health}{40}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Stamina}{41}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Hunger}{41}{subsection.6.3.5}%
+\contentsline {subsection}{\numberline {6.3.6}User Interface changes}{42}{subsection.6.3.6}%
+\contentsline {subsection}{\numberline {6.3.7}Level Creation}{43}{subsection.6.3.7}%
+\contentsline {chapter}{\numberline {7}Asset Listing}{45}{chapter.7}%

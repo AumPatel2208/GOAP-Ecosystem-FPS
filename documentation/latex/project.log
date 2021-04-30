@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.15)  30 APR 2021 21:40
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.15)  30 APR 2021 23:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -550,275 +550,285 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 193.
  [12] [13] [14] [15] [16]
 Chapter 6.
-File: ../images//Actions and food chain build 1.png Graphic file (type bmp)
-<../images//Actions and food chain build 1.png>
+File: ../images//Unity_Window.jpg Graphic file (type bmp)
+<../images//Unity_Window.jpg>
 [17
 
 ]
+File: ../images//Actions and food chain build 1.png Graphic file (type bmp)
+<../images//Actions and food chain build 1.png>
+ [18]
 File: ../images//ClassDiagramBuild 1.png Graphic file (type bmp)
 <../images//ClassDiagramBuild 1.png>
- [18] [19] (/usr/local/texlive/2021basic/texmf-dist/tex/latex/listings/lstlang1.sty
+ [19] [20] (/usr/local/texlive/2021basic/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/texlive/2021basic/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-) [20]
+) [21]
 File: ../images//Player_Inspector_Character_Controller.png Graphic file (type bmp)
 <../images//Player_Inspector_Character_Controller.png>
 File: ../images//Player_Capsule.png Graphic file (type bmp)
 <../images//Player_Capsule.png>
 
-Overfull \hbox (2.02818pt too wide) in paragraph at lines 358--368
+Overfull \hbox (2.02818pt too wide) in paragraph at lines 378--388
 []$[]$ $[]$ 
  []
 
-[21]
+[22]
 File: ../images//SwordBone.png Graphic file (type bmp)
 <../images//SwordBone.png>
 File: ../images//SwordKeyframes.png Graphic file (type bmp)
 <../images//SwordKeyframes.png>
 
-Overfull \hbox (2.02817pt too wide) in paragraph at lines 375--385
+Overfull \hbox (2.02817pt too wide) in paragraph at lines 395--405
 []$[]$ $[]$ 
  []
 
-[22]
+[23]
 File: ../images//Sword_Unity_Animation_Import_Split.png Graphic file (type bmp)
 <../images//Sword_Unity_Animation_Import_Split.png>
 
-Underfull \hbox (badness 1412) in paragraph at lines 393--393
-[]\TU/Arial(0)/m/n/10.95 Figure 6.7: []Splitting Animations up for the
+Underfull \hbox (badness 1412) in paragraph at lines 413--413
+[]\TU/Arial(0)/m/n/10.95 Figure 6.8: []Splitting Animations up for the
  []
 
 File: ../images//Sword_Unity_Heirarchy.png Graphic file (type bmp)
 <../images//Sword_Unity_Heirarchy.png>
 
-Overfull \hbox (2.02818pt too wide) in paragraph at lines 390--400
+Overfull \hbox (2.02818pt too wide) in paragraph at lines 410--420
 []$[]$ $[]$ 
  []
 
 File: ../images//Sword_Animator.png Graphic file (type bmp)
 <../images//Sword_Animator.png>
-[23]
+[24]
 File: ../images//Stats_UI.jpg Graphic file (type bmp)
 <../images//Stats_UI.jpg>
- [24]
 File: ../images//Stats_UI_Build1.png Graphic file (type bmp)
 <../images//Stats_UI_Build1.png>
 File: ../images//Unity_Image_Panel.png Graphic file (type bmp)
 <../images//Unity_Image_Panel.png>
 
-Overfull \hbox (2.02818pt too wide) in paragraph at lines 427--437
+Overfull \hbox (2.02818pt too wide) in paragraph at lines 445--455
 []$[]$ $[]$ 
  []
 
 [25]
 File: ../images//Unity_Scene_Build_1_annotated.jpg Graphic file (type bmp)
 <../images//Unity_Scene_Build_1_annotated.jpg>
+ [26]
 File: ../images//Sloth_Model_Messy_Rig.png Graphic file (type bmp)
 <../images//Sloth_Model_Messy_Rig.png>
 File: ../images//Sloth_Model_Clean_Rig.png Graphic file (type bmp)
 <../images//Sloth_Model_Clean_Rig.png>
 
-Overfull \hbox (2.02818pt too wide) in paragraph at lines 481--491
+Overfull \hbox (2.02818pt too wide) in paragraph at lines 492--502
 []$[]$ $[]$ 
  []
 
-[26]
+[27]
+File: ../images//Sloth_Blender_Animation.png Graphic file (type bmp)
+<../images//Sloth_Blender_Animation.png>
+File: ../images//Sloth_Unity_Import.png Graphic file (type bmp)
+<../images//Sloth_Unity_Import.png>
+
+Overfull \hbox (2.02818pt too wide) in paragraph at lines 506--516
+[]$[]$ $[]$ 
+ []
+
 File: ../images//ClassDiagram.jpg Graphic file (type bmp)
 <../images//ClassDiagram.jpg>
- [27]
+[28] [29]
 File: ../images//AStar_Graph.png Graphic file (type bmp)
 <../images//AStar_Graph.png>
 File: ../images//AStar_CollisionSettings.png Graphic file (type bmp)
 <../images//AStar_CollisionSettings.png>
 
-Overfull \hbox (2.02818pt too wide) in paragraph at lines 551--561
+Overfull \hbox (2.02818pt too wide) in paragraph at lines 576--586
 []$[]$ $[]$ 
  []
 
-[28]
+[30]
 File: ../images//Astar_AgentComponents.png Graphic file (type bmp)
 <../images//Astar_AgentComponents.png>
- [29]
 File: ../images//Vision_Cone_Representation.jpg Graphic file (type bmp)
 <../images//Vision_Cone_Representation.jpg>
- [30] [31] [32] [33]
+ [31] [32] [33] [34]
 File: ../images//Ragdoll_Colliders.png Graphic file (type bmp)
 <../images//Ragdoll_Colliders.png>
 File: ../images//Ragdoll_Inspector.png Graphic file (type bmp)
 <../images//Ragdoll_Inspector.png>
 
-Overfull \hbox (2.02818pt too wide) in paragraph at lines 686--696
+Overfull \hbox (2.02818pt too wide) in paragraph at lines 711--721
 []$[]$ $[]$ 
  []
 
-[34]
+[35] [36]
 File: ../images//Particles_Burst_Emmision.png Graphic file (type bmp)
 <../images//Particles_Burst_Emmision.png>
 File: ../images//Particles_Destroy_OnStop.png Graphic file (type bmp)
 <../images//Particles_Destroy_OnStop.png>
 
-Overfull \hbox (2.02818pt too wide) in paragraph at lines 738--748
+Overfull \hbox (2.02818pt too wide) in paragraph at lines 763--773
 []$[]$ $[]$ 
  []
 
-[35]
 File: ../images//Particles_Blood.png Graphic file (type bmp)
 <../images//Particles_Blood.png>
 File: ../images//Particles_Plant_Food.png Graphic file (type bmp)
 <../images//Particles_Plant_Food.png>
 
-Overfull \hbox (2.02818pt too wide) in paragraph at lines 756--766
+Overfull \hbox (2.02818pt too wide) in paragraph at lines 781--791
 []$[]$ $[]$ 
  []
 
-[36]
+[37] [38]
 File: ../images//Sword_Colliders_Scene.png Graphic file (type bmp)
 <../images//Sword_Colliders_Scene.png>
 File: ../images//Sword_Colliders_Inspector.png Graphic file (type bmp)
 <../images//Sword_Colliders_Inspector.png>
 
-Overfull \hbox (47.55536pt too wide) in paragraph at lines 792--802
+Overfull \hbox (47.55536pt too wide) in paragraph at lines 817--827
 []$[]$ $[]$ 
  []
 
-[37] [38]
+[39]
 File: ../images//CrossBow_Scene.png Graphic file (type bmp)
 <../images//CrossBow_Scene.png>
 
-Overfull \hbox (23.8744pt too wide) in paragraph at lines 829--830
+Overfull \hbox (23.8744pt too wide) in paragraph at lines 854--855
  [][] 
  []
 
 File: ../images//CrossBow_Game_With_GUI.png Graphic file (type bmp)
 <../images//CrossBow_Game_With_GUI.png>
 
-Overfull \hbox (2.02817pt too wide) in paragraph at lines 827--837
+Overfull \hbox (2.02817pt too wide) in paragraph at lines 852--862
 []$[]$ $[]$ 
  []
 
-[39]
+[40]
 File: ../images//darksouls3_hud_ui.jpg Graphic file (type bmp)
 <../images//darksouls3_hud_ui.jpg>
- [40]
+ [41]
 File: ../images//Player_Hud_UI_Plan.jpg Graphic file (type bmp)
 <../images//Player_Hud_UI_Plan.jpg>
 File: ../images//Player_Hud_UI_Implementation.png Graphic file (type bmp)
 <../images//Player_Hud_UI_Implementation.png>
- [41] [42]
+ [42] [43]
 File: ../images//Level1_Blender.jpg Graphic file (type bmp)
 <../images//Level1_Blender.jpg>
 File: ../images//Level1_Stairs.png Graphic file (type bmp)
 <../images//Level1_Stairs.png>
 
-Overfull \hbox (2.02818pt too wide) in paragraph at lines 890--900
+Overfull \hbox (2.02818pt too wide) in paragraph at lines 915--925
 []$[]$ $[]$ 
  []
 
 File: ../images//Level1_Unity.png Graphic file (type bmp)
 <../images//Level1_Unity.png>
-[43]
+[44]
 Chapter 7.
-[44
+[45
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 918--919
+Underfull \hbox (badness 10000) in paragraph at lines 943--944
 \TU/Arial(0)/m/n/10.95 Available at: [][]$[][][][][] [] [] [] [][][][][] [] [][][][][][][][] [] [][][] [] [][][][][] [] [][][][][][][][] [] [][] [] [][] [] [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 922--923
+Underfull \hbox (badness 10000) in paragraph at lines 947--948
 [][][][][][] [] [][][][][][] [] [][][][][][][][] [] [][][][][][][][][][] [] [][] [] [][] [] [][][] [] [][][] [] [][][][][][] [] [][][]$[][] \TU/Arial(0)/m/n/10.95 [Accessed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 924--925
+Underfull \hbox (badness 10000) in paragraph at lines 949--950
 [] [] [][][] [] [][][][][][][][][] [] [][][] [] [][][][][][][][] [] [][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][] [] [][][]$[][] \TU/Arial(0)/m/n/10.95 [Ac-
  []
 
-[45
+[46
 
 ]
-Underfull \hbox (badness 1675) in paragraph at lines 936--937
+Underfull \hbox (badness 1675) in paragraph at lines 961--962
 []\TU/Arial(0)/m/n/10.95 Thompson, T., 2020. Building the AI of F.E.A.R. with Goal Oriented Action Plan-
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 936--937
+Underfull \hbox (badness 1424) in paragraph at lines 961--962
 \TU/Arial(0)/m/n/10.95 ning. [online] Gamasutra.com. Available at: [][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][] [] [][][] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 936--937
+Underfull \hbox (badness 10000) in paragraph at lines 961--962
 [][][][][][][][][][][][][] [] [][][][][][][][] [] [][][][][][] [] [][][][][][][][] [] [][][] [] [][] [] [][] [] [][][][] [] [][][][] [] [][][][] []
  []
 
 
-Underfull \hbox (badness 5592) in paragraph at lines 938--939
+Underfull \hbox (badness 5592) in paragraph at lines 963--964
 []\TU/Arial(0)/m/n/10.95 Monolith Productions, Inc., 2004, Fear SDK 1.08 [code] Available at: [][]$[][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 944--945
+Underfull \hbox (badness 10000) in paragraph at lines 969--970
 []\TU/Arial(0)/m/n/10.95 Owens, B., 2014. Goal Oriented Action Planning for a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 944--945
+Underfull \hbox (badness 10000) in paragraph at lines 969--970
 \TU/Arial(0)/m/n/10.95 Smarter AI. [online] Game Development Envato Tuts+. Avail-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 944--945
+Underfull \hbox (badness 10000) in paragraph at lines 969--970
 \TU/Arial(0)/m/n/10.95 able at: [][]$[][][][][] [] [] [] [][][][][][][][][][][][][][][] [] [][][][][][][][] [] [][][] [] [][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 944--945
+Underfull \hbox (badness 10000) in paragraph at lines 969--970
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][] \TU/Arial(0)/m/n/10.95 [Accessed
  []
 
-[46]
-Underfull \hbox (badness 3039) in paragraph at lines 960--961
+[47]
+Underfull \hbox (badness 3039) in paragraph at lines 985--986
 \TU/Arial(0)/m/n/10.95 Docs.unity3d.com. Available at: [][]$[][][][][] [] [] [] [][][][] [] [][][][][][][] [] [][][] [] [][][][][][][][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 962--963
+Underfull \hbox (badness 10000) in paragraph at lines 987--988
 []\TU/Arial(0)/m/n/10.95 UKEssays.com. 2021. Rapid Application Development vs. Agile Methodolo-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 962--963
+Underfull \hbox (badness 10000) in paragraph at lines 987--988
 \TU/Arial(0)/m/n/10.95 gies. [online] Available at: [][]$[][][][][] [] [] [] [][][] [] [][][][][][][][] [] [][][] [] [][][][][][] [] [][][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 970--971
+Underfull \hbox (badness 10000) in paragraph at lines 995--996
 []\TU/Arial(0)/m/n/10.95 erdiizgi.com. n.d. Data Structures for Games: Bidirectional Dictio-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 970--971
+Underfull \hbox (badness 10000) in paragraph at lines 995--996
 \TU/Arial(0)/m/n/10.95 nary for Unity in C#. [online] Available at: [][]$[][][][][] [] [] [] [][][][][][][][] [] [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 970--971
+Underfull \hbox (badness 10000) in paragraph at lines 995--996
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
  []
 
-[47] (./project.aux)
+[48] (./project.aux)
 Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: 6E0FE291767F57B4593CAFEEAC94BE45;5409.
+(rerunfilecheck)             Checksum: 9C5C00342FBB4F85A09D5FE88B028F39;5568.
  ) 
 Here is how much of TeX's memory you used:
- 14696 strings out of 478436
- 281713 string characters out of 5853929
- 1106573 words of memory out of 5000000
- 34339 multiletter control sequences out of 15000+600000
+ 14714 strings out of 478436
+ 282304 string characters out of 5853929
+ 1064626 words of memory out of 5000000
+ 34354 multiletter control sequences out of 15000+600000
  410751 words of font info for 81 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 81i,10n,89p,1389b,1827s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 81i,10n,89p,1389b,1825s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (48 pages).
+Output written on project.pdf (49 pages).
