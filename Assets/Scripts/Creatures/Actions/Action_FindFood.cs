@@ -41,31 +41,6 @@ namespace Creatures.Actions {
         public override bool perform(GameObject agent) {
             GameObject food = null;
 
-            // OLD
-            /*
-        // // Going through all game objects and getting the shortest distance away
-        // foreach (var f in validFoods) {
-        //
-        //     float distance = 0;
-        //     if (food != null) {
-        //         distance = Vector3.Distance(food.transform.position, transform.position);
-        //     }
-        //
-        //     foreach (var o in GameObject.FindGameObjectsWithTag(f)) {
-        //         if (food == null) {
-        //             food = o;
-        //         }
-        //         else {
-        //             // check distance if it is greater than tempFoodTarget's distance
-        //             if (distance > Vector3.Distance(o.transform.position, transform.position)) {
-        //                 food = o;
-        //             }
-        //         }
-        //     }
-        // }
-        */
-
-
             // all the colliders in the radius
             Collider[] hitColliders = Physics.OverlapSphere(head.position, sphereRadius, lifeLayerMask);
             float selectedFoodDistance = 0;
@@ -73,28 +48,12 @@ namespace Creatures.Actions {
             foreach (Collider collider in hitColliders) {
                 // if (collider.transform.parent == null && !collider.CompareTag(transform.tag)) { // taking this out as to be able to target other enemies of the same species
                 if (collider.transform.parent == null ) {
-                    // Debug.Log("Collider Name: " + collider.gameObject.name);
-                    // check angle
+                    
+                    // get angle
                     Vector3 targetDir = collider.transform.position - head.position;
                     float angle = Vector3.Angle(targetDir, head.forward);
 
-
-                    // Temporarily change the layer of the game object so that it ignores the raycast
-                    // LayerMask originalLayerMask = gameObject.layer;
-                    // gameObject.layer = LayerMask.GetMask("Ignore Raycast");
-                    // bool didRaycastHit = Physics.Raycast(transform.position, targetDir, sphereRadius, lifeLayerMask);
-                    // gameObject.layer = originalLayerMask;
-
-                    // RaycastHit hit;
-                    // if (Physics.Raycast(transform.position, targetDir, out hit, sphereRadius, lifeLayerMask)) {
-                    //     Debug.Log("Hit Info: " + hit.transform.name);
-                    // }
-
-                    // && Physics.Raycast(transform.position, targetDir, sphereRadius, lifeLayerMask)
-                    // && didRaycastHit
-
                     // check the angle
-                    // does not check if there are obstacles in the way
                     if (viewAngle < angle) {
                         // get distance for current food
                         if (food != null) {

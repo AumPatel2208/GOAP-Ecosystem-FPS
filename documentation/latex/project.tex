@@ -16,9 +16,6 @@
 \usepackage{fancyvrb} % extra functionality for verbatim
 \usepackage{fontspec} % changing fonts
 \usepackage[]{microtype} % 
-
-% \usepackage{microtype} % used for formatting nicely and getting rid of hbox badness
-% \usepackage{natbib}
 \usepackage{float} % to place figures in place
 
 \graphicspath{{../images/}}
@@ -29,6 +26,7 @@
 % font family change
 \setmainfont{Arial}
 \setmonofont{JetBrains Mono Regular}
+% \setmonofont{Menlo}
 
 \bibliographystyle{unsrtnat}
 \graphicspath{{../images/}}
@@ -570,8 +568,8 @@ Any game object in the scene can access this food chain and call GetFood(their n
 
 
 \subsubsection{Pathfinding}
-A path finding system was added (as seen in the updated class diagram) in to facilitate better movement for the AI Agents. The 'A* Pathfinding Project by Aron Granberg' (see asset listings) was used. This is a very well featured and free library that provides the generation of many type of nav meshes, the one used in the game is a 'Grid Graph', which is the 'most straight forward path' and can be updated during runtime if obstacles move, it is not the most performance efficient type of graph as all the nodes in the grid are equidistant from each other, and in a large open space, that amount of detail/resolution in the grid is not required; however for the purposes of this project, this type of graph is more than capable. 
-\cite{astarPathfinding}
+A path finding system was added (as seen in the updated class diagram) in to facilitate better movement for the AI Agents. The 'A* Pathfinding Project by Aron Granberg' (see asset listings) was used. This is a very well featured and free library that provides the generation of many type of nav meshes, the one used in the game is a 'Grid Graph', which is the 'most straight forward path' and can be updated during runtime if obstacles move, it is not the most performance efficient type of graph as all the nodes in the grid are equidistant from each other, and in a large open space, that amount of detail/resolution in the grid is not required; however for the purposes of this project, this type of graph is more than capable\cite{astarPathfinding}.
+
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
         \centering
@@ -593,7 +591,9 @@ In figure 6.20 (left) you can see the graph being scaled appropriately for the l
     \caption{Components for Agents to use A Star Pathfinding}
 \end{figure}
 
-Now for the agents to use this graph, a few components provided by the library were attached. As seen in the figure above. The \textbf{AIPath} contains the movement controller for the agent to move along the discovered path and contains the shape(radius and height) of the agent, to ensure it does not go into the obstacles. The \textbf{AI Destination Setter} component contains a \textbf{Target} transform property, this is the transform the seeker will use to find a path. The \textbf{Seeker} component references the target and the A* Graph to find a possible path, which the AIPath component will use. \textbf{Simple Smooth} is an optional component that takes the path produced by seeker and smoothen it out.
+Now for the agents to use this graph, a few components provided by the library were attached. As seen in figure 6.22 (above). The \textbf{AIPath} contains the movement controller for the agent to move along the discovered path and contains the shape(radius and height) of the agent, to ensure it does not go into the obstacles. The \textbf{AI Destination Setter} component contains a \textbf{Target} transform property, this is the transform the seeker will use to find a path. The \textbf{Seeker} component references this target and traverses the A* Graph to find a possible path, which will be used by the AIPath component. \textbf{Simple Smooth} is an optional component that takes the path produced by seeker and smoothen it out by a given value.
+
+These set of components are attached to the creatures and the parameters are tweaked accordingly; in this case the smaller prey is faster than the predator, allowing it to flee easier.
 
 
 \subsubsection{Goap AI}
@@ -605,10 +605,38 @@ The AI system was expanded upon in this build. The action for \textbf{Find Food}
     \caption{Vision Cone Represented}
 \end{figure}
 
-The \textbf{Eat Food} action can only be executed now if the food is ready, and to make the food ready, it needs to be killed, and therefore the planner will find and execute the \textbf{Melee Attack}.
+Before this it was a simple distance check and would chase the closest enemy. To implement this vision cone, Unity's built in \lstinline{Physics.OverlapSphere()} method was used to retrieve all colliders within a certain distance, a layer mask parameter is also used, set to 'Life' to ignore other colliders like the obstacles. Then iterate through these colliders to see whether they are valid food based on the food chain, and pick the closest one from multiple available targets. As mentioned previously, code listings are abridged versions of the ones found in the project.
+\begin{lstlisting}[language=c]
+// Action_FindFood.cs -> perform() method
+...
+// all the colliders in the radius
+Collider[] hitColliders = Physics.OverlapSphere(head.position, sphereRadius, lifeLayerMask);
+// iterate through colliders
+foreach (Collider collider in hitColliders) {
+    // get angle
+    Vector3 targetDir = collider.transform.position - head.position;
+    float angle = Vector3.Angle(targetDir, head.forward);
+    // check the angle
+    if (viewAngle < angle) {
+        ...
+        foreach (var f in validFoods) {
+            ...
+            // if is a valid food and is closer than the other selected food then
+            food = collider.gameObject;
+            ... 
+        }
+    }
+}
+\end{lstlisting}
 
-Both these actions were also changed to play the animations at the correct moment.
-The Creature class from build one was broken down into an abstract BaseAIGoap class that inherited the IGoap interface and provided implementation for the methods that log on action complete/fail/etc.; a boolean check was created so that the programmer can disable the logging to the console, as this has a major hit on performance in Unity and also cluttered up the console when multiple agents were active, essentially making it unusable. The \textbf{Sabertooth} and \textbf{Sloth} now inherited from this and applied their goal states seperatly, reducing the coupling and making debugging simpler than when they inherited from a Creature class.
+Now there is another problem we need to solve, if it cannot find a food in the given vision cone, it will not do anything until something does; to solve this a Roam action was devised, however after attempting to implement it into the system, it was obvious there was no way to interrupt this roam action in mid playback. The solution devised at the time was inspired by a GDC lecture on 'Goal-Oriented Action Planning: Ten Years of AI Programming' by Chris Conway, Peter Higley and Eric Jacopin \cite{10goap}. In this lecture, Peter Higley mentions to keep GOAP performant, plans should be kept short and logic that can be moved out of the planner into other systems, then it should; based on this a script was created that, when there is no action taking place, it finds a random node on the grid and sets it as the destination in the \textbf{AIDestinationSetter} component, while setting can move to true, moving the AI agent towards the random location. At any point in time, if a food target is found, it will take priority and execute an appropriate plan accordingly.
+
+The \textbf{Eat Food} action can only be executed now if the food is ready, added as a precondition; to make the food ready, it needs to be killed, and therefore the planner will find and execute the \textbf{Melee Attack} attached to the Sabertooth based around the preconditions and effects.
+
+Both these actions were also adjusted slightly to play the animations at the correct moment.
+
+The Creature class from build one was broken down, with less features, into an abstract BaseAIGoap class that inherited the IGoap interface and provided implementation for the methods that log on action complete/fail/etc.; a boolean check was created so that the programmer can disable the logging to the console, as this has a major hit on performance in Unity and also cluttered up the console when multiple agents were active, essentially making it unusable. The \textbf{Sabertooth} and \textbf{Sloth} now inherited from this and applied their goal states seperatly, reducing the coupling and making debugging simpler than when they inherited from a Creature class.
+
 \begin{lstlisting}[language=c]
 // This class inherits IGOAP to provide implementation for methods on finishing the plans.
 public abstract class BaseAIGoap : MonoBehaviour, IGoap {
@@ -644,7 +672,7 @@ In this particular case, the problem was that \textbf{Find Food} did not directl
 There were many solutions that came to mind, however most of these lead to heavy refactoring of the AI code, and this was not feasible this late in the development of this project as it would have put a stop on an already tight schedule.
 
 % First use of the AUTHOR ?????
-So the solution that the author went with provided the most minimal amount of refactoring and still provided desirable results in most use cases.
+The following is description of the solution that was both a minimal amount of refactoring and provided desirable results in most use cases.
 
 In the \textbf{Goap Planner} script, there is a method that is called recursively called \lstinline{buildGraph()}, which goes through all possible actions and creates a graph of possible plans, it checks if the plan is fully successful by using the \lstinline{inState()} function; it then compares the \textit{costs} of these plans and picks the lowest cost one.
 
@@ -698,15 +726,12 @@ private bool inState(HashSet<KeyValuePair<string, object>> test, HashSet<KeyValu
    }
    return allMatch;
 }
-
-
-
 \end{lstlisting}
 
 \subsubsection{Ragdolls}
-When destroyed, there was no state for the creatures to be in, so it was decided that ragdolls would be fun to allow the player to move the body around using the physics based collisions on the sword and the crossbow weapons, and it would also provide a clear indicator that the creature is dead.
+When destroyed, there was no state for the creatures to be in, so it was decided that ragdolls would be fun to allow the player to move the body around using the physics based collisions on the sword and the crossbow weapons, and it would also provide a clear indicator that the creature is dead. This adds another level of player interaction into the game world.
 
-Unity has a built-in Ragdoll creator, however that only works on humanoids with the appropriate bone structure (for the armatures), so it had to be done manually for each creature. A YouTube tutorial was used to understand what components were required on what to achieve this effect. \cite{RagdollTutorial}
+Unity has a built-in ragdoll creator, however that only works on humanoids with the appropriate bone structure (for the armatures), so it had to be done manually for each creature. A YouTube tutorial was used to understand what components were required on what to achieve this effect. \cite{RagdollTutorial}
 \begin{figure}[H]
     \begin{minipage}{.5\textwidth}
         \centering
@@ -757,6 +782,8 @@ private void Death() {
 \end{lstlisting}
 
 \subsubsection{Particle Effects}
+Particle Effects were added to improve the presentation value of the game, as well as providing visual feedback to the player that they have damaged another creature or are eating the other creature.
+
 On applying damage via the Stats component, blood particles are spawned, and these blood particles are specified per creature, allowing for different particle effects per enemy type. 
 
 \begin{figure}[H]
@@ -772,7 +799,7 @@ On applying damage via the Stats component, blood particles are spawned, and the
     \end{minipage}
 \end{figure}
 
-For now there one set of blood particles for all enemies. They are set to do a single burst of 30 particles at the beginning, and reduce their size over their lifetime to 0, and when the particle has finished, it will destroy itself. 
+For now there one set of blood particles for all enemies. They are set to do a single burst of 30 particles at the beginning, and reduce their size over their lifetime to 0, and when the particle has finished, it will destroy itself. The system has been designed so that new particles for each specific enemy can be added; this has been put to use in the particles for eating.
 
 % EAT PARTICLE EFFECTS
 A similar system was created when a creature or the player eat another creature. Two different materials were created for this, brown particles for eating a flesh based enemy, and green particles for plant based foods, these can be applied per creature, so it is very flexible to replace particles for different enemies.
@@ -845,9 +872,9 @@ public void SpawnBloodParticles(Vector3 centerPosition, Quaternion rotation) {
 \end{lstlisting}
 
 % Crossbow
-The ranged weapon was decided on being a crossbow that the player can hold right click to charge up the velocity at which it is release. A model was found on Turbosquid (see asset listing). This was imported into blender, and the crossbow and arrow were separated into two different objects, allowing it to be manipulated separately in Unity. A decision was made to not animate the crossbow as it is not crucial for the main aspect of this game.
+The ranged weapon ended up being a crossbow that the player can hold right-click to charge up the velocity at which it is release. A model was found on Turbosquid (see asset listing). This was imported into Blender, and the crossbow and arrow were exported out as two different objects, allowing it to be manipulated separately in Unity. 
 
-This crossbow and arrow model were placed inside an empty called \textbf{RightHand} together and placed in the apropriate position in front of the player. An \textbf{arrow} prefab was created that contained the model of the arrow, a box collider, and a script attached to it to \textbf{ApplyDamage} on collision with an enemy creature similar to the sword. A script component was attached to the \textbf{RightHand} that instantiates an \textbf{arrow} prefab and give it a velocity. This was then adjusted to increase the velocity the longer the player holds down right-click up until a maximum velocity, and on release of the mouse button, the arrow gets released from the center of the camera view forwards. A GUI element was added to screen space canvas which represents the velocity at which the arrow will be released.
+This crossbow and arrow model were placed inside an empty called \textbf{RightHand} together and placed in the appropriate position in front of the player. An \textbf{arrow} prefab was created that contained the model of the arrow, a box collider, and a script attached to it to \textbf{ApplyDamage} on collision with an enemy creature similar to the sword. A script component was attached to the \textbf{RightHand} that instantiates an \textbf{arrow} prefab and give it a velocity. This was then adjusted to increase the velocity the longer the player holds down right-click up until a maximum velocity, and on release of the mouse button, the arrow gets released from the center of the camera view forwards. A GUI element was added (later refined) to screen space canvas which represents the velocity at which the arrow will be released.
 \begin{figure}[H]
     \begin{minipage}{.4\textwidth}
         \centering
@@ -905,8 +932,9 @@ In the figures below, you can see the sketch for the UI created in Adobe Illustr
 
 
 \subsection{Level Creation}
-As seen in the figure below, this was what the level where the different game systems were being tested looked like. After all the systems were created, a larger level was created to accommodate multiple enemies.
-The main elements of the level was modeled in Blender, then unpacked with a texture applied in Unity; for the Pathfinding algorithm to detect these as obstacles, the “Obstacle” layer was applied to these objects. The stairs were built inside of Unity's ProBuilder, it has a tool to auto generate stairs with custom properties, like the curve added.
+
+These different game systems were being created and tested on the level seen in figure 6.20. After all the systems were created, a larger level was created to accommodate multiple enemies.
+The main elements of the level was modeled in Blender, then unpacked with a texture applied in Unity; for the pathfinding algorithm to detect these as obstacles, the “Obstacle” layer was applied to these objects. The stairs were built inside of Unity's ProBuilder, it has a tool to auto generate stairs with custom properties, like the curve added.
 The creatures and plant were placed in random places, they all use the same prefab so changing the components in one, will change it in other instances of that game object.
 
 For the objectives of this project, a win state is not necessary, there is however a death state for the player, when the player's life has been depleted, they will respawn, which is the scene is reloaded and the world state is reset to the beginning.
@@ -931,9 +959,121 @@ For the objectives of this project, a win state is not necessary, there is howev
 \end{figure}
 
 %=========================
+%   Conclusion and Discussion
+%=========================
+\chapter{Conclusion and Discussion}
+The author will be referring to himself as I in this section for better clarity.
+
+This project was overall a success, it achieved most of the objectives set out and was a great learning experience.
+
+I have now a deeper understanding of GOAP and other AI techniques, I understand more how to have autonomous agents interact with each other in a video game.
+
+% Programming Practice
+One thing I learnt that will carry onto future projects is the compositional design paradigm. In the past I would build my programs around inheritance, however after learning about composition, there are many instances, for example in a game, where this design pattern applies much better.
+
+% Game Engine
+The only game engines I had used before were the ones provided by City university: City Engine in Java, and a variety of low level C++ engines using OpenGL. These engines were enough for the scale of the projects at the time, and for the purposes of the modules, however using them for fully fledged games can be very tricky as they lack many necessary features. Choosing to use Unity for this project was a great decision as it provided me with all the functionality I require, while being generic enough to allow me to create a game in this genre. The large Unity community, as mentioned before, was a great deal of help, whenever there was anything I did not know about it, a simple google search would lead me to the forums or documentation where most of the answers could be found.
+
+% C#
+Unity uses C\#, which is a language I had not used prior to this project; it was pretty simple to pick up as it is syntactically similar to Java and in the C family of languages, both of which I have prior experience with.
+
+% Animation
+Animation work is something I had not attempted before this project, it was not necessary for this project, however, to provide a well presented program as my final output, and to use the knowledge in future projects, I deemed it necessary to have some nice animations. I learnt the animation system inside of Unity and how to utilise that to transition/interpolate between different animation states dynamically, and how to create these animation states within Blender.
+
+\section{Objectives Retrospective}
+This section will go through the many objectives set out in the introduction and do a brief retrospective on their success.
+
+
+% Creatures
+The main goal for this project, to use GOAP AI techniques to achieve interaction between different AI agents was a success, as can be seen in the demonstration, the creatures attack each other, flee from each other, and use them as resources to re-fill their hunger. Given more time, the depth to which these creatures interact with each other can be greatly increase using something like the stealth system described in the later section.
+
+I am satisfied with meshes used for the different creatures, they provided a consistent low-poly/cartoon style to them, while also being easy to later create new creatures myself as this style is easier to model over something going for realism. The animations are also something I am very happy with, when expanding on this project, more animation states will have to be created and transitions will have to be implemented inside of Unity's animator controller for each individual creature.
+
+% Player
+As it stands, the player is dual-wielding weapons, with a sword in one hand, and a cross bow in the other, this works great for this demo, and the physics interaction using the ragdolls applied to the creatures is very fun to play around with, however having two weapons on screen at the same time can be very obtrusive on the display; some type of weapon switching system would reduce this visual obstruction and could provide interesting game play opportunity as the player has to be more deliberate with what weapon they have equipped, as changing weapons would cost time and that time loss can cause them taking damage from enemies.
+
+An extra resource can be created that the player can use to create arrows from, and they can hold only a finite number of arrows, having another system for the player to be engaged in.
+
+% HUD
+In terms of the UI for the game, I am quite happy with how it turned out inside of Unity; there is plenty information for the player, based on which they can make their moment-to-moment game play choices. One thing I would change is the UI on top of the creatures, I would make the colour full bars displaying their statistics smaller and would only make them appear when the player is targeting them (or looking at them). The player's HUD runs the issue of not scaling appropriately to different resolutions, which is something that could definitely be improved in a future build.
+
+% Level
+The level created to present this game was created in a very short period of time and does not contain well placed enemies; it is the only objective I would say was not a success. The objective had been simplified during the time from the PDD to the Introduction chapter of this project, however it is not a great level to play, examining it from the lens of a video game player. If there was more time that could be dedicated to this project, creating at least 1 decent level, that can present the game systems in a better way would be up on the list.
+
+\section{Work and time-management}
+% Gannt Chart
+A gannt chart was created before setting off on this project to manage the my time wisely. As the objectives changed, the some items on the gannt chart were replaced with other features, and time spent on it was readjusted. As development of the project went, time time allocated to the AI was quite an underestimated as the complexity of the task was much larger than expected and there were many other elements that also took time as explained in the Results|Creatures and AI.
+
+% Computer Graphics Module
+There was another module running along side this project, and the weeks closer to the presentation deadline for this module were dedicated more to that than this project; this was also an underestimate from the PDD as I expected to only work Thursday's and weekends on that module.
+
+% Contribution Graph
+As the version control system used was Git with GitHub, I have a comprehensive contribution graph which display the commit activity over time (this is based around the size and number of commits), this graph can be seen below.
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width = 15cm]{Git_Contribution_Graph.png}}
+    \caption{Contribution Graph as found on GitHub}
+\end{figure}
+
+\section{Further Improvements}
+% AI and GOAP
+Changing the GOAP system to have multiple groups of goal states as described in this GDC Lecture \cite{10goap}. This would allow multiple \textit{groups of goals} to be considered and would be a better solution to completing plans that partially satisfy the desired world state than the solution I had implemented in chapter 6.3.
+
+% Target Detection
+Better target detection by the AI could be impemented; as it stands it is a very basic vision cone which has 2 states, inside-outside/detected-not detected; this can be replaced with a transition between these states as seen in many stealth games, where the awareness of the AI slowly heightens the longer the target is in the field of view. 
+
+% Actions
+More actions could be created for the enemies, allowing them more to do, a ranged attack was planned, however it had to be dropped due to time. This would be quite simple to implement by using the \textit{Melee Attack Action} as a template and having requires in range be false.
+
+% New Creatures
+New creatures could be created, the food chain is very flexible on adding new creatures at different levels on the food chain.
+
+\section{Final Words}
+
+This has been a great project to work on, and a really eye-opening learning experience and I thank City University for allowing me to work on this project.
+
+%=========================
+%   Glossary
+%=========================
+\chapter{Glossary}
+\section{AI}
+An acronym for Artificial Intelligance; in the context of this project, it refers to 'Game AI' which is different to 'Academic AI'.
+
+\section{the \textit{Author}}
+Any reference to 'The Author' is referring to Aum Patel, the author of this project, this is used to avoid using a first person reference 'I' as much as possible as advised by the module leaders.
+
+\section{Collider}
+A component that can be applied to a GameObject in Unity that defines the Physics/Trigger bounding box.
+
+\section{ECS}
+A design pattern, Unity promotes the usage of this design pattern. Do not confuse this with DOTS/ECS, which is Unity's new way of moving fully away from object orientation to a more Data Oriented Technology Stack (DOTS), this project does not make use of Unity's DOTS in any form.
+
+\section{GameObject / game object}
+A game object entity in the context of the Unity game engine.
+
+\section{GOAP}
+An acronym that refers to Goal Oriented Action Planning, first implemented in games by Jeff Orkin for the video game F.E.A.R. \cite{goap}
+
+\section{In-fighting}
+In-fighting is combat between two autonomous AI agents.
+
+\section{PDD}
+Refering to the Project Definition Document found in appendix A.
+
+\section{Ragdoll}
+"Ragdoll physics is a type of procedural animation used by physics engines, which is often used as a replacement for traditional static death animations in video games and animated films." \cite{ragdollDefinition}
+
+\section{Rigidbody}
+A component that can be applied to a GameObject in Unity that allows it to interact with physics.
+
+\section{Unity}
+The Unity Game Engine.
+
+%=========================
 %   Asset Listings
 %=========================
 \chapter{Asset Listing}
+
 
 %=========================
 %   References / Bibliography
@@ -1001,5 +1141,9 @@ For the objectives of this project, a win state is not necessary, there is howev
     2021. Unreal Engine 4. \url{https://www.unrealengine.com}: Epic Games.
     \bibitem{unity}
     2021. Unity Game Engine. \url{https://unity.com/}: Unity Technologies.
+    \bibitem{10goap}
+    GDC, 2017. Goal-Oriented Action Planning: Ten Years of AI Programming. [video] Available at: \url{https://youtu.be/gm7K68663rA}.
+    \bibitem{ragdollDefinition}
+    In: Wikipedia. Ragdoll physics. \url{https://en.wikipedia.org/wiki/Ragdoll_physics}.
 \end{thebibliography}
 \end{document}

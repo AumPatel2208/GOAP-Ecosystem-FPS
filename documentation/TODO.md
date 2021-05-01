@@ -13,32 +13,34 @@
       - This will make it so when the system gets more complicated than 2 goals and 2 actions, it will still be 'simple' to manage.
     - SOLUTION:
       - Detect when a plan fails whether the plan that was generated was a partial plan. If so, then multiply the cost for that by an arbitrary amount, in this case 10, and perform the action. </del>
-- [ ] Change all references to self to make them sound more formal, try to avoid the author however remove I
-- [ ] Food Chain explanation, write about bi-directional dictionaries.
+- [x] Change all references to self to make them sound more formal, try to avoid the author however remove I
+- [x] Food Chain explanation, write about bi-directional dictionaries.
   - Explain how I required the use of a dictionary where I could use the values as keys as well, and the simplest solution I found was to create two dictionaries. 
   - Later when writing the report, I found this article that explains that that data structure is called a bi-direction dictionary
     - https://erdiizgi.com/data-structures-for-games-bidirectional-dictionary-for-unity-in-c/
 - [x] Explain the GOAP library properly
-- [ ] Expand upon Animator
-  - How it is built into unity 
-- [ ] intro explains what I was hoping to achieve.
-- [ ] Write about the changes from the PDD
+- [x] Expand upon Animator
+  - How it is built into Unity 
+- [x] intro explains what I was hoping to achieve.
+- [x] Write about the changes from the PDD
 - [ ] add intros to sections like Main Product.
-- [ ] Larger images in appendix as well
+- [ ] Larger images in the appendix as well
 - [x] Player
-  - [x] Player Movement, and mouse look
+  - [x] Player Movement, and mouse-look
     - [x] Add images
   - [x] Player Eat food
-- [ ] Remove Negative things about the project
-- [x] Explain when adding the stamina, Sword does 50 damage but costs stamina, but ranged wepon does 10 damage without costing stamina, and you can fire from range, so there is that **trade-off**
+- [x] Remove Negative things about the project
+- [x] Explain when adding the stamina, Sword does 50 damage but costs stamina, but ranged weapon does 10 damage without costing stamina, and you can fire from range, so there is that **trade-off**
 - [x] Excess Hunger refills health
-- [ ] More about learning Unity
-  - [ ] Scenes
-  - [ ] Prefabs
-  - [ ] Importing Assets
-  - [ ] Attaching Components
-  - [ ] Mono Behavoiurs
-- [ ] Change Figure Number refrences
+- [x] More about learning Unity
+  - [x] Scenes
+  - [x] Prefabs
+  - [x] Importing Assets
+  - [x] Attaching Components
+  - [x] Mono Behaviours
+- [ ] Change Figure Number references
+- [x] Talk about (in GOAP AI) extracting items from the planning system to other systems, i.e. roaming, as this allows the roam to be interrupted.
+  - Reference the GDC lecture '10 years of GOAP' 
 
 ## Appendix
 - [ ] Snapshot of git version history
@@ -48,20 +50,22 @@
 - [ ] Layers and tags in Unity **GLOSSARY** with images in appendix
 - [ ] Test cases
 - [ ] Installation document
+  - [ ] Mention the resolution at which the UI is placed perfectly.
 - [ ] Known Bugs
   - [ ] Sword
   - [ ] Two Agents going for the same target may overlap each other as the pathfinding system will give them both the same path.
 
 ## Glossary
 - In-Fighting
-- Goap
+- GOAP
 - AI
-  - refering to Game AI
+  - referring to Game AI
 - GameObject
 - Rigidbody
 - Entity Component System ECS
 - PDD
 - the author
+- Ragdoll
 
 ## Testing
 1 day
@@ -85,6 +89,8 @@
   - https://www.youtube.com/watch?v=mBGUY7EUxXQ
 - https://arongranberg.com/astar/
 - https://rkuhlf-assets.itch.io/ice-age
+- turbo squid
+- nature free
 
 ## CODE NO MORE
 - [x] Roam action
@@ -125,7 +131,7 @@
 ## TOOLS
 UML generator
 https://github.com/pierre3/PlantUmlClassDiagramGenerator
-then compiled using plant uml
+then compiled using plant UML
 
 
 ## Video
@@ -136,7 +142,3 @@ then compiled using plant uml
 ## Pre-Submission
 - Rebuild and test the builds
 
-
-
-## GIT TOKEN
-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
