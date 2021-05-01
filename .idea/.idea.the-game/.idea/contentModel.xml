@@ -188,7 +188,6 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
-        <e p="PlayerStatsUi.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AI" t="Include">
             <e p="FSM" t="Include">
@@ -229,24 +228,13 @@
             <e p="MouseLook.cs" t="Include" />
             <e p="PlayerEatFood.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
+            <e p="PlayerStatsUi.cs" t="Include" />
           </e>
           <e p="Stats" t="Include">
             <e p="Food.cs" t="Include" />
             <e p="FoodStats.cs" t="Include" />
             <e p="Stats.cs" t="Include" />
             <e p="StatsUIController.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Stylized Grass" t="Include">
-          <e p="Demo" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="SimpleCameraController.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Materials" t="Include">
-            <e p="Shader" t="Include">
-              <e p="GetMainLight.hlsl" t="Include" />
-            </e>
           </e>
         </e>
       </e>
