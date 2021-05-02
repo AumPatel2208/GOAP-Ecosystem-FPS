@@ -4,8 +4,8 @@
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
-% \usepackage{graphicx} % images
-\usepackage[draft]{graphicx} % black preview images
+\usepackage{graphicx} % images
+% \usepackage[draft]{graphicx} % black preview images
 \usepackage{fancyhdr} % headers and footers
 \usepackage{parskip} % paragraph
 \usepackage{geometry} % shapes
@@ -81,10 +81,12 @@ bottom=25mm
 %=========================
 %   Title Page
 %=========================
-\begin{titlepage}
-\center
-{\huge\bfseries Report}  
-\end{titlepage}
+% \begin{titlepage}
+% \center
+% {\huge\bfseries Report\\for Individual Project}
+
+% {\big\itseries by Aum Patel}
+% \end{titlepage}
 
 %=========================
 %   Contents Page
@@ -95,7 +97,7 @@ bottom=25mm
 %   Abstract
 %=========================
 \chapter{Abstract}
-This project aim is to create a Souls-Like game with an AI system that allows for in-fighting between creatures based on a food chain. The AI system is at the core of this project and a version of Goal Oriented Action Planning was used, where a planner creates branching action-trees during gameplay and executes those actions leading to novel gameplay moments.
+This project aim is to create a Souls-Like game with an AI system that allows for in-fighting between creatures based on a food chain. The AI system is at the core of this project and a version of Goal-Oriented Action Planning was used, where a planner creates branching action trees during gameplay and executes those actions leading to novel gameplay moments.
 
 %=========================
 %   Introduction
@@ -109,7 +111,7 @@ This project was broken down into two distinct parts, the minimum viable product
 \subsection{Minimum Viable Product}
 \begin{itemize}
     \item 3 foods: a plant, a prey, and a predator
-    \item Simple AI behaviour using Goal Oriented Action Planning
+    \item Simple AI behaviour using Goal-Oriented Action Planning
     \item HUD elements for the Creatures stats
     \item Simple Unity Scene/Level to test the different features
     \item Sword Weapon with a combo system
@@ -130,18 +132,50 @@ The following report is lightly structured to go thoroughly through the differen
 % \section{Assumptions}
 
 \section{Beneficiaries}
-The main beneficiary for this project is me (also referred to as the author throughout the project). I will learn how to use a modern fully featured game engine Unity, learn how to C\# and apply it in the context of game scripting; I will learn how to use compositional relationships efficiently and their benefits over using inheritance in different contexts; the main benefit is learning the different styles of AI techniques available and thoroughly gain an understanding of Goal Oriented Action Planning system of AI and use it to create a simple eco-system of creatures, that are fully animated and rigged up to have rag-doll physics. Overall there are many techniques and challenges that are new to me that I will be facing through this project. 
+The main beneficiary of this project is me (also referred to as the author throughout the project). I will learn how to use a modern fully-featured game engine Unity, learn how to C\# and apply it in the context of game scripting; I will learn how to use compositional relationships efficiently and their benefits over using inheritance in different contexts; the main benefit is learning the different styles of AI techniques available and thoroughly gain an understanding of Goal-Oriented Action Planning system of AI and use it to create a simple eco-system of creatures, that are fully animated and rigged up to have rag-doll physics. Overall there are many techniques and challenges that are new to me that I will be facing through this project. 
 
-Other beneficiaries would include other students/developers interested in seeing a usage of GOAP in a game, this would only come about if I decide to open source this project after it has been graded. As this is a prototype, most players will not be as engaged as they would be on a fully developed project, however if they receive any form of enjoyment out of this game, they would also be considered a beneficiary.
-
-
-
-\section{Upcoming Chapters Overview}
+Other beneficiaries would include other students/developers interested in seeing usage of GOAP in a game, this would only come about if I decide to open-source this project after it has been graded. As this is a prototype, most players will not be as engaged as they would be on a fully developed project, however, if they receive any form of enjoyment out of this game, they would also be considered a beneficiary.
 
 %=========================
 %   Output Summary
 %=========================
 \chapter{Output Summary}
+
+\section{Unity Project}
+Found in Appendix D
+Link to these found in 'Access to Supplementary Material' Appendix D.
+
+3 Builds for macOS, Windows and Linux.
+
+Source Code.
+
+\section{PDD}
+Found in Appendix A
+
+Project Definition Document
+
+Project proposal and description created before the start of this project.
+
+\section{Git Log}
+Found in Appendix B 
+
+A full version control history.
+
+\section{Installation Document and User Guide}
+Found in Appendix C
+
+Contains instruction to download and run the builds.
+
+Also contains instructions to build the project via Unity.
+
+User guide has instructions for playing the game.
+
+\section{Class Diagram}
+Found in Appendix E
+
+A full class diagram which is in full resolution and can be zoomed into digitally.
+
+Class diagram is also broken down into different packages for easier visibility on print.
 
 %=========================
 %   Literature Review
@@ -672,7 +706,6 @@ In this particular case, the problem was that \textbf{Find Food} did not directl
 
 There were many solutions that came to mind, however most of these lead to heavy refactoring of the AI code, and this was not feasible this late in the development of this project as it would have put a stop on an already tight schedule.
 
-% First use of the AUTHOR ?????
 The following is description of the solution that was both a minimal amount of refactoring and provided desirable results in most use cases.
 
 In the \textbf{Goap Planner} script, there is a method that is called recursively called \lstinline{buildGraph()}, which goes through all possible actions and creates a graph of possible plans, it checks if the plan is fully successful by using the \lstinline{inState()} function; it then compares the \textit{costs} of these plans and picks the lowest cost one.
@@ -1038,7 +1071,7 @@ This has been a great project to work on, and a really eye-opening learning expe
 %=========================
 \chapter{Glossary}
 \section{AI}
-An acronym for Artificial Intelligance; in the context of this project, it refers to 'Game AI' which is different to 'Academic AI'.
+An acronym for Artificial Intelligence; in the context of this project, it refers to 'Game AI' which is different to 'Academic AI'.
 
 \section{the \textit{Author}}
 Any reference to 'The Author' is referring to Aum Patel, the author of this project, this is used to avoid using a first person reference 'I' as much as possible as advised by the module leaders.
@@ -1124,8 +1157,6 @@ Usage : Models and animations used for Creatures
 Link : \url{https://rkuhlf-assets.itch.io/ice-age}
 
 Licence : Creative Commons Zero v1.0 Universal
-\\
-
 
 \section{Textures}
 Name : \textbf{Gridbox Prototype Materials}

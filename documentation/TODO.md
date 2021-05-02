@@ -43,29 +43,25 @@
   - Reference the GDC lecture '10 years of GOAP' 
 
 ## Appendix
-- [ ] Snapshot of git version history
+- [x] Snapshot of git version history
 - [ ] Tests
-- [ ] Mention Turbosquid as the location for 3d assets
-- [ ] Explain the Unity Asset store
-- [ ] Layers and tags in Unity **GLOSSARY** with images in appendix
-- [ ] Test cases
-- [ ] Installation document
-  - [ ] Mention the resolution at which the UI is placed perfectly.
+- [x] Installation document
+  - [x] Mention the resolution at which the UI is placed perfectly.
 - [ ] Known Bugs
   - [ ] Sword
   - [ ] Two Agents going for the same target may overlap each other as the pathfinding system will give them both the same path.
 
 ## Glossary
-- In-Fighting
-- GOAP
-- AI
-  - referring to Game AI
-- GameObject
-- Rigidbody
-- Entity Component System ECS
-- PDD
-- the author
-- Ragdoll
+- ~~ In-Fighting~~
+- ~~ GOAP~~
+- ~~ AI~~
+   - ~~referring to Game AI~~
+- ~~ GameObject~~
+- ~~ Rigidbody~~
+- ~~ Entity Component System ECS~~
+- ~~ PDD~~
+- ~~ the author~~
+- ~~ Ragdoll~~
 
 ## Testing
 1 day
@@ -84,13 +80,13 @@
   - Multiplier scale was too low at 3, so was upped to 10.
   
 ## Asset Listing
-- https://assetstore.unity.com/packages/2d/textures-materials/gridbox-prototype-materials-129127
-- Stealth game enemy detection Unity
-  - https://www.youtube.com/watch?v=mBGUY7EUxXQ
-- https://arongranberg.com/astar/
-- https://rkuhlf-assets.itch.io/ice-age
-- turbo squid
-- nature free
+- ~~https://assetstore.unity.com/packages/2d/textures-materials/gridbox-prototype-materials-129127~~
+- ~~Stealth game enemy detection Unity~~
+  -~~ https://www.youtube.com/watch?v=mBGUY7EUxXQ~~
+-~~ https://arongranberg.com/astar/~~
+- ~~https://rkuhlf-assets.itch.io/ice-age~~
+- ~~turbo squid~~
+- ~~nature free~~
 
 ## CODE NO MORE
 - [x] Roam action

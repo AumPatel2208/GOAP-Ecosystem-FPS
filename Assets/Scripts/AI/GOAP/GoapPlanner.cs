@@ -1,3 +1,8 @@
+// Goal Oriented Action Planning AI (GOAP)
+// Creator: Brent Owens sploreg.com @Sploreg 
+// Licence Date : 2015
+// Changes 2021: by  AUM PATEL : Partial completion logic added
+
 using System;
 using System.Collections.Generic;
 using Creatures;
@@ -98,7 +103,7 @@ public class GoapPlanner {
                     leaves.Add(node);
                     foundOne = true;
                 }
-                // if it is a partial match, then It will scale the cost by 10
+                // AUTHOR : AUM - if it is a partial match, then It will scale the cost by 10
                 else if (partial) {
                     // we found a partial solution
                     
